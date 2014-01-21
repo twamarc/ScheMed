@@ -70,7 +70,6 @@
                               ] .
 
 
-
 ###  https://github.com/Twagirumukiza/schema.org#admissionReason
 
 :admissionReason rdf:type owl:ObjectProperty ;
@@ -83,7 +82,6 @@
                                owl:onProperty :playsRole ;
                                owl:someValuesFrom :Patient
                              ] .
-
 
 
 ###  https://github.com/Twagirumukiza/schema.org#adverseEvent
