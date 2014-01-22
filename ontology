@@ -8,6 +8,7 @@
 
 <http://schema.rdfs.org/all> rdf:type owl:Ontology .
 
+# This is a test
 
 #################################################################
 #
