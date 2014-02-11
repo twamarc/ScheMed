@@ -1,0 +1,389 @@
+@prefix : <http://asclepius/medicalEntity#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/medicalEntity> .
+
+<http://www.example.org/medicalEntity> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.example.org/medicalEntity#AdministrativeProcedure
+
+<http://www.example.org/medicalEntity#AdministrativeProcedure> rdf:type owl:Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalProcedure> .
+
+
+
+###  http://www.example.org/medicalEntity#AdverseEvent
+
+<http://www.example.org/medicalEntity#AdverseEvent> rdf:type owl:Class ;
+                                                    
+                                                    rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
+
+
+
+###  http://www.example.org/medicalEntity#Allergy
+
+<http://www.example.org/medicalEntity#Allergy> rdf:type owl:Class ;
+                                               
+                                               rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
+
+
+
+###  http://www.example.org/medicalEntity#AnatomicalEntity
+
+<http://www.example.org/medicalEntity#AnatomicalEntity> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#AnatomicalOrgan
+
+<http://www.example.org/medicalEntity#AnatomicalOrgan> rdf:type owl:Class ;
+                                                       
+                                                       rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#AnatomicalRegion
+
+<http://www.example.org/medicalEntity#AnatomicalRegion> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#AnatomicalStructure
+
+<http://www.example.org/medicalEntity#AnatomicalStructure> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#AnatomicalSystem
+
+<http://www.example.org/medicalEntity#AnatomicalSystem> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#CaringEvent
+
+<http://www.example.org/medicalEntity#CaringEvent> rdf:type owl:Class ;
+                                                   
+                                                   rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#DataReporter
+
+<http://www.example.org/medicalEntity#DataReporter> rdf:type owl:Class ;
+                                                    
+                                                    rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProfessional> .
+
+
+
+###  http://www.example.org/medicalEntity#Diagnosis
+
+<http://www.example.org/medicalEntity#Diagnosis> rdf:type owl:Class ;
+                                                 
+                                                 rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
+
+
+
+###  http://www.example.org/medicalEntity#DiagnosticProcedure
+
+<http://www.example.org/medicalEntity#DiagnosticProcedure> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalProcedure> .
+
+
+
+###  http://www.example.org/medicalEntity#Encounter
+
+<http://www.example.org/medicalEntity#Encounter> rdf:type owl:Class ;
+                                                 
+                                                 rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#EncounterStay
+
+<http://www.example.org/medicalEntity#EncounterStay> rdf:type owl:Class ;
+                                                     
+                                                     rdfs:subClassOf <http://www.example.org/medicalEntity#Encounter> .
+
+
+
+###  http://www.example.org/medicalEntity#EncounterVisit
+
+<http://www.example.org/medicalEntity#EncounterVisit> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:subClassOf <http://www.example.org/medicalEntity#Encounter> .
+
+
+
+###  http://www.example.org/medicalEntity#FamilyHistory
+
+<http://www.example.org/medicalEntity#FamilyHistory> rdf:type owl:Class ;
+                                                     
+                                                     rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#FoodIntolerance
+
+<http://www.example.org/medicalEntity#FoodIntolerance> rdf:type owl:Class ;
+                                                       
+                                                       rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
+
+
+
+###  http://www.example.org/medicalEntity#GeneralPractitioner
+
+<http://www.example.org/medicalEntity#GeneralPractitioner> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProvider> .
+
+
+
+###  http://www.example.org/medicalEntity#HealthcareProfessional
+
+<http://www.example.org/medicalEntity#HealthcareProfessional> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> ;
+                                                              
+                                                              rdfs:comment "Any person working in healthcare settings. This includes healthcare providers but also data reporters, and others" .
+
+
+
+###  http://www.example.org/medicalEntity#HealthcareProvider
+
+<http://www.example.org/medicalEntity#HealthcareProvider> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProfessional> ;
+                                                          
+                                                          rdfs:comment "A health care provider is an individual or an institution that provides preventive, curative, promotional or rehabilitative health care services in a systematic way to individuals, families or communities." .
+
+
+
+###  http://www.example.org/medicalEntity#Homeostasis
+
+<http://www.example.org/medicalEntity#Homeostasis> rdf:type owl:Class ;
+                                                   
+                                                   rdfs:subClassOf <http://www.example.org/medicalEntity#PhysiologicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#Immunization
+
+<http://www.example.org/medicalEntity#Immunization> rdf:type owl:Class ;
+                                                    
+                                                    rdfs:subClassOf <http://www.example.org/medicalEntity#Immunotherapy> .
+
+
+
+###  http://www.example.org/medicalEntity#Immunotherapy
+
+<http://www.example.org/medicalEntity#Immunotherapy> rdf:type owl:Class ;
+                                                     
+                                                     rdfs:subClassOf <http://www.example.org/medicalEntity#Medication> .
+
+
+
+###  http://www.example.org/medicalEntity#KrebsCycle
+
+<http://www.example.org/medicalEntity#KrebsCycle> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf <http://www.example.org/medicalEntity#PhysiologicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#LaboratoryResult
+
+<http://www.example.org/medicalEntity#LaboratoryResult> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#LaboratoryTest
+
+<http://www.example.org/medicalEntity#LaboratoryTest> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#MedicalCondition
+
+<http://www.example.org/medicalEntity#MedicalCondition> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#MedicalEntity
+
+<http://www.example.org/medicalEntity#MedicalEntity> rdf:type owl:Class ;
+                                                     
+                                                     rdfs:label "MedicalEntity" ;
+                                                     
+                                                     rdfs:subClassOf owl:Thing ;
+                                                     
+                                                     rdfs:comment "The most generic type of entity related to health and the practice of medicine." .
+
+
+
+###  http://www.example.org/medicalEntity#MedicalProcedure
+
+<http://www.example.org/medicalEntity#MedicalProcedure> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#Medication
+
+<http://www.example.org/medicalEntity#Medication> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf <http://www.example.org/medicalEntity#TherapeuticProcedure> .
+
+
+
+###  http://www.example.org/medicalEntity#NonSurgicalProcedure
+
+<http://www.example.org/medicalEntity#NonSurgicalProcedure> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalProcedure> .
+
+
+
+###  http://www.example.org/medicalEntity#Nurse
+
+<http://www.example.org/medicalEntity#Nurse> rdf:type owl:Class ;
+                                             
+                                             rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProvider> .
+
+
+
+###  http://www.example.org/medicalEntity#PalliativeProcedure
+
+<http://www.example.org/medicalEntity#PalliativeProcedure> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalProcedure> .
+
+
+
+###  http://www.example.org/medicalEntity#Patient
+
+<http://www.example.org/medicalEntity#Patient> rdf:type owl:Class ;
+                                               
+                                               rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#PhysiologicalEntity
+
+<http://www.example.org/medicalEntity#PhysiologicalEntity> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#Pregnancy
+
+<http://www.example.org/medicalEntity#Pregnancy> rdf:type owl:Class ;
+                                                 
+                                                 rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
+
+
+
+###  http://www.example.org/medicalEntity#SocialHistory
+
+<http://www.example.org/medicalEntity#SocialHistory> rdf:type owl:Class ;
+                                                     
+                                                     rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#SpecialistPhysician
+
+<http://www.example.org/medicalEntity#SpecialistPhysician> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProvider> .
+
+
+
+###  http://www.example.org/medicalEntity#SurgicalProcedure
+
+<http://www.example.org/medicalEntity#SurgicalProcedure> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalProcedure> .
+
+
+
+###  http://www.example.org/medicalEntity#TherapeuticProcedure
+
+<http://www.example.org/medicalEntity#TherapeuticProcedure> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalProcedure> .
+
+
+
+###  http://www.example.org/medicalEntity#TrialNurse
+
+<http://www.example.org/medicalEntity#TrialNurse> rdf:type owl:Class ;
+                                                  
+                                                  rdfs:subClassOf <http://www.example.org/medicalEntity#Nurse> .
+
+
+
+###  http://www.example.org/medicalEntity#Vasoconstriction
+
+<http://www.example.org/medicalEntity#Vasoconstriction> rdf:type owl:Class ;
+                                                        
+                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#VesselsFunction> .
+
+
+
+###  http://www.example.org/medicalEntity#Vasodilatation
+
+<http://www.example.org/medicalEntity#Vasodilatation> rdf:type owl:Class ;
+                                                      
+                                                      rdfs:subClassOf <http://www.example.org/medicalEntity#VesselsFunction> .
+
+
+
+###  http://www.example.org/medicalEntity#VesselsFunction
+
+<http://www.example.org/medicalEntity#VesselsFunction> rdf:type owl:Class ;
+                                                       
+                                                       rdfs:subClassOf <http://www.example.org/medicalEntity#PhysiologicalEntity> .
+
+
+
+###  http://www.example.org/medicalEntity#VitalSign
+
+<http://www.example.org/medicalEntity#VitalSign> rdf:type owl:Class ;
+                                                 
+                                                 rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
