@@ -1,9 +1,17 @@
-@prefix : <https://github.com/Twagirumukiza/schema.org#> .
+@prefix : <http://www.example.org/medicalEntity#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix common: <http://aca.agfa.net/resource/ontology/common#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix w3ctime: <http://www.w3.org/2006/time#> .
+@prefix healthcare: <http://aca.agfa.net/resource/ontology/healthcare#> .
 @base <http://www.example.org/medicalEntity> .
 
 <http://www.example.org/medicalEntity> rdf:type owl:Ontology ;
@@ -18,9 +26,21 @@
 #################################################################
 
 
-###  https://github.com/Twagirumukiza/schema.org#definition
+###  http://schema.org/domainIncludes
 
-:definition rdf:type owl:AnnotationProperty .
+schema:domainIncludes rdf:type owl:AnnotationProperty .
+
+
+
+###  http://schema.org/rangeIncludes
+
+schema:rangeIncludes rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+
+skos:definition rdf:type owl:AnnotationProperty .
 
 
 
@@ -33,532 +53,1370 @@
 #################################################################
 
 
-###  https://github.com/Twagirumukiza/schema.org#administrativeProcedure
+###  http://www.example.org/medicalEntity#aboutRelative
 
-:administrativeProcedure rdf:type owl:ObjectProperty ;
-                         
-                         rdfs:subPropertyOf :medicalProdecureType .
+:aboutRelative rdf:type owl:ObjectProperty ;
+               
+               skos:definition "Specifying someone who you are talking about"@en ;
+               
+               schema:rangeIncludes schema:Person ;
+               
+               schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#admissionPlace
+###  http://www.example.org/medicalEntity#administrativeProcedure
+
+:administrativeProcedure rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.example.org/medicalEntity#admissionPlace
 
 :admissionPlace rdf:type owl:ObjectProperty ;
                 
-                rdfs:range :Department ,
-                           :HealthFacility ,
-                           :Unit ;
-                
-                rdfs:subPropertyOf :administrativeProcedure .
+                schema:rangeIncludes :Department ,
+                                     :HealthFacility ,
+                                     :Unit .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#admissionProvider
+###  http://www.example.org/medicalEntity#admissionProvider
 
 :admissionProvider rdf:type owl:ObjectProperty ;
                    
-                   rdfs:domain :MedicalProcedure ;
-                   
-                   rdfs:subPropertyOf :administrativeProcedure .
+                   schema:domainIncludes :MedicalProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#admissionReason
+###  http://www.example.org/medicalEntity#admissionReason
 
 :admissionReason rdf:type owl:ObjectProperty ;
                  
-                 rdfs:subPropertyOf :administrativeProcedure .
+                 schema:rangeIncludes rdfs:Resource ;
+                 
+                 schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#adverseEvent
+###  http://www.example.org/medicalEntity#adverseEvent
 
 :adverseEvent rdf:type owl:ObjectProperty ;
               
-              rdfs:domain :TherapeuticProcedure ;
+              schema:domainIncludes :TherapeuticProcedure ;
               
-              rdfs:subPropertyOf :therapeuticProcedure .
+              schema:rangeIncludes rdfs:Resource ;
+              
+              schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#diagnosticLevel
+###  http://www.example.org/medicalEntity#ageAtEvent
 
-:diagnosticLevel rdf:type owl:ObjectProperty ;
-                 
-                 rdfs:domain :Diagnosis ;
-                 
-                 rdfs:range :DiagnosticLevel ;
-                 
-                 rdfs:subPropertyOf :hasDiagnosis .
+:ageAtEvent rdf:type owl:ObjectProperty ;
+            
+            skos:definition "Specifying an age in years of something."@en ;
+            
+            schema:domainIncludes rdfs:Resource ;
+            
+            schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#diagnosticMeans
+###  http://www.example.org/medicalEntity#allergen
+
+:allergen rdf:type owl:ObjectProperty ;
+          
+          skos:definition "Specifying something that can cause an allergic reaction."@en ;
+          
+          schema:domainIncludes rdfs:Resource ;
+          
+          schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#atWeeksAmenorrhea
+
+:atWeeksAmenorrhea rdf:type owl:ObjectProperty ;
+                   
+                   skos:definition " specifying weeks of amenorrhoea for a female patient."@en ;
+                   
+                   schema:domainIncludes rdfs:Resource ;
+                   
+                   schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#belongsTo
+
+:belongsTo rdf:type owl:ObjectProperty ;
+           
+           skos:definition "Specifying a resource to wich another resource belongs"@en ;
+           
+           schema:domainIncludes rdfs:Resource ;
+           
+           schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#birthPlace
+
+:birthPlace rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "Place of birth"@en ;
+            
+            skos:definition "Specifying the place of birth for a person"@en ;
+            
+            schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            
+            schema:domainIncludes foaf:Person .
+
+
+
+###  http://www.example.org/medicalEntity#bodySide
+
+:bodySide rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.example.org/medicalEntity#bodySite
+
+:bodySite rdf:type owl:ObjectProperty ;
+          
+          schema:domainIncludes :MedicalProcedure ;
+          
+          schema:rangeIncludes rdfs:Resource ;
+          
+          schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#boxNumber
+
+:boxNumber rdf:type owl:ObjectProperty ;
+           
+           skos:definition "Specifying a Box number, typically in addresses model"@en ;
+           
+           schema:rangeIncludes rdfs:Resource ;
+           
+           schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#careReason
+
+:careReason rdf:type owl:ObjectProperty ;
+            
+            skos:definition "Specifying a reason for a caring event(typically a medcal condition or other encounter reasons)."@en ;
+            
+            schema:domainIncludes rdfs:Resource ;
+            
+            schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#caredFor
+
+:caredFor rdf:type owl:ObjectProperty ;
+          
+          skos:definition "Specifying something a person cared for. This can be a health care professional in health domain caring for a patient or other resource "@en ;
+          
+          schema:rangeIncludes rdfs:Resource ;
+          
+          schema:domainIncludes foaf:Person .
+
+
+
+###  http://www.example.org/medicalEntity#caredPerson
+
+:caredPerson rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying a person (typically a patient) receiving services from the health care professionnal during a caring event."@en ;
+             
+             schema:domainIncludes rdfs:Resource ;
+             
+             schema:rangeIncludes foaf:Agent .
+
+
+
+###  http://www.example.org/medicalEntity#caringEvent
+
+:caringEvent rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying an event wherein services are rendered by members of the health profession (or under their supervision) for the benefit of the patient."@en ;
+             
+             schema:rangeIncludes schema:Event ;
+             
+             schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#caringPerson
+
+:caringPerson rdf:type owl:ObjectProperty ;
+              
+              skos:definition "Specifying a health care professionnal providing services to the patient during a caring event."@en ;
+              
+              schema:domainIncludes rdfs:Resource ;
+              
+              schema:rangeIncludes foaf:Agent .
+
+
+
+###  http://www.example.org/medicalEntity#cause
+
+:cause rdf:type owl:ObjectProperty ;
+       
+       skos:definition "Specifying a cause of something"@en ;
+       
+       schema:rangeIncludes rdfs:Resource ;
+       
+       schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#confirmationStatus
+
+:confirmationStatus rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "has confirmation status"@en ;
+                    
+                    skos:definition "Specifying the confirmation status of something. eg: confirmed, suspected etc."@en ;
+                    
+                    schema:domainIncludes rdfs:Resource ;
+                    
+                    schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#contain
+
+:contain rdf:type owl:ObjectProperty ;
+         
+         skos:definition "Specifying something physically contained by something else."@en ;
+         
+         schema:domainIncludes dcterms:PhysicalResource ;
+         
+         schema:rangeIncludes dcterms:PhysicalResource .
+
+
+
+###  http://www.example.org/medicalEntity#contraIndication
+
+:contraIndication rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "Contraindication"@en ;
+                  
+                  rdfs:comment "A contraindication for a procedure, a therapy, an action or a device use."@en ;
+                  
+                  schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/71388002> ;
+                  
+                  schema:rangeIncludes schema:MedicalContraindication ;
+                  
+                  schema:domainIncludes schema:MedicalDevice .
+
+
+
+###  http://www.example.org/medicalEntity#dateTime
+
+:dateTime rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.example.org/medicalEntity#deathPlace
+
+:deathPlace rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "Place of birth"@en ;
+            
+            skos:definition "Specifying the place of death for a person"@en ;
+            
+            schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            
+            schema:domainIncludes foaf:Person .
+
+
+
+###  http://www.example.org/medicalEntity#denominator
+
+:denominator rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying a denominator of a ratio; typically used in formalization of 'outOf'."@en ;
+             
+             schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#description
+
+:description rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying a resource  containing a description of something"@en ;
+             
+             schema:rangeIncludes rdfs:Resource ;
+             
+             schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#diagnosis
+
+:diagnosis rdf:type owl:ObjectProperty ;
+           
+           skos:definition "Specifying a medical condition which is output of a diagnosis process"@en ;
+           
+           schema:rangeIncludes schema:MedicalCondition ;
+           
+           schema:domainIncludes rdfs:Resource ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.example.org/medicalEntity#diagnosticMeans
 
 :diagnosticMeans rdf:type owl:ObjectProperty ;
                  
-                 rdfs:range :Department ;
+                 schema:rangeIncludes :Department ;
                  
-                 rdfs:domain :Diagnosis ;
+                 schema:domainIncludes :Diagnosis ;
                  
-                 rdfs:range :HealthFacility ,
-                            :Unit ;
-                 
-                 rdfs:subPropertyOf :hasDiagnosis .
+                 schema:rangeIncludes :HealthFacility ,
+                                      :Unit .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#diagnosticPlace
+###  http://www.example.org/medicalEntity#diagnosticPlace
 
 :diagnosticPlace rdf:type owl:ObjectProperty ;
                  
-                 rdfs:range :Department ;
+                 schema:rangeIncludes :Department ;
                  
-                 rdfs:domain :Diagnosis ;
+                 schema:domainIncludes :Diagnosis ;
                  
-                 rdfs:range :HealthFacility ,
-                            :Unit ;
-                 
-                 rdfs:subPropertyOf :hasDiagnosis .
+                 schema:rangeIncludes :HealthFacility ,
+                                      :Unit .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#diagnosticProcedure
+###  http://www.example.org/medicalEntity#diagnosticProcedure
 
-:diagnosticProcedure rdf:type owl:ObjectProperty ;
-                     
-                     rdfs:subPropertyOf :medicalProdecureType .
+:diagnosticProcedure rdf:type owl:ObjectProperty .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#diagnosticType
+###  http://www.example.org/medicalEntity#diagnosticType
 
 :diagnosticType rdf:type owl:ObjectProperty ;
                 
-                rdfs:domain :Diagnosis ;
+                schema:domainIncludes :Diagnosis ,
+                                      rdfs:Resource ;
                 
-                rdfs:range :DiagnosisType ;
-                
-                rdfs:subPropertyOf :hasDiagnosis .
+                schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#dischargeProvider
+###  http://www.example.org/medicalEntity#diastolicBloodPressure
+
+:diastolicBloodPressure rdf:type owl:ObjectProperty ;
+                        
+                        skos:definition "Specifying a diastolic arterial blood pressure of a patient.."@en ;
+                        
+                        schema:rangeIncludes rdfs:Resource ;
+                        
+                        schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#dischargeProvider
 
 :dischargeProvider rdf:type owl:ObjectProperty ;
                    
-                   rdfs:domain :MedicalProcedure ;
+                   schema:rangeIncludes rdfs:Resource ;
                    
-                   rdfs:subPropertyOf :administrativeProcedure .
+                   schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#dischargeReason
+###  http://www.example.org/medicalEntity#dischargeReason
 
 :dischargeReason rdf:type owl:ObjectProperty ;
                  
-                 :definition "Specifying the reason for discharge :death, cured, tranfer, etc" ;
+                 schema:domainIncludes rdfs:Resource ;
                  
-                 rdfs:subPropertyOf :administrativeProcedure ;
-                 
-                 owl:equivalentProperty :dischargeStatus .
+                 schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#dischargeStatus
+###  http://www.example.org/medicalEntity#dischargeStatus
 
 :dischargeStatus rdf:type owl:ObjectProperty ;
                  
-                 rdfs:subPropertyOf :administrativeProcedure .
+                 schema:domainIncludes rdfs:Resource ;
+                 
+                 schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#dischargedPlace
+###  http://www.example.org/medicalEntity#dischargedPlace
 
 :dischargedPlace rdf:type owl:ObjectProperty ;
                  
-                 rdfs:range :Department ,
-                            :HealthFacility ;
-                 
-                 rdfs:domain :MedicalProcedure ;
-                 
-                 rdfs:range :Unit ;
-                 
-                 rdfs:subPropertyOf :administrativeProcedure .
+                 schema:rangeIncludes :Department ,
+                                      :HealthFacility ,
+                                      :Unit .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#diseaseStage
+###  http://www.example.org/medicalEntity#diseaseStage
 
-:diseaseStage rdf:type owl:ObjectProperty ;
+:diseaseStage rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.example.org/medicalEntity#dispensation
+
+:dispensation rdf:type owl:ObjectProperty ;
               
-              rdfs:subPropertyOf :hasDisease .
+              skos:definition "Specifying an drug dispensation event"@en ;
+              
+              schema:domainIncludes rdfs:Resource ;
+              
+              schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#encounter
+###  http://www.example.org/medicalEntity#drug
+
+:drug rdf:type owl:ObjectProperty ;
+      
+      skos:definition "Specifying a drug or medicine used in a medication procedure"@en ;
+      
+      schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/410942007> ;
+      
+      schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#drugIntaken
+
+:drugIntaken rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying an event of taking cure medication, related to a medication periode"@en ;
+             
+             schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/129019007> ;
+             
+             schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#drugOrMedicine
+
+:drugOrMedicine rdf:type owl:ObjectProperty ;
+                
+                schema:rangeIncludes :DrugTherapy ;
+                
+                schema:domainIncludes :TherapeuticProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#drugPreparation
+
+:drugPreparation rdf:type owl:ObjectProperty ;
+                 
+                 skos:definition "Specifying a drug preparation used in a procedure, typically prepared for a patient from one or multiple drug packages"@en ;
+                 
+                 schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/105904009> ;
+                 
+                 schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#encounter
 
 :encounter rdf:type owl:ObjectProperty ;
            
-           :definition "Specifying the encounter for a human patient" ;
+           skos:definition "Encounter describes an encounter between the patient and a healthcare provider."@en ;
            
-           rdfs:subPropertyOf :medicalProdecureType .
+           schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/308335008> ;
+           
+           schema:domainIncludes schema:Person .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#encounterPlace
+###  http://www.example.org/medicalEntity#encounterPlace
 
 :encounterPlace rdf:type owl:ObjectProperty ;
                 
-                rdfs:range :Department ,
-                           :HealthFacility ,
-                           :Unit ;
-                
-                rdfs:subPropertyOf :encounter .
+                schema:rangeIncludes :Department ,
+                                     :HealthFacility ,
+                                     :Unit .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#encounterProvider
+###  http://www.example.org/medicalEntity#encounterProvider
 
 :encounterProvider rdf:type owl:ObjectProperty ;
                    
-                   rdfs:domain :EncounterProcedure ;
-                   
-                   rdfs:subPropertyOf :encounter .
+                   schema:domainIncludes :EncounterProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#encounterReason
+###  http://www.example.org/medicalEntity#encounterReason
 
 :encounterReason rdf:type owl:ObjectProperty ;
                  
-                 rdfs:range :ChiefComplaint ;
-                 
-                 rdfs:subPropertyOf :encounter .
+                 schema:rangeIncludes :ChiefComplaint .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#eventDuration
+###  http://www.example.org/medicalEntity#ethnicOrigin
 
-:eventDuration rdf:type owl:ObjectProperty ;
-               
-               rdfs:subPropertyOf :hasEvent ;
-               
-               rdfs:range [ rdf:type owl:Restriction ;
-                            owl:onProperty owl:topDataProperty ;
-                            owl:someValuesFrom xsd:anyURI
-                          ] .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasChild
-
-:hasChild rdf:type owl:ObjectProperty .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasDiagnosis
-
-:hasDiagnosis rdf:type owl:ObjectProperty ;
+:ethnicOrigin rdf:type owl:ObjectProperty ;
               
-              rdfs:subPropertyOf :medicalCondition .
+              skos:definition "Specifying an ethnic group of person."@en ;
+              
+              schema:domainIncludes schema:Person ;
+              
+              schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#hasDisease
+###  http://www.example.org/medicalEntity#event
 
-:hasDisease rdf:type owl:ObjectProperty ;
+:event rdf:type owl:ObjectProperty ;
+       
+       rdfs:label "has event"@en ;
+       
+       skos:definition "Specifying someone or something (eg. organisation, procedure, event, activity, etc) having an event)."@en ;
+       
+       schema:rangeIncludes rdfs:Resource ;
+       
+       schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#examination
+
+:examination rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying an examination procedure, action or activity of something or a patient."@en ;
+             
+             schema:domainIncludes rdfs:Resource ;
+             
+             schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#examinationOf
+
+:examinationOf rdf:type owl:ObjectProperty ;
+               
+               owl:inverseOf :examination ;
+               
+               schema:domainIncludes rdfs:Resource ;
+               
+               schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#examinedBy
+
+:examinedBy rdf:type owl:ObjectProperty ;
             
-            rdfs:subPropertyOf :medicalCondition .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasEvent
-
-:hasEvent rdf:type owl:ObjectProperty ;
-          
-          :definition "Specifying someone or something (eg. organisation, procedure, event, activity, etc) having an event." ;
-          
-          rdfs:range owl:Thing .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasFamilyMember
-
-:hasFamilyMember rdf:type owl:ObjectProperty .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasFinding
-
-:hasFinding rdf:type owl:ObjectProperty ;
+            schema:domainIncludes rdfs:Resource ;
             
-            rdfs:subPropertyOf :diagnosticProcedure .
+            schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#hasGuarantor
+###  http://www.example.org/medicalEntity#familyHistory
 
-:hasGuarantor rdf:type owl:ObjectProperty .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasMedicalCondition
-
-:hasMedicalCondition rdf:type owl:ObjectProperty ;
-                     
-                     rdfs:subPropertyOf :medicalCondition .
+:familyHistory rdf:type owl:ObjectProperty ;
+               
+               skos:definition " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
+               
+               schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/57177007> ;
+               
+               schema:domainIncludes schema:Person .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#hasMedicalProcedure
+###  http://www.example.org/medicalEntity#familyMember
 
-:hasMedicalProcedure rdf:type owl:ObjectProperty ;
-                     
-                     rdfs:range :MedicalProcedure ;
-                     
-                     rdfs:subPropertyOf :medicalProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasMethod
-
-:hasMethod rdf:type owl:ObjectProperty ;
-           
-           rdfs:range :Invasiveness ;
-           
-           rdfs:domain :MedicalProcedure ;
-           
-           rdfs:subPropertyOf :medicalProcedureMethod .
+:familyMember rdf:type owl:ObjectProperty ;
+              
+              schema:domainIncludes rdfs:Resource ;
+              
+              schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#hasOutcome
+###  http://www.example.org/medicalEntity#finding
 
-:hasOutcome rdf:type owl:ObjectProperty ;
-            
-            rdfs:domain :MedicalProcedure ;
-            
-            rdfs:subPropertyOf :therapeuticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasParent
-
-:hasParent rdf:type owl:ObjectProperty .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasReport
-
-:hasReport rdf:type owl:ObjectProperty ;
-           
-           rdfs:domain :MedicalProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasSignOrSymptom
-
-:hasSignOrSymptom rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:range :SignOrSymptom ;
-                  
-                  rdfs:subPropertyOf :medicalCondition .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasSite
-
-:hasSite rdf:type owl:ObjectProperty ;
+:finding rdf:type owl:ObjectProperty ;
          
-         rdfs:domain :MedicalProcedure ;
+         rdfs:label "has clinical finding"@en ;
          
-         rdfs:subPropertyOf :medicalProcedure .
+         skos:definition "Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc"@en ;
+         
+         schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/116154003> ;
+         
+         schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+         
+         rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#hasSpouse
+###  http://www.example.org/medicalEntity#guarantor
 
-:hasSpouse rdf:type owl:ObjectProperty .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasTherapeuticProcedure
-
-:hasTherapeuticProcedure rdf:type owl:ObjectProperty ;
-                         
-                         rdfs:range :TherapeuticProcedure ;
-                         
-                         rdfs:subPropertyOf :therapeuticProcedure .
+:guarantor rdf:type owl:ObjectProperty ;
+           
+           skos:definition "Specifying a person or company , known as guarantor, offering insurance policies in return for premiums"@en ;
+           
+           schema:rangeIncludes schema:Organization ,
+                                schema:Person ;
+           
+           schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#healthFacility
+###  http://www.example.org/medicalEntity#guarantorOf
 
-:healthFacility rdf:type owl:ObjectProperty .
+:guarantorOf rdf:type owl:ObjectProperty ;
+             
+             owl:inverseOf :guarantor ;
+             
+             schema:rangeIncludes rdfs:Resource ;
+             
+             schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#healthFacilityDepartment
+###  http://www.example.org/medicalEntity#healthFacility
+
+:healthFacility rdf:type owl:ObjectProperty ;
+                
+                schema:domainIncludes rdfs:Resource ;
+                
+                schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#healthFacilityClinic
+
+:healthFacilityClinic rdf:type owl:ObjectProperty ;
+                      
+                      schema:domainIncludes rdfs:Resource ;
+                      
+                      schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#healthFacilityDepartment
 
 :healthFacilityDepartment rdf:type owl:ObjectProperty ;
                           
-                          rdfs:subPropertyOf :healthFacility .
+                          schema:rangeIncludes rdfs:Resource ;
+                          
+                          schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#healthFacilityUnit
+###  http://www.example.org/medicalEntity#healthFacilityRoom
+
+:healthFacilityRoom rdf:type owl:ObjectProperty ;
+                    
+                    schema:domainIncludes rdfs:Resource ;
+                    
+                    schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#healthFacilityUnit
 
 :healthFacilityUnit rdf:type owl:ObjectProperty ;
                     
-                    rdfs:subPropertyOf :healthFacility .
+                    schema:rangeIncludes rdfs:Resource ;
+                    
+                    schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#isProcedureMethodOf
+###  http://www.example.org/medicalEntity#healthFacilityWard
 
-:isProcedureMethodOf rdf:type owl:ObjectProperty ;
-                     
-                     rdfs:domain :Invasiveness ;
-                     
-                     rdfs:range :MedicalProcedure ;
-                     
-                     owl:inverseOf :hasMethod ;
-                     
-                     rdfs:subPropertyOf :medicalProcedureMethod .
+:healthFacilityWard rdf:type owl:ObjectProperty ;
+                    
+                    schema:rangeIncludes rdfs:Resource ;
+                    
+                    schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#medicalCondition
+###  http://www.example.org/medicalEntity#houseNumber
 
-:medicalCondition rdf:type owl:ObjectProperty .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#medicalProcedure
-
-:medicalProcedure rdf:type owl:ObjectProperty .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#medicalProcedureMethod
-
-:medicalProcedureMethod rdf:type owl:ObjectProperty ;
-                        
-                        rdfs:subPropertyOf :medicalProcedure .
+:houseNumber rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying a house number, typically in addresses model"@en ;
+             
+             schema:rangeIncludes rdfs:Resource ;
+             
+             schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#medicalProdecureType
+###  http://www.example.org/medicalEntity#indication
+
+:indication rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "Indication"@en ;
+            
+            rdfs:comment "Specifying the indication of a medical procedure, an action, a therapy, etc"@en ;
+            
+            schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/71388002> ,
+                                  schema:MedicalDevice ;
+            
+            schema:rangeIncludes schema:MedicalIndication .
+
+
+
+###  http://www.example.org/medicalEntity#instant
+
+:instant rdf:type owl:ObjectProperty ;
+         
+         skos:definition "Specifying an instant of something."@en ;
+         
+         schema:domainIncludes rdfs:Resource ;
+         
+         schema:rangeIncludes w3ctime:Instant .
+
+
+
+###  http://www.example.org/medicalEntity#insurance
+
+:insurance rdf:type owl:ObjectProperty ;
+           
+           skos:definition "Specifying an insurance scheme owned by a person or company ,offered by a a busness entity as defined in "@en ;
+           
+           schema:rangeIncludes gr:Offering ;
+           
+           schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#interpretation
+
+:interpretation rdf:type owl:ObjectProperty ;
+                
+                skos:definition "Specifying an interpretation of something"@en ;
+                
+                schema:domainIncludes rdfs:Resource ;
+                
+                schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#interval
+
+:interval rdf:type owl:ObjectProperty ;
+          
+          skos:definition "Specifying an interval of something."@en ;
+          
+          schema:domainIncludes rdfs:Resource ;
+          
+          schema:rangeIncludes w3ctime:Interval .
+
+
+
+###  http://www.example.org/medicalEntity#kinship
+
+:kinship rdf:type owl:ObjectProperty ;
+         
+         skos:definition "Specifying a relationship between persons. Typically between persons uses the 'American Kinship terminology'."@en ;
+         
+         schema:rangeIncludes <http://purl.bioontology.org/ontology/MESH/D005195> ;
+         
+         schema:domainIncludes foaf:Person .
+
+
+
+###  http://www.example.org/medicalEntity#kinshipTo
+
+:kinshipTo rdf:type owl:ObjectProperty ;
+           
+           skos:definition "Specifying a the person a relatioship is pointing to."@en ;
+           
+           schema:domainIncludes <http://purl.bioontology.org/ontology/MESH/D005195> ;
+           
+           schema:rangeIncludes foaf:Person .
+
+
+
+###  http://www.example.org/medicalEntity#maritalStatus
+
+:maritalStatus rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "has marital status"@en ;
+               
+               skos:definition "Specifying an agent having the social and/or juridical status of being married or unmarried. "@en ;
+               
+               schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/365581002> ;
+               
+               schema:domainIncludes schema:Person .
+
+
+
+###  http://www.example.org/medicalEntity#medicalCase
+
+:medicalCase rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying a medical case for a given medical entity or patient. A medical case is a sub-entity of a full medical record of a patient."@en ;
+             
+             schema:rangeIncludes schema:MedicalEntity ;
+             
+             schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#medicalCondition
+
+:medicalCondition rdf:type owl:ObjectProperty ;
+                  
+                  skos:definition "Specifying a medical condition in general diagnosed or not."@en ;
+                  
+                  schema:rangeIncludes schema:MedicalCondition ;
+                  
+                  schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#medicalProcedure
+
+:medicalProcedure rdf:type owl:ObjectProperty ;
+                  
+                  schema:rangeIncludes :MedicalProcedure ,
+                                       rdfs:Resource ;
+                  
+                  schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#medicalProdecureType
 
 :medicalProdecureType rdf:type owl:ObjectProperty ;
                       
-                      :definition "Specifying the medical procedure type: Encounter, Administrative, Routine, Diagnostic, Palliative, Surgical or Therapeutic." ;
+                      schema:domainIncludes :MedicalProcedure ,
+                                            rdfs:Resource ;
                       
-                      rdfs:domain :MedicalProcedure ;
-                      
-                      rdfs:subPropertyOf :medicalProcedure .
+                      schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#medication
+###  http://www.example.org/medicalEntity#medicalRecord
 
-:medication rdf:type owl:ObjectProperty ;
+:medicalRecord rdf:type owl:ObjectProperty ;
+               
+               skos:definition "Specifying a medical record for a given medical entity or patient. A medical record is a summ of all medical cases of a patient."@en ;
+               
+               schema:rangeIncludes schema:MedicalEntity ;
+               
+               schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#medicationProcedure
+
+:medicationProcedure rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:subPropertyOf :therapeuticProcedure ;
+                     
+                     schema:rangeIncludes rdfs:Resource ;
+                     
+                     schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#method
+
+:method rdf:type owl:ObjectProperty ;
+        
+        schema:domainIncludes :MedicalProcedure ,
+                              rdfs:Resource ;
+        
+        schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#methodOf
+
+:methodOf rdf:type owl:ObjectProperty ;
+          
+          owl:inverseOf :method ;
+          
+          schema:rangeIncludes rdfs:Resource ;
+          
+          schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#newborm
+
+:newborm rdf:type owl:ObjectProperty ;
+         
+         skos:definition "Specifying a person as a newborn from delivery"@en ;
+         
+         schema:rangeIncludes rdfs:Resource ;
+         
+         schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#normalRange
+
+:normalRange rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Range of acceptable values for quantitative values: typically a laboratory test, experiment accepted values etc"@en ;
+             
+             schema:domainIncludes rdfs:Resource ;
+             
+             schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#observable
+
+:observable rdf:type owl:ObjectProperty ;
             
-            rdfs:range :DrugTherapy ;
+            rdfs:label "has clinical observable"@en ;
             
-            rdfs:domain :TherapeuticProcedure ;
+            skos:definition "Specifying a clinical observable of a patient not necessarily through a clinical examination. example: a swelling, etc"@en ;
             
-            rdfs:subPropertyOf :therapeuticProcedure .
+            schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/116154003> ;
+            
+            schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/363787002> .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#palliativeProcedure
+###  http://www.example.org/medicalEntity#onsetMode
+
+:onsetMode rdf:type owl:ObjectProperty ;
+           
+           skos:definition "Specifying a way a process, an ilness, or an event comes into existence"@en ;
+           
+           schema:domainIncludes rdfs:Resource ;
+           
+           schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#outcome
+
+:outcome rdf:type owl:ObjectProperty ;
+         
+         schema:domainIncludes :MedicalProcedure ;
+         
+         schema:rangeIncludes rdfs:Resource ;
+         
+         schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#package
+
+:package rdf:type owl:ObjectProperty ;
+         
+         skos:definition "Specifying something physically containing something else."@en ;
+         
+         schema:domainIncludes dcterms:PhysicalResource ;
+         
+         schema:rangeIncludes dcterms:PhysicalResource ;
+         
+         owl:inverseOf :contain .
+
+
+
+###  http://www.example.org/medicalEntity#palliativeProcedure
 
 :palliativeProcedure rdf:type owl:ObjectProperty ;
                      
-                     rdfs:subPropertyOf :medicalProdecureType .
+                     schema:rangeIncludes rdfs:Resource ;
+                     
+                     schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#playsRole
+###  http://www.example.org/medicalEntity#parent
 
-:playsRole rdf:type owl:ObjectProperty .
+:parent rdf:type owl:ObjectProperty ;
+        
+        schema:rangeIncludes rdfs:Resource ;
+        
+        schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#procedureDate
+###  http://www.example.org/medicalEntity#personalHistory
+
+:personalHistory rdf:type owl:ObjectProperty ;
+                 
+                 skos:definition " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
+                 
+                 schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/160476009> ;
+                 
+                 schema:domainIncludes schema:Person .
+
+
+
+###  http://www.example.org/medicalEntity#playsRole
+
+:playsRole rdf:type owl:ObjectProperty ;
+           
+           schema:domainIncludes rdfs:Resource ;
+           
+           schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#position
+
+:position rdf:type owl:ObjectProperty ;
+          
+          skos:definition "Specifying a position of something in given space. e.g. standing position, sitting position etc."@en ;
+          
+          schema:rangeIncludes rdfs:Resource ;
+          
+          schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#possibleCause
+
+:possibleCause rdf:type owl:ObjectProperty ;
+               
+               schema:rangeIncludes rdfs:Resource ;
+               
+               schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#prescription
+
+:prescription rdf:type owl:ObjectProperty ;
+              
+              skos:definition "Specifying a medical order (=written prescription)."@en ;
+              
+              schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/440545006> ;
+              
+              schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#procedure
+
+:procedure rdf:type owl:ObjectProperty ;
+           
+           skos:definition " specifying a procedure for the patient ."@en ;
+           
+           schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/71388002> ;
+           
+           schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#procedureDate
 
 :procedureDate rdf:type owl:ObjectProperty ;
                
-               rdfs:subPropertyOf :medicalProcedure .
+               schema:domainIncludes rdfs:Resource ;
+               
+               schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#procedureProvider
+###  http://www.example.org/medicalEntity#procedureOf
+
+:procedureOf rdf:type owl:ObjectProperty ;
+             
+             owl:inverseOf :procedure ;
+             
+             schema:domainIncludes rdfs:Resource ;
+             
+             schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#procedureProvider
 
 :procedureProvider rdf:type owl:ObjectProperty ;
                    
-                   rdfs:subPropertyOf :medicalProcedure .
+                   schema:rangeIncludes rdfs:Resource ;
+                   
+                   schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#relatedEncounter
+###  http://www.example.org/medicalEntity#provider
+
+:provider rdf:type owl:ObjectProperty ;
+          
+          skos:definition "Specifying a provider of something: a service or a procedure ."@en ;
+          
+          schema:rangeIncludes schema:Organization ,
+                               schema:Person ;
+          
+          schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#providerOf
+
+:providerOf rdf:type owl:ObjectProperty ;
+            
+            owl:inverseOf :provider ;
+            
+            schema:rangeIncludes rdfs:Resource ;
+            
+            schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#quantity
+
+:quantity rdf:type owl:ObjectProperty ;
+          
+          skos:definition "Specifying the number of something."@en ;
+          
+          schema:domainIncludes rdfs:Resource ;
+          
+          schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#raceOrigin
+
+:raceOrigin rdf:type owl:ObjectProperty ;
+            
+            skos:definition "Specifying a race group or antropological family as origin of the person."@en ;
+            
+            schema:domainIncludes schema:Person ;
+            
+            schema:rangeIncludes rdfs:Resource ;
+            
+            schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#ranked
+
+:ranked rdf:type owl:ObjectProperty ;
+        
+        rdfs:comment "Typically used together with common:hasDenominator like for formalization of pattern 4 out of xxx"@en ;
+        
+        skos:definition "rank order number of something."@en ;
+        
+        schema:rangeIncludes rdfs:Resource ;
+        
+        schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#relatedEncounter
 
 :relatedEncounter rdf:type owl:ObjectProperty ;
                   
-                  rdfs:range :EncounterProcedure ;
+                  schema:rangeIncludes :EncounterProcedure ;
                   
-                  rdfs:domain :MedicalProcedure ;
-                  
-                  rdfs:subPropertyOf :administrativeProcedure .
+                  schema:domainIncludes :MedicalProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#rolePlayedBy
+###  http://www.example.org/medicalEntity#relative
+
+:relative rdf:type owl:ObjectProperty ;
+          
+          rdfs:comment "May be used in complement with schema:relatedTo from schema.org or in rules together with common:kinship and common:kinshipTo"@en ;
+          
+          skos:definition "Specifying someone who is a relative of someone else"@en ;
+          
+          schema:rangeIncludes foaf:Person ;
+          
+          schema:domainIncludes foaf:Person .
+
+
+
+###  http://www.example.org/medicalEntity#religion
+
+:religion rdf:type owl:ObjectProperty ;
+          
+          skos:definition "Specifying a religion or religious beliefs of person."@en ;
+          
+          schema:domainIncludes schema:Person ;
+          
+          schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#report
+
+:report rdf:type owl:ObjectProperty ;
+        
+        schema:rangeIncludes :HealthRecord ;
+        
+        schema:domainIncludes :MedicalProcedure ;
+        
+        schema:rangeIncludes :MedicalRecord ,
+                             :PatientRecord .
+
+
+
+###  http://www.example.org/medicalEntity#residentialStatus
+
+:residentialStatus rdf:type owl:ObjectProperty ;
+                   
+                   skos:definition "Specifying the act of dwelling in a place. This status is linked to an address and periode of the time"@en ;
+                   
+                   schema:domainIncludes rdfs:Resource ;
+                   
+                   schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#rolePlayedBy
 
 :rolePlayedBy rdf:type owl:ObjectProperty .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#sideEffects
+###  http://www.example.org/medicalEntity#severity
 
-:sideEffects rdf:type owl:ObjectProperty ;
-             
-             rdfs:domain :TherapeuticProcedure ;
-             
-             rdfs:subPropertyOf :therapeuticProcedure .
+:severity rdf:type owl:ObjectProperty ;
+          
+          skos:definition "Specifying a severity evaluation of a disease: typically by classification resource or ranking scale: mild, moderate, severe, life threatening or fatal"@en ;
+          
+          schema:domainIncludes schema:MedicalCondition ;
+          
+          schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#signOrSymptomOf
+###  http://www.example.org/medicalEntity#sideEffect
+
+:sideEffect rdf:type owl:ObjectProperty ;
+            
+            schema:domainIncludes :TherapeuticProcedure ,
+                                  rdfs:Resource ;
+            
+            schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#signOrSymptomOf
 
 :signOrSymptomOf rdf:type owl:ObjectProperty ;
                  
-                 rdfs:domain :SignOrSymptom ;
+                 schema:domainIncludes :SignOrSymptom ,
+                                       rdfs:Resource ;
                  
-                 owl:inverseOf :hasSignOrSymptom ;
-                 
-                 rdfs:subPropertyOf :medicalCondition .
+                 schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#suspectedCause
+###  http://www.example.org/medicalEntity#spouse
+
+:spouse rdf:type owl:ObjectProperty ;
+        
+        schema:domainIncludes rdfs:Resource ;
+        
+        schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#stage
+
+:stage rdf:type owl:ObjectProperty ;
+       
+       rdfs:label "has stage"@en ;
+       
+       skos:definition "Specifying the stage of a process in general like stage of illness, etc."@en ;
+       
+       schema:rangeIncludes rdfs:Resource ;
+       
+       schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#status
+
+:status rdf:type owl:ObjectProperty ;
+        
+        rdfs:label "has status"@en ;
+        
+        skos:definition "Specifying the confirmation status in general of something."@en ;
+        
+        schema:rangeIncludes rdfs:Resource ;
+        
+        schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#suspectedCause
 
 :suspectedCause rdf:type owl:ObjectProperty ;
                 
-                rdfs:range owl:Thing ,
-                           :Allergen ;
+                schema:rangeIncludes :Allergen ;
                 
-                rdfs:subPropertyOf :medicalCondition .
+                schema:domainIncludes rdfs:Resource ;
+                
+                schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#therapeuticProcedure
+###  http://www.example.org/medicalEntity#systolicBloodPressure
+
+:systolicBloodPressure rdf:type owl:ObjectProperty ;
+                       
+                       skos:definition "Specifying  systolic arterial blood pressure of a patient."@en ;
+                       
+                       schema:domainIncludes rdfs:Resource ;
+                       
+                       schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#therapeuticProcedure
 
 :therapeuticProcedure rdf:type owl:ObjectProperty ;
                       
-                      rdfs:subPropertyOf :medicalProdecureType .
+                      schema:rangeIncludes :TherapeuticProcedure ;
+                      
+                      schema:domainIncludes rdfs:Resource ;
+                      
+                      schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#total
+
+:total rdf:type owl:ObjectProperty ;
+       
+       skos:definition "Total number of something."@en ;
+       
+       schema:domainIncludes rdfs:Resource ;
+       
+       rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.example.org/medicalEntity#treatedWith
+
+:treatedWith rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying a treatment or managment or therapeutic procedures for a disorder"@en ;
+             
+             schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/277132007> ;
+             
+             schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/64572001> ,
+                                   schema:Person .
 
 
 
@@ -571,91 +1429,145 @@
 #################################################################
 
 
-###  https://github.com/Twagirumukiza/schema.org#admissionDate
+###  http://www.example.org/medicalEntity#admissionDate
 
-:admissionDate rdf:type owl:DatatypeProperty .
+:admissionDate rdf:type owl:DatatypeProperty ;
+               
+               schema:rangeIncludes ""^^xsd:dateTime ;
+               
+               schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#deathDate
+###  http://www.example.org/medicalEntity#birthHeight
+
+:birthHeight rdf:type owl:DatatypeProperty ;
+             
+             schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#birthPercentile
+
+:birthPercentile rdf:type owl:DatatypeProperty ;
+                 
+                 schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#birthWeight
+
+:birthWeight rdf:type owl:DatatypeProperty ;
+             
+             schema:domainIncludes rdfs:Resource ;
+             
+             rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+###  http://www.example.org/medicalEntity#bodyMassIndex
+
+:bodyMassIndex rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.example.org/medicalEntity#bodyVolumeIndex
+
+:bodyVolumeIndex rdf:type owl:DatatypeProperty ;
+                 
+                 schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#deathDate
 
 :deathDate rdf:type owl:DatatypeProperty ;
+           
+           schema:domainIncludes rdfs:Resource ;
            
            rdfs:subPropertyOf owl:topDataProperty .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#dischargeDate
+###  http://www.example.org/medicalEntity#diagnosticDate
 
-:dischargeDate rdf:type owl:DatatypeProperty .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasBMI
-
-:hasBMI rdf:type owl:DatatypeProperty .
+:diagnosticDate rdf:type owl:DatatypeProperty .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#hasBirthHeight
+###  http://www.example.org/medicalEntity#dischargeDate
 
-:hasBirthHeight rdf:type owl:DatatypeProperty ;
-                
-                rdfs:subPropertyOf :hasHeight .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasBirthPercentile
-
-:hasBirthPercentile rdf:type owl:DatatypeProperty ;
-                    
-                    rdfs:subPropertyOf :hasBMI .
+:dischargeDate rdf:type owl:DatatypeProperty ;
+               
+               schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#hasBirthWeight
+###  http://www.example.org/medicalEntity#hipCircumference
 
-:hasBirthWeight rdf:type owl:DatatypeProperty ;
-                
-                rdfs:subPropertyOf :hasWeight .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#hasHeight
-
-:hasHeight rdf:type owl:DatatypeProperty .
+:hipCircumference rdf:type owl:DatatypeProperty ;
+                  
+                  schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#hasWeight
+###  http://www.example.org/medicalEntity#refills
 
-:hasWeight rdf:type owl:DatatypeProperty .
+:refills rdf:type owl:DatatypeProperty ;
+         
+         skos:definition "Specifying the history or plan of refills that can be done before a new prescription is needed, related to a given prescription."@en ;
+         
+         schema:domainIncludes rdfs:Resource ;
+         
+         schema:rangeIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#procedureInfo
-
-:procedureInfo rdf:type owl:DatatypeProperty .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#reportDate
+###  http://www.example.org/medicalEntity#reportDate
 
 :reportDate rdf:type owl:DatatypeProperty ;
             
-            rdfs:range xsd:dateTime .
+            schema:domainIncludes rdfs:Resource ;
+            
+            schema:rangeIncludes xsd:dateTime .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#reportID
+###  http://www.example.org/medicalEntity#reportID
 
-:reportID rdf:type owl:DatatypeProperty .
+:reportID rdf:type owl:DatatypeProperty ;
+          
+          schema:domainIncludes rdfs:Resource .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#reportRecorder
+###  http://www.example.org/medicalEntity#reportRecorder
 
-:reportRecorder rdf:type owl:DatatypeProperty .
+:reportRecorder rdf:type owl:DatatypeProperty ;
+                
+                schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#transferDate
+
+:transferDate rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.example.org/medicalEntity#waistCircumference
+
+:waistCircumference rdf:type owl:DatatypeProperty ;
+                    
+                    schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#waistHipRatio
+
+:waistHipRatio rdf:type owl:DatatypeProperty ;
+               
+               schema:domainIncludes rdfs:Resource .
 
 
 
@@ -672,7 +1584,7 @@
 
 <http://schema.rdfs.org/all#AnatomicalRole> rdf:type owl:Class ;
                                             
-                                            rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalEntity> .
+                                            rdfs:subClassOf :AnatomicalEntity .
 
 
 
@@ -680,7 +1592,7 @@
 
 <http://schema.rdfs.org/all#CardiovascularSystem> rdf:type owl:Class ;
                                                   
-                                                  rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                                  rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -688,7 +1600,7 @@
 
 <http://schema.rdfs.org/all#DigestiveSystem> rdf:type owl:Class ;
                                              
-                                             rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                             rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -696,7 +1608,7 @@
 
 <http://schema.rdfs.org/all#EndocrineSystem> rdf:type owl:Class ;
                                              
-                                             rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                             rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -704,7 +1616,7 @@
 
 <http://schema.rdfs.org/all#ImmuneSystem> rdf:type owl:Class ;
                                           
-                                          rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                          rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -712,7 +1624,7 @@
 
 <http://schema.rdfs.org/all#IntegumentarySystem> rdf:type owl:Class ;
                                                  
-                                                 rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                                 rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -720,7 +1632,7 @@
 
 <http://schema.rdfs.org/all#LymphaticSystem> rdf:type owl:Class ;
                                              
-                                             rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                             rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -728,7 +1640,7 @@
 
 <http://schema.rdfs.org/all#MedicalCase> rdf:type owl:Class ;
                                          
-                                         rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+                                         rdfs:subClassOf :MedicalEntity .
 
 
 
@@ -736,7 +1648,7 @@
 
 <http://schema.rdfs.org/all#MuscularSystem> rdf:type owl:Class ;
                                             
-                                            rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                            rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -744,7 +1656,7 @@
 
 <http://schema.rdfs.org/all#NervousSystem> rdf:type owl:Class ;
                                            
-                                           rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                           rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -752,7 +1664,7 @@
 
 <http://schema.rdfs.org/all#ReproductiveSystem> rdf:type owl:Class ;
                                                 
-                                                rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                                rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -760,7 +1672,7 @@
 
 <http://schema.rdfs.org/all#RespiratorySystem> rdf:type owl:Class ;
                                                
-                                               rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                               rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -768,7 +1680,7 @@
 
 <http://schema.rdfs.org/all#SkeletalSystem> rdf:type owl:Class ;
                                             
-                                            rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                            rdfs:subClassOf :AnatomicalSystem .
 
 
 
@@ -776,367 +1688,11 @@
 
 <http://schema.rdfs.org/all#UrinarySystem> rdf:type owl:Class ;
                                            
-                                           rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalSystem> .
+                                           rdfs:subClassOf :AnatomicalSystem .
 
 
 
-###  http://www.example.org/medicalEntity#AdministrativeProcedure
-
-<http://www.example.org/medicalEntity#AdministrativeProcedure> rdf:type owl:Class ;
-                                                               
-                                                               rdfs:subClassOf :MedicalProcedure .
-
-
-
-###  http://www.example.org/medicalEntity#AdverseEvent
-
-<http://www.example.org/medicalEntity#AdverseEvent> rdf:type owl:Class ;
-                                                    
-                                                    rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
-
-
-
-###  http://www.example.org/medicalEntity#Allergy
-
-<http://www.example.org/medicalEntity#Allergy> rdf:type owl:Class ;
-                                               
-                                               rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
-
-
-
-###  http://www.example.org/medicalEntity#AnatomicalEntity
-
-<http://www.example.org/medicalEntity#AnatomicalEntity> rdf:type owl:Class ;
-                                                        
-                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#AnatomicalOrgan
-
-<http://www.example.org/medicalEntity#AnatomicalOrgan> rdf:type owl:Class ;
-                                                       
-                                                       rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#AnatomicalRegion
-
-<http://www.example.org/medicalEntity#AnatomicalRegion> rdf:type owl:Class ;
-                                                        
-                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#AnatomicalStructure
-
-<http://www.example.org/medicalEntity#AnatomicalStructure> rdf:type owl:Class ;
-                                                           
-                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#AnatomicalSystem
-
-<http://www.example.org/medicalEntity#AnatomicalSystem> rdf:type owl:Class ;
-                                                        
-                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#AnatomicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#CaringEvent
-
-<http://www.example.org/medicalEntity#CaringEvent> rdf:type owl:Class ;
-                                                   
-                                                   rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#DataReporter
-
-<http://www.example.org/medicalEntity#DataReporter> rdf:type owl:Class ;
-                                                    
-                                                    rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProfessional> .
-
-
-
-###  http://www.example.org/medicalEntity#EHR
-
-<http://www.example.org/medicalEntity#EHR> rdf:type owl:Class ;
-                                           
-                                           rdfs:label "Electronic Health Record" ;
-                                           
-                                           rdfs:subClassOf <http://www.example.org/medicalEntity#HealthRecord> .
-
-
-
-###  http://www.example.org/medicalEntity#EMR
-
-<http://www.example.org/medicalEntity#EMR> rdf:type owl:Class ;
-                                           
-                                           rdfs:label "Electronic Medical Record" ;
-                                           
-                                           rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalRecord> .
-
-
-
-###  http://www.example.org/medicalEntity#EPR
-
-<http://www.example.org/medicalEntity#EPR> rdf:type owl:Class ;
-                                           
-                                           rdfs:label "Electronic Patient Record" ;
-                                           
-                                           rdfs:subClassOf <http://www.example.org/medicalEntity#PatientRecord> .
-
-
-
-###  http://www.example.org/medicalEntity#Encounter
-
-<http://www.example.org/medicalEntity#Encounter> rdf:type owl:Class ;
-                                                 
-                                                 rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#EncounterStay
-
-<http://www.example.org/medicalEntity#EncounterStay> rdf:type owl:Class ;
-                                                     
-                                                     rdfs:subClassOf <http://www.example.org/medicalEntity#Encounter> .
-
-
-
-###  http://www.example.org/medicalEntity#EncounterVisit
-
-<http://www.example.org/medicalEntity#EncounterVisit> rdf:type owl:Class ;
-                                                      
-                                                      rdfs:subClassOf <http://www.example.org/medicalEntity#Encounter> .
-
-
-
-###  http://www.example.org/medicalEntity#FamilyHistory
-
-<http://www.example.org/medicalEntity#FamilyHistory> rdf:type owl:Class ;
-                                                     
-                                                     rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#FoodIntolerance
-
-<http://www.example.org/medicalEntity#FoodIntolerance> rdf:type owl:Class ;
-                                                       
-                                                       rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
-
-
-
-###  http://www.example.org/medicalEntity#GeneralPractitioner
-
-<http://www.example.org/medicalEntity#GeneralPractitioner> rdf:type owl:Class ;
-                                                           
-                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProvider> .
-
-
-
-###  http://www.example.org/medicalEntity#HealthRecord
-
-<http://www.example.org/medicalEntity#HealthRecord> rdf:type owl:Class ;
-                                                    
-                                                    rdfs:subClassOf <http://www.example.org/medicalEntity#Patient> ;
-                                                    
-                                                    :definition "A longitudinal collection of patient’s health and health care – from cradle to grave. It combines information from different care settings held in different systems and in some instances aggregates the data and shows them as a single record." .
-
-
-
-###  http://www.example.org/medicalEntity#HealthcareProfessional
-
-<http://www.example.org/medicalEntity#HealthcareProfessional> rdf:type owl:Class ;
-                                                              
-                                                              rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> ;
-                                                              
-                                                              rdfs:comment "Any person working in healthcare settings. This includes healthcare providers but also data reporters, and others" .
-
-
-
-###  http://www.example.org/medicalEntity#HealthcareProvider
-
-<http://www.example.org/medicalEntity#HealthcareProvider> rdf:type owl:Class ;
-                                                          
-                                                          rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProfessional> ;
-                                                          
-                                                          rdfs:comment "A health care provider is an individual or an institution that provides preventive, curative, promotional or rehabilitative health care services in a systematic way to individuals, families or communities." .
-
-
-
-###  http://www.example.org/medicalEntity#Homeostasis
-
-<http://www.example.org/medicalEntity#Homeostasis> rdf:type owl:Class ;
-                                                   
-                                                   rdfs:subClassOf <http://www.example.org/medicalEntity#PhysiologicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#KrebsCycle
-
-<http://www.example.org/medicalEntity#KrebsCycle> rdf:type owl:Class ;
-                                                  
-                                                  rdfs:subClassOf <http://www.example.org/medicalEntity#PhysiologicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#LaboratoryResult
-
-<http://www.example.org/medicalEntity#LaboratoryResult> rdf:type owl:Class ;
-                                                        
-                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#LaboratoryTest
-
-<http://www.example.org/medicalEntity#LaboratoryTest> rdf:type owl:Class ;
-                                                      
-                                                      rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#MedicalCondition
-
-<http://www.example.org/medicalEntity#MedicalCondition> rdf:type owl:Class ;
-                                                        
-                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#MedicalEntity
-
-<http://www.example.org/medicalEntity#MedicalEntity> rdf:type owl:Class ;
-                                                     
-                                                     rdfs:label "MedicalEntity" ;
-                                                     
-                                                     rdfs:subClassOf owl:Thing ;
-                                                     
-                                                     rdfs:comment "The most generic type of entity related to health and the practice of medicine." .
-
-
-
-###  http://www.example.org/medicalEntity#MedicalRecord
-
-<http://www.example.org/medicalEntity#MedicalRecord> rdf:type owl:Class ;
-                                                     
-                                                     rdfs:subClassOf <http://www.example.org/medicalEntity#Patient> ;
-                                                     
-                                                     :definition "A very medically focused and usually focuses on a particular medical domain for example orthopedics" .
-
-
-
-###  http://www.example.org/medicalEntity#NonSurgicalProcedure
-
-<http://www.example.org/medicalEntity#NonSurgicalProcedure> rdf:type owl:Class ;
-                                                            
-                                                            rdfs:subClassOf :MedicalProcedure .
-
-
-
-###  http://www.example.org/medicalEntity#Nurse
-
-<http://www.example.org/medicalEntity#Nurse> rdf:type owl:Class ;
-                                             
-                                             rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProvider> .
-
-
-
-###  http://www.example.org/medicalEntity#Patient
-
-<http://www.example.org/medicalEntity#Patient> rdf:type owl:Class ;
-                                               
-                                               rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#PatientRecord
-
-<http://www.example.org/medicalEntity#PatientRecord> rdf:type owl:Class ;
-                                                     
-                                                     rdfs:subClassOf <http://www.example.org/medicalEntity#Patient> ;
-                                                     
-                                                     :definition "This is a term which has its origins in the UK and essentially has the same definition as that of EMR. However the definition of EPR by NHS as “an electronic record of periodic health care of a single individual, provided mainly by one institution” makes EPR definition more patients centric." .
-
-
-
-###  http://www.example.org/medicalEntity#PhysiologicalEntity
-
-<http://www.example.org/medicalEntity#PhysiologicalEntity> rdf:type owl:Class ;
-                                                           
-                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#Pregnancy
-
-<http://www.example.org/medicalEntity#Pregnancy> rdf:type owl:Class ;
-                                                 
-                                                 rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
-
-
-
-###  http://www.example.org/medicalEntity#SocialHistory
-
-<http://www.example.org/medicalEntity#SocialHistory> rdf:type owl:Class ;
-                                                     
-                                                     rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#SpecialistPhysician
-
-<http://www.example.org/medicalEntity#SpecialistPhysician> rdf:type owl:Class ;
-                                                           
-                                                           rdfs:subClassOf <http://www.example.org/medicalEntity#HealthcareProvider> .
-
-
-
-###  http://www.example.org/medicalEntity#TrialNurse
-
-<http://www.example.org/medicalEntity#TrialNurse> rdf:type owl:Class ;
-                                                  
-                                                  rdfs:subClassOf <http://www.example.org/medicalEntity#Nurse> .
-
-
-
-###  http://www.example.org/medicalEntity#Vasoconstriction
-
-<http://www.example.org/medicalEntity#Vasoconstriction> rdf:type owl:Class ;
-                                                        
-                                                        rdfs:subClassOf <http://www.example.org/medicalEntity#VesselsFunction> .
-
-
-
-###  http://www.example.org/medicalEntity#Vasodilatation
-
-<http://www.example.org/medicalEntity#Vasodilatation> rdf:type owl:Class ;
-                                                      
-                                                      rdfs:subClassOf <http://www.example.org/medicalEntity#VesselsFunction> .
-
-
-
-###  http://www.example.org/medicalEntity#VesselsFunction
-
-<http://www.example.org/medicalEntity#VesselsFunction> rdf:type owl:Class ;
-                                                       
-                                                       rdfs:subClassOf <http://www.example.org/medicalEntity#PhysiologicalEntity> .
-
-
-
-###  http://www.example.org/medicalEntity#VitalSign
-
-<http://www.example.org/medicalEntity#VitalSign> rdf:type owl:Class ;
-                                                 
-                                                 rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Acupuncture
+###  http://www.example.org/medicalEntity#Acupuncture
 
 :Acupuncture rdf:type owl:Class ;
              
@@ -1144,25 +1700,47 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#AdministrativeProcedure
+###  http://www.example.org/medicalEntity#AdministrativeProcedure
 
 :AdministrativeProcedure rdf:type owl:Class ;
                          
-                         rdfs:subClassOf :RoutineProcedure .
+                         rdfs:subClassOf :MedicalProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Allergen
+###  http://www.example.org/medicalEntity#Admission
+
+:Admission rdf:type owl:Class ;
+           
+           rdfs:subClassOf :MedicalProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#AdverseEvent
+
+:AdverseEvent rdf:type owl:Class ;
+              
+              rdfs:subClassOf :MedicalCondition .
+
+
+
+###  http://www.example.org/medicalEntity#Allergen
 
 :Allergen rdf:type owl:Class ;
           
-          rdfs:subClassOf <http://www.example.org/medicalEntity#Allergy> ;
-          
-          :definition "A substance that causes a reaction is called an allergen. " .
+          rdfs:subClassOf :Allergy .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#AlternativeMedicineTherapy
+###  http://www.example.org/medicalEntity#Allergy
+
+:Allergy rdf:type owl:Class ;
+         
+         rdfs:subClassOf :MedicalCondition .
+
+
+
+###  http://www.example.org/medicalEntity#AlternativeMedicineTherapy
 
 :AlternativeMedicineTherapy rdf:type owl:Class ;
                             
@@ -1170,15 +1748,55 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Anamnesis
+###  http://www.example.org/medicalEntity#Anamnesis
 
 :Anamnesis rdf:type owl:Class ;
            
-           rdfs:subClassOf :EncounterProcedure .
+           rdfs:subClassOf :MedicalProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Angiography
+###  http://www.example.org/medicalEntity#AnatomicalEntity
+
+:AnatomicalEntity rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :MedicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#AnatomicalOrgan
+
+:AnatomicalOrgan rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :AnatomicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#AnatomicalRegion
+
+:AnatomicalRegion rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :AnatomicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#AnatomicalStructure
+
+:AnatomicalStructure rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :AnatomicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#AnatomicalSystem
+
+:AnatomicalSystem rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :AnatomicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#Angiography
 
 :Angiography rdf:type owl:Class ;
              
@@ -1186,25 +1804,15 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Aortography
-
-:Aortography rdf:type owl:Class ;
-             
-             rdfs:subClassOf :Angiography .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#AquiredDisease
+###  http://www.example.org/medicalEntity#AquiredDisease
 
 :AquiredDisease rdf:type owl:Class ;
                 
-                rdfs:subClassOf :Disease ;
-                
-                :definition "An acquired disorder is a medical condition which develops post-fetally; in contrast with a congenital disorder, which is present at birth. " .
+                rdfs:subClassOf :Disease .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#AxillaryTemperature
+###  http://www.example.org/medicalEntity#AxillaryTemperature
 
 :AxillaryTemperature rdf:type owl:Class ;
                      
@@ -1212,39 +1820,47 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#BloodPressure
+###  http://www.example.org/medicalEntity#BloodPressure
 
 :BloodPressure rdf:type owl:Class ;
                
-               rdfs:subClassOf :Vitalsigns .
+               rdfs:subClassOf :Vitalsign .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Brother
+###  http://www.example.org/medicalEntity#BodyMassIndex
 
-:Brother rdf:type owl:Class ;
-         
-         rdfs:subClassOf :FamilyHistory .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#CardiacStressTest
-
-:CardiacStressTest rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :DiagnosticProcedure .
+:BodyMassIndex rdf:type owl:Class ;
+               
+               rdfs:subClassOf :BodyMeasure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#CerebralAngiography
+###  http://www.example.org/medicalEntity#BodyMeasure
 
-:CerebralAngiography rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf :Angiography .
+:BodyMeasure rdf:type owl:Class ;
+             
+             rdfs:subClassOf :PhycalExamination .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#CheckUpProcedure
+###  http://www.example.org/medicalEntity#BodyVolumeIndex
+
+:BodyVolumeIndex rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :BodyMeasure .
+
+
+
+###  http://www.example.org/medicalEntity#CaringEvent
+
+:CaringEvent rdf:type owl:Class ;
+             
+             rdfs:subClassOf :MedicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#CheckUpProcedure
 
 :CheckUpProcedure rdf:type owl:Class ;
                   
@@ -1252,7 +1868,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Chemotherapy
+###  http://www.example.org/medicalEntity#Chemotherapy
 
 :Chemotherapy rdf:type owl:Class ;
               
@@ -1260,15 +1876,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#ChestPhotofluorography
-
-:ChestPhotofluorography rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf :MedicalImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#ChiefComplaint
+###  http://www.example.org/medicalEntity#ChiefComplaint
 
 :ChiefComplaint rdf:type owl:Class ;
                 
@@ -1276,31 +1884,15 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Children
+###  http://www.example.org/medicalEntity#Clinic
 
-:Children rdf:type owl:Class ;
-          
-          rdfs:subClassOf :FamilyHistory .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Colonoscopy
-
-:Colonoscopy rdf:type owl:Class ;
-             
-             rdfs:subClassOf :Endoscopy .
+:Clinic rdf:type owl:Class ;
+        
+        rdfs:subClassOf :HealthFacility .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Colposcopy
-
-:Colposcopy rdf:type owl:Class ;
-            
-            rdfs:subClassOf :Endoscopy .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#ComputedTomography
+###  http://www.example.org/medicalEntity#ComputedTomography
 
 :ComputedTomography rdf:type owl:Class ;
                     
@@ -1308,61 +1900,25 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#CongenitalDisease
+###  http://www.example.org/medicalEntity#CongenitalDisease
 
 :CongenitalDisease rdf:type owl:Class ;
                    
                    rdfs:subClassOf :Disease ;
                    
-                   rdfs:comment "A congenital disorder may be the result of genetic abnormalities, the intrauterine (uterus) environment, errors of morphogenesis, infection, or a chromosomal abnormality" ;
-                   
-                   :definition "A congenital disease, is a condition existing at birth and often before birth, or that develops during the first month of life (neonatal disease), regardless of causation." .
+                   rdfs:comment "A congenital disorder may be the result of genetic abnormalities, the intrauterine (uterus) environment, errors of morphogenesis, infection, or a chromosomal abnormality" .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#ContrastEnhancedUltrasound
+###  http://www.example.org/medicalEntity#DataReporter
 
-:ContrastEnhancedUltrasound rdf:type owl:Class ;
-                            
-                            rdfs:subClassOf :Ultrasonography .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#CoronaryAngiography
-
-:CoronaryAngiography rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf :Angiography .
+:DataReporter rdf:type owl:Class ;
+              
+              rdfs:subClassOf :HealthcareProfessional .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Cousin
-
-:Cousin rdf:type owl:Class ;
-        
-        rdfs:subClassOf :FamilyRelative .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#CurrentMariatlStatusHistory
-
-:CurrentMariatlStatusHistory rdf:type owl:Class ;
-                             
-                             rdfs:subClassOf :MariatlStatus ;
-                             
-                             owl:disjointWith :MariatlStatusHistory .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Cystoscopy
-
-:Cystoscopy rdf:type owl:Class ;
-            
-            rdfs:subClassOf :Endoscopy .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Department
+###  http://www.example.org/medicalEntity#Department
 
 :Department rdf:type owl:Class ;
             
@@ -1370,55 +1926,15 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Diagnosis
+###  http://www.example.org/medicalEntity#Diagnosis
 
 :Diagnosis rdf:type owl:Class ;
            
-           rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
+           rdfs:subClassOf :MedicalCondition .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#DiagnosisType
-
-:DiagnosisType rdf:type owl:Class ;
-               
-               rdfs:subClassOf :Diagnosis ;
-               
-               :definition "Specifying the type of diagnosis : admission, discharge, etc" .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#DiagnosticLevel
-
-:DiagnosticLevel rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :Diagnosis ;
-                 
-                 :definition "Specifying the diagnostic reliability level: Suspected, Final, Differential, etc." .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#DiagnosticMeans
-
-:DiagnosticMeans rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :Diagnosis ;
-                 
-                 :definition "Specifying the means of diagnostic used: laboratory, clinical, etc" .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#DiagnosticPlace
-
-:DiagnosticPlace rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :Diagnosis ;
-                 
-                 :definition "Specifying the palce of diagnostic in health facility" .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#DiagnosticProcedure
+###  http://www.example.org/medicalEntity#DiagnosticProcedure
 
 :DiagnosticProcedure rdf:type owl:Class ;
                      
@@ -1426,41 +1942,23 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#DiffuseOpticalImaging
+###  http://www.example.org/medicalEntity#Discharge
 
-:DiffuseOpticalImaging rdf:type owl:Class ;
-                       
-                       rdfs:subClassOf :MagneticResonanceImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#DiffusionTensorImaging
-
-:DiffusionTensorImaging rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf :MagneticResonanceImaging .
+:Discharge rdf:type owl:Class ;
+           
+           rdfs:subClassOf :MedicalProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#DiffusionWeightedImaging
-
-:DiffusionWeightedImaging rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :MagneticResonanceImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Disease
+###  http://www.example.org/medicalEntity#Disease
 
 :Disease rdf:type owl:Class ;
          
-         rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> ;
-         
-         :definition "The term disease broadly refers to any condition that impairs normal function, and is therefore associated with dysfunction of normal homeostasis." .
+         rdfs:subClassOf :MedicalCondition .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#DrugOrMedicine
+###  http://www.example.org/medicalEntity#DrugOrMedicine
 
 :DrugOrMedicine rdf:type owl:Class ;
                 
@@ -1468,7 +1966,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#DrugTherapy
+###  http://www.example.org/medicalEntity#DrugTherapy
 
 :DrugTherapy rdf:type owl:Class ;
              
@@ -1476,87 +1974,37 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Echocardiography
+###  http://www.example.org/medicalEntity#EHR
 
-:Echocardiography rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf :MedicalImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#ElectricalImpedanceTomography
-
-:ElectricalImpedanceTomography rdf:type owl:Class ;
-                               
-                               rdfs:subClassOf :MedicalImaging .
+:EHR rdf:type owl:Class ;
+     
+     rdfs:label "Electronic Health Record" ;
+     
+     rdfs:subClassOf :HealthRecord .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#ElectroCardiography
+###  http://www.example.org/medicalEntity#EMR
 
-:ElectroCardiography rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#ElectroCorticography
-
-:ElectroCorticography rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf :DiagnosticProcedure .
+:EMR rdf:type owl:Class ;
+     
+     rdfs:label "Electronic Medical Record" ;
+     
+     rdfs:subClassOf :MedicalRecord .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#ElectroEncephalography
+###  http://www.example.org/medicalEntity#EPR
 
-:ElectroEncephalography rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#ElectroNeuronography
-
-:ElectroNeuronography rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf :DiagnosticProcedure .
+:EPR rdf:type owl:Class ;
+     
+     rdfs:label "Electronic Patient Record" ;
+     
+     rdfs:subClassOf :PatientRecord .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#ElectroNystagmography
-
-:ElectroNystagmography rdf:type owl:Class ;
-                       
-                       rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#ElectroOculography
-
-:ElectroOculography rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#ElectroRetinography
-
-:ElectroRetinography rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#ElectromMyography
-
-:ElectromMyography rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Electrotherapy
+###  http://www.example.org/medicalEntity#Electrotherapy
 
 :Electrotherapy rdf:type owl:Class ;
                 
@@ -1564,7 +2012,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#EncounterProcedure
+###  http://www.example.org/medicalEntity#EncounterProcedure
 
 :EncounterProcedure rdf:type owl:Class ;
                     
@@ -1572,23 +2020,31 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#EndoluminalCapsuleMonitoring
+###  http://www.example.org/medicalEntity#EncounterStay
 
-:EndoluminalCapsuleMonitoring rdf:type owl:Class ;
-                              
-                              rdfs:subClassOf :DiagnosticProcedure .
+:EncounterStay rdf:type owl:Class ;
+               
+               rdfs:subClassOf :EncounterProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Endoscopy
+###  http://www.example.org/medicalEntity#EncounterVisit
+
+:EncounterVisit rdf:type owl:Class ;
+                
+                rdfs:subClassOf :EncounterProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#Endoscopy
 
 :Endoscopy rdf:type owl:Class ;
            
-           rdfs:subClassOf :DiagnosticProcedure .
+           rdfs:subClassOf :MedicalImaging .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Episode
+###  http://www.example.org/medicalEntity#Episode
 
 :Episode rdf:type owl:Class ;
          
@@ -1596,15 +2052,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#EsophagealMotilityStudy
-
-:EsophagealMotilityStudy rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Ethnicity
+###  http://www.example.org/medicalEntity#Ethnicity
 
 :Ethnicity rdf:type owl:Class ;
            
@@ -1612,15 +2060,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#EvokedPotential
-
-:EvokedPotential rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#FamilyHistory
+###  http://www.example.org/medicalEntity#FamilyHistory
 
 :FamilyHistory rdf:type owl:Class ;
                
@@ -1628,33 +2068,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#FamilyRelative
-
-:FamilyRelative rdf:type owl:Class ;
-                
-                rdfs:subClassOf :FamilyHistory .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Father
-
-:Father rdf:type owl:Class ;
-        
-        rdfs:subClassOf :Parent ;
-        
-        owl:disjointWith :Mother .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Fluoroscopy
-
-:Fluoroscopy rdf:type owl:Class ;
-             
-             rdfs:subClassOf :MedicalImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#FollowUpProcedure
+###  http://www.example.org/medicalEntity#FollowUpProcedure
 
 :FollowUpProcedure rdf:type owl:Class ;
                    
@@ -1662,23 +2076,15 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#FunctionalMagneticResonanceImaging
+###  http://www.example.org/medicalEntity#FoodIntolerance
 
-:FunctionalMagneticResonanceImaging rdf:type owl:Class ;
-                                    
-                                    rdfs:subClassOf :MagneticResonanceImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Gastroscopy
-
-:Gastroscopy rdf:type owl:Class ;
-             
-             rdfs:subClassOf :Endoscopy .
+:FoodIntolerance rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :MedicalCondition .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#GeneTherapy
+###  http://www.example.org/medicalEntity#GeneTherapy
 
 :GeneTherapy rdf:type owl:Class ;
              
@@ -1686,31 +2092,67 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#GynecologicUltrasonography
+###  http://www.example.org/medicalEntity#GeneralPractitioner
 
-:GynecologicUltrasonography rdf:type owl:Class ;
-                            
-                            rdfs:subClassOf :Ultrasonography .
+:GeneralPractitioner rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :HealthcareProvider .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#HealthFacility
+###  http://www.example.org/medicalEntity#HealthFacility
 
 :HealthFacility rdf:type owl:Class ;
                 
-                rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+                rdfs:subClassOf :MedicalEntity .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#HeartRate
+###  http://www.example.org/medicalEntity#HealthRecord
+
+:HealthRecord rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#HealthcareProfessional
+
+:HealthcareProfessional rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :MedicalEntity ;
+                        
+                        rdfs:comment "Any person working in healthcare settings. This includes healthcare providers but also data reporters, and others" .
+
+
+
+###  http://www.example.org/medicalEntity#HealthcareProvider
+
+:HealthcareProvider rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :HealthcareProfessional ;
+                    
+                    rdfs:comment "A health care provider is an individual or an institution that provides preventive, curative, promotional or rehabilitative health care services in a systematic way to individuals, families or communities." .
+
+
+
+###  http://www.example.org/medicalEntity#HeartRate
 
 :HeartRate rdf:type owl:Class ;
            
-           rdfs:subClassOf :Vitalsigns .
+           rdfs:subClassOf :Vitalsign .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#HistoryOfPresentIllness
+###  http://www.example.org/medicalEntity#HipCircumference
+
+:HipCircumference rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :BodyMeasure .
+
+
+
+###  http://www.example.org/medicalEntity#HistoryOfPresentIllness
 
 :HistoryOfPresentIllness rdf:type owl:Class ;
                          
@@ -1718,15 +2160,23 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#HormonalTherapy
+###  http://www.example.org/medicalEntity#Homeostasis
 
-:HormonalTherapy rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :TherapeuticProcedure .
+:Homeostasis rdf:type owl:Class ;
+             
+             rdfs:subClassOf :PhysiologicalEntity .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Hydrotherapy
+###  http://www.example.org/medicalEntity#Hormonotherapy
+
+:Hormonotherapy rdf:type owl:Class ;
+                
+                rdfs:subClassOf :TherapeuticProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#Hydrotherapy
 
 :Hydrotherapy rdf:type owl:Class ;
               
@@ -1734,53 +2184,25 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Hypertension
-
-:Hypertension rdf:type owl:Class ;
-              
-              rdfs:subClassOf :BloodPressure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Hypotension
-
-:Hypotension rdf:type owl:Class ;
-             
-             rdfs:subClassOf :BloodPressure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Immunization
+###  http://www.example.org/medicalEntity#Immunization
 
 :Immunization rdf:type owl:Class ;
               
-              rdfs:subClassOf :Immunotherapy ;
-              
-              :definition "Immunization, or immunisation, is the process by which an individual's immune system becomes fortified against an agent (known as the immunogen)." .
+              rdfs:subClassOf :Immunotherapy .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Immunotherapy
+###  http://www.example.org/medicalEntity#Immunotherapy
 
 :Immunotherapy rdf:type owl:Class ;
                
                rdfs:subClassOf :TherapeuticProcedure ;
                
-               :definition "Immunotherapy is a medical term defined as the \"treatment of disease by inducing, enhancing, or suppressing an immune response\"." ;
-               
                rdfs:comment "Immunotherapies designed to elicit or amplify an immune response are classified as activation immunotherapies, while immunotherapies that reduce or suppress are classified as suppression immunotherapies." .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#IntravascularUltrasound
-
-:IntravascularUltrasound rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf :Ultrasonography .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Invasive
+###  http://www.example.org/medicalEntity#Invasive
 
 :Invasive rdf:type owl:Class ;
           
@@ -1788,7 +2210,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Invasiveness
+###  http://www.example.org/medicalEntity#Invasiveness
 
 :Invasiveness rdf:type owl:Class ;
               
@@ -1796,7 +2218,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Kinesiotherapy
+###  http://www.example.org/medicalEntity#Kinesiotherapy
 
 :Kinesiotherapy rdf:type owl:Class ;
                 
@@ -1804,23 +2226,31 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Laparoscopy
+###  http://www.example.org/medicalEntity#KrebsCycle
 
-:Laparoscopy rdf:type owl:Class ;
-             
-             rdfs:subClassOf :Endoscopy .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Laryngoscopy
-
-:Laryngoscopy rdf:type owl:Class ;
-              
-              rdfs:subClassOf :Endoscopy .
+:KrebsCycle rdf:type owl:Class ;
+            
+            rdfs:subClassOf :PhysiologicalEntity .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#LaserTherapy
+###  http://www.example.org/medicalEntity#LaboratoryResult
+
+:LaboratoryResult rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :MedicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#LaboratoryTest
+
+:LaboratoryTest rdf:type owl:Class ;
+                
+                rdfs:subClassOf :DiagnosticProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#LaserTherapy
 
 :LaserTherapy rdf:type owl:Class ;
               
@@ -1828,15 +2258,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Lymphangiography
-
-:Lymphangiography rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf :Angiography .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#MagneticResonanceImaging
+###  http://www.example.org/medicalEntity#MagneticResonanceImaging
 
 :MagneticResonanceImaging rdf:type owl:Class ;
                           
@@ -1844,31 +2266,15 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MagnetoEncephalography
+###  http://www.example.org/medicalEntity#MaritalStatus
 
-:MagnetoEncephalography rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#MariatlStatus
-
-:MariatlStatus rdf:type owl:Class ;
+:MaritalStatus rdf:type owl:Class ;
                
                rdfs:subClassOf :SocialHistory .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MariatlStatusHistory
-
-:MariatlStatusHistory rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf :MariatlStatus .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#MedicalAuscultation
+###  http://www.example.org/medicalEntity#MedicalAuscultation
 
 :MedicalAuscultation rdf:type owl:Class ;
                      
@@ -1876,7 +2282,27 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MedicalHistory
+###  http://www.example.org/medicalEntity#MedicalCondition
+
+:MedicalCondition rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :MedicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#MedicalEntity
+
+:MedicalEntity rdf:type owl:Class ;
+               
+               rdfs:label "MedicalEntity" ;
+               
+               rdfs:subClassOf owl:Thing ;
+               
+               rdfs:comment "The most generic type of entity related to health and the practice of medicine." .
+
+
+
+###  http://www.example.org/medicalEntity#MedicalHistory
 
 :MedicalHistory rdf:type owl:Class ;
                 
@@ -1884,7 +2310,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MedicalImaging
+###  http://www.example.org/medicalEntity#MedicalImaging
 
 :MedicalImaging rdf:type owl:Class ;
                 
@@ -1892,7 +2318,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MedicalInspection
+###  http://www.example.org/medicalEntity#MedicalInspection
 
 :MedicalInspection rdf:type owl:Class ;
                    
@@ -1900,7 +2326,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MedicalPalpation
+###  http://www.example.org/medicalEntity#MedicalPalpation
 
 :MedicalPalpation rdf:type owl:Class ;
                   
@@ -1908,7 +2334,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MedicalPercussion
+###  http://www.example.org/medicalEntity#MedicalPercussion
 
 :MedicalPercussion rdf:type owl:Class ;
                    
@@ -1916,15 +2342,23 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MedicalProcedure
+###  http://www.example.org/medicalEntity#MedicalProcedure
 
 :MedicalProcedure rdf:type owl:Class ;
                   
-                  rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalEntity> .
+                  rdfs:subClassOf :MedicalEntity .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MedicationUseHistory
+###  http://www.example.org/medicalEntity#MedicalRecord
+
+:MedicalRecord rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#MedicationUseHistory
 
 :MedicationUseHistory rdf:type owl:Class ;
                       
@@ -1932,7 +2366,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#MinimallyInvasive
+###  http://www.example.org/medicalEntity#MinimallyInvasive
 
 :MinimallyInvasive rdf:type owl:Class ;
                    
@@ -1940,23 +2374,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Mother
-
-:Mother rdf:type owl:Class ;
-        
-        rdfs:subClassOf :Parent .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Neuroimaging
-
-:Neuroimaging rdf:type owl:Class ;
-              
-              rdfs:subClassOf :DiagnosticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#NonInvasive
+###  http://www.example.org/medicalEntity#NonInvasive
 
 :NonInvasive rdf:type owl:Class ;
              
@@ -1964,23 +2382,31 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Normotension
+###  http://www.example.org/medicalEntity#NonSurgicalProcedure
 
-:Normotension rdf:type owl:Class ;
-              
-              rdfs:subClassOf :BloodPressure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#ObstetricUltrasonography
-
-:ObstetricUltrasonography rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf :Ultrasonography .
+:NonSurgicalProcedure rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :MedicalProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#OccupationalHistory
+###  http://www.example.org/medicalEntity#NuclearMedicine
+
+:NuclearMedicine rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :MedicalImaging .
+
+
+
+###  http://www.example.org/medicalEntity#Nurse
+
+:Nurse rdf:type owl:Class ;
+       
+       rdfs:subClassOf :HealthcareProvider .
+
+
+
+###  http://www.example.org/medicalEntity#OccupationalHistory
 
 :OccupationalHistory rdf:type owl:Class ;
                      
@@ -1988,15 +2414,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Ophthalmoscopy
-
-:Ophthalmoscopy rdf:type owl:Class ;
-                
-                rdfs:subClassOf :Endoscopy .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#OralTemperature
+###  http://www.example.org/medicalEntity#OralTemperature
 
 :OralTemperature rdf:type owl:Class ;
                  
@@ -2004,31 +2422,15 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#OtherFamilyRelatives
+###  http://www.example.org/medicalEntity#Oxygenotherapy
 
-:OtherFamilyRelatives rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf :FamilyRelative .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Otoscopy
-
-:Otoscopy rdf:type owl:Class ;
-          
-          rdfs:subClassOf :Endoscopy .
+:Oxygenotherapy rdf:type owl:Class ;
+                
+                rdfs:subClassOf :TherapeuticProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#OxygenTherapy
-
-:OxygenTherapy rdf:type owl:Class ;
-               
-               rdfs:subClassOf :TherapeuticProcedure .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#PalliativeCare
+###  http://www.example.org/medicalEntity#PalliativeCare
 
 :PalliativeCare rdf:type owl:Class ;
                 
@@ -2036,7 +2438,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#PalliativeProcedure
+###  http://www.example.org/medicalEntity#PalliativeProcedure
 
 :PalliativeProcedure rdf:type owl:Class ;
                      
@@ -2044,15 +2446,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Parent
-
-:Parent rdf:type owl:Class ;
-        
-        rdfs:subClassOf :FamilyHistory .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#PastMedicalHistory
+###  http://www.example.org/medicalEntity#PastMedicalHistory
 
 :PastMedicalHistory rdf:type owl:Class ;
                     
@@ -2060,7 +2454,23 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#PersonalHistory
+###  http://www.example.org/medicalEntity#Patient
+
+:Patient rdf:type owl:Class ;
+         
+         rdfs:subClassOf :MedicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#PatientRecord
+
+:PatientRecord rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#PersonalHistory
 
 :PersonalHistory rdf:type owl:Class ;
                  
@@ -2068,15 +2478,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#PersonalProfile
-
-:PersonalProfile rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :Anamnesis .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#PhotodynamicTherapy
+###  http://www.example.org/medicalEntity#PhotodynamicTherapy
 
 :PhotodynamicTherapy rdf:type owl:Class ;
                      
@@ -2084,47 +2486,39 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Phototerapy
+###  http://www.example.org/medicalEntity#Phototherapy
 
-:Phototerapy rdf:type owl:Class ;
-             
-             rdfs:subClassOf :TherapeuticProcedure .
+:Phototherapy rdf:type owl:Class ;
+              
+              rdfs:subClassOf :TherapeuticProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#PhycalExamination
+###  http://www.example.org/medicalEntity#PhycalExamination
 
 :PhycalExamination rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :EncounterProcedure .
+                   rdfs:subClassOf :MedicalProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#PositronEmissionTomography
+###  http://www.example.org/medicalEntity#PhysiologicalEntity
 
-:PositronEmissionTomography rdf:type owl:Class ;
-                            
-                            rdfs:subClassOf :MedicalImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Posturography
-
-:Posturography rdf:type owl:Class ;
-               
-               rdfs:subClassOf :DiagnosticProcedure .
+:PhysiologicalEntity rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :MedicalEntity .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#PreHypertension
+###  http://www.example.org/medicalEntity#Pregnancy
 
-:PreHypertension rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :BloodPressure .
+:Pregnancy rdf:type owl:Class ;
+           
+           rdfs:subClassOf :MedicalCondition .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Psychotherapy
+###  http://www.example.org/medicalEntity#Psychotherapy
 
 :Psychotherapy rdf:type owl:Class ;
                
@@ -2132,15 +2526,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#PulmonaryAngiography
-
-:PulmonaryAngiography rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf :Angiography .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#RadiationTherapy
+###  http://www.example.org/medicalEntity#RadiationTherapy
 
 :RadiationTherapy rdf:type owl:Class ;
                   
@@ -2148,7 +2534,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Radiography
+###  http://www.example.org/medicalEntity#Radiography
 
 :Radiography rdf:type owl:Class ;
              
@@ -2156,7 +2542,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#RecreationalHistory
+###  http://www.example.org/medicalEntity#RecreationalHistory
 
 :RecreationalHistory rdf:type owl:Class ;
                      
@@ -2164,7 +2550,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#RectalTemperature
+###  http://www.example.org/medicalEntity#RectalTemperature
 
 :RectalTemperature rdf:type owl:Class ;
                    
@@ -2172,7 +2558,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#ReligionGroup
+###  http://www.example.org/medicalEntity#ReligionGroup
 
 :ReligionGroup rdf:type owl:Class ;
                
@@ -2180,7 +2566,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#ReligiousBelief
+###  http://www.example.org/medicalEntity#ReligiousBelief
 
 :ReligiousBelief rdf:type owl:Class ;
                  
@@ -2188,15 +2574,23 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#RespiratoryRate
+###  http://www.example.org/medicalEntity#RespiratoryRate
 
 :RespiratoryRate rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :Vitalsigns .
+                 rdfs:subClassOf :Vitalsign .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#RoutineProcedure
+###  http://www.example.org/medicalEntity#Room
+
+:Room rdf:type owl:Class ;
+      
+      rdfs:subClassOf :HealthFacility .
+
+
+
+###  http://www.example.org/medicalEntity#RoutineProcedure
 
 :RoutineProcedure rdf:type owl:Class ;
                   
@@ -2204,23 +2598,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#SPECT
-
-:SPECT rdf:type owl:Class ;
-       
-       rdfs:subClassOf :MedicalImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Scintillography
-
-:Scintillography rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :MedicalImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Severity
+###  http://www.example.org/medicalEntity#Severity
 
 :Severity rdf:type owl:Class ;
           
@@ -2228,31 +2606,15 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Sigmoidoscopy
-
-:Sigmoidoscopy rdf:type owl:Class ;
-               
-               rdfs:subClassOf :Endoscopy .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#SignOrSymptom
+###  http://www.example.org/medicalEntity#SignOrSymptom
 
 :SignOrSymptom rdf:type owl:Class ;
                
-               rdfs:subClassOf <http://www.example.org/medicalEntity#MedicalCondition> .
+               rdfs:subClassOf :MedicalCondition .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Sister
-
-:Sister rdf:type owl:Class ;
-        
-        rdfs:subClassOf :FamilyHistory .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#SocialHistory
+###  http://www.example.org/medicalEntity#SocialHistory
 
 :SocialHistory rdf:type owl:Class ;
                
@@ -2260,15 +2622,15 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Spouse
+###  http://www.example.org/medicalEntity#SpecialistPhysician
 
-:Spouse rdf:type owl:Class ;
-        
-        rdfs:subClassOf :FamilyHistory .
+:SpecialistPhysician rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :HealthcareProvider .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#SurgicalProcedure
+###  http://www.example.org/medicalEntity#SurgicalProcedure
 
 :SurgicalProcedure rdf:type owl:Class ;
                    
@@ -2276,23 +2638,23 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#SystemicReview
+###  http://www.example.org/medicalEntity#SystemicReview
 
 :SystemicReview rdf:type owl:Class ;
                 
-                rdfs:subClassOf :EncounterProcedure .
+                rdfs:subClassOf :Anamnesis .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#TemperatureExamination
+###  http://www.example.org/medicalEntity#TemperatureExamination
 
 :TemperatureExamination rdf:type owl:Class ;
                         
-                        rdfs:subClassOf :Vitalsigns .
+                        rdfs:subClassOf :Vitalsign .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#TherapeuticProcedure
+###  http://www.example.org/medicalEntity#TherapeuticProcedure
 
 :TherapeuticProcedure rdf:type owl:Class ;
                       
@@ -2300,15 +2662,7 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Thermography
-
-:Thermography rdf:type owl:Class ;
-              
-              rdfs:subClassOf :MedicalImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#TraditionalMedicineTherapy
+###  http://www.example.org/medicalEntity#TraditionalMedicineTherapy
 
 :TraditionalMedicineTherapy rdf:type owl:Class ;
                             
@@ -2316,23 +2670,31 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Ultrasonography
+###  http://www.example.org/medicalEntity#Transfer
 
-:Ultrasonography rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf :MedicalImaging .
-
-
-
-###  https://github.com/Twagirumukiza/schema.org#Uncle
-
-:Uncle rdf:type owl:Class ;
-       
-       rdfs:subClassOf :FamilyRelative .
+:Transfer rdf:type owl:Class ;
+          
+          rdfs:subClassOf :MedicalProcedure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Unit
+###  http://www.example.org/medicalEntity#TrialNurse
+
+:TrialNurse rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Nurse .
+
+
+
+###  http://www.example.org/medicalEntity#Ultrasound
+
+:Ultrasound rdf:type owl:Class ;
+            
+            rdfs:subClassOf :MedicalImaging .
+
+
+
+###  http://www.example.org/medicalEntity#Unit
 
 :Unit rdf:type owl:Class ;
       
@@ -2340,196 +2702,67 @@
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Vaccination
+###  http://www.example.org/medicalEntity#Vaccination
 
 :Vaccination rdf:type owl:Class ;
              
-             rdfs:subClassOf :Immunization ;
-             
-             :definition "Vaccination is the administration of antigenic material (a vaccine) to stimulate an individual's immune system to develop adaptive immunity to a pathogen. " .
+             rdfs:subClassOf :Immunization .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Ventriculography
+###  http://www.example.org/medicalEntity#Vasoconstriction
 
-:Ventriculography rdf:type owl:Class ;
+:Vasoconstriction rdf:type owl:Class ;
                   
-                  rdfs:subClassOf :Angiography .
+                  rdfs:subClassOf :VesselsFunction .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#VirtualColonoscopy
+###  http://www.example.org/medicalEntity#Vasodilatation
 
-:VirtualColonoscopy rdf:type owl:Class ;
+:Vasodilatation rdf:type owl:Class ;
+                
+                rdfs:subClassOf :VesselsFunction .
+
+
+
+###  http://www.example.org/medicalEntity#VesselsFunction
+
+:VesselsFunction rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :PhysiologicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#Vitalsign
+
+:Vitalsign rdf:type owl:Class ;
+           
+           rdfs:subClassOf :PhycalExamination .
+
+
+
+###  http://www.example.org/medicalEntity#WaistCircumference
+
+:WaistCircumference rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :MedicalImaging .
+                    rdfs:subClassOf :BodyMeasure .
 
 
 
-###  https://github.com/Twagirumukiza/schema.org#Vitalsigns
+###  http://www.example.org/medicalEntity#WaistHipRatio
 
-:Vitalsigns rdf:type owl:Class ;
-            
-            rdfs:subClassOf :EncounterProcedure .
-
-
+:WaistHipRatio rdf:type owl:Class ;
+               
+               rdfs:subClassOf :BodyMeasure .
 
 
 
-#################################################################
-#
-#    General axioms
-#
-#################################################################
+###  http://www.example.org/medicalEntity#Ward
 
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ContrastEnhancedUltrasound
-                :GynecologicUltrasonography
-                :IntravascularUltrasound
-                :ObstetricUltrasonography
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Hypertension
-                :Hypotension
-                :Normotension
-                :PreHypertension
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :MedicalAuscultation
-                :MedicalInspection
-                :MedicalPalpation
-                :MedicalPercussion
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Aortography
-                :CerebralAngiography
-                :CoronaryAngiography
-                :Lymphangiography
-                :PulmonaryAngiography
-                :Ventriculography
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :DiffuseOpticalImaging
-                :DiffusionTensorImaging
-                :DiffusionWeightedImaging
-                :FunctionalMagneticResonanceImaging
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :HistoryOfPresentIllness
-                :MedicationUseHistory
-                :PastMedicalHistory
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ChiefComplaint
-                :MedicalHistory
-                :PersonalProfile
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Colonoscopy
-                :Colposcopy
-                :Cystoscopy
-                :Gastroscopy
-                :Laparoscopy
-                :Laryngoscopy
-                :Ophthalmoscopy
-                :Otoscopy
-                :Sigmoidoscopy
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Ethnicity
-                :MariatlStatus
-                :OccupationalHistory
-                :RecreationalHistory
-                :ReligiousBelief
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AxillaryTemperature
-                :OralTemperature
-                :RectalTemperature
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :FamilyHistory
-                :PersonalHistory
-                :SocialHistory
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Cousin
-                :OtherFamilyRelatives
-                :Uncle
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Brother
-                :Children
-                :FamilyRelative
-                :Parent
-                :Sister
-                :Spouse
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :BloodPressure
-                :HeartRate
-                :RespiratoryRate
-                :TemperatureExamination
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Anamnesis
-                :PhycalExamination
-                :SystemicReview
-                :Vitalsigns
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :CardiacStressTest
-                :ElectroCardiography
-                :ElectroCorticography
-                :ElectroEncephalography
-                :ElectroNeuronography
-                :ElectroNystagmography
-                :ElectroOculography
-                :ElectroRetinography
-                :ElectromMyography
-                :EndoluminalCapsuleMonitoring
-                :Endoscopy
-                :EsophagealMotilityStudy
-                :EvokedPotential
-                :MagnetoEncephalography
-                :MedicalImaging
-                :Neuroimaging
-                :Posturography
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Angiography
-                :ChestPhotofluorography
-                :ComputedTomography
-                :Echocardiography
-                :ElectricalImpedanceTomography
-                :Fluoroscopy
-                :MagneticResonanceImaging
-                :PositronEmissionTomography
-                :Radiography
-                :SPECT
-                :Scintillography
-                :Thermography
-                :Ultrasonography
-                :VirtualColonoscopy
-              )
-] .
+:Ward rdf:type owl:Class ;
+      
+      rdfs:subClassOf :HealthFacility .
 
 
 
