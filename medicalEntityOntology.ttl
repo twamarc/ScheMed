@@ -11,6 +11,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix w3ctime: <http://www.w3.org/2006/time#> .
+@prefix inscheme: <http://www.example.org/medicalEntity> .
 @prefix healthcare: <http://aca.agfa.net/resource/ontology/healthcare#> .
 @base <http://www.example.org/medicalEntity> .
 
@@ -61,19 +62,42 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                schema:rangeIncludes schema:Person ;
                
-               schema:domainIncludes rdfs:Resource .
+               schema:domainIncludes rdfs:Resource ;
+               
+               rdfs:domain owl:Thing .
 
 
 
 ###  http://www.example.org/medicalEntity#administrativeProcedure
 
-:administrativeProcedure rdf:type owl:ObjectProperty .
+:administrativeProcedure rdf:type owl:ObjectProperty ;
+                         
+                         skos:definition "Specifying an administrative procedure for a resource or patient"@en ;
+                         
+                         schema:rangeIncludes :AdministrativeProcedure ;
+                         
+                         schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#admission
+
+:admission rdf:type owl:ObjectProperty ;
+           
+           rdfs:range :AdmissionProcedure ,
+                      :MedicalProcedure ;
+           
+           rdfs:domain :Patient .
 
 
 
 ###  http://www.example.org/medicalEntity#admissionPlace
 
 :admissionPlace rdf:type owl:ObjectProperty ;
+                
+                skos:definition "Specifying a location or a place where the admission is taking place"@en ;
+                
+                schema:domainIncludes schema:Place ;
                 
                 schema:rangeIncludes :Department ,
                                      :HealthFacility ,
@@ -85,7 +109,12 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :admissionProvider rdf:type owl:ObjectProperty ;
                    
-                   schema:domainIncludes :MedicalProcedure .
+                   skos:definition "Specifying the provider related to the admission procedure"@en ;
+                   
+                   schema:rangeIncludes schema:Person ;
+                   
+                   schema:domainIncludes :MedicalProcedure ,
+                                         rdfs:Resource .
 
 
 
@@ -93,15 +122,44 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :admissionReason rdf:type owl:ObjectProperty ;
                  
+                 skos:definition "Specifying a reason why the patient is admitted"@en ;
+                 
                  schema:rangeIncludes rdfs:Resource ;
                  
                  schema:domainIncludes rdfs:Resource .
 
 
 
+###  http://www.example.org/medicalEntity#adulthoodHistory
+
+:adulthoodHistory rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :AdulthoodHistory ;
+                  
+                  rdfs:domain :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#adverseDrugEvent
+
+:adverseDrugEvent rdf:type owl:ObjectProperty ;
+                  
+                  skos:definition "Specifying an adverse drug event- defined according World Health Organization"@en ;
+                  
+                  schema:domainIncludes :TherapeuticProcedure ,
+                                        rdfs:Resource ;
+                  
+                  schema:rangeIncludes rdfs:Resource ;
+                  
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
 ###  http://www.example.org/medicalEntity#adverseEvent
 
 :adverseEvent rdf:type owl:ObjectProperty ;
+              
+              skos:definition "Specifying an adverse event- defined according World Health Organization"@en ;
               
               schema:domainIncludes :TherapeuticProcedure ;
               
@@ -115,11 +173,21 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :ageAtEvent rdf:type owl:ObjectProperty ;
             
-            skos:definition "Specifying an age in years of something."@en ;
+            skos:definition "Specifying the age of the entity when an event occurred"@en ;
             
             schema:domainIncludes rdfs:Resource ;
             
             schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#alcoholIntake
+
+:alcoholIntake rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :AlcoholIntake ;
+               
+               rdfs:domain :Patient .
 
 
 
@@ -135,6 +203,28 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#allergy
+
+:allergy rdf:type owl:ObjectProperty ;
+         
+         rdfs:range :Allergy ;
+         
+         rdfs:domain :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#anamnesisProcedure
+
+:anamnesisProcedure rdf:type owl:ObjectProperty ;
+                    
+                    skos:definition "specifying the anamnesis procedure of patient" ;
+                    
+                    rdfs:range :AnamnesisProcedure ;
+                    
+                    rdfs:domain :Patient .
+
+
+
 ###  http://www.example.org/medicalEntity#atWeeksAmenorrhea
 
 :atWeeksAmenorrhea rdf:type owl:ObjectProperty ;
@@ -147,11 +237,21 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#behaviour
+
+:behaviour rdf:type owl:ObjectProperty ;
+           
+           rdfs:range :LifestyleOrHabits ;
+           
+           rdfs:domain :Patient .
+
+
+
 ###  http://www.example.org/medicalEntity#belongsTo
 
 :belongsTo rdf:type owl:ObjectProperty ;
            
-           skos:definition "Specifying a resource to wich another resource belongs"@en ;
+           skos:definition "Specifying a resource to which another resource belongs"@en ;
            
            schema:domainIncludes rdfs:Resource ;
            
@@ -167,7 +267,7 @@ skos:definition rdf:type owl:AnnotationProperty .
             
             skos:definition "Specifying the place of birth for a person"@en ;
             
-            schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            schema:rangeIncludes <http://snomed.info/169812000> ;
             
             schema:domainIncludes foaf:Person .
 
@@ -207,7 +307,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :careReason rdf:type owl:ObjectProperty ;
             
-            skos:definition "Specifying a reason for a caring event(typically a medcal condition or other encounter reasons)."@en ;
+            skos:definition "Specifying a reason for a caring event(typically a medical condition or other encounter reasons)."@en ;
             
             schema:domainIncludes rdfs:Resource ;
             
@@ -231,7 +331,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :caredPerson rdf:type owl:ObjectProperty ;
              
-             skos:definition "Specifying a person (typically a patient) receiving services from the health care professionnal during a caring event."@en ;
+             skos:definition "Specifying a person (typically a patient) receiving services from the health care professional during a caring event."@en ;
              
              schema:domainIncludes rdfs:Resource ;
              
@@ -255,7 +355,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :caringPerson rdf:type owl:ObjectProperty ;
               
-              skos:definition "Specifying a health care professionnal providing services to the patient during a caring event."@en ;
+              skos:definition "Specifying a health care professional providing services to the patient during a caring event."@en ;
               
               schema:domainIncludes rdfs:Resource ;
               
@@ -275,6 +375,16 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#childhoodHistory
+
+:childhoodHistory rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :ChildhoodHistory ;
+                  
+                  rdfs:domain :Patient .
+
+
+
 ###  http://www.example.org/medicalEntity#confirmationStatus
 
 :confirmationStatus rdf:type owl:ObjectProperty ;
@@ -289,15 +399,15 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.example.org/medicalEntity#contain
+###  http://www.example.org/medicalEntity#contains
 
-:contain rdf:type owl:ObjectProperty ;
-         
-         skos:definition "Specifying something physically contained by something else."@en ;
-         
-         schema:domainIncludes dcterms:PhysicalResource ;
-         
-         schema:rangeIncludes dcterms:PhysicalResource .
+:contains rdf:type owl:ObjectProperty ;
+          
+          skos:definition "Specifying something physically contained by something else."@en ;
+          
+          schema:domainIncludes dcterms:PhysicalResource ;
+          
+          schema:rangeIncludes dcterms:PhysicalResource .
 
 
 
@@ -309,11 +419,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "A contraindication for a procedure, a therapy, an action or a device use."@en ;
                   
-                  schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/71388002> ;
-                  
                   schema:rangeIncludes schema:MedicalContraindication ;
                   
-                  schema:domainIncludes schema:MedicalDevice .
+                  schema:domainIncludes schema:MedicalDevice ,
+                                        <http://snomed.info/71388002> .
 
 
 
@@ -331,7 +440,7 @@ skos:definition rdf:type owl:AnnotationProperty .
             
             skos:definition "Specifying the place of death for a person"@en ;
             
-            schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            schema:rangeIncludes <http://snomed.info/169812000> ;
             
             schema:domainIncludes foaf:Person .
 
@@ -428,9 +537,25 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#discharge
+
+:discharge rdf:type owl:ObjectProperty ;
+           
+           rdfs:range :DischargeProcedure ;
+           
+           rdfs:domain :Patient .
+
+
+
 ###  http://www.example.org/medicalEntity#dischargeProvider
 
 :dischargeProvider rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:domain :DischargeProcedure ;
+                   
+                   rdfs:range :HealthcareProfessional ;
+                   
+                   rdfs:domain :Patient ;
                    
                    schema:rangeIncludes rdfs:Resource ;
                    
@@ -442,6 +567,16 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :dischargeReason rdf:type owl:ObjectProperty ;
                  
+                 rdfs:range :Death ;
+                 
+                 rdfs:domain :DischargeProcedure ;
+                 
+                 rdfs:range :MedicalCondition ;
+                 
+                 rdfs:domain :Patient ;
+                 
+                 rdfs:range :TransferProcedure ;
+                 
                  schema:domainIncludes rdfs:Resource ;
                  
                  schema:rangeIncludes rdfs:Resource .
@@ -451,6 +586,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 ###  http://www.example.org/medicalEntity#dischargeStatus
 
 :dischargeStatus rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :DischargeProcedure ,
+                             :Patient ;
                  
                  schema:domainIncludes rdfs:Resource ;
                  
@@ -462,9 +600,15 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :dischargedPlace rdf:type owl:ObjectProperty ;
                  
-                 schema:rangeIncludes :Department ,
-                                      :HealthFacility ,
-                                      :Unit .
+                 schema:rangeIncludes :Department ;
+                 
+                 rdfs:domain :DischargeProcedure ;
+                 
+                 schema:rangeIncludes :HealthFacility ;
+                 
+                 rdfs:domain :Patient ;
+                 
+                 schema:rangeIncludes :Unit .
 
 
 
@@ -492,7 +636,7 @@ skos:definition rdf:type owl:AnnotationProperty .
       
       skos:definition "Specifying a drug or medicine used in a medication procedure"@en ;
       
-      schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/410942007> ;
+      schema:rangeIncludes <http://snomed.info/410942007> ;
       
       schema:domainIncludes rdfs:Resource .
 
@@ -502,9 +646,12 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :drugIntaken rdf:type owl:ObjectProperty ;
              
+             schema:domainIncludes "schema:Patient" ,
+                                   "schema:Person" ;
+             
              skos:definition "Specifying an event of taking cure medication, related to a medication periode"@en ;
              
-             schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/129019007> ;
+             schema:rangeIncludes <http://snomed.info/129019007> ;
              
              schema:domainIncludes rdfs:Resource .
 
@@ -526,9 +673,29 @@ skos:definition rdf:type owl:AnnotationProperty .
                  
                  skos:definition "Specifying a drug preparation used in a procedure, typically prepared for a patient from one or multiple drug packages"@en ;
                  
-                 schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/105904009> ;
+                 schema:rangeIncludes <http://snomed.info/105904009> ;
                  
                  schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#educationLevel
+
+:educationLevel rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :EducationLevel ;
+                
+                rdfs:domain :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#elderhoodHistory
+
+:elderhoodHistory rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :Elderhood ;
+                  
+                  rdfs:domain :Patient .
 
 
 
@@ -538,9 +705,9 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            skos:definition "Encounter describes an encounter between the patient and a healthcare provider."@en ;
            
-           schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/308335008> ;
+           schema:domainIncludes schema:Person ;
            
-           schema:domainIncludes schema:Person .
+           schema:rangeIncludes <http://snomed.info/308335008> .
 
 
 
@@ -579,6 +746,16 @@ skos:definition rdf:type owl:AnnotationProperty .
               schema:domainIncludes schema:Person ;
               
               schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#ethnicity
+
+:ethnicity rdf:type owl:ObjectProperty ;
+           
+           rdfs:range :Ethnicity ;
+           
+           rdfs:domain :Patient .
 
 
 
@@ -636,9 +813,9 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                skos:definition " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
                
-               schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/57177007> ;
+               schema:domainIncludes schema:Person ;
                
-               schema:domainIncludes schema:Person .
+               schema:rangeIncludes <http://snomed.info/57177007> .
 
 
 
@@ -652,6 +829,12 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#father
+
+:father rdf:type owl:ObjectProperty .
+
+
+
 ###  http://www.example.org/medicalEntity#finding
 
 :finding rdf:type owl:ObjectProperty ;
@@ -660,9 +843,9 @@ skos:definition rdf:type owl:AnnotationProperty .
          
          skos:definition "Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc"@en ;
          
-         schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/116154003> ;
+         schema:domainIncludes <http://snomed.info/116154003> ;
          
-         schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+         schema:rangeIncludes <http://snomed.info/404684003> ;
          
          rdfs:subPropertyOf owl:topObjectProperty .
 
@@ -690,6 +873,18 @@ skos:definition rdf:type owl:AnnotationProperty .
              schema:rangeIncludes rdfs:Resource ;
              
              schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#gynecObsetricHistory
+
+:gynecObsetricHistory rdf:type owl:ObjectProperty ;
+                      
+                      skos:definition "specifing the gyneco-obstetric history of a patient" ;
+                      
+                      rdfs:range :GynecObstetricHistory ;
+                      
+                      rdfs:domain :Patient .
 
 
 
@@ -753,6 +948,18 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#historyOfPresentIllness
+
+:historyOfPresentIllness rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:label "History of Present Illness" ;
+                         
+                         rdfs:range :HistoryOfPresentIllness ;
+                         
+                         rdfs:domain :Patient .
+
+
+
 ###  http://www.example.org/medicalEntity#houseNumber
 
 :houseNumber rdf:type owl:ObjectProperty ;
@@ -773,10 +980,11 @@ skos:definition rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the indication of a medical procedure, an action, a therapy, etc"@en ;
             
-            schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/71388002> ,
-                                  schema:MedicalDevice ;
+            schema:domainIncludes schema:MedicalDevice ;
             
-            schema:rangeIncludes schema:MedicalIndication .
+            schema:rangeIncludes schema:MedicalIndication ;
+            
+            schema:domainIncludes <http://snomed.info/71388002> .
 
 
 
@@ -852,6 +1060,28 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#lastMenstruationPeriod
+
+:lastMenstruationPeriod rdf:type owl:ObjectProperty ;
+                        
+                        skos:definition "Specifying the last menstruation period of a patient" ;
+                        
+                        rdfs:range :Menstruation ;
+                        
+                        rdfs:domain :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#lifestyleOrHabits
+
+:lifestyleOrHabits rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:range :LifestyleOrHabits ;
+                   
+                   rdfs:domain :Patient .
+
+
+
 ###  http://www.example.org/medicalEntity#maritalStatus
 
 :maritalStatus rdf:type owl:ObjectProperty ;
@@ -860,9 +1090,15 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                skos:definition "Specifying an agent having the social and/or juridical status of being married or unmarried. "@en ;
                
-               schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/365581002> ;
+               schema:domainIncludes schema:Person ;
                
-               schema:domainIncludes schema:Person .
+               schema:rangeIncludes <http://snomed.info/365581002> .
+
+
+
+###  http://www.example.org/medicalEntity#maternalRelatives
+
+:maternalRelatives rdf:type owl:ObjectProperty .
 
 
 
@@ -890,6 +1126,16 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#medicalHistory
+
+:medicalHistory rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :MedicalHistory ;
+                
+                rdfs:domain :Patient .
+
+
+
 ###  http://www.example.org/medicalEntity#medicalProcedure
 
 :medicalProcedure rdf:type owl:ObjectProperty ;
@@ -898,17 +1144,6 @@ skos:definition rdf:type owl:AnnotationProperty .
                                        rdfs:Resource ;
                   
                   schema:domainIncludes rdfs:Resource .
-
-
-
-###  http://www.example.org/medicalEntity#medicalProdecureType
-
-:medicalProdecureType rdf:type owl:ObjectProperty ;
-                      
-                      schema:domainIncludes :MedicalProcedure ,
-                                            rdfs:Resource ;
-                      
-                      schema:rangeIncludes rdfs:Resource .
 
 
 
@@ -928,11 +1163,57 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :medicationProcedure rdf:type owl:ObjectProperty ;
                      
-                     rdfs:subPropertyOf :therapeuticProcedure ;
-                     
                      schema:rangeIncludes rdfs:Resource ;
                      
-                     schema:domainIncludes rdfs:Resource .
+                     schema:domainIncludes rdfs:Resource ;
+                     
+                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.example.org/medicalEntity#menopause
+
+:menopause rdf:type owl:ObjectProperty ;
+           
+           skos:definition "Specifying the menaupause event of a women " ;
+           
+           rdfs:range :Menopause ;
+           
+           rdfs:domain :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#menstruation
+
+:menstruation rdf:type owl:ObjectProperty ;
+              
+              skos:definition "Specifying the menstruation event of a women " ;
+              
+              rdfs:range :Menstruation ;
+              
+              rdfs:domain :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#menstruationPeriod
+
+:menstruationPeriod rdf:type owl:ObjectProperty ;
+                    
+                    skos:definition "Specifying the menstruation period description event of a women " ;
+                    
+                    rdfs:range :Menstruation ;
+                    
+                    rdfs:domain :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#mentalHealthHistory
+
+:mentalHealthHistory rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:range :MentalHealthHistory ;
+                     
+                     rdfs:domain :Patient .
 
 
 
@@ -956,6 +1237,20 @@ skos:definition rdf:type owl:AnnotationProperty .
           schema:rangeIncludes rdfs:Resource ;
           
           schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#miscarriage
+
+:miscarriage rdf:type owl:ObjectProperty ;
+             
+             skos:definition "Specifying the resource as the miscarriage or abortion event related to the patient. Should be noted that abortions property is a data property instead." .
+
+
+
+###  http://www.example.org/medicalEntity#mother
+
+:mother rdf:type owl:ObjectProperty .
 
 
 
@@ -991,9 +1286,19 @@ skos:definition rdf:type owl:AnnotationProperty .
             
             skos:definition "Specifying a clinical observable of a patient not necessarily through a clinical examination. example: a swelling, etc"@en ;
             
-            schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/116154003> ;
+            schema:domainIncludes <http://snomed.info/116154003> ;
             
-            schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/363787002> .
+            schema:rangeIncludes <http://snomed.info/363787002> .
+
+
+
+###  http://www.example.org/medicalEntity#occupationalHistory
+
+:occupationalHistory rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:range :OccupationalHistory ;
+                     
+                     rdfs:domain :Patient .
 
 
 
@@ -1031,7 +1336,7 @@ skos:definition rdf:type owl:AnnotationProperty .
          
          schema:rangeIncludes dcterms:PhysicalResource ;
          
-         owl:inverseOf :contain .
+         owl:inverseOf :contains .
 
 
 
@@ -1055,15 +1360,57 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#parity
+
+:parity rdf:type owl:ObjectProperty ;
+        
+        skos:definition "Parity is defined as the number of times that she has given birth to a fetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn." ;
+        
+        rdfs:range :Parity ;
+        
+        rdfs:domain :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#pastMedicalHistory
+
+:pastMedicalHistory rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:range :PastMedicalHistory ;
+                    
+                    rdfs:domain :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#paternalRelatives
+
+:paternalRelatives rdf:type owl:ObjectProperty .
+
+
+
 ###  http://www.example.org/medicalEntity#personalHistory
 
 :personalHistory rdf:type owl:ObjectProperty ;
                  
                  skos:definition " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
                  
-                 schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/160476009> ;
+                 schema:domainIncludes schema:Person ;
                  
-                 schema:domainIncludes schema:Person .
+                 schema:rangeIncludes <http://snomed.info/160476009> ;
+                 
+                 rdfs:domain :Patient ;
+                 
+                 rdfs:range :PersonalHistory .
+
+
+
+###  http://www.example.org/medicalEntity#physicalActivity
+
+:physicalActivity rdf:type owl:ObjectProperty ;
+                  
+                  schema:rangeIncludes "schema:PhysicalActivity" ;
+                  
+                  rdfs:domain :Patient .
 
 
 
@@ -1093,9 +1440,25 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :possibleCause rdf:type owl:ObjectProperty ;
                
+               skos:definition "Specifying a possible cause of something" ;
+               
                schema:rangeIncludes rdfs:Resource ;
                
                schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#pregnancy
+
+:pregnancy rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "Specifying the resource as the pregnancy event or period related to the patient not differentiating if the pregnancy gave a birth or not. Should be noted that gravidity property is a data property instead. " ;
+           
+           skos:definition "Gravidity refers to the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth." ;
+           
+           rdfs:range :Gravidity ;
+           
+           rdfs:domain :Patient .
 
 
 
@@ -1105,7 +1468,7 @@ skos:definition rdf:type owl:AnnotationProperty .
               
               skos:definition "Specifying a medical order (=written prescription)."@en ;
               
-              schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/440545006> ;
+              schema:rangeIncludes <http://snomed.info/440545006> ;
               
               schema:domainIncludes rdfs:Resource .
 
@@ -1117,7 +1480,7 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            skos:definition " specifying a procedure for the patient ."@en ;
            
-           schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/71388002> ;
+           schema:rangeIncludes <http://snomed.info/71388002> ;
            
            schema:domainIncludes rdfs:Resource .
 
@@ -1152,6 +1515,18 @@ skos:definition rdf:type owl:AnnotationProperty .
                    schema:rangeIncludes rdfs:Resource ;
                    
                    schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#prodecureType
+
+:prodecureType rdf:type owl:ObjectProperty ;
+               
+               schema:domainIncludes :MedicalProcedure ;
+               
+               schema:rangeIncludes rdfs:Resource ;
+               
+               schema:domainIncludes rdfs:Resource .
 
 
 
@@ -1220,6 +1595,16 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#recreationalHistory
+
+:recreationalHistory rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:domain :Patient ;
+                     
+                     rdfs:range :RecreationalHistory .
+
+
+
 ###  http://www.example.org/medicalEntity#relatedEncounter
 
 :relatedEncounter rdf:type owl:ObjectProperty ;
@@ -1244,15 +1629,29 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.example.org/medicalEntity#religion
+###  http://www.example.org/medicalEntity#religionGroup
 
-:religion rdf:type owl:ObjectProperty ;
-          
-          skos:definition "Specifying a religion or religious beliefs of person."@en ;
-          
-          schema:domainIncludes schema:Person ;
-          
-          schema:rangeIncludes rdfs:Resource .
+:religionGroup rdf:type owl:ObjectProperty ;
+               
+               skos:definition "Specifying a religion or religious beliefs of person."@en ;
+               
+               schema:domainIncludes schema:Person ;
+               
+               rdfs:domain :Patient ;
+               
+               rdfs:range :ReligionGroup ;
+               
+               schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#religiousBelief
+
+:religiousBelief rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :Patient ;
+                 
+                 rdfs:range :ReligiousBelief .
 
 
 
@@ -1266,6 +1665,16 @@ skos:definition rdf:type owl:AnnotationProperty .
         
         schema:rangeIncludes :MedicalRecord ,
                              :PatientRecord .
+
+
+
+###  http://www.example.org/medicalEntity#residenceHistory
+
+:residenceHistory rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:domain :Patient ;
+                  
+                  rdfs:range :ResidenceHistory .
 
 
 
@@ -1299,6 +1708,22 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#sexualBehaviour
+
+:sexualBehaviour rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :Patient ;
+                 
+                 rdfs:range :SexualBehaviour .
+
+
+
+###  http://www.example.org/medicalEntity#siblings
+
+:siblings rdf:type owl:ObjectProperty .
+
+
+
 ###  http://www.example.org/medicalEntity#sideEffect
 
 :sideEffect rdf:type owl:ObjectProperty ;
@@ -1318,6 +1743,26 @@ skos:definition rdf:type owl:AnnotationProperty .
                                        rdfs:Resource ;
                  
                  schema:rangeIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#smoking
+
+:smoking rdf:type owl:ObjectProperty ;
+         
+         rdfs:domain :Patient ;
+         
+         rdfs:range :Smoking .
+
+
+
+###  http://www.example.org/medicalEntity#socialHistory
+
+:socialHistory rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :Patient ;
+               
+               rdfs:range :SocialHistory .
 
 
 
@@ -1359,15 +1804,34 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#substanceUseOrAbuse
+
+:substanceUseOrAbuse rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:domain :Patient ;
+                     
+                     rdfs:range :SubstanceUseOrAbuse .
+
+
+
 ###  http://www.example.org/medicalEntity#suspectedCause
 
 :suspectedCause rdf:type owl:ObjectProperty ;
                 
                 schema:rangeIncludes :Allergen ;
                 
-                schema:domainIncludes rdfs:Resource ;
+                schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#systemicReview
+
+:systemicReview rdf:type owl:ObjectProperty ;
                 
-                schema:rangeIncludes rdfs:Resource .
+                rdfs:domain :Patient ,
+                            :Record ;
+                
+                rdfs:range :SystemicReview .
 
 
 
@@ -1407,16 +1871,69 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#transfer
+
+:transfer rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Patient ;
+          
+          rdfs:range :TransferProcedure .
+
+
+
 ###  http://www.example.org/medicalEntity#treatedWith
 
 :treatedWith rdf:type owl:ObjectProperty ;
              
              skos:definition "Specifying a treatment or managment or therapeutic procedures for a disorder"@en ;
              
-             schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/277132007> ;
+             schema:domainIncludes schema:Person ;
              
-             schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/64572001> ,
-                                   schema:Person .
+             schema:rangeIncludes <http://snomed.info/277132007> ;
+             
+             schema:domainIncludes <http://snomed.info/64572001> .
+
+
+
+###  http://www.example.org/medicalEntity#triage
+
+:triage rdf:type owl:ObjectProperty ;
+        
+        rdfs:range :Triage .
+
+
+
+###  http://www.example.org/medicalEntity#triageScore
+
+:triageScore rdf:type owl:ObjectProperty ;
+             
+             skos:definition "The sorting of patients (as in an emergency room) according to the urgency of their need for care normally evaluated on scale or coding system" ;
+             
+             rdfs:domain :Patient ;
+             
+             rdfs:range :TriageScore .
+
+
+
+###  http://www.example.org/medicalEntity#vaccination
+
+:vaccination rdf:type owl:ObjectProperty ;
+             
+             rdfs:domain :Patient ;
+             
+             rdfs:range :Vaccination .
+
+
+
+###  http://www.example.org/medicalEntity#voluntaryInterruptionOfPregnancy
+
+:voluntaryInterruptionOfPregnancy rdf:type owl:ObjectProperty ;
+                                  
+                                  rdfs:comment " The voluntary induced abortion of a normal human pregnancy. Note that when an abortion occurs spontaneously is called a miscarriage" ;
+                                  
+                                  rdfs:domain :Patient ;
+                                  
+                                  rdfs:range :VoluntaryInterruptionOfPregnancy .
 
 
 
@@ -1429,6 +1946,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 #################################################################
 
 
+###  http://www.example.org/medicalEntity#abortions
+
+:abortions rdf:type owl:DatatypeProperty ;
+           
+           skos:definition "Specifying the number of obortion for a given patient woman" .
+
+
+
 ###  http://www.example.org/medicalEntity#admissionDate
 
 :admissionDate rdf:type owl:DatatypeProperty ;
@@ -1436,6 +1961,12 @@ skos:definition rdf:type owl:AnnotationProperty .
                schema:rangeIncludes ""^^xsd:dateTime ;
                
                schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#apgarScore
+
+:apgarScore rdf:type owl:DatatypeProperty .
 
 
 
@@ -1500,6 +2031,26 @@ skos:definition rdf:type owl:AnnotationProperty .
 :dischargeDate rdf:type owl:DatatypeProperty ;
                
                schema:domainIncludes rdfs:Resource .
+
+
+
+###  http://www.example.org/medicalEntity#firstDayOfLastMenstruation
+
+:firstDayOfLastMenstruation rdf:type owl:DatatypeProperty ;
+                            
+                            rdfs:range xsd:anyURI ,
+                                       xsd:dateTime ,
+                                       xsd:dateTimeStamp .
+
+
+
+###  http://www.example.org/medicalEntity#gravidity
+
+:gravidity rdf:type owl:DatatypeProperty ;
+           
+           skos:definition "Specifying the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth." ;
+           
+           rdfs:range xsd:positiveInteger .
 
 
 
@@ -1692,6 +2243,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#Abortion
+
+:Abortion rdf:type owl:Class ;
+          
+          rdfs:subClassOf :GynecObstetricHistory .
+
+
+
 ###  http://www.example.org/medicalEntity#Acupuncture
 
 :Acupuncture rdf:type owl:Class ;
@@ -1708,11 +2267,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.example.org/medicalEntity#Admission
+###  http://www.example.org/medicalEntity#AdmissionProcedure
 
-:Admission rdf:type owl:Class ;
-           
-           rdfs:subClassOf :MedicalProcedure .
+:AdmissionProcedure rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :MedicalProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#AdulthoodHistory
+
+:AdulthoodHistory rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :SocialHistory .
 
 
 
@@ -1724,11 +2291,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#AlcoholIntake
+
+:AlcoholIntake rdf:type owl:Class ;
+               
+               rdfs:subClassOf :LifestyleOrHabits .
+
+
+
 ###  http://www.example.org/medicalEntity#Allergen
 
 :Allergen rdf:type owl:Class ;
           
-          rdfs:subClassOf :Allergy .
+          rdfs:subClassOf :Substance .
 
 
 
@@ -1748,11 +2323,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.example.org/medicalEntity#Anamnesis
+###  http://www.example.org/medicalEntity#AnamnesisProcedure
 
-:Anamnesis rdf:type owl:Class ;
-           
-           rdfs:subClassOf :MedicalProcedure .
+:AnamnesisProcedure rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :MedicalProcedure .
 
 
 
@@ -1804,6 +2379,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#ApgarScore
+
+:ApgarScore rdf:type owl:Class ;
+            
+            rdfs:subClassOf :MedicalEntity .
+
+
+
 ###  http://www.example.org/medicalEntity#AquiredDisease
 
 :AquiredDisease rdf:type owl:Class ;
@@ -1817,6 +2400,22 @@ skos:definition rdf:type owl:AnnotationProperty .
 :AxillaryTemperature rdf:type owl:Class ;
                      
                      rdfs:subClassOf :TemperatureExamination .
+
+
+
+###  http://www.example.org/medicalEntity#BiologicalSubstance
+
+:BiologicalSubstance rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :Substance .
+
+
+
+###  http://www.example.org/medicalEntity#Birth
+
+:Birth rdf:type owl:Class ;
+       
+       rdfs:subClassOf :MedicalEntity .
 
 
 
@@ -1840,7 +2439,15 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :BodyMeasure rdf:type owl:Class ;
              
-             rdfs:subClassOf :PhycalExamination .
+             rdfs:subClassOf :PhysicalExamination .
+
+
+
+###  http://www.example.org/medicalEntity#BodySubstance
+
+:BodySubstance rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Substance .
 
 
 
@@ -1868,6 +2475,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#ChemicalSubstance
+
+:ChemicalSubstance rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Substance .
+
+
+
 ###  http://www.example.org/medicalEntity#Chemotherapy
 
 :Chemotherapy rdf:type owl:Class ;
@@ -1876,11 +2491,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.example.org/medicalEntity#ChiefComplaint
+###  http://www.example.org/medicalEntity#ChiefComplaintSymptom
 
-:ChiefComplaint rdf:type owl:Class ;
-                
-                rdfs:subClassOf :Anamnesis .
+:ChiefComplaintSymptom rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :Symptom .
+
+
+
+###  http://www.example.org/medicalEntity#ChildhoodHistory
+
+:ChildhoodHistory rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :SocialHistory .
 
 
 
@@ -1918,6 +2541,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#Death
+
+:Death rdf:type owl:Class ;
+       
+       rdfs:subClassOf :MedicalEntity .
+
+
+
 ###  http://www.example.org/medicalEntity#Department
 
 :Department rdf:type owl:Class ;
@@ -1942,11 +2573,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.example.org/medicalEntity#Discharge
+###  http://www.example.org/medicalEntity#Disability
 
-:Discharge rdf:type owl:Class ;
-           
-           rdfs:subClassOf :MedicalProcedure .
+:Disability rdf:type owl:Class ;
+            
+            rdfs:subClassOf :SocialHistory .
+
+
+
+###  http://www.example.org/medicalEntity#DischargeProcedure
+
+:DischargeProcedure rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :MedicalProcedure .
 
 
 
@@ -1962,7 +2601,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :DrugOrMedicine rdf:type owl:Class ;
                 
-                rdfs:subClassOf :DrugTherapy .
+                rdfs:subClassOf :PharmaceuticalSubstance .
 
 
 
@@ -2001,6 +2640,22 @@ skos:definition rdf:type owl:AnnotationProperty .
      rdfs:label "Electronic Patient Record" ;
      
      rdfs:subClassOf :PatientRecord .
+
+
+
+###  http://www.example.org/medicalEntity#EducationLevel
+
+:EducationLevel rdf:type owl:Class ;
+                
+                rdfs:subClassOf :SocialHistory .
+
+
+
+###  http://www.example.org/medicalEntity#Elderhood
+
+:Elderhood rdf:type owl:Class ;
+           
+           rdfs:subClassOf :SocialHistory .
 
 
 
@@ -2044,11 +2699,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.example.org/medicalEntity#Episode
+###  http://www.example.org/medicalEntity#Episodicity
 
-:Episode rdf:type owl:Class ;
-         
-         rdfs:subClassOf :SignOrSymptom .
+:Episodicity rdf:type owl:Class ;
+             
+             rdfs:subClassOf :QualifierConcept .
 
 
 
@@ -2100,6 +2755,22 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#Gravidity
+
+:Gravidity rdf:type owl:Class ;
+           
+           rdfs:subClassOf :GynecObstetricHistory .
+
+
+
+###  http://www.example.org/medicalEntity#GynecObstetricHistory
+
+:GynecObstetricHistory rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :PersonalHistory .
+
+
+
 ###  http://www.example.org/medicalEntity#HealthFacility
 
 :HealthFacility rdf:type owl:Class ;
@@ -2112,7 +2783,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :HealthRecord rdf:type owl:Class ;
               
-              rdfs:subClassOf :Patient .
+              rdfs:subClassOf :Record .
 
 
 
@@ -2206,15 +2877,15 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :Invasive rdf:type owl:Class ;
           
-          rdfs:subClassOf :Invasiveness .
+          rdfs:subClassOf :InvasivenessCategory .
 
 
 
-###  http://www.example.org/medicalEntity#Invasiveness
+###  http://www.example.org/medicalEntity#InvasivenessCategory
 
-:Invasiveness rdf:type owl:Class ;
-              
-              rdfs:subClassOf :MedicalProcedure .
+:InvasivenessCategory rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :MedicalEntity .
 
 
 
@@ -2258,6 +2929,22 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#LegalIssueHistory
+
+:LegalIssueHistory rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :SocialHistory .
+
+
+
+###  http://www.example.org/medicalEntity#LifestyleOrHabits
+
+:LifestyleOrHabits rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :PersonalHistory .
+
+
+
 ###  http://www.example.org/medicalEntity#MagneticResonanceImaging
 
 :MagneticResonanceImaging rdf:type owl:Class ;
@@ -2278,7 +2965,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :MedicalAuscultation rdf:type owl:Class ;
                      
-                     rdfs:subClassOf :PhycalExamination .
+                     rdfs:subClassOf :PhysicalExamination .
 
 
 
@@ -2306,7 +2993,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :MedicalHistory rdf:type owl:Class ;
                 
-                rdfs:subClassOf :Anamnesis .
+                rdfs:subClassOf :AnamnesisProcedure .
 
 
 
@@ -2322,7 +3009,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :MedicalInspection rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :PhycalExamination .
+                   rdfs:subClassOf :PhysicalExamination .
 
 
 
@@ -2330,7 +3017,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :MedicalPalpation rdf:type owl:Class ;
                   
-                  rdfs:subClassOf :PhycalExamination .
+                  rdfs:subClassOf :PhysicalExamination .
 
 
 
@@ -2338,7 +3025,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :MedicalPercussion rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :PhycalExamination .
+                   rdfs:subClassOf :PhysicalExamination .
 
 
 
@@ -2354,7 +3041,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :MedicalRecord rdf:type owl:Class ;
                
-               rdfs:subClassOf :Patient .
+               rdfs:subClassOf :Record .
 
 
 
@@ -2366,11 +3053,43 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#Menopause
+
+:Menopause rdf:type owl:Class ;
+           
+           rdfs:subClassOf :GynecObstetricHistory .
+
+
+
+###  http://www.example.org/medicalEntity#Menstruation
+
+:Menstruation rdf:type owl:Class ;
+              
+              rdfs:subClassOf :GynecObstetricHistory .
+
+
+
+###  http://www.example.org/medicalEntity#MentalHealthHistory
+
+:MentalHealthHistory rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :PersonalHistory .
+
+
+
 ###  http://www.example.org/medicalEntity#MinimallyInvasive
 
 :MinimallyInvasive rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :Invasiveness .
+                   rdfs:subClassOf :InvasivenessCategory .
+
+
+
+###  http://www.example.org/medicalEntity#Miscarriage
+
+:Miscarriage rdf:type owl:Class ;
+             
+             rdfs:subClassOf :GynecObstetricHistory .
 
 
 
@@ -2378,7 +3097,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :NonInvasive rdf:type owl:Class ;
              
-             rdfs:subClassOf :Invasiveness .
+             rdfs:subClassOf :InvasivenessCategory .
 
 
 
@@ -2446,6 +3165,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#Parity
+
+:Parity rdf:type owl:Class ;
+        
+        rdfs:subClassOf :GynecObstetricHistory .
+
+
+
 ###  http://www.example.org/medicalEntity#PastMedicalHistory
 
 :PastMedicalHistory rdf:type owl:Class ;
@@ -2466,7 +3193,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :PatientRecord rdf:type owl:Class ;
                
-               rdfs:subClassOf :Patient .
+               rdfs:subClassOf :Record .
 
 
 
@@ -2475,6 +3202,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 :PersonalHistory rdf:type owl:Class ;
                  
                  rdfs:subClassOf :MedicalHistory .
+
+
+
+###  http://www.example.org/medicalEntity#PharmaceuticalSubstance
+
+:PharmaceuticalSubstance rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :ChemicalSubstance .
 
 
 
@@ -2494,11 +3229,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.example.org/medicalEntity#PhycalExamination
+###  http://www.example.org/medicalEntity#PhysicalExamination
 
-:PhycalExamination rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :MedicalProcedure .
+:PhysicalExamination rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :MedicalProcedure .
 
 
 
@@ -2514,7 +3249,17 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :Pregnancy rdf:type owl:Class ;
            
-           rdfs:subClassOf :MedicalCondition .
+           rdfs:subClassOf :MedicalEntity ;
+           
+           skos:definition "The period from conception to birth. Can also refer to the condition of a woman or female animal that is going to have a baby or babies. This is regardless to the outcome" .
+
+
+
+###  http://www.example.org/medicalEntity#PresentingComplainSymptom
+
+:PresentingComplainSymptom rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf :Symptom .
 
 
 
@@ -2523,6 +3268,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 :Psychotherapy rdf:type owl:Class ;
                
                rdfs:subClassOf :TherapeuticProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#QualifierConcept
+
+:QualifierConcept rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :MedicalEntity .
 
 
 
@@ -2539,6 +3292,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 :Radiography rdf:type owl:Class ;
              
              rdfs:subClassOf :MedicalImaging .
+
+
+
+###  http://www.example.org/medicalEntity#Record
+
+:Record rdf:type owl:Class ;
+        
+        rdfs:subClassOf :MedicalEntity .
 
 
 
@@ -2562,7 +3323,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :ReligionGroup rdf:type owl:Class ;
                
-               rdfs:subClassOf :ReligiousBelief .
+               rdfs:subClassOf :SocialHistory .
 
 
 
@@ -2571,6 +3332,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 :ReligiousBelief rdf:type owl:Class ;
                  
                  rdfs:subClassOf :SocialHistory .
+
+
+
+###  http://www.example.org/medicalEntity#ResidenceHistory
+
+:ResidenceHistory rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :SocialHistory .
 
 
 
@@ -2602,7 +3371,23 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :Severity rdf:type owl:Class ;
           
-          rdfs:subClassOf :SignOrSymptom .
+          rdfs:subClassOf :QualifierConcept .
+
+
+
+###  http://www.example.org/medicalEntity#SexualBehaviour
+
+:SexualBehaviour rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :SocialHistory .
+
+
+
+###  http://www.example.org/medicalEntity#Sign
+
+:Sign rdf:type owl:Class ;
+      
+      rdfs:subClassOf :SignOrSymptom .
 
 
 
@@ -2614,11 +3399,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#Smoking
+
+:Smoking rdf:type owl:Class ;
+         
+         rdfs:subClassOf :LifestyleOrHabits .
+
+
+
 ###  http://www.example.org/medicalEntity#SocialHistory
 
 :SocialHistory rdf:type owl:Class ;
                
-               rdfs:subClassOf :MedicalHistory .
+               rdfs:subClassOf :PersonalHistory .
 
 
 
@@ -2630,6 +3423,22 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#Substance
+
+:Substance rdf:type owl:Class ;
+           
+           rdfs:subClassOf :MedicalEntity .
+
+
+
+###  http://www.example.org/medicalEntity#SubstanceUseOrAbuse
+
+:SubstanceUseOrAbuse rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :LifestyleOrHabits .
+
+
+
 ###  http://www.example.org/medicalEntity#SurgicalProcedure
 
 :SurgicalProcedure rdf:type owl:Class ;
@@ -2638,11 +3447,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#Symptom
+
+:Symptom rdf:type owl:Class ;
+         
+         rdfs:subClassOf :SignOrSymptom .
+
+
+
 ###  http://www.example.org/medicalEntity#SystemicReview
 
 :SystemicReview rdf:type owl:Class ;
                 
-                rdfs:subClassOf :Anamnesis .
+                rdfs:subClassOf :AnamnesisProcedure .
 
 
 
@@ -2670,11 +3487,35 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://www.example.org/medicalEntity#Transfer
+###  http://www.example.org/medicalEntity#TransferProcedure
 
-:Transfer rdf:type owl:Class ;
-          
-          rdfs:subClassOf :MedicalProcedure .
+:TransferProcedure rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :MedicalProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#Triage
+
+:Triage rdf:type owl:Class ;
+        
+        rdfs:subClassOf :MedicalProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#TriageComplain
+
+:TriageComplain rdf:type owl:Class ;
+                
+                rdfs:subClassOf :MedicalCondition .
+
+
+
+###  http://www.example.org/medicalEntity#TriageScore
+
+:TriageScore rdf:type owl:Class ;
+             
+             rdfs:subClassOf :MedicalEntity .
 
 
 
@@ -2738,7 +3579,17 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :Vitalsign rdf:type owl:Class ;
            
-           rdfs:subClassOf :PhycalExamination .
+           rdfs:subClassOf :MedicalEntity ;
+           
+           skos:definition "Vital sign (observable entity)" .
+
+
+
+###  http://www.example.org/medicalEntity#VoluntaryInterruptionOfPregnancy
+
+:VoluntaryInterruptionOfPregnancy rdf:type owl:Class ;
+                                  
+                                  rdfs:subClassOf :GynecObstetricHistory .
 
 
 
