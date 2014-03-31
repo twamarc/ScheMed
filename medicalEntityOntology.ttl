@@ -60,11 +60,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                skos:definition "Specifying someone who you are talking about"@en ;
                
-               schema:rangeIncludes schema:Person ;
-               
-               schema:domainIncludes rdfs:Resource ;
-               
-               rdfs:domain owl:Thing .
+               schema:rangeIncludes schema:Person .
 
 
 
@@ -74,9 +70,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                          
                          skos:definition "Specifying an administrative procedure for a resource or patient"@en ;
                          
-                         schema:rangeIncludes :AdministrativeProcedure ;
-                         
-                         schema:domainIncludes rdfs:Resource .
+                         schema:rangeIncludes :AdministrativeProcedure .
 
 
 
@@ -84,10 +78,10 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :admission rdf:type owl:ObjectProperty ;
            
-           rdfs:range :AdmissionProcedure ,
-                      :MedicalProcedure ;
+           schema:rangeIncludes :AdmissionProcedure ,
+                                :MedicalProcedure ;
            
-           rdfs:domain :Patient .
+           schema:domainIncludes :Patient .
 
 
 
@@ -113,8 +107,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                    
                    schema:rangeIncludes schema:Person ;
                    
-                   schema:domainIncludes :MedicalProcedure ,
-                                         rdfs:Resource .
+                   schema:domainIncludes :MedicalProcedure .
 
 
 
@@ -122,11 +115,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :admissionReason rdf:type owl:ObjectProperty ;
                  
-                 skos:definition "Specifying a reason why the patient is admitted"@en ;
-                 
-                 schema:rangeIncludes rdfs:Resource ;
-                 
-                 schema:domainIncludes rdfs:Resource .
+                 skos:definition "Specifying a reason why the patient is admitted"@en .
 
 
 
@@ -134,9 +123,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :adulthoodHistory rdf:type owl:ObjectProperty ;
                   
-                  rdfs:range :AdulthoodHistory ;
+                  schema:rangeIncludes :AdulthoodHistory ;
                   
-                  rdfs:domain :Patient .
+                  schema:domainIncludes :Patient .
 
 
 
@@ -146,12 +135,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                   
                   skos:definition "Specifying an adverse drug event- defined according World Health Organization"@en ;
                   
-                  schema:domainIncludes :TherapeuticProcedure ,
-                                        rdfs:Resource ;
-                  
-                  schema:rangeIncludes rdfs:Resource ;
-                  
-                  rdfs:subPropertyOf owl:topObjectProperty .
+                  schema:domainIncludes :TherapeuticProcedure .
 
 
 
@@ -161,11 +145,7 @@ skos:definition rdf:type owl:AnnotationProperty .
               
               skos:definition "Specifying an adverse event- defined according World Health Organization"@en ;
               
-              schema:domainIncludes :TherapeuticProcedure ;
-              
-              schema:rangeIncludes rdfs:Resource ;
-              
-              schema:domainIncludes rdfs:Resource .
+              schema:domainIncludes :TherapeuticProcedure .
 
 
 
@@ -173,11 +153,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :ageAtEvent rdf:type owl:ObjectProperty ;
             
-            skos:definition "Specifying the age of the entity when an event occurred"@en ;
-            
-            schema:domainIncludes rdfs:Resource ;
-            
-            schema:rangeIncludes rdfs:Resource .
+            skos:definition "Specifying the age of the entity when an event occurred"@en .
 
 
 
@@ -185,9 +161,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :alcoholIntake rdf:type owl:ObjectProperty ;
                
-               rdfs:range :AlcoholIntake ;
+               schema:rangeIncludes :AlcoholIntake ;
                
-               rdfs:domain :Patient .
+               schema:domainIncludes :Patient .
 
 
 
@@ -195,11 +171,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :allergen rdf:type owl:ObjectProperty ;
           
-          skos:definition "Specifying something that can cause an allergic reaction."@en ;
-          
-          schema:domainIncludes rdfs:Resource ;
-          
-          schema:rangeIncludes rdfs:Resource .
+          skos:definition "Specifying something that can cause an allergic reaction."@en .
 
 
 
@@ -207,9 +179,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :allergy rdf:type owl:ObjectProperty ;
          
-         rdfs:range :Allergy ;
+         schema:rangeIncludes :Allergy ;
          
-         rdfs:domain :Patient .
+         schema:domainIncludes :Patient .
 
 
 
@@ -219,9 +191,9 @@ skos:definition rdf:type owl:AnnotationProperty .
                     
                     skos:definition "specifying the anamnesis procedure of patient" ;
                     
-                    rdfs:range :AnamnesisProcedure ;
+                    schema:rangeIncludes :AnamnesisProcedure ;
                     
-                    rdfs:domain :Patient .
+                    schema:domainIncludes :Patient .
 
 
 
@@ -229,11 +201,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :atWeeksAmenorrhea rdf:type owl:ObjectProperty ;
                    
-                   skos:definition " specifying weeks of amenorrhoea for a female patient."@en ;
-                   
-                   schema:domainIncludes rdfs:Resource ;
-                   
-                   schema:rangeIncludes rdfs:Resource .
+                   skos:definition " specifying weeks of amenorrhoea for a female patient."@en .
 
 
 
@@ -241,9 +209,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :behaviour rdf:type owl:ObjectProperty ;
            
-           rdfs:range :LifestyleOrHabits ;
+           schema:rangeIncludes :LifestyleOrHabits ;
            
-           rdfs:domain :Patient .
+           schema:domainIncludes :Patient .
 
 
 
@@ -251,11 +219,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :belongsTo rdf:type owl:ObjectProperty ;
            
-           skos:definition "Specifying a resource to which another resource belongs"@en ;
-           
-           schema:domainIncludes rdfs:Resource ;
-           
-           schema:rangeIncludes rdfs:Resource .
+           skos:definition "Specifying a resource to which another resource belongs"@en .
 
 
 
@@ -267,9 +231,9 @@ skos:definition rdf:type owl:AnnotationProperty .
             
             skos:definition "Specifying the place of birth for a person"@en ;
             
-            schema:rangeIncludes <http://snomed.info/169812000> ;
+            schema:domainIncludes schema:Person ;
             
-            schema:domainIncludes foaf:Person .
+            schema:rangeIncludes <http://snomed.info/169812000> .
 
 
 
@@ -283,11 +247,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :bodySite rdf:type owl:ObjectProperty ;
           
-          schema:domainIncludes :MedicalProcedure ;
-          
-          schema:rangeIncludes rdfs:Resource ;
-          
-          schema:domainIncludes rdfs:Resource .
+          schema:domainIncludes :MedicalProcedure .
 
 
 
@@ -295,11 +255,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :boxNumber rdf:type owl:ObjectProperty ;
            
-           skos:definition "Specifying a Box number, typically in addresses model"@en ;
-           
-           schema:rangeIncludes rdfs:Resource ;
-           
-           schema:domainIncludes rdfs:Resource .
+           skos:definition "Specifying a Box number, typically in addresses model"@en .
 
 
 
@@ -307,11 +263,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :careReason rdf:type owl:ObjectProperty ;
             
-            skos:definition "Specifying a reason for a caring event(typically a medical condition or other encounter reasons)."@en ;
-            
-            schema:domainIncludes rdfs:Resource ;
-            
-            schema:rangeIncludes rdfs:Resource .
+            skos:definition "Specifying a reason for a caring event(typically a medical condition or other encounter reasons)"@en .
 
 
 
@@ -321,9 +273,7 @@ skos:definition rdf:type owl:AnnotationProperty .
           
           skos:definition "Specifying something a person cared for. This can be a health care professional in health domain caring for a patient or other resource "@en ;
           
-          schema:rangeIncludes rdfs:Resource ;
-          
-          schema:domainIncludes foaf:Person .
+          schema:domainIncludes schema:Person .
 
 
 
@@ -333,9 +283,7 @@ skos:definition rdf:type owl:AnnotationProperty .
              
              skos:definition "Specifying a person (typically a patient) receiving services from the health care professional during a caring event."@en ;
              
-             schema:domainIncludes rdfs:Resource ;
-             
-             schema:rangeIncludes foaf:Agent .
+             schema:rangeIncludes schema:Person .
 
 
 
@@ -345,9 +293,7 @@ skos:definition rdf:type owl:AnnotationProperty .
              
              skos:definition "Specifying an event wherein services are rendered by members of the health profession (or under their supervision) for the benefit of the patient."@en ;
              
-             schema:rangeIncludes schema:Event ;
-             
-             schema:domainIncludes rdfs:Resource .
+             schema:rangeIncludes schema:Event .
 
 
 
@@ -357,9 +303,7 @@ skos:definition rdf:type owl:AnnotationProperty .
               
               skos:definition "Specifying a health care professional providing services to the patient during a caring event."@en ;
               
-              schema:domainIncludes rdfs:Resource ;
-              
-              schema:rangeIncludes foaf:Agent .
+              schema:rangeIncludes schema:Person .
 
 
 
@@ -367,11 +311,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :cause rdf:type owl:ObjectProperty ;
        
-       skos:definition "Specifying a cause of something"@en ;
-       
-       schema:rangeIncludes rdfs:Resource ;
-       
-       schema:domainIncludes rdfs:Resource .
+       skos:definition "Specifying a cause of something"@en .
 
 
 
@@ -379,9 +319,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :childhoodHistory rdf:type owl:ObjectProperty ;
                   
-                  rdfs:range :ChildhoodHistory ;
+                  schema:rangeIncludes :ChildhoodHistory ;
                   
-                  rdfs:domain :Patient .
+                  schema:domainIncludes :Patient .
 
 
 
@@ -391,11 +331,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                     
                     rdfs:label "has confirmation status"@en ;
                     
-                    skos:definition "Specifying the confirmation status of something. eg: confirmed, suspected etc."@en ;
-                    
-                    schema:domainIncludes rdfs:Resource ;
-                    
-                    schema:rangeIncludes rdfs:Resource .
+                    skos:definition "Specifying the confirmation status of something. eg: confirmed, suspected etc."@en .
 
 
 
@@ -440,9 +376,9 @@ skos:definition rdf:type owl:AnnotationProperty .
             
             skos:definition "Specifying the place of death for a person"@en ;
             
-            schema:rangeIncludes <http://snomed.info/169812000> ;
+            schema:domainIncludes schema:Person ;
             
-            schema:domainIncludes foaf:Person .
+            schema:rangeIncludes <http://snomed.info/169812000> .
 
 
 
@@ -450,9 +386,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :denominator rdf:type owl:ObjectProperty ;
              
-             skos:definition "Specifying a denominator of a ratio; typically used in formalization of 'outOf'."@en ;
-             
-             schema:domainIncludes rdfs:Resource .
+             skos:definition "Specifying a denominator of a ratio; typically used in formalization of 'outOf'."@en .
 
 
 
@@ -460,11 +394,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :description rdf:type owl:ObjectProperty ;
              
-             skos:definition "Specifying a resource  containing a description of something"@en ;
-             
-             schema:rangeIncludes rdfs:Resource ;
-             
-             schema:domainIncludes rdfs:Resource .
+             skos:definition "Specifying a resource  containing a description of something"@en .
 
 
 
@@ -474,11 +404,7 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            skos:definition "Specifying a medical condition which is output of a diagnosis process"@en ;
            
-           schema:rangeIncludes schema:MedicalCondition ;
-           
-           schema:domainIncludes rdfs:Resource ;
-           
-           rdfs:subPropertyOf owl:topObjectProperty .
+           schema:rangeIncludes schema:MedicalCondition .
 
 
 
@@ -486,12 +412,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :diagnosticMeans rdf:type owl:ObjectProperty ;
                  
-                 schema:rangeIncludes :Department ;
-                 
-                 schema:domainIncludes :Diagnosis ;
-                 
-                 schema:rangeIncludes :HealthFacility ,
-                                      :Unit .
+                 schema:domainIncludes :Diagnosis .
 
 
 
@@ -518,10 +439,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :diagnosticType rdf:type owl:ObjectProperty ;
                 
-                schema:domainIncludes :Diagnosis ,
-                                      rdfs:Resource ;
+                skos:definition "Specifying the type of diagnosis-typically using SNOMED CT sub-types."@en ;
                 
-                schema:rangeIncludes rdfs:Resource .
+                schema:domainIncludes :Diagnosis .
 
 
 
@@ -529,11 +449,8 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :diastolicBloodPressure rdf:type owl:ObjectProperty ;
                         
-                        skos:definition "Specifying a diastolic arterial blood pressure of a patient.."@en ;
-                        
-                        schema:rangeIncludes rdfs:Resource ;
-                        
-                        schema:domainIncludes rdfs:Resource .
+                        skos:definition "Specifying a diastolic arterial blood pressure of a patient."@en ,
+                                        "Specifying the diastolic blood pressure of a patient."@en .
 
 
 
@@ -541,9 +458,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :discharge rdf:type owl:ObjectProperty ;
            
-           rdfs:range :DischargeProcedure ;
+           schema:rangeIncludes :DischargeProcedure ;
            
-           rdfs:domain :Patient .
+           schema:domainIncludes :Patient .
 
 
 
@@ -551,15 +468,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :dischargeProvider rdf:type owl:ObjectProperty ;
                    
-                   rdfs:domain :DischargeProcedure ;
+                   schema:domainIncludes :DischargeProcedure ;
                    
-                   rdfs:range :HealthcareProfessional ;
+                   schema:rangeIncludes :HealthcareProfessional ;
                    
-                   rdfs:domain :Patient ;
-                   
-                   schema:rangeIncludes rdfs:Resource ;
-                   
-                   schema:domainIncludes rdfs:Resource .
+                   schema:domainIncludes :Patient .
 
 
 
@@ -567,19 +480,15 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :dischargeReason rdf:type owl:ObjectProperty ;
                  
-                 rdfs:range :Death ;
+                 schema:rangeIncludes :Death ;
                  
-                 rdfs:domain :DischargeProcedure ;
+                 schema:domainIncludes :DischargeProcedure ;
                  
-                 rdfs:range :MedicalCondition ;
+                 schema:rangeIncludes :MedicalCondition ;
                  
-                 rdfs:domain :Patient ;
+                 schema:domainIncludes :Patient ;
                  
-                 rdfs:range :TransferProcedure ;
-                 
-                 schema:domainIncludes rdfs:Resource ;
-                 
-                 schema:rangeIncludes rdfs:Resource .
+                 schema:rangeIncludes :TransferProcedure .
 
 
 
@@ -587,12 +496,8 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :dischargeStatus rdf:type owl:ObjectProperty ;
                  
-                 rdfs:domain :DischargeProcedure ,
-                             :Patient ;
-                 
-                 schema:domainIncludes rdfs:Resource ;
-                 
-                 schema:rangeIncludes rdfs:Resource .
+                 schema:domainIncludes :DischargeProcedure ,
+                                       :Patient .
 
 
 
@@ -602,11 +507,11 @@ skos:definition rdf:type owl:AnnotationProperty .
                  
                  schema:rangeIncludes :Department ;
                  
-                 rdfs:domain :DischargeProcedure ;
+                 schema:domainIncludes :DischargeProcedure ;
                  
                  schema:rangeIncludes :HealthFacility ;
                  
-                 rdfs:domain :Patient ;
+                 schema:domainIncludes :Patient ;
                  
                  schema:rangeIncludes :Unit .
 
@@ -614,7 +519,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#diseaseStage
 
-:diseaseStage rdf:type owl:ObjectProperty .
+:diseaseStage rdf:type owl:ObjectProperty ;
+              
+              skos:definition "Specifying the stage of a disease, eg. HIV/AIDS stage 4"@en .
 
 
 
@@ -622,11 +529,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :dispensation rdf:type owl:ObjectProperty ;
               
-              skos:definition "Specifying an drug dispensation event"@en ;
-              
-              schema:domainIncludes rdfs:Resource ;
-              
-              schema:rangeIncludes rdfs:Resource .
+              skos:definition "Specifying an drug dispensation event"@en .
 
 
 
@@ -636,9 +539,7 @@ skos:definition rdf:type owl:AnnotationProperty .
       
       skos:definition "Specifying a drug or medicine used in a medication procedure"@en ;
       
-      schema:rangeIncludes <http://snomed.info/410942007> ;
-      
-      schema:domainIncludes rdfs:Resource .
+      schema:rangeIncludes <http://snomed.info/410942007> .
 
 
 
@@ -646,14 +547,12 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :drugIntaken rdf:type owl:ObjectProperty ;
              
-             schema:domainIncludes "schema:Patient" ,
-                                   "schema:Person" ;
-             
              skos:definition "Specifying an event of taking cure medication, related to a medication periode"@en ;
              
-             schema:rangeIncludes <http://snomed.info/129019007> ;
+             schema:domainIncludes schema:Patient ,
+                                   schema:Person ;
              
-             schema:domainIncludes rdfs:Resource .
+             schema:rangeIncludes <http://snomed.info/129019007> .
 
 
 
@@ -673,9 +572,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                  
                  skos:definition "Specifying a drug preparation used in a procedure, typically prepared for a patient from one or multiple drug packages"@en ;
                  
-                 schema:rangeIncludes <http://snomed.info/105904009> ;
-                 
-                 schema:domainIncludes rdfs:Resource .
+                 schema:rangeIncludes <http://snomed.info/105904009> .
 
 
 
@@ -683,9 +580,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :educationLevel rdf:type owl:ObjectProperty ;
                 
-                rdfs:range :EducationLevel ;
+                schema:rangeIncludes :EducationLevel ;
                 
-                rdfs:domain :Patient .
+                schema:domainIncludes :Patient .
 
 
 
@@ -693,9 +590,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :elderhoodHistory rdf:type owl:ObjectProperty ;
                   
-                  rdfs:range :Elderhood ;
+                  schema:rangeIncludes :Elderhood ;
                   
-                  rdfs:domain :Patient .
+                  schema:domainIncludes :Patient .
 
 
 
@@ -743,9 +640,7 @@ skos:definition rdf:type owl:AnnotationProperty .
               
               skos:definition "Specifying an ethnic group of person."@en ;
               
-              schema:domainIncludes schema:Person ;
-              
-              schema:rangeIncludes rdfs:Resource .
+              schema:domainIncludes schema:Person .
 
 
 
@@ -753,9 +648,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :ethnicity rdf:type owl:ObjectProperty ;
            
-           rdfs:range :Ethnicity ;
+           schema:rangeIncludes :Ethnicity ;
            
-           rdfs:domain :Patient .
+           schema:domainIncludes :Patient .
 
 
 
@@ -767,8 +662,6 @@ skos:definition rdf:type owl:AnnotationProperty .
        
        skos:definition "Specifying someone or something (eg. organisation, procedure, event, activity, etc) having an event)."@en ;
        
-       schema:rangeIncludes rdfs:Resource ;
-       
        schema:domainIncludes rdfs:Resource .
 
 
@@ -777,11 +670,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :examination rdf:type owl:ObjectProperty ;
              
-             skos:definition "Specifying an examination procedure, action or activity of something or a patient."@en ;
-             
-             schema:domainIncludes rdfs:Resource ;
-             
-             schema:rangeIncludes rdfs:Resource .
+             skos:definition "Specifying an examination procedure, action or activity of something or a patient."@en .
 
 
 
@@ -789,21 +678,13 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :examinationOf rdf:type owl:ObjectProperty ;
                
-               owl:inverseOf :examination ;
-               
-               schema:domainIncludes rdfs:Resource ;
-               
-               schema:rangeIncludes rdfs:Resource .
+               owl:inverseOf :examination .
 
 
 
 ###  http://www.example.org/medicalEntity#examinedBy
 
-:examinedBy rdf:type owl:ObjectProperty ;
-            
-            schema:domainIncludes rdfs:Resource ;
-            
-            schema:rangeIncludes rdfs:Resource .
+:examinedBy rdf:type owl:ObjectProperty .
 
 
 
@@ -821,11 +702,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#familyMember
 
-:familyMember rdf:type owl:ObjectProperty ;
-              
-              schema:domainIncludes rdfs:Resource ;
-              
-              schema:rangeIncludes rdfs:Resource .
+:familyMember rdf:type owl:ObjectProperty .
 
 
 
@@ -845,9 +722,7 @@ skos:definition rdf:type owl:AnnotationProperty .
          
          schema:domainIncludes <http://snomed.info/116154003> ;
          
-         schema:rangeIncludes <http://snomed.info/404684003> ;
-         
-         rdfs:subPropertyOf owl:topObjectProperty .
+         schema:rangeIncludes <http://snomed.info/404684003> .
 
 
 
@@ -858,9 +733,7 @@ skos:definition rdf:type owl:AnnotationProperty .
            skos:definition "Specifying a person or company , known as guarantor, offering insurance policies in return for premiums"@en ;
            
            schema:rangeIncludes schema:Organization ,
-                                schema:Person ;
-           
-           schema:domainIncludes rdfs:Resource .
+                                schema:Person .
 
 
 
@@ -868,11 +741,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :guarantorOf rdf:type owl:ObjectProperty ;
              
-             owl:inverseOf :guarantor ;
-             
-             schema:rangeIncludes rdfs:Resource ;
-             
-             schema:domainIncludes rdfs:Resource .
+             owl:inverseOf :guarantor .
 
 
 
@@ -880,71 +749,47 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :gynecObsetricHistory rdf:type owl:ObjectProperty ;
                       
-                      skos:definition "specifing the gyneco-obstetric history of a patient" ;
+                      skos:definition "specifying the gyneco-obstetric history of a patient" ;
                       
-                      rdfs:range :GynecObstetricHistory ;
+                      schema:rangeIncludes :GynecObstetricHistory ;
                       
-                      rdfs:domain :Patient .
+                      schema:domainIncludes :Patient .
 
 
 
 ###  http://www.example.org/medicalEntity#healthFacility
 
-:healthFacility rdf:type owl:ObjectProperty ;
-                
-                schema:domainIncludes rdfs:Resource ;
-                
-                schema:rangeIncludes rdfs:Resource .
+:healthFacility rdf:type owl:ObjectProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#healthFacilityClinic
 
-:healthFacilityClinic rdf:type owl:ObjectProperty ;
-                      
-                      schema:domainIncludes rdfs:Resource ;
-                      
-                      schema:rangeIncludes rdfs:Resource .
+:healthFacilityClinic rdf:type owl:ObjectProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#healthFacilityDepartment
 
-:healthFacilityDepartment rdf:type owl:ObjectProperty ;
-                          
-                          schema:rangeIncludes rdfs:Resource ;
-                          
-                          schema:domainIncludes rdfs:Resource .
+:healthFacilityDepartment rdf:type owl:ObjectProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#healthFacilityRoom
 
-:healthFacilityRoom rdf:type owl:ObjectProperty ;
-                    
-                    schema:domainIncludes rdfs:Resource ;
-                    
-                    schema:rangeIncludes rdfs:Resource .
+:healthFacilityRoom rdf:type owl:ObjectProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#healthFacilityUnit
 
-:healthFacilityUnit rdf:type owl:ObjectProperty ;
-                    
-                    schema:rangeIncludes rdfs:Resource ;
-                    
-                    schema:domainIncludes rdfs:Resource .
+:healthFacilityUnit rdf:type owl:ObjectProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#healthFacilityWard
 
-:healthFacilityWard rdf:type owl:ObjectProperty ;
-                    
-                    schema:rangeIncludes rdfs:Resource ;
-                    
-                    schema:domainIncludes rdfs:Resource .
+:healthFacilityWard rdf:type owl:ObjectProperty .
 
 
 
@@ -954,9 +799,9 @@ skos:definition rdf:type owl:AnnotationProperty .
                          
                          rdfs:label "History of Present Illness" ;
                          
-                         rdfs:range :HistoryOfPresentIllness ;
+                         schema:rangeIncludes :HistoryOfPresentIllness ;
                          
-                         rdfs:domain :Patient .
+                         schema:domainIncludes :Patient .
 
 
 
@@ -964,11 +809,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :houseNumber rdf:type owl:ObjectProperty ;
              
-             skos:definition "Specifying a house number, typically in addresses model"@en ;
-             
-             schema:rangeIncludes rdfs:Resource ;
-             
-             schema:domainIncludes rdfs:Resource .
+             skos:definition "Specifying a house number, typically in addresses model"@en .
 
 
 
@@ -994,8 +835,6 @@ skos:definition rdf:type owl:AnnotationProperty .
          
          skos:definition "Specifying an instant of something."@en ;
          
-         schema:domainIncludes rdfs:Resource ;
-         
          schema:rangeIncludes w3ctime:Instant .
 
 
@@ -1006,9 +845,7 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            skos:definition "Specifying an insurance scheme owned by a person or company ,offered by a a busness entity as defined in "@en ;
            
-           schema:rangeIncludes gr:Offering ;
-           
-           schema:domainIncludes rdfs:Resource .
+           schema:rangeIncludes gr:Offering .
 
 
 
@@ -1016,11 +853,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :interpretation rdf:type owl:ObjectProperty ;
                 
-                skos:definition "Specifying an interpretation of something"@en ;
-                
-                schema:domainIncludes rdfs:Resource ;
-                
-                schema:rangeIncludes rdfs:Resource .
+                skos:definition "Specifying an interpretation of something"@en .
 
 
 
@@ -1029,8 +862,6 @@ skos:definition rdf:type owl:AnnotationProperty .
 :interval rdf:type owl:ObjectProperty ;
           
           skos:definition "Specifying an interval of something."@en ;
-          
-          schema:domainIncludes rdfs:Resource ;
           
           schema:rangeIncludes w3ctime:Interval .
 
@@ -1044,7 +875,7 @@ skos:definition rdf:type owl:AnnotationProperty .
          
          schema:rangeIncludes <http://purl.bioontology.org/ontology/MESH/D005195> ;
          
-         schema:domainIncludes foaf:Person .
+         schema:domainIncludes schema:Person .
 
 
 
@@ -1056,7 +887,7 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            schema:domainIncludes <http://purl.bioontology.org/ontology/MESH/D005195> ;
            
-           schema:rangeIncludes foaf:Person .
+           schema:rangeIncludes schema:Person .
 
 
 
@@ -1066,9 +897,9 @@ skos:definition rdf:type owl:AnnotationProperty .
                         
                         skos:definition "Specifying the last menstruation period of a patient" ;
                         
-                        rdfs:range :Menstruation ;
+                        schema:rangeIncludes :Menstruation ;
                         
-                        rdfs:domain :Patient .
+                        schema:domainIncludes :Patient .
 
 
 
@@ -1076,9 +907,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :lifestyleOrHabits rdf:type owl:ObjectProperty ;
                    
-                   rdfs:range :LifestyleOrHabits ;
+                   schema:rangeIncludes :LifestyleOrHabits ;
                    
-                   rdfs:domain :Patient .
+                   schema:domainIncludes :Patient .
 
 
 
@@ -1108,9 +939,7 @@ skos:definition rdf:type owl:AnnotationProperty .
              
              skos:definition "Specifying a medical case for a given medical entity or patient. A medical case is a sub-entity of a full medical record of a patient."@en ;
              
-             schema:rangeIncludes schema:MedicalEntity ;
-             
-             schema:domainIncludes rdfs:Resource .
+             schema:rangeIncludes schema:MedicalEntity .
 
 
 
@@ -1120,9 +949,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                   
                   skos:definition "Specifying a medical condition in general diagnosed or not."@en ;
                   
-                  schema:rangeIncludes schema:MedicalCondition ;
-                  
-                  schema:domainIncludes rdfs:Resource .
+                  schema:rangeIncludes schema:MedicalCondition .
 
 
 
@@ -1130,9 +957,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :medicalHistory rdf:type owl:ObjectProperty ;
                 
-                rdfs:range :MedicalHistory ;
+                schema:rangeIncludes :MedicalHistory ;
                 
-                rdfs:domain :Patient .
+                schema:domainIncludes :Patient .
 
 
 
@@ -1153,21 +980,13 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                skos:definition "Specifying a medical record for a given medical entity or patient. A medical record is a summ of all medical cases of a patient."@en ;
                
-               schema:rangeIncludes schema:MedicalEntity ;
-               
-               schema:domainIncludes rdfs:Resource .
+               schema:rangeIncludes schema:MedicalEntity .
 
 
 
 ###  http://www.example.org/medicalEntity#medicationProcedure
 
-:medicationProcedure rdf:type owl:ObjectProperty ;
-                     
-                     schema:rangeIncludes rdfs:Resource ;
-                     
-                     schema:domainIncludes rdfs:Resource ;
-                     
-                     rdfs:subPropertyOf owl:topObjectProperty .
+:medicationProcedure rdf:type owl:ObjectProperty .
 
 
 
@@ -1175,11 +994,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :menopause rdf:type owl:ObjectProperty ;
            
-           skos:definition "Specifying the menaupause event of a women " ;
+           skos:definition "Specifying the menopause event of a women " ;
            
-           rdfs:range :Menopause ;
+           schema:rangeIncludes :Menopause ;
            
-           rdfs:domain :Patient .
+           schema:domainIncludes :Patient .
 
 
 
@@ -1189,9 +1008,9 @@ skos:definition rdf:type owl:AnnotationProperty .
               
               skos:definition "Specifying the menstruation event of a women " ;
               
-              rdfs:range :Menstruation ;
+              schema:rangeIncludes :Menstruation ;
               
-              rdfs:domain :Patient .
+              schema:domainIncludes :Patient .
 
 
 
@@ -1201,9 +1020,9 @@ skos:definition rdf:type owl:AnnotationProperty .
                     
                     skos:definition "Specifying the menstruation period description event of a women " ;
                     
-                    rdfs:range :Menstruation ;
+                    schema:rangeIncludes :Menstruation ;
                     
-                    rdfs:domain :Patient .
+                    schema:domainIncludes :Patient .
 
 
 
@@ -1211,9 +1030,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :mentalHealthHistory rdf:type owl:ObjectProperty ;
                      
-                     rdfs:range :MentalHealthHistory ;
+                     schema:rangeIncludes :MentalHealthHistory ;
                      
-                     rdfs:domain :Patient .
+                     schema:domainIncludes :Patient .
 
 
 
@@ -1221,10 +1040,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :method rdf:type owl:ObjectProperty ;
         
-        schema:domainIncludes :MedicalProcedure ,
-                              rdfs:Resource ;
-        
-        schema:rangeIncludes rdfs:Resource .
+        schema:domainIncludes :MedicalProcedure .
 
 
 
@@ -1232,11 +1048,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :methodOf rdf:type owl:ObjectProperty ;
           
-          owl:inverseOf :method ;
-          
-          schema:rangeIncludes rdfs:Resource ;
-          
-          schema:domainIncludes rdfs:Resource .
+          owl:inverseOf :method .
 
 
 
@@ -1258,11 +1070,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :newborm rdf:type owl:ObjectProperty ;
          
-         skos:definition "Specifying a person as a newborn from delivery"@en ;
-         
-         schema:rangeIncludes rdfs:Resource ;
-         
-         schema:domainIncludes rdfs:Resource .
+         skos:definition "Specifying a person as a newborn from delivery"@en .
 
 
 
@@ -1270,11 +1078,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :normalRange rdf:type owl:ObjectProperty ;
              
-             skos:definition "Range of acceptable values for quantitative values: typically a laboratory test, experiment accepted values etc"@en ;
-             
-             schema:domainIncludes rdfs:Resource ;
-             
-             schema:rangeIncludes rdfs:Resource .
+             skos:definition "Range of acceptable values for quantitative values: typically a laboratory test, experiment accepted values etc"@en .
 
 
 
@@ -1296,9 +1100,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :occupationalHistory rdf:type owl:ObjectProperty ;
                      
-                     rdfs:range :OccupationalHistory ;
+                     schema:rangeIncludes :OccupationalHistory ;
                      
-                     rdfs:domain :Patient .
+                     schema:domainIncludes :Patient .
 
 
 
@@ -1306,11 +1110,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :onsetMode rdf:type owl:ObjectProperty ;
            
-           skos:definition "Specifying a way a process, an ilness, or an event comes into existence"@en ;
-           
-           schema:domainIncludes rdfs:Resource ;
-           
-           schema:rangeIncludes rdfs:Resource .
+           skos:definition "Specifying a way a process, an ilness, or an event comes into existence"@en .
 
 
 
@@ -1318,11 +1118,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :outcome rdf:type owl:ObjectProperty ;
          
-         schema:domainIncludes :MedicalProcedure ;
-         
-         schema:rangeIncludes rdfs:Resource ;
-         
-         schema:domainIncludes rdfs:Resource .
+         schema:domainIncludes :MedicalProcedure .
 
 
 
@@ -1342,21 +1138,13 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#palliativeProcedure
 
-:palliativeProcedure rdf:type owl:ObjectProperty ;
-                     
-                     schema:rangeIncludes rdfs:Resource ;
-                     
-                     schema:domainIncludes rdfs:Resource .
+:palliativeProcedure rdf:type owl:ObjectProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#parent
 
-:parent rdf:type owl:ObjectProperty ;
-        
-        schema:rangeIncludes rdfs:Resource ;
-        
-        schema:domainIncludes rdfs:Resource .
+:parent rdf:type owl:ObjectProperty .
 
 
 
@@ -1366,9 +1154,9 @@ skos:definition rdf:type owl:AnnotationProperty .
         
         skos:definition "Parity is defined as the number of times that she has given birth to a fetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn." ;
         
-        rdfs:range :Parity ;
+        schema:rangeIncludes :Parity ;
         
-        rdfs:domain :Patient .
+        schema:domainIncludes :Patient .
 
 
 
@@ -1376,9 +1164,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :pastMedicalHistory rdf:type owl:ObjectProperty ;
                     
-                    rdfs:range :PastMedicalHistory ;
+                    schema:rangeIncludes :PastMedicalHistory ;
                     
-                    rdfs:domain :Patient .
+                    schema:domainIncludes :Patient .
 
 
 
@@ -1394,13 +1182,9 @@ skos:definition rdf:type owl:AnnotationProperty .
                  
                  skos:definition " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
                  
-                 schema:domainIncludes schema:Person ;
+                 schema:domainIncludes schema:Person, :Patient  ;
                  
-                 schema:rangeIncludes <http://snomed.info/160476009> ;
-                 
-                 rdfs:domain :Patient ;
-                 
-                 rdfs:range :PersonalHistory .
+                 schema:rangeIncludes :PersonalHistory , <http://snomed.info/160476009>  .
 
 
 
@@ -1410,17 +1194,13 @@ skos:definition rdf:type owl:AnnotationProperty .
                   
                   schema:rangeIncludes "schema:PhysicalActivity" ;
                   
-                  rdfs:domain :Patient .
+                  schema:domainIncludes :Patient .
 
 
 
 ###  http://www.example.org/medicalEntity#playsRole
 
-:playsRole rdf:type owl:ObjectProperty ;
-           
-           schema:domainIncludes rdfs:Resource ;
-           
-           schema:rangeIncludes rdfs:Resource .
+:playsRole rdf:type owl:ObjectProperty .
 
 
 
@@ -1428,11 +1208,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :position rdf:type owl:ObjectProperty ;
           
-          skos:definition "Specifying a position of something in given space. e.g. standing position, sitting position etc."@en ;
-          
-          schema:rangeIncludes rdfs:Resource ;
-          
-          schema:domainIncludes rdfs:Resource .
+          skos:definition "Specifying a position of something in given space. e.g. standing position, sitting position etc."@en .
 
 
 
@@ -1440,11 +1216,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :possibleCause rdf:type owl:ObjectProperty ;
                
-               skos:definition "Specifying a possible cause of something" ;
-               
-               schema:rangeIncludes rdfs:Resource ;
-               
-               schema:domainIncludes rdfs:Resource .
+               skos:definition "Specifying a possible cause of something" .
 
 
 
@@ -1456,9 +1228,9 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            skos:definition "Gravidity refers to the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth." ;
            
-           rdfs:range :Gravidity ;
+           schema:rangeIncludes :Gravidity ;
            
-           rdfs:domain :Patient .
+           schema:domainIncludes :Patient .
 
 
 
@@ -1468,9 +1240,7 @@ skos:definition rdf:type owl:AnnotationProperty .
               
               skos:definition "Specifying a medical order (=written prescription)."@en ;
               
-              schema:rangeIncludes <http://snomed.info/440545006> ;
-              
-              schema:domainIncludes rdfs:Resource .
+              schema:rangeIncludes <http://snomed.info/440545006> .
 
 
 
@@ -1480,19 +1250,13 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            skos:definition " specifying a procedure for the patient ."@en ;
            
-           schema:rangeIncludes <http://snomed.info/71388002> ;
-           
-           schema:domainIncludes rdfs:Resource .
+           schema:rangeIncludes <http://snomed.info/71388002> .
 
 
 
 ###  http://www.example.org/medicalEntity#procedureDate
 
-:procedureDate rdf:type owl:ObjectProperty ;
-               
-               schema:domainIncludes rdfs:Resource ;
-               
-               schema:rangeIncludes rdfs:Resource .
+:procedureDate rdf:type owl:ObjectProperty .
 
 
 
@@ -1500,21 +1264,13 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :procedureOf rdf:type owl:ObjectProperty ;
              
-             owl:inverseOf :procedure ;
-             
-             schema:domainIncludes rdfs:Resource ;
-             
-             schema:rangeIncludes rdfs:Resource .
+             owl:inverseOf :procedure .
 
 
 
 ###  http://www.example.org/medicalEntity#procedureProvider
 
-:procedureProvider rdf:type owl:ObjectProperty ;
-                   
-                   schema:rangeIncludes rdfs:Resource ;
-                   
-                   schema:domainIncludes rdfs:Resource .
+:procedureProvider rdf:type owl:ObjectProperty .
 
 
 
@@ -1522,11 +1278,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :prodecureType rdf:type owl:ObjectProperty ;
                
-               schema:domainIncludes :MedicalProcedure ;
-               
-               schema:rangeIncludes rdfs:Resource ;
-               
-               schema:domainIncludes rdfs:Resource .
+               schema:domainIncludes :MedicalProcedure .
 
 
 
@@ -1537,9 +1289,7 @@ skos:definition rdf:type owl:AnnotationProperty .
           skos:definition "Specifying a provider of something: a service or a procedure ."@en ;
           
           schema:rangeIncludes schema:Organization ,
-                               schema:Person ;
-          
-          schema:domainIncludes rdfs:Resource .
+                               schema:Person .
 
 
 
@@ -1547,11 +1297,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :providerOf rdf:type owl:ObjectProperty ;
             
-            owl:inverseOf :provider ;
-            
-            schema:rangeIncludes rdfs:Resource ;
-            
-            schema:domainIncludes rdfs:Resource .
+            owl:inverseOf :provider .
 
 
 
@@ -1559,11 +1305,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :quantity rdf:type owl:ObjectProperty ;
           
-          skos:definition "Specifying the number of something."@en ;
-          
-          schema:domainIncludes rdfs:Resource ;
-          
-          schema:rangeIncludes rdfs:Resource .
+          skos:definition "Specifying the number of something."@en .
 
 
 
@@ -1571,13 +1313,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :raceOrigin rdf:type owl:ObjectProperty ;
             
-            skos:definition "Specifying a race group or antropological family as origin of the person."@en ;
+            skos:definition "Specifying a race group or anthropological family as origin of the person."@en ;
             
-            schema:domainIncludes schema:Person ;
-            
-            schema:rangeIncludes rdfs:Resource ;
-            
-            schema:domainIncludes rdfs:Resource .
+            schema:domainIncludes schema:Person .
 
 
 
@@ -1587,11 +1325,7 @@ skos:definition rdf:type owl:AnnotationProperty .
         
         rdfs:comment "Typically used together with common:hasDenominator like for formalization of pattern 4 out of xxx"@en ;
         
-        skos:definition "rank order number of something."@en ;
-        
-        schema:rangeIncludes rdfs:Resource ;
-        
-        schema:domainIncludes rdfs:Resource .
+        skos:definition "rank order number of something."@en .
 
 
 
@@ -1599,9 +1333,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :recreationalHistory rdf:type owl:ObjectProperty ;
                      
-                     rdfs:domain :Patient ;
+                     schema:domainIncludes :Patient ;
                      
-                     rdfs:range :RecreationalHistory .
+                     schema:rangeIncludes :RecreationalHistory .
 
 
 
@@ -1623,9 +1357,9 @@ skos:definition rdf:type owl:AnnotationProperty .
           
           skos:definition "Specifying someone who is a relative of someone else"@en ;
           
-          schema:rangeIncludes foaf:Person ;
+          schema:domainIncludes schema:Person ;
           
-          schema:domainIncludes foaf:Person .
+          schema:rangeIncludes schema:Person .
 
 
 
@@ -1635,13 +1369,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                skos:definition "Specifying a religion or religious beliefs of person."@en ;
                
-               schema:domainIncludes schema:Person ;
+               schema:domainIncludes schema:Person ,
+                                     :Patient ;
                
-               rdfs:domain :Patient ;
-               
-               rdfs:range :ReligionGroup ;
-               
-               schema:rangeIncludes rdfs:Resource .
+               schema:rangeIncludes :ReligionGroup .
 
 
 
@@ -1649,9 +1380,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :religiousBelief rdf:type owl:ObjectProperty ;
                  
-                 rdfs:domain :Patient ;
+                 schema:domainIncludes :Patient ;
                  
-                 rdfs:range :ReligiousBelief .
+                 schema:rangeIncludes :ReligiousBelief .
 
 
 
@@ -1672,9 +1403,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :residenceHistory rdf:type owl:ObjectProperty ;
                   
-                  rdfs:domain :Patient ;
+                  schema:domainIncludes :Patient ;
                   
-                  rdfs:range :ResidenceHistory .
+                  schema:rangeIncludes :ResidenceHistory .
 
 
 
@@ -1682,11 +1413,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :residentialStatus rdf:type owl:ObjectProperty ;
                    
-                   skos:definition "Specifying the act of dwelling in a place. This status is linked to an address and periode of the time"@en ;
-                   
-                   schema:domainIncludes rdfs:Resource ;
-                   
-                   schema:rangeIncludes rdfs:Resource .
+                   skos:definition "Specifying the act of dwelling in a place. This status is linked to an address and periode of the time"@en .
 
 
 
@@ -1702,9 +1429,7 @@ skos:definition rdf:type owl:AnnotationProperty .
           
           skos:definition "Specifying a severity evaluation of a disease: typically by classification resource or ranking scale: mild, moderate, severe, life threatening or fatal"@en ;
           
-          schema:domainIncludes schema:MedicalCondition ;
-          
-          schema:rangeIncludes rdfs:Resource .
+          schema:domainIncludes schema:MedicalCondition .
 
 
 
@@ -1712,9 +1437,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :sexualBehaviour rdf:type owl:ObjectProperty ;
                  
-                 rdfs:domain :Patient ;
+                 schema:domainIncludes :Patient ;
                  
-                 rdfs:range :SexualBehaviour .
+                 schema:rangeIncludes :SexualBehaviour .
 
 
 
@@ -1728,10 +1453,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :sideEffect rdf:type owl:ObjectProperty ;
             
-            schema:domainIncludes :TherapeuticProcedure ,
-                                  rdfs:Resource ;
-            
-            schema:rangeIncludes rdfs:Resource .
+            schema:domainIncludes :TherapeuticProcedure .
 
 
 
@@ -1739,10 +1461,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :signOrSymptomOf rdf:type owl:ObjectProperty ;
                  
-                 schema:domainIncludes :SignOrSymptom ,
-                                       rdfs:Resource ;
-                 
-                 schema:rangeIncludes rdfs:Resource .
+                 schema:domainIncludes :SignOrSymptom .
 
 
 
@@ -1750,9 +1469,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :smoking rdf:type owl:ObjectProperty ;
          
-         rdfs:domain :Patient ;
+         schema:domainIncludes :Patient ;
          
-         rdfs:range :Smoking .
+         schema:rangeIncludes :Smoking .
 
 
 
@@ -1760,9 +1479,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :socialHistory rdf:type owl:ObjectProperty ;
                
-               rdfs:domain :Patient ;
+               schema:domainIncludes :Patient ;
                
-               rdfs:range :SocialHistory .
+               schema:rangeIncludes :SocialHistory .
 
 
 
@@ -1770,9 +1489,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :spouse rdf:type owl:ObjectProperty ;
         
-        schema:domainIncludes rdfs:Resource ;
-        
-        schema:rangeIncludes rdfs:Resource .
+        schema:domainIncludes rdfs:Resource .
 
 
 
@@ -1782,11 +1499,7 @@ skos:definition rdf:type owl:AnnotationProperty .
        
        rdfs:label "has stage"@en ;
        
-       skos:definition "Specifying the stage of a process in general like stage of illness, etc."@en ;
-       
-       schema:rangeIncludes rdfs:Resource ;
-       
-       schema:domainIncludes rdfs:Resource .
+       skos:definition "Specifying the stage of a process in general like stage of illness, etc."@en .
 
 
 
@@ -1796,11 +1509,7 @@ skos:definition rdf:type owl:AnnotationProperty .
         
         rdfs:label "has status"@en ;
         
-        skos:definition "Specifying the confirmation status in general of something."@en ;
-        
-        schema:rangeIncludes rdfs:Resource ;
-        
-        schema:domainIncludes rdfs:Resource .
+        skos:definition "Specifying the confirmation status in general of something."@en .
 
 
 
@@ -1808,9 +1517,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :substanceUseOrAbuse rdf:type owl:ObjectProperty ;
                      
-                     rdfs:domain :Patient ;
+                     schema:domainIncludes :Patient ;
                      
-                     rdfs:range :SubstanceUseOrAbuse .
+                     schema:rangeIncludes :SubstanceUseOrAbuse .
 
 
 
@@ -1818,9 +1527,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :suspectedCause rdf:type owl:ObjectProperty ;
                 
-                schema:rangeIncludes :Allergen ;
-                
-                schema:domainIncludes rdfs:Resource .
+                schema:rangeIncludes :Allergen .
 
 
 
@@ -1828,10 +1535,10 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :systemicReview rdf:type owl:ObjectProperty ;
                 
-                rdfs:domain :Patient ,
-                            :Record ;
+                schema:domainIncludes :Patient ,
+                                      :Record ;
                 
-                rdfs:range :SystemicReview .
+                schema:rangeIncludes :SystemicReview .
 
 
 
@@ -1839,11 +1546,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :systolicBloodPressure rdf:type owl:ObjectProperty ;
                        
-                       skos:definition "Specifying  systolic arterial blood pressure of a patient."@en ;
-                       
-                       schema:domainIncludes rdfs:Resource ;
-                       
-                       schema:rangeIncludes rdfs:Resource .
+                       skos:definition "Specifying  systolic arterial blood pressure of a patient."@en .
 
 
 
@@ -1851,11 +1554,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :therapeuticProcedure rdf:type owl:ObjectProperty ;
                       
-                      schema:rangeIncludes :TherapeuticProcedure ;
-                      
-                      schema:domainIncludes rdfs:Resource ;
-                      
-                      schema:rangeIncludes rdfs:Resource .
+                      schema:rangeIncludes :TherapeuticProcedure .
 
 
 
@@ -1875,9 +1574,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :transfer rdf:type owl:ObjectProperty ;
           
-          rdfs:domain :Patient ;
+          schema:domainIncludes :Patient ;
           
-          rdfs:range :TransferProcedure .
+          schema:rangeIncludes :TransferProcedure .
 
 
 
@@ -1885,7 +1584,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :treatedWith rdf:type owl:ObjectProperty ;
              
-             skos:definition "Specifying a treatment or managment or therapeutic procedures for a disorder"@en ;
+             skos:definition "Specifying a treatment or management or therapeutic procedures for a disorder"@en ;
              
              schema:domainIncludes schema:Person ;
              
@@ -1899,7 +1598,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :triage rdf:type owl:ObjectProperty ;
         
-        rdfs:range :Triage .
+        schema:rangeIncludes :Triage .
 
 
 
@@ -1909,9 +1608,9 @@ skos:definition rdf:type owl:AnnotationProperty .
              
              skos:definition "The sorting of patients (as in an emergency room) according to the urgency of their need for care normally evaluated on scale or coding system" ;
              
-             rdfs:domain :Patient ;
+             schema:domainIncludes :Patient ;
              
-             rdfs:range :TriageScore .
+             schema:rangeIncludes :TriageScore .
 
 
 
@@ -1919,9 +1618,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :vaccination rdf:type owl:ObjectProperty ;
              
-             rdfs:domain :Patient ;
+             schema:domainIncludes :Patient ;
              
-             rdfs:range :Vaccination .
+             schema:rangeIncludes :Vaccination .
 
 
 
@@ -1931,9 +1630,9 @@ skos:definition rdf:type owl:AnnotationProperty .
                                   
                                   rdfs:comment " The voluntary induced abortion of a normal human pregnancy. Note that when an abortion occurs spontaneously is called a miscarriage" ;
                                   
-                                  rdfs:domain :Patient ;
+                                  schema:domainIncludes :Patient ;
                                   
-                                  rdfs:range :VoluntaryInterruptionOfPregnancy .
+                                  schema:rangeIncludes :VoluntaryInterruptionOfPregnancy .
 
 
 
@@ -1950,7 +1649,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :abortions rdf:type owl:DatatypeProperty ;
            
-           skos:definition "Specifying the number of obortion for a given patient woman" .
+           skos:definition "Specifying the number of abortion for a given patient woman" .
 
 
 
@@ -1958,9 +1657,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :admissionDate rdf:type owl:DatatypeProperty ;
                
-               schema:rangeIncludes ""^^xsd:dateTime ;
-               
-               schema:domainIncludes rdfs:Resource .
+               schema:rangeIncludes ""^^xsd:dateTime .
 
 
 
@@ -1972,25 +1669,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#birthHeight
 
-:birthHeight rdf:type owl:DatatypeProperty ;
-             
-             schema:domainIncludes rdfs:Resource .
+:birthHeight rdf:type owl:DatatypeProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#birthPercentile
 
-:birthPercentile rdf:type owl:DatatypeProperty ;
-                 
-                 schema:domainIncludes rdfs:Resource .
+:birthPercentile rdf:type owl:DatatypeProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#birthWeight
 
 :birthWeight rdf:type owl:DatatypeProperty ;
-             
-             schema:domainIncludes rdfs:Resource ;
              
              rdfs:subPropertyOf owl:topDataProperty .
 
@@ -2004,19 +1695,13 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#bodyVolumeIndex
 
-:bodyVolumeIndex rdf:type owl:DatatypeProperty ;
-                 
-                 schema:domainIncludes rdfs:Resource .
+:bodyVolumeIndex rdf:type owl:DatatypeProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#deathDate
 
-:deathDate rdf:type owl:DatatypeProperty ;
-           
-           schema:domainIncludes rdfs:Resource ;
-           
-           rdfs:subPropertyOf owl:topDataProperty .
+:deathDate rdf:type owl:DatatypeProperty .
 
 
 
@@ -2028,9 +1713,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#dischargeDate
 
-:dischargeDate rdf:type owl:DatatypeProperty ;
-               
-               schema:domainIncludes rdfs:Resource .
+:dischargeDate rdf:type owl:DatatypeProperty .
 
 
 
@@ -2038,9 +1721,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :firstDayOfLastMenstruation rdf:type owl:DatatypeProperty ;
                             
-                            rdfs:range xsd:anyURI ,
-                                       xsd:dateTime ,
-                                       xsd:dateTimeStamp .
+                            schema:rangeIncludes xsd:anyURI ,
+                                                 xsd:dateTime ,
+                                                 xsd:dateTimeStamp .
 
 
 
@@ -2050,15 +1733,13 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            skos:definition "Specifying the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth." ;
            
-           rdfs:range xsd:positiveInteger .
+           schema:rangeIncludes xsd:positiveInteger .
 
 
 
 ###  http://www.example.org/medicalEntity#hipCircumference
 
-:hipCircumference rdf:type owl:DatatypeProperty ;
-                  
-                  schema:domainIncludes rdfs:Resource .
+:hipCircumference rdf:type owl:DatatypeProperty .
 
 
 
@@ -2066,11 +1747,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :refills rdf:type owl:DatatypeProperty ;
          
-         skos:definition "Specifying the history or plan of refills that can be done before a new prescription is needed, related to a given prescription."@en ;
-         
-         schema:domainIncludes rdfs:Resource ;
-         
-         schema:rangeIncludes rdfs:Resource .
+         skos:definition "Specifying the history or plan of refills that can be done before a new prescription is needed, related to a given prescription."@en .
 
 
 
@@ -2078,25 +1755,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :reportDate rdf:type owl:DatatypeProperty ;
             
-            schema:domainIncludes rdfs:Resource ;
-            
             schema:rangeIncludes xsd:dateTime .
 
 
 
 ###  http://www.example.org/medicalEntity#reportID
 
-:reportID rdf:type owl:DatatypeProperty ;
-          
-          schema:domainIncludes rdfs:Resource .
+:reportID rdf:type owl:DatatypeProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#reportRecorder
 
-:reportRecorder rdf:type owl:DatatypeProperty ;
-                
-                schema:domainIncludes rdfs:Resource .
+:reportRecorder rdf:type owl:DatatypeProperty .
 
 
 
@@ -2108,17 +1779,13 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#waistCircumference
 
-:waistCircumference rdf:type owl:DatatypeProperty ;
-                    
-                    schema:domainIncludes rdfs:Resource .
+:waistCircumference rdf:type owl:DatatypeProperty .
 
 
 
 ###  http://www.example.org/medicalEntity#waistHipRatio
 
-:waistHipRatio rdf:type owl:DatatypeProperty ;
-               
-               schema:domainIncludes rdfs:Resource .
+:waistHipRatio rdf:type owl:DatatypeProperty .
 
 
 
@@ -2271,7 +1938,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :AdmissionProcedure rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :MedicalProcedure .
+                    rdfs:subClassOf :EncounterProcedure .
 
 
 
@@ -2585,7 +2252,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :DischargeProcedure rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :MedicalProcedure .
+                    rdfs:subClassOf :EncounterProcedure .
 
 
 
@@ -3491,15 +3158,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :TransferProcedure rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :MedicalProcedure .
-
-
-
-###  http://www.example.org/medicalEntity#Triage
-
-:Triage rdf:type owl:Class ;
-        
-        rdfs:subClassOf :MedicalProcedure .
+                   rdfs:subClassOf :EncounterProcedure .
 
 
 
@@ -3508,6 +3167,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 :TriageComplain rdf:type owl:Class ;
                 
                 rdfs:subClassOf :MedicalCondition .
+
+
+
+###  http://www.example.org/medicalEntity#TriageProcedure
+
+:TriageProcedure rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :MedicalProcedure .
 
 
 
