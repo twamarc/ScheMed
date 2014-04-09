@@ -58,9 +58,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :aboutRelative rdf:type owl:ObjectProperty ;
                
-               skos:definition "Specifying someone who you are talking about"@en ;
+               skos:definition "Specifying a relative of another person or a person in the family where code comes from SNOMED CT or other resources"@en ;
                
-               schema:rangeIncludes schema:Person .
+               schema:rangeIncludes schema:Person ,
+                                    <http://snomed.info/116154003> ,
+                                    <http://snomed.info/125676002> ;
+               
+               schema:domainIncludes <http://snomed.info/125676002> ;
+               
+               schema:rangeIncludes <http://snomed.info/303071001> ;
+               
+               schema:domainIncludes <http://snomed.info/303071001> ;
+               
+               schema:rangeIncludes :Patient .
 
 
 
@@ -68,9 +78,17 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :administrativeProcedure rdf:type owl:ObjectProperty ;
                          
-                         skos:definition "Specifying an administrative procedure for a resource or patient"@en ;
+                         skos:definition "Specifying an administrative procedure related to a resource, activity, another procedure, or patient"@en ;
                          
-                         schema:rangeIncludes :AdministrativeProcedure .
+                         schema:domainIncludes schema:Event ,
+                                               schema:Person ,
+                                               <http://snomed.info/116154003> ,
+                                               <http://snomed.info/125676002> ;
+                         
+                         schema:rangeIncludes <http://snomed.info/14734007> ,
+                                              :AdministrativeProcedure ;
+                         
+                         schema:domainIncludes :Patient .
 
 
 
@@ -78,7 +96,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :admission rdf:type owl:ObjectProperty ;
            
-           schema:rangeIncludes :AdmissionProcedure ,
+           skos:definition "Specifying admission procedure related to a resource, activity, another procedure, or patient"@en ;
+           
+           schema:domainIncludes schema:Person ,
+                                 <http://snomed.info/116154003> ,
+                                 <http://snomed.info/125676002> ;
+           
+           schema:rangeIncludes <http://snomed.info/305056002> ,
+                                :AdmissionProcedure ,
                                 :MedicalProcedure ;
            
            schema:domainIncludes :Patient .
@@ -91,11 +116,20 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 skos:definition "Specifying a location or a place where the admission is taking place"@en ;
                 
-                schema:domainIncludes schema:Place ;
+                schema:domainIncludes schema:Person ;
+                
+                schema:rangeIncludes schema:Place ;
+                
+                schema:domainIncludes <http://snomed.info/116154003> ,
+                                      <http://snomed.info/125676002> ,
+                                      <http://snomed.info/305056002> ;
                 
                 schema:rangeIncludes :Department ,
-                                     :HealthFacility ,
-                                     :Unit .
+                                     :HealthFacility ;
+                
+                schema:domainIncludes :Patient ;
+                
+                schema:rangeIncludes :Unit .
 
 
 
@@ -103,19 +137,30 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :admissionProvider rdf:type owl:ObjectProperty ;
                    
-                   skos:definition "Specifying the provider related to the admission procedure"@en ;
-                   
-                   schema:rangeIncludes schema:Person ;
-                   
-                   schema:domainIncludes :MedicalProcedure .
-
+                   skos:definition "Specifying the provider related to the admission procedure"@en ;                   
+                   schema:rangeIncludes schema:Person,             
+									<http://snomed.info/223366009>,                 
+									:HealthcareProfessional ;
+                 
+					schema:domainIncludes schema:Person ,
+                                       <http://snomed.info/116154003> ,
+									   <http://snomed.info/305056002> ,
+                                       <http://snomed.info/125676002> ,
+                                       :Patient .
 
 
 ###  http://www.example.org/medicalEntity#admissionReason
 
 :admissionReason rdf:type owl:ObjectProperty ;
                  
-                 skos:definition "Specifying a reason why the patient is admitted"@en .
+                 skos:definition "Specifying a reason why the patient is admitted"@en ;
+                 
+                 schema:rangeIncludes schema:MedicalCondition ;
+                 
+                 schema:domainIncludes schema:Person ,
+                                       <http://snomed.info/116154003> ,
+                                       <http://snomed.info/125676002> ,
+                                       :Patient .
 
 
 
@@ -123,7 +168,14 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :adulthoodHistory rdf:type owl:ObjectProperty ;
                   
-                  schema:rangeIncludes :AdulthoodHistory ;
+                  skos:definition "Specifying an adulthood description of someone"@en ;
+                  
+                  schema:domainIncludes schema:Person ,
+                                        <http://snomed.info/116154003> ,
+                                        <http://snomed.info/125676002> ;
+                  
+                  schema:rangeIncludes <http://snomed.info/41847000> ,
+                                       :AdulthoodHistory ;
                   
                   schema:domainIncludes :Patient .
 
@@ -133,9 +185,18 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :adverseDrugEvent rdf:type owl:ObjectProperty ;
                   
-                  skos:definition "Specifying an adverse drug event- defined according World Health Organization"@en ;
+                  skos:definition "Specifying an adverse drug event- defined according World Health Organization standards"@en ;
                   
-                  schema:domainIncludes :TherapeuticProcedure .
+                  schema:rangeIncludes schema:Person ,
+                                       <http://snomed.info/116154003> ,
+                                       <http://snomed.info/125676002> ,
+                                       <http://snomed.info/277132007> ,
+                                       <http://snomed.info/410942007> ;
+                  
+                  schema:domainIncludes <http://snomed.info/62014003> ;
+                  
+                  schema:rangeIncludes :Patient ,
+                                       :TherapeuticProcedure .
 
 
 
@@ -143,45 +204,57 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :adverseEvent rdf:type owl:ObjectProperty ;
               
-              skos:definition "Specifying an adverse event- defined according World Health Organization"@en ;
-              
-              schema:domainIncludes :TherapeuticProcedure .
-
-
-
-###  http://www.example.org/medicalEntity#ageAtEvent
-
-:ageAtEvent rdf:type owl:ObjectProperty ;
-            
-            skos:definition "Specifying the age of the entity when an event occurred"@en .
-
-
-
+              skos:definition "Specifying an adverse event, in general sense - defined according World Health Organization standards"@en ;
+              schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient,
+									   <http://snomed.info/281647001> ;
+			  
+			schema:rangeIncludes schema:Person ,
+				   <http://snomed.info/116154003> ,
+				   <http://snomed.info/125676002> ,
+				   <http://snomed.info/277132007> ,
+					<http://snomed.info/410942007> ,
+                                   :Patient ,
+                                   :TherapeuticProcedure .
+								   
 ###  http://www.example.org/medicalEntity#alcoholIntake
 
 :alcoholIntake rdf:type owl:ObjectProperty ;
+               skos:definition "Specifying a alcohol intake of a person"@en ;
                
                schema:rangeIncludes :AlcoholIntake ;
-               
-               schema:domainIncludes :Patient .
 
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 ###  http://www.example.org/medicalEntity#allergen
 
 :allergen rdf:type owl:ObjectProperty ;
           
-          skos:definition "Specifying something that can cause an allergic reaction."@en .
+          skos:definition "Specifying something that can cause an allergic reaction."@en ;
 
+               
+          schema:rangeIncludes <http://snomed.info/90260006> ;
 
+		  schema:domainIncludes :Allergy, <http://snomed.info/473011001> , <http://snomed.info/421961002>  .
+		  
 
 ###  http://www.example.org/medicalEntity#allergy
 
 :allergy rdf:type owl:ObjectProperty ;
+         skos:definition "Specifying an allergic reaction, an hypersensitivity or disorder."@en ;
          
-         schema:rangeIncludes :Allergy ;
+         schema:rangeIncludes :Allergy, <http://snomed.info/473011001> , <http://snomed.info/421961002>  ;
          
-         schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -193,7 +266,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                     
                     schema:rangeIncludes :AnamnesisProcedure ;
                     
-                    schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -211,7 +287,10 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            schema:rangeIncludes :LifestyleOrHabits ;
            
-           schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -231,7 +310,10 @@ skos:definition rdf:type owl:AnnotationProperty .
             
             skos:definition "Specifying the place of birth for a person"@en ;
             
-            schema:domainIncludes schema:Person ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient ;
             
             schema:rangeIncludes <http://snomed.info/169812000> .
 
@@ -321,7 +403,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                   
                   schema:rangeIncludes :ChildhoodHistory ;
                   
-                  schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -376,7 +461,10 @@ skos:definition rdf:type owl:AnnotationProperty .
             
             skos:definition "Specifying the place of death for a person"@en ;
             
-            schema:domainIncludes schema:Person ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient;
             
             schema:rangeIncludes <http://snomed.info/169812000> .
 
@@ -431,8 +519,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#diagnosticProcedure
 
-:diagnosticProcedure rdf:type owl:ObjectProperty .
-
+:diagnosticProcedure rdf:type owl:ObjectProperty ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 ###  http://www.example.org/medicalEntity#diagnosticType
@@ -449,10 +540,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :diastolicBloodPressure rdf:type owl:ObjectProperty ;
                         
-                        skos:definition "Specifying a diastolic arterial blood pressure of a patient."@en ,
-                                        "Specifying the diastolic blood pressure of a patient."@en .
-
-
+                        skos:definition "Specifying a diastolic arterial blood pressure of a patient."@en ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 ###  http://www.example.org/medicalEntity#discharge
 
@@ -460,7 +552,10 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            schema:rangeIncludes :DischargeProcedure ;
            
-           schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -468,11 +563,17 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :dischargeProvider rdf:type owl:ObjectProperty ;
                    
+                   schema:rangeIncludes schema:Person ,
+                                        <http://snomed.info/223366009> ;
+                   
                    schema:domainIncludes :DischargeProcedure ;
                    
                    schema:rangeIncludes :HealthcareProfessional ;
                    
-                   schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -480,38 +581,37 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :dischargeReason rdf:type owl:ObjectProperty ;
                  
-                 schema:rangeIncludes :Death ;
+                 schema:rangeIncludes :Death,:TransferProcedure,:MedicalCondition  ;              
                  
-                 schema:domainIncludes :DischargeProcedure ;
+				schema:domainIncludes schema:Person , :DischargeProcedure,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
                  
-                 schema:rangeIncludes :MedicalCondition ;
-                 
-                 schema:domainIncludes :Patient ;
-                 
-                 schema:rangeIncludes :TransferProcedure .
 
 
 
 ###  http://www.example.org/medicalEntity#dischargeStatus
 
 :dischargeStatus rdf:type owl:ObjectProperty ;
-                 
-                 schema:domainIncludes :DischargeProcedure ,
-                                       :Patient .
 
-
+				schema:domainIncludes schema:Person , :DischargeProcedure ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 ###  http://www.example.org/medicalEntity#dischargedPlace
 
 :dischargedPlace rdf:type owl:ObjectProperty ;
                  
                  schema:rangeIncludes :Department ;
-                 
-                 schema:domainIncludes :DischargeProcedure ;
+				schema:domainIncludes schema:Person , :DischargeProcedure ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient ;
                  
                  schema:rangeIncludes :HealthFacility ;
-                 
-                 schema:domainIncludes :Patient ;
+                
                  
                  schema:rangeIncludes :Unit .
 
@@ -549,8 +649,10 @@ skos:definition rdf:type owl:AnnotationProperty .
              
              skos:definition "Specifying an event of taking cure medication, related to a medication periode"@en ;
              
-             schema:domainIncludes schema:Patient ,
-                                   schema:Person ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient ;
              
              schema:rangeIncludes <http://snomed.info/129019007> .
 
@@ -582,7 +684,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 schema:rangeIncludes :EducationLevel ;
                 
-                schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -591,8 +696,10 @@ skos:definition rdf:type owl:AnnotationProperty .
 :elderhoodHistory rdf:type owl:ObjectProperty ;
                   
                   schema:rangeIncludes :Elderhood ;
-                  
-                  schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -601,8 +708,10 @@ skos:definition rdf:type owl:AnnotationProperty .
 :encounter rdf:type owl:ObjectProperty ;
            
            skos:definition "Encounter describes an encounter between the patient and a healthcare provider."@en ;
-           
-           schema:domainIncludes schema:Person ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient ;
            
            schema:rangeIncludes <http://snomed.info/308335008> .
 
@@ -622,7 +731,12 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :encounterProvider rdf:type owl:ObjectProperty ;
                    
-                   schema:domainIncludes :EncounterProcedure .
+                   schema:rangeIncludes schema:Person ,
+                                        <http://snomed.info/223366009> ;
+                   
+                   schema:domainIncludes :EncounterProcedure ;
+                   
+                   schema:rangeIncludes :HealthcareProfessional .
 
 
 
@@ -650,7 +764,10 @@ skos:definition rdf:type owl:AnnotationProperty .
            
            schema:rangeIncludes :Ethnicity ;
            
-           schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -670,9 +787,12 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :examination rdf:type owl:ObjectProperty ;
              
-             skos:definition "Specifying an examination procedure, action or activity of something or a patient."@en .
+             skos:definition "Specifying an examination procedure, action or activity of something or a patient."@en ;
 
-
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 ###  http://www.example.org/medicalEntity#examinationOf
 
@@ -694,7 +814,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                skos:definition " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
                
-               schema:domainIncludes schema:Person ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient ;
                
                schema:rangeIncludes <http://snomed.info/57177007> .
 
@@ -702,15 +825,21 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#familyMember
 
-:familyMember rdf:type owl:ObjectProperty .
-
+:familyMember rdf:type owl:ObjectProperty ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 ###  http://www.example.org/medicalEntity#father
 
-:father rdf:type owl:ObjectProperty .
+:father rdf:type owl:ObjectProperty ;
 
-
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 ###  http://www.example.org/medicalEntity#finding
 
@@ -720,7 +849,10 @@ skos:definition rdf:type owl:AnnotationProperty .
          
          skos:definition "Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc"@en ;
          
-         schema:domainIncludes <http://snomed.info/116154003> ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient ;
          
          schema:rangeIncludes <http://snomed.info/404684003> .
 
@@ -753,7 +885,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                       
                       schema:rangeIncludes :GynecObstetricHistory ;
                       
-                      schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -801,7 +936,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                          
                          schema:rangeIncludes :HistoryOfPresentIllness ;
                          
-                         schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -875,7 +1013,10 @@ skos:definition rdf:type owl:AnnotationProperty .
          
          schema:rangeIncludes <http://purl.bioontology.org/ontology/MESH/D005195> ;
          
-         schema:domainIncludes schema:Person .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -898,8 +1039,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                         skos:definition "Specifying the last menstruation period of a patient" ;
                         
                         schema:rangeIncludes :Menstruation ;
-                        
-                        schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -909,7 +1052,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                    
                    schema:rangeIncludes :LifestyleOrHabits ;
                    
-                   schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -921,7 +1067,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                skos:definition "Specifying an agent having the social and/or juridical status of being married or unmarried. "@en ;
                
-               schema:domainIncludes schema:Person ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient ;
                
                schema:rangeIncludes <http://snomed.info/365581002> .
 
@@ -929,9 +1078,12 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#maternalRelatives
 
-:maternalRelatives rdf:type owl:ObjectProperty .
+:maternalRelatives rdf:type owl:ObjectProperty ;
 
-
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 ###  http://www.example.org/medicalEntity#medicalCase
 
@@ -939,9 +1091,12 @@ skos:definition rdf:type owl:AnnotationProperty .
              
              skos:definition "Specifying a medical case for a given medical entity or patient. A medical case is a sub-entity of a full medical record of a patient."@en ;
              
-             schema:rangeIncludes schema:MedicalEntity .
+             schema:rangeIncludes schema:MedicalEntity ;
 
-
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 ###  http://www.example.org/medicalEntity#medicalCondition
 
@@ -949,8 +1104,11 @@ skos:definition rdf:type owl:AnnotationProperty .
                   
                   skos:definition "Specifying a medical condition in general diagnosed or not."@en ;
                   
-                  schema:rangeIncludes schema:MedicalCondition .
-
+                  schema:rangeIncludes schema:MedicalCondition ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient. 
 
 
 ###  http://www.example.org/medicalEntity#medicalHistory
@@ -959,7 +1117,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 schema:rangeIncludes :MedicalHistory ;
                 
-                schema:domainIncludes :Patient .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -970,7 +1131,10 @@ skos:definition rdf:type owl:AnnotationProperty .
                   schema:rangeIncludes :MedicalProcedure ,
                                        rdfs:Resource ;
                   
-                  schema:domainIncludes rdfs:Resource .
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 
@@ -980,14 +1144,20 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                skos:definition "Specifying a medical record for a given medical entity or patient. A medical record is a summ of all medical cases of a patient."@en ;
                
-               schema:rangeIncludes schema:MedicalEntity .
-
+               schema:rangeIncludes schema:MedicalEntity ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 ###  http://www.example.org/medicalEntity#medicationProcedure
 
-:medicationProcedure rdf:type owl:ObjectProperty .
-
+:medicationProcedure rdf:type owl:ObjectProperty ;
+				schema:domainIncludes schema:Person ,
+									   <http://snomed.info/116154003> ,
+									   <http://snomed.info/125676002> ,
+									   :Patient .
 
 
 ###  http://www.example.org/medicalEntity#menopause
@@ -1182,9 +1352,13 @@ skos:definition rdf:type owl:AnnotationProperty .
                  
                  skos:definition " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
                  
-                 schema:domainIncludes schema:Person, :Patient  ;
+                 schema:domainIncludes schema:Person ;
                  
-                 schema:rangeIncludes :PersonalHistory , <http://snomed.info/160476009>  .
+                 schema:rangeIncludes <http://snomed.info/160476009> ;
+                 
+                 schema:domainIncludes :Patient ;
+                 
+                 schema:rangeIncludes :PersonalHistory .
 
 
 
@@ -1270,7 +1444,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.example.org/medicalEntity#procedureProvider
 
-:procedureProvider rdf:type owl:ObjectProperty .
+:procedureProvider rdf:type owl:ObjectProperty ;
+                   
+                   schema:rangeIncludes schema:Person ,
+                                        <http://snomed.info/223366009> ,
+                                        :HealthcareProfessional .
 
 
 
@@ -1288,8 +1466,9 @@ skos:definition rdf:type owl:AnnotationProperty .
           
           skos:definition "Specifying a provider of something: a service or a procedure ."@en ;
           
-          schema:rangeIncludes schema:Organization ,
-                               schema:Person .
+          schema:rangeIncludes schema:Person ,
+                               <http://snomed.info/223366009> ,
+                               :HealthcareProfessional .
 
 
 
@@ -1649,7 +1828,9 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 :abortions rdf:type owl:DatatypeProperty ;
            
-           skos:definition "Specifying the number of abortion for a given patient woman" .
+           skos:definition "Specifying the number of abortion for a given patient woman" ;
+           
+           rdfs:range xsd:integer .
 
 
 
@@ -1658,6 +1839,16 @@ skos:definition rdf:type owl:AnnotationProperty .
 :admissionDate rdf:type owl:DatatypeProperty ;
                
                schema:rangeIncludes ""^^xsd:dateTime .
+
+
+
+###  http://www.example.org/medicalEntity#ageAtEvent
+
+:ageAtEvent rdf:type owl:DatatypeProperty ;
+            
+            skos:definition "Specifying the age of the entity when an event occurred" ;
+            
+            rdfs:range xsd:decimal .
 
 
 
