@@ -1445,8 +1445,6 @@ skos:definition rdf:type owl:AnnotationProperty .
                                  <http://snomed.info/363787002> ,
                                  :Patient .
 
-
-
 ###  http://www.example.org/medicalEntity#occupationalHistory
 
 :occupationalHistory rdf:type owl:ObjectProperty ;
@@ -1454,7 +1452,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                      schema:domainIncludes schema:Person ,
                                            <http://snomed.info/116154003> ,
                                            <http://snomed.info/125676002> ,
-										   schema:domainIncludes :Patient;
+										   :Patient;
                      
                      schema:rangeIncludes :OccupationalHistory.
 
