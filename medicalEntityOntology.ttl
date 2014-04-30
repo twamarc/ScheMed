@@ -2780,13 +2780,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
-###  http://www.example.org/medicalEntity#AdmissionProcedure
+###  http://www.example.org/medicalEntity#Admission
 
-:AdmissionProcedure rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :EncounterProcedure ;
-                    
-                    rdfs:comment "Procedure consisting in taking a patient into a health care environment" .
+:Admission rdf:type owl:Class ;
+           
+           rdfs:subClassOf :EncounterProcedure ;
+           
+           rdfs:comment "Procedure consisting in taking a patient into a health care environment" .
 
 
 
@@ -2848,7 +2848,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :Allergy rdf:type owl:Class ;
          
-         rdfs:label "allergy" ;
+         rdfs:label "Allergy" ;
          
          rdfs:subClassOf :MedicalCondition ;
          
@@ -2950,7 +2950,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
             
             rdfs:label "APGAR Score" ;
             
-            rdfs:subClassOf :MedicalEntity ;
+            rdfs:subClassOf :MedicalScore ;
             
             rdfs:comment "A scoring method to quickly and summarily assess the health of newborn children immediately after birth." .
 
@@ -2976,7 +2976,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :Birth rdf:type owl:Class ;
        
-       rdfs:subClassOf :MedicalEntity ;
+       rdfs:subClassOf :LifeEvent ;
        
        rdfs:comment "The event, act or process of bearing or bringing forth offspring" ,
                     "Birth" .
@@ -3029,17 +3029,9 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
              
              rdfs:label "caring event" ;
              
-             rdfs:subClassOf :MedicalEntity ;
+             rdfs:subClassOf :LifeEvent ;
              
              rdfs:comment "Commonly regarded as 'episode of care, the caring event refers to any event of the prevention, treatment, and management of illness and the preservation of mental and physical well-being through the services offered by the medical and allied health professions." .
-
-
-
-###  http://www.example.org/medicalEntity#CheckUpProcedure
-
-:CheckUpProcedure rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf :RoutineProcedure .
 
 
 
@@ -3179,7 +3171,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
        
        rdfs:label "death" ;
        
-       rdfs:subClassOf :MedicalEntity ;
+       rdfs:subClassOf :LifeEvent ;
        
        rdfs:comment "Death is the cessation of all biological functions that sustain a living organism. " .
 
@@ -3239,13 +3231,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
-###  http://www.example.org/medicalEntity#DischargeProcedure
+###  http://www.example.org/medicalEntity#Discharge
 
-:DischargeProcedure rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf :EncounterProcedure ;
-                    
-                    rdfs:comment "Procedure consisting in taking a patient out of a health care environment" .
+:Discharge rdf:type owl:Class ;
+           
+           rdfs:subClassOf :EncounterProcedure ;
+           
+           rdfs:comment "Procedure consisting in taking a patient out of a health care environment" .
 
 
 
@@ -3283,7 +3275,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
      
      rdfs:label "Electronic Health Record" ;
      
-     rdfs:subClassOf :HealthOrMedicalRecord ;
+     rdfs:subClassOf :RecordArtifact ;
      
      rdfs:comment "The Electronic Health Record (EHR) is an electronic record of health-related information on an individual that conforms to nationally recognized interoperability standards and that can be created, managed, and consulted by authorized clinicians and staff across more than one health care organization.US NAHIT" .
 
@@ -3295,7 +3287,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
      
      rdfs:label "Electronic Medical Record" ;
      
-     rdfs:subClassOf :HealthOrMedicalRecord ;
+     rdfs:subClassOf :RecordArtifact ;
      
      rdfs:comment "An Electronic Medical Record (EMR) is an electronic record of health-related information on an individual that can be created, gathered, managed, and consulted by authorized clinicians and staff within one health care organization. Source: US NAHIT" .
 
@@ -3345,7 +3337,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :EncounterProcedure rdf:type owl:Class ;
                     
-                    rdfs:subClassOf :MedicalProcedure ;
+                    rdfs:subClassOf :AdministrativeProcedure ;
                     
                     rdfs:comment "An interaction between a patient and healthcare participant(s) for the purpose of providing patient service(s) or assessing the health status of a patient." .
 
@@ -3355,7 +3347,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :EncounterStay rdf:type owl:Class ;
                
-               rdfs:subClassOf :AnatomicalStructure ;
+               rdfs:subClassOf :EncounterProcedure ;
                
                rdfs:comment "Procedure consisting in taking a patient into a health care environment as inpatient (hospitalization)" .
 
@@ -3418,14 +3410,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                rdfs:subClassOf :MedicalHistory ;
                
                rdfs:comment "In medicine, as a part of medical history, the family history consists of information about disorders from which the direct blood relatives of the patient have suffered." .
-
-
-
-###  http://www.example.org/medicalEntity#FollowUpProcedure
-
-:FollowUpProcedure rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :RoutineProcedure .
 
 
 
@@ -3498,18 +3482,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                 rdfs:subClassOf :MedicalEntity ;
                 
                 rdfs:comment "A medical facility is, in general, any location where healthcare is provided or medicine is practiced regularly. " .
-
-
-
-###  http://www.example.org/medicalEntity#HealthOrMedicalRecord
-
-:HealthOrMedicalRecord rdf:type owl:Class ;
-                       
-                       rdfs:label "health or medical record" ;
-                       
-                       rdfs:subClassOf :MedicalEntity ;
-                       
-                       rdfs:comment "Any kind of patient related information record. This can be paper or digital" .
 
 
 
@@ -3697,6 +3669,18 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
+###  http://www.example.org/medicalEntity#LifeEvent
+
+:LifeEvent rdf:type owl:Class ;
+           
+           rdfs:label "Life event" ;
+           
+           rdfs:subClassOf :MedicalEntity ;
+           
+           rdfs:comment "Any event happening in person's life." .
+
+
+
 ###  http://www.example.org/medicalEntity#LifestyleOrHabits
 
 :LifestyleOrHabits rdf:type owl:Class ;
@@ -3836,6 +3820,18 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
+###  http://www.example.org/medicalEntity#MedicalScore
+
+:MedicalScore rdf:type owl:Class ;
+              
+              rdfs:label "Medical score" ;
+              
+              rdfs:subClassOf :MedicalEntity ;
+              
+              rdfs:comment "The number of points achieved by a individual through a systematic evaluation." .
+
+
+
 ###  http://www.example.org/medicalEntity#MedicalSpecialty
 
 :MedicalSpecialty rdf:type owl:Class ;
@@ -3901,6 +3897,18 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 :Miscarriage rdf:type owl:Class ;
              
              rdfs:subClassOf :GynObsHistory .
+
+
+
+###  http://www.example.org/medicalEntity#MorbidityEvent
+
+:MorbidityEvent rdf:type owl:Class ;
+                
+                rdfs:label "Morbidity event" ;
+                
+                rdfs:subClassOf :LifeEvent ;
+                
+                owl:backwardCompatibleWith "The state of being  diseased or unhealthy for a person or within a population" .
 
 
 
@@ -3990,7 +3998,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
      
      rdfs:label "Personal Health Record" ;
      
-     rdfs:subClassOf :HealthOrMedicalRecord ;
+     rdfs:subClassOf :RecordArtifact ;
      
      rdfs:comment "The Personal Health Record (PHR) is an electronic record of health-related information on an individual that conforms to nationally recognized interoperability standards and that can be drawn from multiple sources while being managed, shared, and controlled by the individual.Source: US NAHIT" .
 
@@ -4160,6 +4168,18 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
+###  http://www.example.org/medicalEntity#RecordArtifact
+
+:RecordArtifact rdf:type owl:Class ;
+                
+                rdfs:label "health or medical record" ;
+                
+                rdfs:subClassOf :MedicalEntity ;
+                
+                rdfs:comment "Any kind of patient related information record. This can be paper or digital" .
+
+
+
 ###  http://www.example.org/medicalEntity#RecreationalHistory
 
 :RecreationalHistory rdf:type owl:Class ;
@@ -4231,14 +4251,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       rdfs:subClassOf :HealthFacility ;
       
       rdfs:comment "A room (as a physical space) in a hospital for the care of patients" .
-
-
-
-###  http://www.example.org/medicalEntity#RoutineProcedure
-
-:RoutineProcedure rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf :MedicalProcedure .
 
 
 
@@ -4398,13 +4410,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
-###  http://www.example.org/medicalEntity#TransferProcedure
+###  http://www.example.org/medicalEntity#Transfer
 
-:TransferProcedure rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf :EncounterProcedure ;
-                   
-                   rdfs:comment "Procedure consisting in tranfering a patient from a health care environment to another" .
+:Transfer rdf:type owl:Class ;
+          
+          rdfs:subClassOf :EncounterProcedure ;
+          
+          rdfs:comment "Procedure consisting in tranfering a patient from a health care environment to another" .
 
 
 
@@ -4424,7 +4436,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :TriageProcedure rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :MedicalProcedure .
+                 rdfs:subClassOf :AdministrativeProcedure .
 
 
 
@@ -4434,7 +4446,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
              
              rdfs:label "Triage score" ;
              
-             rdfs:subClassOf :MedicalEntity ;
+             rdfs:subClassOf :MedicalScore ;
              
              rdfs:comment "The score used sorting of patients (as in an emergency room) according to the urgency of their need for care normally evaluated on scale or coding system" .
 
