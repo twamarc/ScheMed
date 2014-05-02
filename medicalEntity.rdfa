@@ -22,11 +22,13 @@
     <hr />
     <div typeof="rdfs:Class" resource="http://schema.org/Abortion">
       <span class="h" property="rdfs:label">Abortion</span>
+      <span property="rdfs:comment">Abortion is the ending of pregnancy by the removal or expulsion from the uterus of a fetus or embryo before viability.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/GynObsHistory">GynObsHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Acupuncture">
       <span class="h" property="rdfs:label">Acupuncture</span>
+      <span property="rdfs:comment">A system of complementary medicine in which fine needles are inserted in the skin at specific points along what are considered to be lines of energy (meridians), used in the treatment of various physical and mental conditions.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
@@ -62,6 +64,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/AlcoholIntake">
       <span class="h" property="rdfs:label">AlcoholIntake</span>
+      <span property="rdfs:comment">The quantification or description of alcohol intake for the person</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/LifestyleOrHabits">LifestyleOrHabits</a></span>
     </div>
 
@@ -75,11 +78,6 @@
       <span class="h" property="rdfs:label">Allergy</span>
       <span property="rdfs:comment">An abnormal reaction of the body to a previously encountered allergen.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/AlternativeMedicineTherapy">
-      <span class="h" property="rdfs:label">AlternativeMedicineTherapy</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/AnamnesisProcedure">
@@ -120,6 +118,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Angiography">
       <span class="h" property="rdfs:label">Angiography</span>
+      <span property="rdfs:comment">Radiography of blood or lymph vessels, carried out after introduction of a radiopaque substance.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalImaging">MedicalImaging</a></span>
     </div>
 
@@ -131,11 +130,13 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/AxillaryTemperature">
       <span class="h" property="rdfs:label">AxillaryTemperature</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TemperatureExamination">TemperatureExamination</a></span>
+      <span property="rdfs:comment">Temperature of human body taken in axillary region</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BodyTemperature">BodyTemperature</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/BiologicalSubstance">
       <span class="h" property="rdfs:label">BiologicalSubstance</span>
+      <span property="rdfs:comment">Material produced by living organisms; it can be a necessary constituent of, or product of an organismal process</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Substance">Substance</a></span>
     </div>
 
@@ -153,26 +154,43 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/BloodPressure">
       <span class="h" property="rdfs:label">BloodPressure</span>
+      <span property="rdfs:comment">Blood pressure (BP), sometimes referred to as arterial blood pressure, is the pressure exerted by circulating blood upon the walls of blood vessels, and is one of the principal vital signs. </span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Vitalsign">Vitalsign</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/BodyMassIndex">
       <span class="h" property="rdfs:label">BodyMassIndex</span>
+      <span property="rdfs:comment">Also known as BMI, is measure of relative weight based on an individual's mass and height.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BodyMeasure">BodyMeasure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/BodyMeasure">
       <span class="h" property="rdfs:label">BodyMeasure</span>
+      <span property="rdfs:comment">Common method of specifying body sizes parameters</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/BodySubstance">
       <span class="h" property="rdfs:label">BodySubstance</span>
+      <span property="rdfs:comment">Body substance</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Substance">Substance</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/BodySubstance">
+      <span class="h" property="rdfs:label">BodySubstance</span>
+      <span property="rdfs:comment">The substance of the human body.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Substance">Substance</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/BodyTemperature">
+      <span class="h" property="rdfs:label">BodyTemperature</span>
+      <span property="rdfs:comment">Human body temperature is the temperature of person's body. </span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Vitalsign">Vitalsign</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/BodyVolumeIndex">
       <span class="h" property="rdfs:label">BodyVolumeIndex</span>
+      <span property="rdfs:comment">Measurement for obesity,  based at the relationship between mass and volume distribution</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BodyMeasure">BodyMeasure</a></span>
     </div>
 
@@ -190,16 +208,19 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/ChemicalSubstance">
       <span class="h" property="rdfs:label">ChemicalSubstance</span>
+      <span property="rdfs:comment">Substance produced by or used in a reaction involving changes in atoms or molecules</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Substance">Substance</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Chemotherapy">
       <span class="h" property="rdfs:label">Chemotherapy</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span property="rdfs:comment">The word chemotherapy means the use of any drug (such as aspirin or penicillin) to treat any disease, but to most people chemotherapy refers to drugs used for cancer treatment.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Pharmacotherapy">Pharmacotherapy</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/ChiefComplaintSymptom">
-      <span class="h" property="rdfs:label">ChiefComplaintSymptom</span>
+    <div typeof="rdfs:Class" resource="http://schema.org/ChiefComplaint">
+      <span class="h" property="rdfs:label">ChiefComplaint</span>
+      <span property="rdfs:comment">Also  termed Presenting Complaint, Reason for Encounter, Presenting Problem, Problem on admission or Reason for Presenting, refers the primary symptom that a patient states as the reason for seeking medical care.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Symptom">Symptom</a></span>
     </div>
 
@@ -215,33 +236,21 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/AnatomicalSystem">AnatomicalSystem</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Clinic">
-      <span class="h" property="rdfs:label">Clinic</span>
-      <span property="rdfs:comment">A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with medicin evolution it may be open to inpatients as well.
-</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/ClinicalCertificate">
-      <span class="h" property="rdfs:label">ClinicalCertificate</span>
-      <span property="rdfs:comment">Any certificate given to a person for healthcare purposes</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/ClinicalDocument">
       <span class="h" property="rdfs:label">ClinicalDocument</span>
       <span property="rdfs:comment">Any document used throughout healthcare to describe care provided to a patient, communicate essential information between healthcare providers and to maintain a patient medical record. </span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/ClinicalReport">
-      <span class="h" property="rdfs:label">ClinicalReport</span>
-      <span property="rdfs:comment">Any kind of report with patient information</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
+    <div typeof="rdfs:Class" resource="http://schema.org/ClinicalFinding">
+      <span class="h" property="rdfs:label">ClinicalFinding</span>
+      <span property="rdfs:comment">The result of a clinical observation, assessment or judgment, and include both normal and abnormal clinical states. Source: SNOMED</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/ComputedTomography">
       <span class="h" property="rdfs:label">ComputedTomography</span>
+      <span property="rdfs:comment">A method of examining body organs by scanning them with X rays and using a computer to construct a series of cross-sectional scans along a single axis</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalImaging">MedicalImaging</a></span>
     </div>
 
@@ -263,12 +272,6 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/LifeEvent">LifeEvent</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Department">
-      <span class="h" property="rdfs:label">Department</span>
-      <span property="rdfs:comment">A health ficility department. Typically named according the medical specialities. Eg. Internal medicine, Surgery, etc.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/Dermis">
       <span class="h" property="rdfs:label">Dermis</span>
       <span property="rdfs:comment">The dermis is the middle layer of skin, composed of dense irregular connective tissue and areolar connective tissue such as collagen with elastin arranged in a diffusely bundled and woven pattern.</span>
@@ -283,6 +286,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/DiagnosticProcedure">
       <span class="h" property="rdfs:label">DiagnosticProcedure</span>
+      <span property="rdfs:comment">A set of process performed to help diagnose a disease or condition</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
     </div>
 
@@ -312,12 +316,9 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/DrugOrMedicine">
       <span class="h" property="rdfs:label">DrugOrMedicine</span>
+      <span property="rdfs:comment">The term "drug" means any articles intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease in man or other animals.
+</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PharmaceuticalSubstance">PharmaceuticalSubstance</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/DrugTherapy">
-      <span class="h" property="rdfs:label">DrugTherapy</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/EHR">
@@ -350,11 +351,6 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Electrotherapy">
-      <span class="h" property="rdfs:label">Electrotherapy</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/EncounterProcedure">
       <span class="h" property="rdfs:label">EncounterProcedure</span>
       <span property="rdfs:comment">An interaction between a patient and healthcare participant(s) for the purpose of providing patient service(s) or assessing the health status of a patient.</span>
@@ -381,6 +377,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Endoscopy">
       <span class="h" property="rdfs:label">Endoscopy</span>
+      <span property="rdfs:comment">Visual examination of the interior of a hollow body organ by use of an endoscope</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalImaging">MedicalImaging</a></span>
     </div>
 
@@ -392,6 +389,13 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Episodicity">
       <span class="h" property="rdfs:label">Episodicity</span>
+      <span property="rdfs:comment">A quantification of a medical condition occurances.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QualifierConcept">QualifierConcept</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/Episodicity">
+      <span class="h" property="rdfs:label">Episodicity</span>
+      <span property="rdfs:comment">Episodicity</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QualifierConcept">QualifierConcept</a></span>
     </div>
 
@@ -415,12 +419,8 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/GeneTherapy">
       <span class="h" property="rdfs:label">GeneTherapy</span>
+      <span property="rdfs:comment">The introduction of normal genes into cells in place of missing or defective ones in order to correct genetic disorders.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/GeneralPractitioner">
-      <span class="h" property="rdfs:label">GeneralPractitioner</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthcareProvider">HealthcareProvider</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Gland">
@@ -431,6 +431,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Gravidity">
       <span class="h" property="rdfs:label">Gravidity</span>
+      <span property="rdfs:comment">Gravidity is defined as the number of times that a woman has been pregnant.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/GynObsHistory">GynObsHistory</a></span>
     </div>
 
@@ -449,13 +450,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/HealthcareProfessional">
       <span class="h" property="rdfs:label">HealthcareProfessional</span>
       <span property="rdfs:comment">Any person working in healthcare settings. This includes healthcare providers but also data reporters, and others</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/HealthcareProfessional">
-      <span class="h" property="rdfs:label">HealthcareProfessional</span>
-      <span property="rdfs:comment">healthcare professional</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/HealthcareProvider">
@@ -466,11 +461,13 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/HeartRate">
       <span class="h" property="rdfs:label">HeartRate</span>
+      <span property="rdfs:comment">In medicine, heart rate represents the heat beat frequency normally evaluated per minute. </span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Vitalsign">Vitalsign</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/HipCircumference">
       <span class="h" property="rdfs:label">HipCircumference</span>
+      <span property="rdfs:comment">A measurement of the hips, including the widest portion of the buttocks, used in conjunction with the waist circumference, body weight and percent body fat to calculate the body composition score.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BodyMeasure">BodyMeasure</a></span>
     </div>
 
@@ -486,13 +483,15 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysiologicalEntity">PhysiologicalEntity</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Hormonotherapy">
-      <span class="h" property="rdfs:label">Hormonotherapy</span>
+    <div typeof="rdfs:Class" resource="http://schema.org/Hormonetherapy">
+      <span class="h" property="rdfs:label">Hormonetherapy</span>
+      <span property="rdfs:comment">Hormone therapy or hormonal therapy is the use of hormones in medical treatment. </span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Hydrotherapy">
       <span class="h" property="rdfs:label">Hydrotherapy</span>
+      <span property="rdfs:comment">Hydrotherapy, or water therapy, is the use of water (hot, cold, steam, or ice) to relieve discomfort and promote physical well-being.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
@@ -508,15 +507,10 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/AnatomicalSystem">AnatomicalSystem</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Immunization">
-      <span class="h" property="rdfs:label">Immunization</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Immunotherapy">Immunotherapy</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/Immunotherapy">
       <span class="h" property="rdfs:label">Immunotherapy</span>
-      <span property="rdfs:comment">Immunotherapies designed to elicit or amplify an immune response are classified as activation immunotherapies, while immunotherapies that reduce or suppress are classified as suppression immunotherapies.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span property="rdfs:comment">The treatment of disease by inducing, enhancing, or suppressing an immune response.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Pharmacotherapy">Pharmacotherapy</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/IntegumentarySystem">
@@ -531,12 +525,6 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/InvasivenessType">InvasivenessType</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Invasive">
-      <span class="h" property="rdfs:label">Invasive</span>
-      <span property="rdfs:comment">invasive</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/InvasivenessType">InvasivenessType</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/InvasivenessType">
       <span class="h" property="rdfs:label">InvasivenessType</span>
       <span property="rdfs:comment">A cotegorization of invasiveness type of medical procedures.</span>
@@ -545,6 +533,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Kinesiotherapy">
       <span class="h" property="rdfs:label">Kinesiotherapy</span>
+      <span property="rdfs:comment">Also known as physical therapy or physiotherapy is a health care profession primarily concerned with the remediation of impairments and disabilities and the promotion of mobility, functional ability, quality of life and movement potential through examination, evaluation, diagnosis and physical intervention.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
@@ -557,17 +546,13 @@
     <div typeof="rdfs:Class" resource="http://schema.org/LaboratoryResult">
       <span class="h" property="rdfs:label">LaboratoryResult</span>
       <span property="rdfs:comment">Medical laboratory results resource</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/LaboratoryTest">
       <span class="h" property="rdfs:label">LaboratoryTest</span>
+      <span property="rdfs:comment">A quantitative or qualitative test of a substance to determine its components</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/DiagnosticProcedure">DiagnosticProcedure</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/LaserTherapy">
-      <span class="h" property="rdfs:label">LaserTherapy</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/LegalIssueHistory">
@@ -596,16 +581,19 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/MagneticResonanceImaging">
       <span class="h" property="rdfs:label">MagneticResonanceImaging</span>
+      <span property="rdfs:comment">Also known as MRI, is a technique for producing images of bodily organs by measuring the response of the atomic nuclei of body tissues to high-frequency radio waves when placed in a strong magnetic field.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalImaging">MedicalImaging</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MaritalStatus">
       <span class="h" property="rdfs:label">MaritalStatus</span>
+      <span property="rdfs:comment">One's situation with regard to whether one is single, married, separated, divorced, or widowed.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SocialHistory">SocialHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalAuscultation">
       <span class="h" property="rdfs:label">MedicalAuscultation</span>
+      <span property="rdfs:comment">The action of listening to sounds from the heart, lungs, or other organs, typically with a stethoscope, as a part of medical diagnosis.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
     </div>
 
@@ -615,22 +603,34 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/MedicalCase">
-      <span class="h" property="rdfs:label">MedicalCase</span>
-      <span property="rdfs:comment">Medical case</span>
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalCertificate">
+      <span class="h" property="rdfs:label">MedicalCertificate</span>
+      <span property="rdfs:comment">Any certificate given to a person for healthcare purposes</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalClinic">
+      <span class="h" property="rdfs:label">MedicalClinic</span>
+      <span property="rdfs:comment">A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.
+</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalCondition">
       <span class="h" property="rdfs:label">MedicalCondition</span>
       <span property="rdfs:comment">A medical condition is an abnormal condition that affects the body of an organism. It is often construed as a disease when associated with specific symptoms and signs. A medical condition is a broad term that includes all diseases and disorders.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalDepartment">
+      <span class="h" property="rdfs:label">MedicalDepartment</span>
+      <span property="rdfs:comment">A health ficility department. Typically named according the medical specialities. Eg. Internal medicine, Surgery, etc.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalEntity">
       <span class="h" property="rdfs:label">MedicalEntity</span>
       <span property="rdfs:comment">The most generic type of entity related to health and the practice of medicine.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Thing">Thing</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalHistory">
@@ -639,42 +639,58 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/AnamnesisProcedure">AnamnesisProcedure</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/MedicalHistory">
-      <span class="h" property="rdfs:label">MedicalHistory</span>
-      <span property="rdfs:comment">medical history</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/AnamnesisProcedure">AnamnesisProcedure</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalImaging">
       <span class="h" property="rdfs:label">MedicalImaging</span>
+      <span property="rdfs:comment">A process of capturing, storing, manipulating, and displaying of images for a medical use</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/DiagnosticProcedure">DiagnosticProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalInspection">
       <span class="h" property="rdfs:label">MedicalInspection</span>
+      <span property="rdfs:comment">The thorough and unhurried visualization of the patient that requires the use of the naked eye.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalIntervention">
       <span class="h" property="rdfs:label">MedicalIntervention</span>
-      <span property="rdfs:comment">Any examination, treatment, or other act having preventive, diagnostic, therapeutic or rehabilitative aims and which is carried out by a physician or other health care provider (Declaration on the Promotion of Rights of Patients in Europe, WHO, Amsterdam 1994). Typically the intervention is set of different procedure for a common care purpose.</span>
+      <span property="rdfs:comment">Any examination, treatment, or other act having preventive, diagnostic, therapeutic or rehabilitative aims and which is carried out by a physician or other health care provider (Declaration on the Promotion of Rights of Patients in Europe, WHO, Amsterdam 1994). Typically-but not limitted to, the intervention is set of different procedures for a common care purpose.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalPalpation">
       <span class="h" property="rdfs:label">MedicalPalpation</span>
+      <span property="rdfs:comment">The process of using your hands to examine the body, especially while perceiving/diagnosing a disease or illness.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalPercussion">
       <span class="h" property="rdfs:label">MedicalPercussion</span>
+      <span property="rdfs:comment">A method of tapping on a surface to determine the underlying structure, and is used in clinical examinations to assess the condition of the thorax or abdomen</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalPrescription">
+      <span class="h" property="rdfs:label">MedicalPrescription</span>
+      <span property="rdfs:comment">Also known as a medical order, the prescription is a written document from a healthcare provider to the patient bearing the information about the medicine or therapy to be used as a treatment.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalProcedure">
       <span class="h" property="rdfs:label">MedicalProcedure</span>
       <span property="rdfs:comment">A series of steps taken with defined manner of performing something; a method or technique within medical examination, treatment, or other act having preventive, administrative, diagnostic, therapeutic or rehabilitative aims. </span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalReport">
+      <span class="h" property="rdfs:label">MedicalReport</span>
+      <span property="rdfs:comment">Any kind of report with patient information</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalRoom">
+      <span class="h" property="rdfs:label">MedicalRoom</span>
+      <span property="rdfs:comment">A room (as a physical space) in a hospital for the care of patients</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalScore">
@@ -685,31 +701,49 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalSpecialty">
       <span class="h" property="rdfs:label">MedicalSpecialty</span>
+      <span property="rdfs:comment">A specialty (or speciality) in medicine is a branch of medical science.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalSubSpeciality">
       <span class="h" property="rdfs:label">MedicalSubSpeciality</span>
+      <span property="rdfs:comment">A subspecialty (or sub-speciality) in medicine is a branch of medical speciality.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalSpecialty">MedicalSpecialty</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalUnit">
+      <span class="h" property="rdfs:label">MedicalUnit</span>
+      <span property="rdfs:comment">A health facility Unit. eg Nephrology unit, Dialyses unite etc.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalWard">
+      <span class="h" property="rdfs:label">MedicalWard</span>
+      <span property="rdfs:comment">A block forming a division of a hospital (or a suite of rooms) shared by patients who need a similar kind of care</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicationUseHistory">
       <span class="h" property="rdfs:label">MedicationUseHistory</span>
+      <span property="rdfs:comment">The description of medications use for a person</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PersonalHistory">PersonalHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Menopause">
       <span class="h" property="rdfs:label">Menopause</span>
+      <span property="rdfs:comment">The period in a woman's life when menstruation ceases.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/GynObsHistory">GynObsHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Menstruation">
       <span class="h" property="rdfs:label">Menstruation</span>
+      <span property="rdfs:comment">The periodic discharge of blood and mucosal tissue (the endometrium) from the uterus and vagina.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/GynObsHistory">GynObsHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MentalHealthHistory">
       <span class="h" property="rdfs:label">MentalHealthHistory</span>
+      <span property="rdfs:comment">The description of mental health disorder or conditions for a person</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PersonalHistory">PersonalHistory</a></span>
     </div>
 
@@ -717,11 +751,6 @@
       <span class="h" property="rdfs:label">MinimallyInvasive</span>
       <span property="rdfs:comment">A minimally invasive procedure (MIP) is any procedure (surgical or otherwise) that is less invasive than open surgery used for the same purpose. Source: wikipedia</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/InvasivenessType">InvasivenessType</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/Miscarriage">
-      <span class="h" property="rdfs:label">Miscarriage</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/GynObsHistory">GynObsHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MorbidityEvent">
@@ -753,38 +782,33 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/InvasivenessType">InvasivenessType</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/NonSurgicalProcedure">
-      <span class="h" property="rdfs:label">NonSurgicalProcedure</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/NuclearMedicine">
-      <span class="h" property="rdfs:label">NuclearMedicine</span>
+    <div typeof="rdfs:Class" resource="http://schema.org/NuclearMedicineImaging">
+      <span class="h" property="rdfs:label">NuclearMedicineImaging</span>
+      <span property="rdfs:comment">The branch of medicine that deals with the use of radioactive substances in research, diagnosis, and treatment.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalImaging">MedicalImaging</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/Nurse">
-      <span class="h" property="rdfs:label">Nurse</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthcareProvider">HealthcareProvider</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/ObstetricSurgery">
       <span class="h" property="rdfs:label">ObstetricSurgery</span>
+      <span property="rdfs:comment">A surgical procedure related to the care of women during or after pregnancy.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SurgicalProcedure">SurgicalProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/OccupationalHistory">
       <span class="h" property="rdfs:label">OccupationalHistory</span>
+      <span property="rdfs:comment">A part of the health history in which questions are asked about the person's occupation, source of income, effects of the work on the worker's health or the worker's health on the job, the duration of the job, and to what degree the occupation satisfies the person.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SocialHistory">SocialHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/OralTemperature">
       <span class="h" property="rdfs:label">OralTemperature</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TemperatureExamination">TemperatureExamination</a></span>
+      <span property="rdfs:comment">Human body temperature taken from oral region (mouth)</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BodyTemperature">BodyTemperature</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Oxygenotherapy">
       <span class="h" property="rdfs:label">Oxygenotherapy</span>
+      <span property="rdfs:comment">Oxygen therapy is the administration of oxygen as a medical intervention, which can be for a variety of purposes in both chronic and acute patient care</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
@@ -796,22 +820,25 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/PalliativeProcedure">
       <span class="h" property="rdfs:label">PalliativeProcedure</span>
+      <span property="rdfs:comment">Any procedure related to a care that offers pain and symptom management and emotional and spiritual support when you face a chronic, debilitating or life-threatening illness.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Parity">
       <span class="h" property="rdfs:label">Parity</span>
+      <span property="rdfs:comment">Parity is defined as the number of times that she has given birth to a fetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/GynObsHistory">GynObsHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/PastMedicalHistory">
       <span class="h" property="rdfs:label">PastMedicalHistory</span>
+      <span property="rdfs:comment">The total sum of a patient's health status and morbidity events prior to the presenting problem</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PersonalHistory">PersonalHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Patient">
       <span class="h" property="rdfs:label">Patient</span>
-      <span property="rdfs:comment">A patient is any recipient of health care services.</span>
+      <span property="rdfs:comment">A patient is any person recipient of health care services.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
@@ -821,24 +848,21 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalHistory">MedicalHistory</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/PersonalHistory">
-      <span class="h" property="rdfs:label">PersonalHistory</span>
-      <span property="rdfs:comment">personal history</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalHistory">MedicalHistory</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/PharmaceuticalSubstance">
       <span class="h" property="rdfs:label">PharmaceuticalSubstance</span>
+      <span property="rdfs:comment">Any chemical substance formulated or compounded as single active ingredient or in combination of other pharmacologically active substance, intended for internal, or external or for use in the medical diagnosis, cure, treatment, or prevention of disease</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ChemicalSubstance">ChemicalSubstance</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/PhotodynamicTherapy">
-      <span class="h" property="rdfs:label">PhotodynamicTherapy</span>
+    <div typeof="rdfs:Class" resource="http://schema.org/Pharmacotherapy">
+      <span class="h" property="rdfs:label">Pharmacotherapy</span>
+      <span property="rdfs:comment">Pharmacotherapy or drug therapy or medication is the treatment of disease through the administration of drugs.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Phototherapy">
       <span class="h" property="rdfs:label">Phototherapy</span>
+      <span property="rdfs:comment">Also known as light therapy or classically referred to as heliotherapy, consists of exposure to daylight or to specific wavelengths of light using polychromatic polarised light, lasers, light-emitting diodes, fluorescent lamps, dichroic lamps or very bright, full-spectrum light, usually controlled with various devices.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
@@ -856,6 +880,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/PlasticSurgeryProcedure">
       <span class="h" property="rdfs:label">PlasticSurgeryProcedure</span>
+      <span property="rdfs:comment">The process of reconstructing or repairing parts of the body by the transfer of tissue, either in the treatment of injury or for cosmetic reasons.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SurgicalProcedure">SurgicalProcedure</a></span>
     </div>
 
@@ -865,25 +890,21 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Prescription">
-      <span class="h" property="rdfs:label">Prescription</span>
-      <span property="rdfs:comment">Also known as a medical order, the prescription is a written document from a healthcare provider to the patient bearing the information about the medicine or therapy to be used as a treatment.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/Prescription">
-      <span class="h" property="rdfs:label">Prescription</span>
-      <span property="rdfs:comment">prescription</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/Psychotherapy">
       <span class="h" property="rdfs:label">Psychotherapy</span>
+      <span property="rdfs:comment">The treatment of mental disorder by psychological rather than medical means.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/Pulse">
+      <span class="h" property="rdfs:label">Pulse</span>
+      <span property="rdfs:comment">In medicine, one's pulse represents the tactile arterial palpation of the heartbeat by trained fingertips. </span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Sign">Sign</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/QualifierConcept">
       <span class="h" property="rdfs:label">QualifierConcept</span>
+      <span property="rdfs:comment">A concept that is used as word or phrase, especially an adjective, to attribute a quality to another concept.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
@@ -893,14 +914,16 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SocialHistory">SocialHistory</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/RadiationTherapy">
-      <span class="h" property="rdfs:label">RadiationTherapy</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/Radiography">
       <span class="h" property="rdfs:label">Radiography</span>
+      <span property="rdfs:comment">Radiography is an imaging technique that uses electromagnetic radiation other than visible light, especially X-rays, to view the internal structure of a non-uniformly composed and opaque object such as the human body. </span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalImaging">MedicalImaging</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/Radiotherapy">
+      <span class="h" property="rdfs:label">Radiotherapy</span>
+      <span property="rdfs:comment">The treatment of disease, especially cancer, using X-rays or similar forms of radiation.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/RecordArtifact">
@@ -911,12 +934,14 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/RecreationalHistory">
       <span class="h" property="rdfs:label">RecreationalHistory</span>
+      <span property="rdfs:comment">Description of activity history of a person during his leisure or recreation time. This is a part of medical history describing the physical activity of a person.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SocialHistory">SocialHistory</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/RectalTemperature">
       <span class="h" property="rdfs:label">RectalTemperature</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TemperatureExamination">TemperatureExamination</a></span>
+      <span property="rdfs:comment">Human body temperature taken at rectal region (anal)</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BodyTemperature">BodyTemperature</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/ReligionGroup">
@@ -927,7 +952,8 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/ReligiousBelief">
       <span class="h" property="rdfs:label">ReligiousBelief</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SocialHistory">SocialHistory</a></span>
+      <span property="rdfs:comment">A strong belief in a supernatural power or powers that control human destiny.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ReligionGroup">ReligionGroup</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/ReproductiveSystem">
@@ -944,11 +970,13 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/ResidenceHistory">
       <span class="h" property="rdfs:label">ResidenceHistory</span>
+      <span property="rdfs:comment">History of residence addresses change for a person</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SocialHistory">SocialHistory</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/RespiratoryRate">
-      <span class="h" property="rdfs:label">RespiratoryRate</span>
+    <div typeof="rdfs:Class" resource="http://schema.org/RespirationRate">
+      <span class="h" property="rdfs:label">RespirationRate</span>
+      <span property="rdfs:comment">The respiratory rate (RR), also known as the respiration rate, ventilation rate, ventilatory rate, ventilation frequency (Vf), respiration frequency (Rf), pulmonary ventilation rate, or breathing frequency, is the rate (frequency) of ventilation, that is, the number of breaths (inhalation-exhalation cycles) taken within a set amount of time (typically 60 seconds). </span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Vitalsign">Vitalsign</a></span>
     </div>
 
@@ -958,19 +986,15 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/AnatomicalSystem">AnatomicalSystem</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Room">
-      <span class="h" property="rdfs:label">Room</span>
-      <span property="rdfs:comment">A room (as a physical space) in a hospital for the care of patients</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/Severity">
       <span class="h" property="rdfs:label">Severity</span>
+      <span property="rdfs:comment">Intensity quantification or scoring of illness or a medical condition</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QualifierConcept">QualifierConcept</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/SexualBehaviour">
       <span class="h" property="rdfs:label">SexualBehaviour</span>
+      <span property="rdfs:comment">The history describing the capacity to have erotic experiences and responses. Human sexuality may also involve a person's sexual attraction to another person</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SocialHistory">SocialHistory</a></span>
     </div>
 
@@ -1000,31 +1024,31 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Smoking">
       <span class="h" property="rdfs:label">Smoking</span>
+      <span property="rdfs:comment">The quantification or description of smoking habit for the person</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/LifestyleOrHabits">LifestyleOrHabits</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/SocialHistory">
       <span class="h" property="rdfs:label">SocialHistory</span>
+      <span property="rdfs:comment">A portion of the medical history addressing familial, occupational, and recreational aspects of the patient's personal life that have the potential to be clinically significant.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PersonalHistory">PersonalHistory</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/SpecialistPhysician">
-      <span class="h" property="rdfs:label">SpecialistPhysician</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthcareProvider">HealthcareProvider</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/SubstanceUseOrAbuse">
       <span class="h" property="rdfs:label">SubstanceUseOrAbuse</span>
+      <span property="rdfs:comment">The quantification or description of substance use (i.e illicit substances or psychoactive drugs) or abuse for a person</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/LifestyleOrHabits">LifestyleOrHabits</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Substance">
       <span class="h" property="rdfs:label">Substance</span>
+      <span property="rdfs:comment">Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/SurgicalProcedure">
       <span class="h" property="rdfs:label">SurgicalProcedure</span>
+      <span property="rdfs:comment">A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes in a living body</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
     </div>
 
@@ -1042,22 +1066,14 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/SystemicReview">
       <span class="h" property="rdfs:label">SystemicReview</span>
+      <span property="rdfs:comment">The part of anamnesis where the physician makes a screening interview of all body systems and organs for relevant disorders in history of the patient.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/AnamnesisProcedure">AnamnesisProcedure</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/TemperatureExamination">
-      <span class="h" property="rdfs:label">TemperatureExamination</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Vitalsign">Vitalsign</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/TherapeuticProcedure">
       <span class="h" property="rdfs:label">TherapeuticProcedure</span>
+      <span property="rdfs:comment">Any medical procedure concerned with the prevention or treatment of medical conditions.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/TraditionalMedicineTherapy">
-      <span class="h" property="rdfs:label">TraditionalMedicineTherapy</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Transfer">
@@ -1074,6 +1090,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/TriageProcedure">
       <span class="h" property="rdfs:label">TriageProcedure</span>
+      <span property="rdfs:comment">Procedure which consist in selecting patients by priority of care need, typically at hospital emergency unit</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/AdministrativeProcedure">AdministrativeProcedure</a></span>
     </div>
 
@@ -1085,13 +1102,14 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Ultrasound">
       <span class="h" property="rdfs:label">Ultrasound</span>
+      <span property="rdfs:comment">Diagnostic ultrasound, also called sonography or diagnostic medical sonography, is an imaging method that uses high-frequency sound waves to produce relatively precise images of structures within your body.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalImaging">MedicalImaging</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Unit">
-      <span class="h" property="rdfs:label">Unit</span>
-      <span property="rdfs:comment">A health facility Unit. eg Nephrology unit, Dialyses unite etc.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
+    <div typeof="rdfs:Class" resource="http://schema.org/Ultrasound">
+      <span class="h" property="rdfs:label">Ultrasound</span>
+      <span property="rdfs:comment">Ultrasound</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalImaging">MedicalImaging</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/UrinarySystem">
@@ -1102,12 +1120,13 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Vaccination">
       <span class="h" property="rdfs:label">Vaccination</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Immunization">Immunization</a></span>
+      <span property="rdfs:comment">Communly known as immunization, vaccination is the administration of antigenic material (a vaccine) to stimulate an individual's immune system to develop adaptive immunity to a pathogen.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Immunotherapy">Immunotherapy</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Vasoconstriction">
       <span class="h" property="rdfs:label">Vasoconstriction</span>
-      <span property="rdfs:comment">is the constriction of blood vessels (narrowing, becoming smaller in cross-sectional area) by contracting the vascular smooth muscle in the vessel walls.</span>
+      <span property="rdfs:comment">The constriction of blood vessels (narrowing, becoming smaller in cross-sectional area) by contracting the vascular smooth muscle in the vessel walls.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/VesselsFunction">VesselsFunction</a></span>
     </div>
 
@@ -1125,29 +1144,20 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Vitalsign">
       <span class="h" property="rdfs:label">Vitalsign</span>
-      <span property="rdfs:comment">Vital sign (observable entity)</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/VoluntaryInterruptionOfPregnancy">
-      <span class="h" property="rdfs:label">VoluntaryInterruptionOfPregnancy</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/GynObsHistory">GynObsHistory</a></span>
+      <span property="rdfs:comment">Vital signs are measures of various physiological functions in order to assess the most basic body functions</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Sign">Sign</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/WaistCircumference">
       <span class="h" property="rdfs:label">WaistCircumference</span>
+      <span property="rdfs:comment">A measure of the circumference of the narrowest part of a person's waist, typically measured between belly button and the center of rib cage. This measurement can be used to indicate abdominal obesity and to track changes in waist size during weight loss efforts.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BodyMeasure">BodyMeasure</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/WaistHipRatio">
       <span class="h" property="rdfs:label">WaistHipRatio</span>
+      <span property="rdfs:comment">Waist–hip ratio or waist-to-hip ratio is the ratio of the circumference of the waist to that of the hips.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BodyMeasure">BodyMeasure</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/Ward">
-      <span class="h" property="rdfs:label">Ward</span>
-      <span property="rdfs:comment">A block forming a division of a hospital (or a suite of rooms) shared by patients who need a similar kind of care</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/abortions">
@@ -1158,7 +1168,7 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/aboutRelative">
       <span class="h" property="rdfs:label">aboutRelative</span>
-      <span property="rdfs:comment">Specifying a person who is relative of another person .</span>
+      <span property="rdfs:comment">Specifying a relative who is concerned by something. i.e medical history about a relative.</span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
@@ -1172,29 +1182,6 @@
     <div typeof="rdf:Property" resource="http://schema.org/admissionDate">
       <span class="h" property="rdfs:label">admissionDate</span>
       <span property="rdfs:comment">An admission date</span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/admissionPlace">
-      <span class="h" property="rdfs:label">admissionPlace</span>
-      <span property="rdfs:comment">Specifying a location or a place where the admission is taking place</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Department">Department</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Unit">Unit</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/admissionProvider">
-      <span class="h" property="rdfs:label">admissionProvider</span>
-      <span property="rdfs:comment">Specifying the provider related to the admission procedure</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Patient">Patient</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/admissionReason">
-      <span class="h" property="rdfs:label">admissionReason</span>
-      <span property="rdfs:comment">Specifying a reason why the patient is admitted. Typically the condition or other indication</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/admission">
@@ -1261,14 +1248,27 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/anatomicalOrgan">
       <span class="h" property="rdfs:label">anatomicalOrgan</span>
+      <span property="rdfs:comment">Specifying the anatomical organ for a resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalOrgan">AnatomicalOrgan</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/anatomicalRegion">
       <span class="h" property="rdfs:label">anatomicalRegion</span>
+      <span property="rdfs:comment">Specifying the anatomical region for a resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/anatomicalSystem">
       <span class="h" property="rdfs:label">anatomicalSystem</span>
+      <span property="rdfs:comment">Specifying the anatomical system for a resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/apgarScore">
@@ -1276,6 +1276,11 @@
       <span property="rdfs:comment">Spifying the value of APGAR Score. </span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Newborn">Newborn</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/arterialPulse">
+      <span class="h" property="rdfs:label">arterialPulse</span>
+      <span property="rdfs:comment">Specifying the regularly recurrent wave of distension in arteries that results from the progress through an artery of blood injected into the arterial system at each contraction of the ventricles of the heart</span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/atWeeksAmenorrhea">
@@ -1294,11 +1299,6 @@
     <div typeof="rdf:Property" resource="http://schema.org/belongsTo">
       <span class="h" property="rdfs:label">belongsTo</span>
       <span property="rdfs:comment">Specifying a resource to which another resource belongs</span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/belongsTo">
-      <span class="h" property="rdfs:label">belongsTo</span>
-      <span property="rdfs:comment">belongs to</span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/birthHeight">
@@ -1323,6 +1323,13 @@
       <span class="h" property="rdfs:label">birthWeight</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Newborn">Newborn</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/bloodPressure">
+      <span class="h" property="rdfs:label">bloodPressure</span>
+      <span property="rdfs:comment">Specifing the blood pressure resource of a patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/BloodPressure">BloodPressure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/bodyMassIndex">
@@ -1353,34 +1360,24 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/boxNumber">
-      <span class="h" property="rdfs:label">boxNumber</span>
-      <span property="rdfs:comment">Specifying a postal box number, typically in addresses model</span>
-    </div>
-
     <div typeof="rdf:Property" resource="http://schema.org/careLocation">
       <span class="h" property="rdfs:label">careLocation</span>
       <span property="rdfs:comment">Specifying a location or a place where the care event is taking place</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Department">Department</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Unit">Unit</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDepartment">MedicalDepartment</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalUnit">MedicalUnit</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/careProvider">
       <span class="h" property="rdfs:label">careProvider</span>
-      <span property="rdfs:comment">Specifying a care provider for any health care services. here can be also medical organization, or unit. The property caringPerson refers only to the treating physician. </span>
+      <span property="rdfs:comment">Specifying a person, medical organization, or unitcare provider for any health care services</span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/careReason">
       <span class="h" property="rdfs:label">careReason</span>
       <span property="rdfs:comment">Specifying a reason for a caring event(typically a medical condition or other encounter reasons)</span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/caredFor">
-      <span class="h" property="rdfs:label">caredFor</span>
-      <span property="rdfs:comment">Specifying medical condition a healthcare professional cared for.</span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/caredPerson">
@@ -1393,18 +1390,13 @@
       <span property="rdfs:comment">Specifying an event wherein services are rendered by members of the health profession (or under their supervision) for the benefit of the patient.</span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/caringPerson">
-      <span class="h" property="rdfs:label">caringPerson</span>
-      <span property="rdfs:comment">Specifying a health care professional providing services to the patient during a caring event.</span>
-    </div>
-
     <div typeof="rdf:Property" resource="http://schema.org/cause">
       <span class="h" property="rdfs:label">cause</span>
       <span property="rdfs:comment">Specifying a cause of something. when it's established. </span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/chiefComplaintSymptom">
-      <span class="h" property="rdfs:label">chiefComplaintSymptom</span>
+    <div typeof="rdf:Property" resource="http://schema.org/chiefComplaint">
+      <span class="h" property="rdfs:label">chiefComplaint</span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/childhoodHistory">
@@ -1412,6 +1404,19 @@
       <span property="rdfs:comment">Specifying a resource describing the childhood history of a patient or a person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ChildhoodHistory">ChildhoodHistory</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/clinicaFinding">
+      <span class="h" property="rdfs:label">clinicaFinding</span>
+      <span property="rdfs:comment">Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/clinicalDocument">
+      <span class="h" property="rdfs:label">clinicalDocument</span>
+      <span property="rdfs:comment">Specifying any clinical document</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/confirmationStatus">
@@ -1468,9 +1473,9 @@
       <span class="h" property="rdfs:label">diagnosticPlace</span>
       <span property="rdfs:comment">Specifying the location or place where the diagnosis was made. Typically the department or health facility unit.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Diagnosis">Diagnosis</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Department">Department</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Unit">Unit</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDepartment">MedicalDepartment</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalUnit">MedicalUnit</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diagnosticProcedure">
@@ -1492,58 +1497,6 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/dischargeDate">
       <span class="h" property="rdfs:label">dischargeDate</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/dischargePlace">
-      <span class="h" property="rdfs:label">dischargePlace</span>
-      <span property="rdfs:comment">Specifying the location or a place where discharge procedure have been made. Typicaly a health facility unit or department</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DischargeProcedure">DischargeProcedure</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Department">Department</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Unit">Unit</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/dischargePlace">
-      <span class="h" property="rdfs:label">dischargePlace</span>
-      <span property="rdfs:comment">discharge place</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DischargeProcedure">DischargeProcedure</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Department">Department</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Unit">Unit</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/dischargeProvider">
-      <span class="h" property="rdfs:label">dischargeProvider</span>
-      <span property="rdfs:comment">Specifying the provider of the discharge procedure</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DischargeProcedure">DischargeProcedure</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/dischargeReason">
-      <span class="h" property="rdfs:label">dischargeReason</span>
-      <span property="rdfs:comment">specifying the reason of discharge for a patient, i.e. death, transfer or cured sent home</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DischargeProcedure">DischargeProcedure</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Death">Death</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/TransferProcedure">TransferProcedure</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/dischargeStatus">
-      <span class="h" property="rdfs:label">dischargeStatus</span>
-      <span property="rdfs:comment">discharge status</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DischargeProcedure">DischargeProcedure</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/dischargeStatus">
-      <span class="h" property="rdfs:label">dischargeStatus</span>
-      <span property="rdfs:comment">specifying the status of discharhe procedure.</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DischargeProcedure">DischargeProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
@@ -1618,9 +1571,9 @@
     <div typeof="rdf:Property" resource="http://schema.org/encounterPlace">
       <span class="h" property="rdfs:label">encounterPlace</span>
       <span property="rdfs:comment">specifying the location or a place where the encounter took place</span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Department">Department</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Unit">Unit</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDepartment">MedicalDepartment</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalUnit">MedicalUnit</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/encounterProvider">
@@ -1636,15 +1589,23 @@
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/SignOrSymptom">SignOrSymptom</a></span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/encounter">
-      <span class="h" property="rdfs:label">encounter</span>
-      <span property="rdfs:comment">Encounter describes an encounter between the patient and a healthcare provider.</span>
+    <div typeof="rdf:Property" resource="http://schema.org/encounterStatus">
+      <span class="h" property="rdfs:label">encounterStatus</span>
+      <span property="rdfs:comment">discharge status</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DischargeProcedure">DischargeProcedure</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/encounterStatus">
+      <span class="h" property="rdfs:label">encounterStatus</span>
+      <span property="rdfs:comment">specifying the status of discharhe procedure.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DischargeProcedure">DischargeProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/encounter">
       <span class="h" property="rdfs:label">encounter</span>
-      <span property="rdfs:comment">Patient Encounter is defined by HL7 as an interaction between a patient and healthcare participant(s) for the purpose of providing patient service(s) or assessing the health status of a patient. For example, outpatient visit to multiple departments, home health support (including physical therapy), inpatient hospital stay, emergency room visit, field visit (e.g., traffic accident), office visit, occupational therapy, telephone call.</span>
+      <span property="rdfs:comment">Specifying an encounter between the patient and a healthcare provider.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
@@ -1680,10 +1641,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/examinedBy">
-      <span class="h" property="rdfs:label">examinedBy</span>
-    </div>
-
     <div typeof="rdf:Property" resource="http://schema.org/familyHistory">
       <span class="h" property="rdfs:label">familyHistory</span>
       <span property="rdfs:comment"> specifying a personal history provided by the patient during an anamnesis procedure .</span>
@@ -1699,12 +1656,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
     <div typeof="rdf:Property" resource="http://schema.org/father">
       <span class="h" property="rdfs:label">father</span>
       <span property="rdfs:comment">Specifying a person who plays a role of an administrative father (parent) of someone.</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/finding">
-      <span class="h" property="rdfs:label">finding</span>
-      <span property="rdfs:comment">Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
@@ -1735,26 +1686,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/GynecObstetricHistory">GynecObstetricHistory</a></span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/healthFacilityClinic">
-      <span class="h" property="rdfs:label">healthFacilityClinic</span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/healthFacilityDepartment">
-      <span class="h" property="rdfs:label">healthFacilityDepartment</span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/healthFacilityRoom">
-      <span class="h" property="rdfs:label">healthFacilityRoom</span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/healthFacilityUnit">
-      <span class="h" property="rdfs:label">healthFacilityUnit</span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/healthFacilityWard">
-      <span class="h" property="rdfs:label">healthFacilityWard</span>
-    </div>
-
     <div typeof="rdf:Property" resource="http://schema.org/healthFacility">
       <span class="h" property="rdfs:label">healthFacility</span>
     </div>
@@ -1768,11 +1699,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span class="h" property="rdfs:label">historyOfPresentIllness</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HistoryOfPresentIllness">HistoryOfPresentIllness</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/houseNumber">
-      <span class="h" property="rdfs:label">houseNumber</span>
-      <span property="rdfs:comment">Specifying a house number, typically in addresses model</span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/indication">
@@ -1806,14 +1732,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span property="rdfs:comment">Specifying a the person a relatioship is pointing to.</span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/kinship">
-      <span class="h" property="rdfs:label">kinship</span>
-      <span property="rdfs:comment">Specifying a relationship between persons. Typically between persons uses the 'American Kinship terminology'.</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-    </div>
-
     <div typeof="rdf:Property" resource="http://schema.org/laboratoryProcedure">
       <span class="h" property="rdfs:label">laboratoryProcedure</span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/laboratoryResult">
+      <span class="h" property="rdfs:label">laboratoryResult</span>
+      <span property="rdfs:comment">Specifying the laboratory test findings</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/LaboratoryResult">LaboratoryResult</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/lastMenstruationPeriod">
@@ -1821,6 +1748,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span property="rdfs:comment">Specifying the last menstruation period of a patient</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Menstruation">Menstruation</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/lifeEvent">
+      <span class="h" property="rdfs:label">lifeEvent</span>
+      <span property="rdfs:comment">Specifying an event in person's life timeline</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/lifestyleOrHabits">
@@ -1846,10 +1780,27 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/medicalCertificate">
+      <span class="h" property="rdfs:label">medicalCertificate</span>
+      <span property="rdfs:comment">Specifying any medical certificate</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCertificate">MedicalCertificate</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalClinic">
+      <span class="h" property="rdfs:label">medicalClinic</span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/medicalCondition">
       <span class="h" property="rdfs:label">medicalCondition</span>
       <span property="rdfs:comment">Specifying a medical condition in general diagnosed or not.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MorbidityEvent">MorbidityEvent</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalDepartment">
+      <span class="h" property="rdfs:label">medicalDepartment</span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalHistory">
@@ -1858,10 +1809,29 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalHistory">MedicalHistory</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/medicalIdentifier">
+      <span class="h" property="rdfs:label">medicalIdentifier</span>
+      <span property="rdfs:comment">Specifying the identification number of a medical entity like provider identifier number, patient identifier etc.</span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/medicalIntervention">
       <span class="h" property="rdfs:label">medicalIntervention</span>
       <span property="rdfs:comment">Medical surgical intervention-as a set of multiple procedures</span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalLetter">
+      <span class="h" property="rdfs:label">medicalLetter</span>
+      <span property="rdfs:comment">Specifying any medical letter </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalPrescription">
+      <span class="h" property="rdfs:label">medicalPrescription</span>
+      <span property="rdfs:comment">Linking a patient with his medical order (=written prescription) for the patient. Not that for the provider we use the property prescribingProcedure.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalPrescription">MedicalPrescription</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalProcedure">
@@ -1876,9 +1846,40 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/medicalReport">
+      <span class="h" property="rdfs:label">medicalReport</span>
+      <span property="rdfs:comment">Specifying any medical report</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthRecord">HealthRecord</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalReport">MedicalReport</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PatientRecord">PatientRecord</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalRoom">
+      <span class="h" property="rdfs:label">medicalRoom</span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalSpecialty">
+      <span class="h" property="rdfs:label">medicalSpecialty</span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/medicalSubSpecialty">
       <span class="h" property="rdfs:label">medicalSubSpecialty</span>
       <span property="rdfs:comment">Specifying the medical sub-speciality of a healthcare provider</span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalUnit">
+      <span class="h" property="rdfs:label">medicalUnit</span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalWard">
+      <span class="h" property="rdfs:label">medicalWard</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/CaringEvent">CaringEvent</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalWard">MedicalWard</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicationProcedure">
@@ -1917,12 +1918,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span class="h" property="rdfs:label">method</span>
       <span property="rdfs:comment">Specifying the method used in a procedure</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/miscarriage">
-      <span class="h" property="rdfs:label">miscarriage</span>
-      <span property="rdfs:comment">Specifying the resource as the miscarriage or abortion event related to the patient. Should be noted that abortions property is a data property instead.</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/mother">
@@ -2037,6 +2032,8 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
     <div typeof="rdf:Property" resource="http://schema.org/physiologicalRole">
       <span class="h" property="rdfs:label">physiologicalRole</span>
+      <span property="rdfs:comment">Specifying any physiological role of something</span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PhysiologicalEntity">PhysiologicalEntity</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/playsRole">
@@ -2074,22 +2071,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span property="rdfs:comment">Specifying the prescribing procedure. This propety is linking a patient or a provider to the procedure. The precudre has as an output a prescription.</span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/prescription">
-      <span class="h" property="rdfs:label">prescription</span>
-      <span property="rdfs:comment">Linking a patient with his medical order (=written prescription) for the patient. Not that for the provider we use the property prescribingProcedure.</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/procedureDate">
-      <span class="h" property="rdfs:label">procedureDate</span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/procedureProvider">
-      <span class="h" property="rdfs:label">procedureProvider</span>
-      <span property="rdfs:comment">Specifying a procedure provider/performer, typically here the technician who can also be a physician or not </span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
-    </div>
-
     <div typeof="rdf:Property" resource="http://schema.org/procedure">
       <span class="h" property="rdfs:label">procedure</span>
       <span property="rdfs:comment"> specifying a procedure for the patient .</span>
@@ -2099,11 +2080,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
     <div typeof="rdf:Property" resource="http://schema.org/prodecureType">
       <span class="h" property="rdfs:label">prodecureType</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/providerIdentifierNumber">
-      <span class="h" property="rdfs:label">providerIdentifierNumber</span>
-      <span property="rdfs:comment">Specifying the provider identification number</span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/raceOrigin">
@@ -2135,9 +2111,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/relationship">
+      <span class="h" property="rdfs:label">relationship</span>
+      <span property="rdfs:comment">Specifying a relationship between persons. Typically between persons uses the 'American Kinship terminology'.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/relative">
       <span class="h" property="rdfs:label">relative</span>
-      <span property="rdfs:comment">Specifying someone who is a relative of someone else</span>
+      <span property="rdfs:comment">Specifying someone who is a relative of someone else, typically used as hasRelative</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
@@ -2168,14 +2150,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span class="h" property="rdfs:label">reportRecorder</span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/report">
-      <span class="h" property="rdfs:label">report</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthRecord">HealthRecord</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PatientRecord">PatientRecord</a></span>
-    </div>
-
     <div typeof="rdf:Property" resource="http://schema.org/residenceHistory">
       <span class="h" property="rdfs:label">residenceHistory</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
@@ -2186,10 +2160,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span class="h" property="rdfs:label">residentialStatus</span>
       <span property="rdfs:comment">Specifying the act of dwelling in a place. This status is linked to an address and period of the time</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/rolePlayedBy">
-      <span class="h" property="rdfs:label">rolePlayedBy</span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/severity">
@@ -2309,6 +2279,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/treatingPhysician">
+      <span class="h" property="rdfs:label">treatingPhysician</span>
+      <span property="rdfs:comment">Specifying a specific physician assigned to the patient as specific or individual healthcare provider.</span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/triageScore">
       <span class="h" property="rdfs:label">triageScore</span>
       <span property="rdfs:comment">Specifying the value of a triage score</span>
@@ -2331,11 +2306,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
       <span class="h" property="rdfs:label">vesselFunction</span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/voluntaryInterruptionOfPregnancy">
-      <span class="h" property="rdfs:label">voluntaryInterruptionOfPregnancy</span>
-      <span property="rdfs:comment"> The voluntary induced abortion of a normal human pregnancy. Note that when an abortion occurs spontaneously is called a miscarriage</span>
+    <div typeof="rdf:Property" resource="http://schema.org/vitalSign">
+      <span class="h" property="rdfs:label">vitalSign</span>
+      <span property="rdfs:comment">Specifying the vital sign of a person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/VoluntaryInterruptionOfPregnancy">VoluntaryInterruptionOfPregnancy</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Vitalsign">Vitalsign</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/waistCircumference">
