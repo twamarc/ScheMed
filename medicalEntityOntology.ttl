@@ -56,41 +56,45 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:label "about relative" ;
                
-               rdfs:comment "Specifying a relative who is concerned by something. i.e medical history about a relative."@en ;
+               rdfs:comment "Specifying a relative who is concerned by something. i.e medical history about XY relative."@en ;
                
-               schema:rangeIncludes schema:Person ,
-                                    <http://snomed.info/116154003> ,
-                                    <http://snomed.info/125676002> ;
-               
-               schema:domainIncludes <http://snomed.info/125676002> ;
+               schema:domainIncludes schema:Person ;
                
                schema:rangeIncludes <http://snomed.info/303071001> ;
                
-               schema:domainIncludes <http://snomed.info/303071001> ;
-               
-               schema:rangeIncludes :Patient ;
-               
-               rdfs:subPropertyOf :relationship .
+               rdfs:subPropertyOf :familyRelationship .
 
 
 
-###  http://www.example.org/medicalEntity#administrativeProcedure
+###  http://www.example.org/medicalEntity#administrativeFather
 
-:administrativeProcedure rdf:type owl:ObjectProperty ;
-                         
-                         rdfs:label "administrative procedure" ;
-                         
-                         rdfs:comment "Specifying an administrative procedure related to a resource, activity, another procedure, or patient"@en ;
-                         
-                         schema:domainIncludes schema:Event ,
-                                               schema:Person ,
-                                               <http://snomed.info/116154003> ,
-                                               <http://snomed.info/125676002> ;
-                         
-                         schema:rangeIncludes <http://snomed.info/14734007> ,
-                                              :AdministrativeProcedure ;
-                         
-                         schema:domainIncludes :Patient .
+:administrativeFather rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "administrative father" ;
+                      
+                      rdfs:comment "Specifying a person who plays a role of an administrative father (parent) of this person." ;
+                      
+                      schema:domainIncludes schema:Person ;
+                      
+                      schema:rangeIncludes schema:Person ;
+                      
+                      rdfs:subPropertyOf :father .
+
+
+
+###  http://www.example.org/medicalEntity#administrativeMother
+
+:administrativeMother rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "administrative mother" ;
+                      
+                      rdfs:comment "Specifying a person who plays a role of an administrative mother (parent) of this person." ;
+                      
+                      schema:rangeIncludes schema:Person ;
+                      
+                      schema:domainIncludes schema:Person ;
+                      
+                      rdfs:subPropertyOf :mother .
 
 
 
@@ -102,15 +106,13 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying admission procedure related to a resource, activity, another procedure, or patient"@en ;
            
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ;
+           schema:domainIncludes schema:Person ;
            
            schema:rangeIncludes <http://snomed.info/305056002> ,
-                                :AdmissionProcedure ,
-                                :MedicalProcedure ;
+                                :Admission ,
+                                :AdmissionProcedure ;
            
-           schema:domainIncludes :Patient ;
+           schema:domainIncludes :EncounterProcedure ;
            
            rdfs:subPropertyOf :encounter .
 
@@ -124,14 +126,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying an adulthood description of someone"@en ;
                   
-                  schema:domainIncludes schema:Person ,
-                                        <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ;
+                  schema:domainIncludes schema:Person ;
                   
                   schema:rangeIncludes <http://snomed.info/41847000> ,
                                        :AdulthoodHistory ;
-                  
-                  schema:domainIncludes :Patient ;
                   
                   rdfs:subPropertyOf :socialHistory .
 
@@ -145,13 +143,13 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying an adverse drug event- defined according World Health Organization standards"@en ;
                   
-                  schema:domainIncludes schema:Person ,
-                                        <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ,
-                                        <http://snomed.info/277132007> ,
-                                        <http://snomed.info/410942007> ,
-                                        <http://snomed.info/62014003> ,
-                                        :Patient ,
+                  schema:domainIncludes <http://snomed.info/277132007> ,
+                                        <http://snomed.info/410942007> ;
+                  
+                  schema:rangeIncludes <http://snomed.info/62014003> ,
+                                       :AdverseDrugReaction ;
+                  
+                  schema:domainIncludes :Patient ,
                                         :TherapeuticProcedure ;
                   
                   rdfs:subPropertyOf :adverseEvent .
@@ -166,16 +164,22 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               rdfs:comment "Specifying an adverse event, in general sense - defined according World Health Organization standards"@en ;
               
-              schema:domainIncludes schema:Person ,
-                                    <http://snomed.info/105590001> ,
-                                    <http://snomed.info/116154003> ,
-                                    <http://snomed.info/125676002> ,
+              schema:domainIncludes <http://snomed.info/105590001> ,
                                     <http://snomed.info/277132007> ;
               
-              schema:rangeIncludes <http://snomed.info/281647001> ;
+              schema:rangeIncludes <http://snomed.info/281647001> ,
+                                   :AdverseEvent ;
               
               schema:domainIncludes :Patient ,
-                                    :TherapeuticProcedure .
+                                    :TherapeuticProcedure ;
+              
+              rdfs:subPropertyOf :adverseOutcome .
+
+
+
+###  http://www.example.org/medicalEntity#adverseOutcome
+
+:adverseOutcome rdf:type owl:ObjectProperty .
 
 
 
@@ -185,17 +189,13 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:label "alcohol intake" ;
                
-               rdfs:comment "Specifying a alcohol intake behavious description of a person. "@en ;
+               rdfs:comment "Specifying a alcohol intake behaviour description of a person. "@en ;
                
-               schema:domainIncludes schema:Person ,
-                                     <http://snomed.info/116154003> ,
-                                     <http://snomed.info/125676002> ;
+               schema:domainIncludes schema:Person ;
                
                schema:rangeIncludes :AlcoholIntake ;
                
-               schema:domainIncludes :Patient ;
-               
-               rdfs:subPropertyOf :lifestyleOrHabits .
+               rdfs:subPropertyOf :lifestyleOrHabit .
 
 
 
@@ -207,7 +207,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           rdfs:comment "Specifying something that can cause an allergic reaction."@en ;
           
-          schema:domainIncludes <http://snomed.info/421961002> ,
+          schema:domainIncludes schema:Person ,
+                                <http://snomed.info/421961002> ,
                                 <http://snomed.info/473011001> ;
           
           schema:rangeIncludes <http://snomed.info/90260006> ;
@@ -226,10 +227,6 @@ rdfs:comment rdf:type owl:AnnotationProperty .
          
          rdfs:comment "Specifying an allergic reaction, an hypersensitivity or disorder."@en ;
          
-         schema:domainIncludes schema:Person ,
-                               <http://snomed.info/116154003> ,
-                               <http://snomed.info/125676002> ;
-         
          schema:rangeIncludes <http://snomed.info/421961002> ,
                               <http://snomed.info/473011001> ,
                               :Allergy ;
@@ -242,15 +239,13 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :anamnesisProcedure rdf:type owl:ObjectProperty ;
                     
-                    rdfs:comment "specifying the anamnesis procedure of patient" ;
+                    rdfs:label "anamnesis procedure" ;
                     
-                    schema:domainIncludes schema:Person ,
-                                          <http://snomed.info/116154003> ,
-                                          <http://snomed.info/125676002> ;
+                    rdfs:comment "Specifying the anamnesis procedure resource for a patient or a person." ;
+                    
+                    schema:domainIncludes schema:Person ;
                     
                     schema:rangeIncludes :AnamnesisProcedure ;
-                    
-                    schema:domainIncludes :Patient ;
                     
                     rdfs:subPropertyOf :medicalProcedure .
 
@@ -264,11 +259,13 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Specifying the anatomical organ for a resource" ;
                  
+                 schema:domainIncludes schema:Person ,
+                                       <http://snomed.info/404684003> ;
+                 
                  schema:rangeIncludes :AnatomicalOrgan ;
                  
                  schema:domainIncludes :ClinicalFinding ,
-                                       :MedicalProcedure ,
-                                       :Patient .
+                                       :MedicalProcedure .
 
 
 
@@ -280,9 +277,31 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying the anatomical region for a resource" ;
                   
+                  schema:domainIncludes schema:Person ,
+                                        <http://snomed.info/404684003> ;
+                  
+                  schema:rangeIncludes :AnatomicalRegion ;
+                  
                   schema:domainIncludes :ClinicalFinding ,
-                                        :MedicalProcedure ,
-                                        :Patient .
+                                        :MedicalProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#anatomicalStructure
+
+:anatomicalStructure rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "anatomical structure" ;
+                     
+                     rdfs:comment "Specifying the anatomical structure for a resource" ;
+                     
+                     schema:domainIncludes schema:Person ,
+                                           <http://snomed.info/404684003> ;
+                     
+                     schema:rangeIncludes :AnatomicalStructure ;
+                     
+                     schema:domainIncludes :ClinicalFinding ,
+                                           :MedicalProcedure .
 
 
 
@@ -294,9 +313,13 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying the anatomical system for a resource" ;
                   
+                  schema:domainIncludes schema:Person ,
+                                        <http://snomed.info/404684003> ;
+                  
+                  schema:rangeIncludes :AnatomicalSystem ;
+                  
                   schema:domainIncludes :ClinicalFinding ,
-                                        :MedicalProcedure ,
-                                        :Patient .
+                                        :MedicalProcedure .
 
 
 
@@ -308,25 +331,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying the regularly recurrent wave of distension in arteries that results from the progress through an artery of blood injected into the arterial system at each contraction of the ventricles of the heart" ;
                
+               schema:domainIncludes schema:Person ;
+               
+               schema:rangeIncludes :Pulse ;
+               
                rdfs:subPropertyOf :sign .
-
-
-
-###  http://www.example.org/medicalEntity#behaviour
-
-:behaviour rdf:type owl:ObjectProperty ;
-           
-           rdfs:label "behaviour" ;
-           
-           rdfs:comment "specifying a resource describing the behaviour or lifestyles of a person or patient" ;
-           
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ;
-           
-           schema:rangeIncludes :LifestyleOrHabits ;
-           
-           schema:domainIncludes :Patient .
 
 
 
@@ -344,6 +353,38 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#biologicalFather
+
+:biologicalFather rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "biological father" ;
+                  
+                  rdfs:comment "Specifying a person who is a biological father (parent) of this person." ;
+                  
+                  schema:domainIncludes schema:Person ;
+                  
+                  schema:rangeIncludes schema:Person ;
+                  
+                  rdfs:subPropertyOf :father .
+
+
+
+###  http://www.example.org/medicalEntity#biologicalMother
+
+:biologicalMother rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "biological mother" ;
+                  
+                  rdfs:comment "Specifying a person who is a biological mother (parent) of this person." ;
+                  
+                  schema:rangeIncludes schema:Person ;
+                  
+                  schema:domainIncludes schema:Person ;
+                  
+                  rdfs:subPropertyOf :mother .
+
+
+
 ###  http://www.example.org/medicalEntity#birthPlace
 
 :birthPlace rdf:type owl:ObjectProperty ;
@@ -352,13 +393,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the place of birth for a person"@en ;
             
-            schema:domainIncludes schema:Person ,
-                                  <http://snomed.info/116154003> ,
-                                  <http://snomed.info/125676002> ;
+            schema:domainIncludes schema:Person ;
             
             schema:rangeIncludes <http://snomed.info/169812000> ;
             
-            schema:domainIncludes :Patient .
+            schema:domainIncludes :Birth .
 
 
 
@@ -368,11 +407,26 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:label "blood pressure" ;
                
-               rdfs:comment "Specifing the blood pressure resource of a patient" ;
+               rdfs:comment "Specifying the blood pressure resource of a patient" ;
                
-               schema:rangeIncludes :BloodPressure ;
+               schema:domainIncludes schema:Person ;
                
-               schema:domainIncludes :Patient .
+               schema:rangeIncludes <http://snomed.info/75367002> ,
+                                    :BloodPressure .
+
+
+
+###  http://www.example.org/medicalEntity#bodyPosition
+
+:bodyPosition rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "body position" ;
+              
+              rdfs:comment "Specifying a position of human body or anatomical entity in given space e.g. Supine body position, standing position, sitting position etc."@en ;
+              
+              schema:domainIncludes schema:Thing ;
+              
+              schema:rangeIncludes <http://snomed.info/364830008> .
 
 
 
@@ -383,17 +437,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           rdfs:comment "body side" ,
                        "specifying the laterality of the body structure, body organ, or body region." ;
           
-          schema:rangeIncludes :AnatomicalEntity .
-
-
-
-###  http://www.example.org/medicalEntity#bodySite
-
-:bodySite rdf:type owl:ObjectProperty ;
+          schema:rangeIncludes schema:Text ;
           
-          schema:rangeIncludes :AnatomicalEntity ;
-          
-          schema:domainIncludes :MedicalProcedure .
+          schema:domainIncludes <http://snomed.info/404684003> ,
+                                :ClinicalFinding .
 
 
 
@@ -418,6 +465,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               schema:rangeIncludes :MedicalUnit ;
               
+              schema:domainIncludes :Patient ;
+              
               rdfs:subPropertyOf :caringEvent .
 
 
@@ -432,8 +481,14 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               schema:rangeIncludes schema:MedicalOrganization ,
                                    schema:Person ,
-                                   <http://snomed.info/223366009> ,
-                                   :HealthcareProfessional ;
+                                   <http://snomed.info/223366009> ;
+              
+              schema:domainIncludes :CaringEvent ;
+              
+              schema:rangeIncludes :HealthcareProfessional ;
+              
+              schema:domainIncludes :MedicalProcedure ,
+                                    :Patient ;
               
               rdfs:subPropertyOf :caringEvent .
 
@@ -447,9 +502,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying a reason for a caring event(typically a medical condition or other encounter reasons)"@en ;
             
-            schema:domainIncludes schema:Person ;
+            schema:domainIncludes :CaringEvent ,
+                                  :MedicalProcedure ,
+                                  :Patient ;
             
-            rdfs:subPropertyOf :caringEvent .
+            rdfs:subPropertyOf :indication .
 
 
 
@@ -461,11 +518,15 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying a person (typically a patient) receiving services from the health care professional during a caring event."@en ;
              
-             schema:rangeIncludes schema:Person ;
+             schema:domainIncludes <http://snomed.info/223366009> ,
+                                   :CaringEvent ,
+                                   :HealthcareProfessional ;
              
-             rdfs:subPropertyOf :caringEvent ;
+             schema:rangeIncludes :Patient ;
              
-             owl:inverseOf :treatingPhysician .
+             owl:inverseOf :treatingPhysician ;
+             
+             rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -477,9 +538,28 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying an event wherein services are rendered by members of the health profession (or under their supervision) for the benefit of the patient."@en ;
              
-             schema:rangeIncludes schema:Event ;
+             schema:rangeIncludes :CaringEvent ;
+             
+             schema:domainIncludes :MedicalCondition ,
+                                   :Patient ;
              
              rdfs:subPropertyOf :lifeEvent .
+
+
+
+###  http://www.example.org/medicalEntity#causalityStatus
+
+:causalityStatus rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "causalityStatus" ;
+                 
+                 rdfs:comment "Causality score or ranking following a codified system (like HL7 causalityExpectation) or not." ;
+                 
+                 schema:rangeIncludes schema:Thing ;
+                 
+                 schema:domainIncludes schema:Thing ;
+                 
+                 rdfs:subPropertyOf :status .
 
 
 
@@ -491,15 +571,24 @@ rdfs:comment rdf:type owl:AnnotationProperty .
        
        rdfs:comment "Specifying a cause of something. when it's established. "@en ;
        
-       schema:rangeIncludes schema:Thing ;
+       schema:rangeIncludes schema:MedicalCause ;
        
-       schema:domainIncludes schema:Thing .
+       schema:domainIncludes :MedicalCondition ,
+                             :SignOrSymptom .
 
 
 
 ###  http://www.example.org/medicalEntity#chiefComplaint
 
 :chiefComplaint rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "chief complaint" ;
+                
+                rdfs:comment "Specifying a chief complaint resource" ;
+                
+                schema:rangeIncludes :ChiefComplaint ;
+                
+                schema:domainIncludes :Patient ;
                 
                 rdfs:subPropertyOf :symptom .
 
@@ -513,36 +602,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying a resource describing the childhood history of a patient or a person" ;
                   
-                  schema:domainIncludes schema:Person ,
-                                        <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ;
+                  schema:domainIncludes schema:Person ;
                   
                   schema:rangeIncludes :ChildhoodHistory ;
                   
-                  schema:domainIncludes :Patient ;
-                  
                   rdfs:subPropertyOf :socialHistory .
-
-
-
-###  http://www.example.org/medicalEntity#clinicaFinding
-
-:clinicaFinding rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "clinical finding"@en ;
-                
-                rdfs:comment "Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc"@en ;
-                
-                schema:domainIncludes schema:Person ,
-                                      <http://snomed.info/116154003> ;
-                
-                schema:rangeIncludes <http://snomed.info/118246004> ;
-                
-                schema:domainIncludes <http://snomed.info/125676002> ;
-                
-                schema:rangeIncludes <http://snomed.info/404684003> ;
-                
-                schema:domainIncludes :Patient .
 
 
 
@@ -560,42 +624,50 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#clinicalFinding
+
+:clinicalFinding rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "clinical finding"@en ;
+                 
+                 rdfs:comment "Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc"@en ;
+                 
+                 schema:rangeIncludes <http://snomed.info/118246004> ,
+                                      <http://snomed.info/404684003> ,
+                                      :ClinicalFinding ;
+                 
+                 schema:domainIncludes :Patient .
+
+
+
+###  http://www.example.org/medicalEntity#comprisedOf
+
+:comprisedOf rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "comprised Of" ;
+             
+             rdfs:comment "Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system."@en ;
+             
+             schema:rangeIncludes :AnatomicalStructure ,
+                                  :AnatomicalSystem ;
+             
+             schema:domainIncludes :AnatomicalSystem .
+
+
+
 ###  http://www.example.org/medicalEntity#confirmationStatus
 
 :confirmationStatus rdf:type owl:ObjectProperty ;
                     
                     rdfs:label "confirmation status"@en ;
                     
-                    rdfs:comment "Specifying the confirmation status of something. eg: confirmed, suspected etc., as outcome of evaluation process"@en .
-
-
-
-###  http://www.example.org/medicalEntity#contains
-
-:contains rdf:type owl:ObjectProperty ;
-          
-          rdfs:label "contains" ;
-          
-          rdfs:comment "Specifying something physically contained by something else."@en ;
-          
-          schema:domainIncludes schema:Thing ;
-          
-          schema:rangeIncludes schema:Thing .
-
-
-
-###  http://www.example.org/medicalEntity#contraIndication
-
-:contraIndication rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:label "Contra-indication"@en ;
-                  
-                  rdfs:comment "A contraindication for a procedure, a therapy, an action or a device use."@en ;
-                  
-                  schema:rangeIncludes schema:MedicalContraindication ;
-                  
-                  schema:domainIncludes schema:MedicalDevice ,
-                                        <http://snomed.info/71388002> .
+                    rdfs:comment "Specifying the confirmation status of something. eg: confirmed, suspected etc., as outcome of evaluation process"@en ;
+                    
+                    schema:domainIncludes schema:Text ;
+                    
+                    schema:rangeIncludes schema:Thing ;
+                    
+                    rdfs:subPropertyOf :status .
 
 
 
@@ -603,7 +675,15 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :cosmeticProcedure rdf:type owl:ObjectProperty ;
                    
-                   rdfs:subPropertyOf :medicalProcedure .
+                   rdfs:label "cosmetic procedure" ;
+                   
+                   rdfs:comment "Specifying a cosmetic procedure resource for a patient or a person" ;
+                   
+                   schema:domainIncludes schema:Person ;
+                   
+                   schema:rangeIncludes :MedicalProcedure ;
+                   
+                   rdfs:subPropertyOf :electiveProcedure .
 
 
 
@@ -615,27 +695,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the place of death for a person"@en ;
             
-            schema:domainIncludes schema:Person ,
-                                  <http://snomed.info/116154003> ,
-                                  <http://snomed.info/125676002> ;
+            schema:domainIncludes schema:Person ;
             
             schema:rangeIncludes <http://snomed.info/169812000> ;
             
-            schema:domainIncludes :Patient .
-
-
-
-###  http://www.example.org/medicalEntity#denominator
-
-:denominator rdf:type owl:ObjectProperty ;
-             
-             rdfs:label "denominator" ;
-             
-             rdfs:comment "Specifying a denominator of a ratio; typically used in formalization of 'outOf'."@en ;
-             
-             schema:domainIncludes schema:Thing ;
-             
-             schema:rangeIncludes schema:Thing .
+            schema:domainIncludes :Death .
 
 
 
@@ -647,7 +711,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying a medical condition which is output of a diagnosis process"@en ;
            
-           schema:rangeIncludes schema:MedicalCondition .
+           schema:rangeIncludes schema:MedicalCondition ,
+                                <http://snomed.info/439401001> ;
+           
+           schema:domainIncludes :Patient .
 
 
 
@@ -657,9 +724,14 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "diagnosis mean" ;
                 
-                rdfs:comment "Specyfying the mean for diagnosis procedure." ;
+                rdfs:comment "Specifying the mean for diagnosis procedure." ;
                 
-                schema:domainIncludes :Diagnosis ;
+                schema:rangeIncludes schema:MedicalDevice ,
+                                     schema:MedicalTest ,
+                                     <http://snomed.info/260686004> ;
+                
+                schema:domainIncludes <http://snomed.info/439401001> ,
+                                      :Diagnosis ;
                 
                 rdfs:subPropertyOf :diagnosis .
 
@@ -673,7 +745,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Specifying the location or place where the diagnosis was made. Typically the department or health facility unit." ;
                  
-                 schema:domainIncludes :Diagnosis ;
+                 schema:domainIncludes <http://snomed.info/439401001> ,
+                                       :Diagnosis ;
                  
                  schema:rangeIncludes :HealthFacility ,
                                       :MedicalDepartment ,
@@ -687,10 +760,13 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :diagnosticProcedure rdf:type owl:ObjectProperty ;
                      
-                     schema:domainIncludes schema:Person ,
-                                           <http://snomed.info/116154003> ,
-                                           <http://snomed.info/125676002> ,
-                                           :Patient ;
+                     rdfs:label "diagnostic procedure" ;
+                     
+                     rdfs:comment "Specifying the diagnostic procedure resource for a patient or a person." ;
+                     
+                     schema:rangeIncludes :DiagnosticProcedure ;
+                     
+                     schema:domainIncludes :Patient ;
                      
                      rdfs:subPropertyOf :medicalProcedure .
 
@@ -704,7 +780,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:comment "Specifying the type of diagnosis i.e discharge diagnosis, admission diagnosis, etc."@en ;
                 
-                schema:domainIncludes :Diagnosis ;
+                schema:rangeIncludes <http://snomed.info/106229004> ;
+                
+                schema:domainIncludes <http://snomed.info/439401001> ,
+                                      :Diagnosis ;
                 
                 rdfs:subPropertyOf :diagnosis .
 
@@ -718,10 +797,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                         
                         rdfs:comment "Specifying a diastolic arterial blood pressure of a patient."@en ;
                         
-                        schema:domainIncludes schema:Person ,
-                                              <http://snomed.info/116154003> ,
-                                              <http://snomed.info/125676002> ,
-                                              :Patient ;
+                        schema:domainIncludes schema:Person ;
+                        
+                        schema:rangeIncludes <http://snomed.info/271650006> ;
                         
                         rdfs:subPropertyOf :bloodPressure .
 
@@ -735,24 +813,29 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "specifying a discharge procedure resource of a patient" ;
            
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ;
+           schema:rangeIncludes :Discharge ;
            
-           schema:rangeIncludes :DischargeProcedure ;
-           
-           schema:domainIncludes :Patient ;
+           schema:domainIncludes :EncounterProcedure ,
+                                 :Patient ;
            
            rdfs:subPropertyOf :encounter .
 
 
 
-###  http://www.example.org/medicalEntity#diseaseStage
+###  http://www.example.org/medicalEntity#drug
 
-:diseaseStage rdf:type owl:ObjectProperty ;
-              
-              rdfs:comment "disease stage" ,
-                           "Specifying the stage of a disease, eg. HIV/AIDS stage 4"@en .
+:drug rdf:type owl:ObjectProperty ;
+      
+      rdfs:label "drug " ;
+      
+      rdfs:comment "Specifying a drug or medicine used in a medication procedure" ;
+      
+      schema:rangeIncludes <http://snomed.info/410942007> ,
+                           :Drug ;
+      
+      schema:domainIncludes :MedicalCondition ,
+                            :Patient ,
+                            :TherapeuticProcedure .
 
 
 
@@ -760,10 +843,17 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :drugAdministration rdf:type owl:ObjectProperty ;
                     
-                    rdfs:comment "drug administration" ,
-                                 "specifying the event of administrering the drug to the patient. Typically associated with the route of administration ie.oral, injection etc." ;
+                    rdfs:label "drug administration" ;
                     
-                    rdfs:subPropertyOf :drugOrMedicine .
+                    rdfs:comment "specifying the event of administering the drug to the patient. Typically associated with the route of administration ie.oral, injection etc." ;
+                    
+                    schema:rangeIncludes <http://snomed.info/182832007> ;
+                    
+                    schema:domainIncludes :MedicalCondition ,
+                                          :Patient ,
+                                          :TherapeuticProcedure ;
+                    
+                    rdfs:subPropertyOf :drug .
 
 
 
@@ -771,9 +861,19 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :drugDispensation rdf:type owl:ObjectProperty ;
                   
+                  rdfs:label "drug dispensation" ;
+                  
                   rdfs:comment "Specifying an drug dispensation event i.e the event of delivering the drug to the patient at pharmacy. This is different to the drug administration"@en ;
                   
-                  rdfs:subPropertyOf :drugOrMedicine .
+                  schema:domainIncludes <http://snomed.info/223366009> ;
+                  
+                  schema:rangeIncludes <http://snomed.info/440298008> ;
+                  
+                  schema:domainIncludes :HealthcareProfessional ,
+                                        :MedicalCondition ,
+                                        :TherapeuticProcedure ;
+                  
+                  rdfs:subPropertyOf :drug .
 
 
 
@@ -781,32 +881,17 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :drugIntaken rdf:type owl:ObjectProperty ;
              
-             rdfs:comment "Specifying an event of taking cure medication, related to a medication periode"@en ;
+             rdfs:label "drug intake" ;
              
-             schema:domainIncludes schema:Person ,
-                                   <http://snomed.info/116154003> ,
-                                   <http://snomed.info/125676002> ;
+             rdfs:comment "Specifying an event of taking cure medication, related to a medication period"@en ;
              
              schema:rangeIncludes <http://snomed.info/129019007> ;
              
-             schema:domainIncludes :Patient ;
+             schema:domainIncludes :MedicalCondition ,
+                                   :Patient ,
+                                   :TherapeuticProcedure ;
              
-             rdfs:subPropertyOf :drugOrMedicine .
-
-
-
-###  http://www.example.org/medicalEntity#drugOrMedicine
-
-:drugOrMedicine rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "drug or medicine" ;
-                
-                rdfs:comment "Specifying a drug or medicine used in a medication procedure" ;
-                
-                schema:rangeIncludes <http://snomed.info/410942007> ,
-                                     :DrugTherapy ;
-                
-                schema:domainIncludes :TherapeuticProcedure .
+             rdfs:subPropertyOf :drug .
 
 
 
@@ -818,9 +903,15 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Specifying a drug preparation used in a procedure, typically prepared for a patient from one or multiple drug packages"@en ;
                  
+                 schema:domainIncludes schema:Person ;
+                 
                  schema:rangeIncludes <http://snomed.info/105904009> ;
                  
-                 rdfs:subPropertyOf :drugOrMedicine .
+                 schema:domainIncludes <http://snomed.info/223366009> ,
+                                       :HealthcareProfessional ,
+                                       :TherapeuticProcedure ;
+                 
+                 rdfs:subPropertyOf :drug .
 
 
 
@@ -830,15 +921,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "education level" ;
                 
-                rdfs:comment "specifying the education level of the person" ;
+                rdfs:comment "Specifying the education level of the person" ;
                 
-                schema:domainIncludes schema:Person ,
-                                      <http://snomed.info/116154003> ,
-                                      <http://snomed.info/125676002> ;
+                schema:domainIncludes schema:Person ;
                 
-                schema:rangeIncludes :EducationLevel ;
-                
-                schema:domainIncludes :Patient .
+                schema:rangeIncludes :EducationLevel .
 
 
 
@@ -850,13 +937,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "specifying the elderhood history of someone" ;
                   
-                  schema:domainIncludes schema:Person ,
-                                        <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ;
+                  schema:domainIncludes schema:Person ;
                   
                   schema:rangeIncludes :Elderhood ;
-                  
-                  schema:domainIncludes :Patient ;
                   
                   rdfs:subPropertyOf :socialHistory .
 
@@ -865,6 +948,14 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 ###  http://www.example.org/medicalEntity#electiveProcedure
 
 :electiveProcedure rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "elective procedure" ;
+                   
+                   rdfs:comment "Specifying the elective procedure resource for a patient or a person." ;
+                   
+                   schema:domainIncludes schema:Person ;
+                   
+                   schema:rangeIncludes :ElectiveProcedure ;
                    
                    rdfs:subPropertyOf :medicalProcedure .
 
@@ -878,13 +969,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying an encounter between the patient and a healthcare provider."@en ;
            
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ;
+           schema:domainIncludes schema:Person ;
            
-           schema:rangeIncludes <http://snomed.info/308335008> ;
-           
-           schema:domainIncludes :Patient .
+           schema:rangeIncludes <http://snomed.info/308335008> ,
+                                :EncounterProcedure .
 
 
 
@@ -896,9 +984,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:comment "specifying the location or a place where the encounter took place" ;
                 
-                schema:rangeIncludes :HealthFacility ,
-                                     :MedicalDepartment ,
-                                     :MedicalUnit ;
+                schema:domainIncludes :EncounterProcedure ;
+                
+                schema:rangeIncludes :HealthFacility ;
                 
                 rdfs:subPropertyOf :encounter .
 
@@ -908,8 +996,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :encounterProvider rdf:type owl:ObjectProperty ;
                    
-                   rdfs:label "specifying the provider of the encounter" ,
-                              "encounter provider" ;
+                   rdfs:label "encounter provider" ;
+                   
+                   rdfs:comment "specifying the provider of the encounter" ;
                    
                    schema:rangeIncludes schema:Person ,
                                         <http://snomed.info/223366009> ;
@@ -930,11 +1019,15 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "specifying the reason or indication for a patient encounter" ;
                  
+                 schema:rangeIncludes schema:MedicalIndication ;
+                 
+                 schema:domainIncludes :EncounterProcedure ;
+                 
+                 schema:rangeIncludes :MedicalCondition ;
+                 
                  schema:domainIncludes :Patient ;
                  
-                 schema:rangeIncludes :SignOrSymptom ;
-                 
-                 rdfs:subPropertyOf :encounter .
+                 rdfs:subPropertyOf :indication .
 
 
 
@@ -942,32 +1035,17 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :encounterStatus rdf:type owl:ObjectProperty ;
                  
-                 rdfs:comment "specifying the status of discharhe procedure." ,
+                 rdfs:comment "specifying the status of discharge procedure." ,
                               "discharge status" ;
                  
-                 schema:domainIncludes schema:Person ,
-                                       <http://snomed.info/116154003> ,
-                                       <http://snomed.info/125676002> ,
-                                       :DischargeProcedure ,
+                 schema:domainIncludes schema:Person ;
+                 
+                 schema:rangeIncludes schema:Text ;
+                 
+                 schema:domainIncludes :EncounterProcedure ,
                                        :Patient ;
                  
                  rdfs:subPropertyOf :encounter .
-
-
-
-###  http://www.example.org/medicalEntity#ethnicOrigin
-
-:ethnicOrigin rdf:type owl:ObjectProperty ;
-              
-              rdfs:label "ethnic origin" ;
-              
-              rdfs:comment """Race is a biologically defined group and the term refers to a person's physical appearance, such as skin color, eye color, hair color, bone/jaw structure etc. 
-Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property """ ,
-                           "Specifying an ethnic group of person."@en ;
-              
-              schema:domainIncludes schema:Person ;
-              
-              rdfs:subPropertyOf :socialHistory .
 
 
 
@@ -977,19 +1055,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
            
            rdfs:label "ethnicity" ;
            
-           rdfs:comment """Ethnicity or ethnic group is a socially defined category of people.
-Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property """ ,
-                        "specifying the ethnicity of someone." ;
+           rdfs:comment "Specifying the ethnicity resource of someone. Ethnicity or ethnic group is a socially defined category of people. Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property " ;
            
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ;
+           schema:domainIncludes schema:Person ;
            
            schema:rangeIncludes :Ethnicity ;
            
-           schema:domainIncludes :Patient ;
-           
-           rdfs:subPropertyOf :ethnicOrigin .
+           rdfs:subPropertyOf :socialHistory .
 
 
 
@@ -999,12 +1071,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
              
              rdfs:label "examination" ;
              
-             rdfs:comment "Specifying an examination procedure in general meaning performed on  something or on a patient."@en ;
+             rdfs:comment "Specifying an examination procedure in general performed on  something or on a patient."@en ;
              
-             schema:domainIncludes schema:Person ,
-                                   <http://snomed.info/116154003> ,
-                                   <http://snomed.info/125676002> ,
-                                   :Patient .
+             schema:rangeIncludes schema:MedicalTest ;
+             
+             schema:domainIncludes :Patient .
 
 
 
@@ -1012,15 +1083,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :familyHistory rdf:type owl:ObjectProperty ;
                
-               rdfs:comment " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
+               rdfs:label "family history" ;
                
-               schema:domainIncludes schema:Person ,
-                                     <http://snomed.info/116154003> ,
-                                     <http://snomed.info/125676002> ;
+               rdfs:comment "Specifying a personal history as a part of a full medical history provided by the patient during an anamnesis procedure ."@en ;
+               
+               schema:domainIncludes schema:Person ;
                
                schema:rangeIncludes <http://snomed.info/57177007> ;
-               
-               schema:domainIncludes :Patient ;
                
                rdfs:subPropertyOf :medicalHistory .
 
@@ -1030,14 +1099,29 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :familyMember rdf:type owl:ObjectProperty ;
               
-              rdfs:comment "Specifying a family member for a person" ;
+              rdfs:label "family member" ;
               
-              schema:domainIncludes schema:Person ,
-                                    <http://snomed.info/116154003> ,
-                                    <http://snomed.info/125676002> ,
-                                    :Patient ;
+              rdfs:comment "Specifying a family member for this person" ;
+              
+              schema:rangeIncludes schema:Person ;
+              
+              schema:domainIncludes schema:Person ;
               
               rdfs:subPropertyOf :familyHistory .
+
+
+
+###  http://www.example.org/medicalEntity#familyRelationship
+
+:familyRelationship rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "relationship" ;
+                    
+                    rdfs:comment "Specifying a relationship between persons. Typically between persons uses the 'American Kinship terminology'."@en ;
+                    
+                    schema:domainIncludes schema:Person ;
+                    
+                    schema:rangeIncludes :FamilyRelation .
 
 
 
@@ -1045,14 +1129,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :father rdf:type owl:ObjectProperty ;
         
-        rdfs:comment "Specifying a person who plays a role of an administrative father (parent) of someone." ;
+        rdfs:label "father" ;
         
-        schema:domainIncludes schema:Person ,
-                              <http://snomed.info/116154003> ,
-                              <http://snomed.info/125676002> ,
-                              :Patient ;
+        rdfs:comment "Specifying a father (parent) of this person when no other specifications are given." ;
         
-        rdfs:subPropertyOf :familyMember .
+        schema:domainIncludes schema:Person ;
+        
+        schema:rangeIncludes schema:Person ;
+        
+        rdfs:subPropertyOf :parent .
 
 
 
@@ -1060,34 +1145,51 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :guarantor rdf:type owl:ObjectProperty ;
            
+           rdfs:label "guarantor" ;
+           
            rdfs:comment "Specifying a person or company , known as guarantor, offering insurance policies in return for premiums"@en ;
            
-           schema:rangeIncludes schema:Organization ,
-                                schema:Person .
+           schema:rangeIncludes schema:Organization ;
+           
+           schema:domainIncludes schema:Person ;
+           
+           schema:rangeIncludes schema:Person .
 
 
 
-###  http://www.example.org/medicalEntity#gynecObsetricHistory
+###  http://www.example.org/medicalEntity#gynObsHistory
 
-:gynecObsetricHistory rdf:type owl:ObjectProperty ;
-                      
-                      rdfs:comment "specifying the gyneco-obstetric history of a patient" ;
-                      
-                      schema:domainIncludes schema:Person ,
-                                            <http://snomed.info/116154003> ,
-                                            <http://snomed.info/125676002> ;
-                      
-                      schema:rangeIncludes :GynecObstetricHistory ;
-                      
-                      schema:domainIncludes :Patient ;
-                      
-                      rdfs:subPropertyOf :personalHistory .
+:gynObsHistory rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "gynaecology and obstetric history" ;
+               
+               rdfs:comment "Specifying the gynaecology-obstetric history of a patient" ;
+               
+               schema:domainIncludes schema:Person ;
+               
+               schema:rangeIncludes :GynObsHistory ;
+               
+               rdfs:subPropertyOf :personalHistory .
 
 
 
 ###  http://www.example.org/medicalEntity#healthFacility
 
-:healthFacility rdf:type owl:ObjectProperty .
+:healthFacility rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "health facility" ;
+                
+                rdfs:comment "Specifying a health facility where care is being given." ;
+                
+                schema:domainIncludes <http://snomed.info/404684003> ,
+                                      :ClinicalFinding ;
+                
+                schema:rangeIncludes :HealthFacility ;
+                
+                schema:domainIncludes :LifeEvent ,
+                                      :MedicalIntervention ,
+                                      :MedicalProcedure ,
+                                      :Patient .
 
 
 
@@ -1097,9 +1199,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                          
                          rdfs:label "History of Present Illness" ;
                          
-                         schema:domainIncludes schema:Person ,
-                                               <http://snomed.info/116154003> ,
-                                               <http://snomed.info/125676002> ;
+                         rdfs:comment "The history of the present illness." ;
                          
                          schema:rangeIncludes :HistoryOfPresentIllness ;
                          
@@ -1113,27 +1213,20 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :indication rdf:type owl:ObjectProperty ;
             
-            rdfs:label "Indication"@en ;
+            rdfs:label "indication"@en ;
             
-            rdfs:comment "Specifying the indication of a medical procedure, an action, a therapy, etc"@en ;
+            rdfs:comment "A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication."@en ;
             
-            schema:domainIncludes schema:MedicalDevice ;
+            schema:domainIncludes schema:MedicalDevice ,
+                                  schema:MedicalIndication ;
             
             schema:rangeIncludes schema:MedicalIndication ;
             
-            schema:domainIncludes <http://snomed.info/71388002> .
-
-
-
-###  http://www.example.org/medicalEntity#instant
-
-:instant rdf:type owl:ObjectProperty ;
-         
-         rdfs:comment "Specifying an instant of something."@en ;
-         
-         schema:rangeIncludes schema:QuantitativeValue ;
-         
-         schema:domainIncludes schema:Thing .
+            schema:domainIncludes <http://snomed.info/71388002> ,
+                                  :CaringEvent ,
+                                  :MedicalIntervention ,
+                                  :MedicalProcedure ,
+                                  :MedicalTherapy .
 
 
 
@@ -1141,9 +1234,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :insurance rdf:type owl:ObjectProperty ;
            
-           rdfs:comment "Specifying an insurance scheme owned by a person or company ,offered by a a busness entity as defined in "@en ;
+           rdfs:label "insurance" ;
            
-           schema:rangeIncludes gr:Offering .
+           rdfs:comment "Specifying an insurance scheme for a patient. "@en ;
+           
+           schema:rangeIncludes schema:Offer ;
+           
+           schema:domainIncludes :Patient .
 
 
 
@@ -1151,11 +1248,17 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :interpretation rdf:type owl:ObjectProperty ;
                 
-                rdfs:comment "Specifying an interpretation of something"@en ;
+                rdfs:label "interpretation" ;
                 
-                schema:domainIncludes schema:Thing ;
+                rdfs:comment "Specifying an interpretation of something or concise and clinically contextualized narrative interpretation of laboratory results or medical test."@en ;
                 
-                schema:rangeIncludes schema:Thing .
+                schema:rangeIncludes <http://snomed.info/243814003> ,
+                                     <http://snomed.info/277034006> ;
+                
+                schema:domainIncludes <http://snomed.info/404684003> ,
+                                      :ClinicalFinding ,
+                                      :DiagnosticProcedure ,
+                                      :PhysicalExamination .
 
 
 
@@ -1163,7 +1266,9 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :interval rdf:type owl:ObjectProperty ;
           
-          rdfs:comment "Specifying an interval of something."@en ;
+          rdfs:label "interval" ;
+          
+          rdfs:comment "Typically derived from W3C Time Ontology this describes a time interval when an event or action occurs."@en ;
           
           schema:rangeIncludes schema:QuantitativeValue ;
           
@@ -1171,25 +1276,19 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
-###  http://www.example.org/medicalEntity#kinshipTo
-
-:kinshipTo rdf:type owl:ObjectProperty ;
-           
-           rdfs:comment "Specifying a the person a relatioship is pointing to."@en ;
-           
-           schema:domainIncludes <http://purl.bioontology.org/ontology/MESH/D005195> ;
-           
-           schema:rangeIncludes schema:Person .
-
-
-
 ###  http://www.example.org/medicalEntity#laboratoryProcedure
 
 :laboratoryProcedure rdf:type owl:ObjectProperty ;
                      
-                     schema:domainIncludes schema:Thing ;
+                     rdfs:label "laboratory procedure" ;
                      
-                     rdfs:subPropertyOf :medicalProcedure .
+                     rdfs:comment "Specifying a laboratory procedure resource for a patient or a person." ;
+                     
+                     schema:rangeIncludes :LaboratoryTest ;
+                     
+                     schema:domainIncludes :Patient ;
+                     
+                     rdfs:subPropertyOf :diagnosticProcedure .
 
 
 
@@ -1199,7 +1298,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                   
                   rdfs:label "laboratory result" ;
                   
-                  rdfs:comment "Specifying the laboratory test findings" ;
+                  rdfs:comment "Specifying the laboratory test findings for a person" ;
                   
                   schema:rangeIncludes :LaboratoryResult ;
                   
@@ -1211,15 +1310,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :lastMenstruationPeriod rdf:type owl:ObjectProperty ;
                         
-                        rdfs:comment "Specifying the last menstruation period of a patient" ;
+                        rdfs:comment "Specifying the last menstruation period of a woman" ;
                         
-                        schema:domainIncludes schema:Person ,
-                                              <http://snomed.info/116154003> ,
-                                              <http://snomed.info/125676002> ;
+                        schema:rangeIncludes schema:QuantitativeValue ;
                         
-                        schema:rangeIncludes :Menstruation ;
+                        schema:domainIncludes <http://snomed.info/224526002> ;
                         
-                        schema:domainIncludes :Patient .
+                        rdfs:subPropertyOf :interval .
 
 
 
@@ -1229,7 +1326,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
            
            rdfs:label "life event" ;
            
-           rdfs:comment "Specifying an event in person's life timeline" ;
+           rdfs:comment "Specifying an event in person's life time line" ;
            
            schema:rangeIncludes :LifeEvent ;
            
@@ -1237,19 +1334,19 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
-###  http://www.example.org/medicalEntity#lifestyleOrHabits
+###  http://www.example.org/medicalEntity#lifestyleOrHabit
 
-:lifestyleOrHabits rdf:type owl:ObjectProperty ;
-                   
-                   schema:domainIncludes schema:Person ,
-                                         <http://snomed.info/116154003> ,
-                                         <http://snomed.info/125676002> ;
-                   
-                   schema:rangeIncludes :LifestyleOrHabits ;
-                   
-                   schema:domainIncludes :Patient ;
-                   
-                   rdfs:subPropertyOf :personalHistory .
+:lifestyleOrHabit rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "lifestyles or habits" ;
+                  
+                  rdfs:comment "describing the lifestyles or habits of the person" ;
+                  
+                  schema:domainIncludes schema:Person ;
+                  
+                  schema:rangeIncludes :LifestyleOrHabits ;
+                  
+                  rdfs:subPropertyOf :personalHistory .
 
 
 
@@ -1261,28 +1358,27 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                
                rdfs:comment "Specifying an agent having the social and/or juridical status of being married or unmarried. "@en ;
                
-               schema:domainIncludes schema:Person ,
-                                     <http://snomed.info/116154003> ,
-                                     <http://snomed.info/125676002> ;
+               schema:domainIncludes schema:Person ;
                
                schema:rangeIncludes <http://snomed.info/365581002> ;
-               
-               schema:domainIncludes :Patient ;
                
                rdfs:subPropertyOf :socialHistory .
 
 
 
-###  http://www.example.org/medicalEntity#maternalRelatives
+###  http://www.example.org/medicalEntity#maternalRelative
 
-:maternalRelatives rdf:type owl:ObjectProperty ;
-                   
-                   schema:domainIncludes schema:Person ,
-                                         <http://snomed.info/116154003> ,
-                                         <http://snomed.info/125676002> ,
-                                         :Patient ;
-                   
-                   rdfs:subPropertyOf :familyMember .
+:maternalRelative rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "maternal relative" ;
+                  
+                  rdfs:comment "Specifying the a maternal relative person of this person" ;
+                  
+                  schema:domainIncludes schema:Person ;
+                  
+                  schema:rangeIncludes schema:Person ;
+                  
+                  rdfs:subPropertyOf :familyMember .
 
 
 
@@ -1290,14 +1386,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalCase rdf:type owl:ObjectProperty ;
              
-             rdfs:comment "Specifying a medical case for a given medical entity or patient. A medical case is a sub-entity of a full medical record of a patient."@en ;
+             rdfs:label "medical case" ;
              
-             schema:rangeIncludes schema:MedicalEntity ;
+             rdfs:comment "Specifying a medical case for a given medical entity or patient. A medical case is a part of a full medical record of a patient."@en ;
              
-             schema:domainIncludes schema:Person ,
-                                   <http://snomed.info/116154003> ,
-                                   <http://snomed.info/125676002> ,
-                                   :Patient .
+             schema:rangeIncludes <http://schema.rdfs.org/all#MedicalCase> ;
+             
+             schema:domainIncludes :Patient .
 
 
 
@@ -1321,7 +1416,16 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalClinic rdf:type owl:ObjectProperty ;
                
-               schema:domainIncludes schema:Thing ;
+               schema:domainIncludes schema:Thing ,
+                                     <http://snomed.info/404684003> ,
+                                     :ClinicalFinding ,
+                                     :LifeEvent ;
+               
+               schema:rangeIncludes :MedicalClinic ;
+               
+               schema:domainIncludes :MedicalIntervention ,
+                                     :MedicalProcedure ,
+                                     :Patient ;
                
                rdfs:subPropertyOf :healthFacility .
 
@@ -1331,15 +1435,12 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalCondition rdf:type owl:ObjectProperty ;
                   
-                  rdfs:comment "Specifying a medical condition in general diagnosed or not."@en ;
+                  rdfs:label "medical condition" ;
                   
-                  schema:rangeIncludes schema:MedicalCondition ;
+                  rdfs:comment "Specifying a medical condition in general, diagnosed or not."@en ;
                   
-                  schema:domainIncludes schema:Person ,
-                                        <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ;
-                  
-                  schema:rangeIncludes :MedicalCondition ,
+                  schema:rangeIncludes schema:MedicalCondition ,
+                                       :MedicalCondition ,
                                        :MorbidityEvent ;
                   
                   schema:domainIncludes :Patient .
@@ -1350,7 +1451,16 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalDepartment rdf:type owl:ObjectProperty ;
                    
-                   schema:domainIncludes schema:Thing ;
+                   schema:domainIncludes schema:Thing ,
+                                         <http://snomed.info/404684003> ,
+                                         :ClinicalFinding ,
+                                         :LifeEvent ;
+                   
+                   schema:rangeIncludes :MedicalDepartment ;
+                   
+                   schema:domainIncludes :MedicalIntervention ,
+                                         :MedicalProcedure ,
+                                         :Patient ;
                    
                    rdfs:subPropertyOf :healthFacility .
 
@@ -1360,13 +1470,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalHistory rdf:type owl:ObjectProperty ;
                 
-                schema:domainIncludes schema:Person ,
-                                      <http://snomed.info/116154003> ,
-                                      <http://snomed.info/125676002> ;
+                rdfs:label "medical history" ;
                 
-                schema:rangeIncludes :MedicalHistory ;
+                rdfs:comment "Specifying a full medical history provided by the patient during an anamnesis procedure ." ;
                 
-                schema:domainIncludes :Patient .
+                schema:domainIncludes schema:Person ;
+                
+                schema:rangeIncludes :MedicalHistory .
 
 
 
@@ -1376,9 +1486,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                      
                      rdfs:label "medical intervention" ;
                      
-                     rdfs:comment "Medical surgical intervention-as a set of multiple procedures" ;
+                     rdfs:comment "Specifying the medical intervention resource for the patient or person. Medical intervention is a broad non specific term often used as a set of multiple procedures." ;
                      
-                     schema:rangeIncludes :MedicalIntervention .
+                     schema:rangeIncludes :MedicalIntervention ;
+                     
+                     schema:domainIncludes :Patient .
 
 
 
@@ -1406,10 +1518,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                      
                      rdfs:comment "Linking a patient with his medical order (=written prescription) for the patient. Not that for the provider we use the property prescribingProcedure."@en ;
                      
-                     schema:domainIncludes schema:Person ,
-                                           <http://snomed.info/116154003> ,
-                                           <http://snomed.info/125676002> ;
-                     
                      schema:rangeIncludes <http://snomed.info/440545006> ,
                                           :MedicalPrescription ;
                      
@@ -1423,13 +1531,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalProcedure rdf:type owl:ObjectProperty ;
                   
-                  schema:domainIncludes schema:Person ,
-                                        <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ;
+                  rdfs:label "medical procedure" ;
+                  
+                  rdfs:comment "Specifying the medical procedure resource of the patient or person." ;
                   
                   schema:rangeIncludes :MedicalProcedure ;
                   
-                  schema:domainIncludes :Patient .
+                  schema:domainIncludes :Patient ;
+                  
+                  rdfs:subPropertyOf :procedure .
 
 
 
@@ -1437,14 +1547,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalRecord rdf:type owl:ObjectProperty ;
                
+               rdfs:label "medical record" ;
+               
                rdfs:comment "Specifying a medical record for a given medical entity or patient. A medical record is a summ of all medical cases of a patient."@en ;
                
-               schema:rangeIncludes schema:MedicalEntity ;
+               schema:domainIncludes :Patient ;
                
-               schema:domainIncludes schema:Person ,
-                                     <http://snomed.info/116154003> ,
-                                     <http://snomed.info/125676002> ,
-                                     :Patient .
+               schema:rangeIncludes :RecordArtifact .
 
 
 
@@ -1475,7 +1584,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalRoom rdf:type owl:ObjectProperty ;
              
-             schema:domainIncludes schema:Thing ;
+             schema:domainIncludes <http://snomed.info/404684003> ,
+                                   :ClinicalFinding ,
+                                   :LifeEvent ,
+                                   :MedicalIntervention ,
+                                   :MedicalProcedure ;
+             
+             schema:rangeIncludes :MedicalRoom ;
+             
+             schema:domainIncludes :Patient ;
              
              rdfs:subPropertyOf :healthFacility .
 
@@ -1483,11 +1600,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 ###  http://www.example.org/medicalEntity#medicalSpecialty
 
-:medicalSpecialty rdf:type owl:ObjectProperty ;
-                  
-                  schema:rangeIncludes schema:Thing ;
-                  
-                  schema:domainIncludes schema:Thing .
+:medicalSpecialty rdf:type owl:ObjectProperty .
 
 
 
@@ -1499,6 +1612,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                      
                      rdfs:comment "Specifying the medical sub-speciality of a healthcare provider" ;
                      
+                     schema:domainIncludes schema:Person ,
+                                           <http://snomed.info/223366009> ,
+                                           :HealthFacility ,
+                                           :HealthcareProfessional ;
+                     
+                     schema:rangeIncludes :MedicalSubSpeciality ;
+                     
                      rdfs:subPropertyOf :medicalSpecialty .
 
 
@@ -1507,7 +1627,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalUnit rdf:type owl:ObjectProperty ;
              
-             schema:domainIncludes schema:Thing ;
+             schema:domainIncludes <http://snomed.info/404684003> ,
+                                   :ClinicalFinding ,
+                                   :LifeEvent ,
+                                   :MedicalIntervention ,
+                                   :MedicalProcedure ;
+             
+             schema:rangeIncludes :MedicalUnit ;
+             
+             schema:domainIncludes :Patient ;
              
              rdfs:subPropertyOf :healthFacility .
 
@@ -1517,11 +1645,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicalWard rdf:type owl:ObjectProperty ;
              
-             schema:domainIncludes :CaringEvent ,
+             schema:domainIncludes <http://snomed.info/404684003> ,
+                                   :ClinicalFinding ,
+                                   :LifeEvent ,
                                    :MedicalIntervention ,
                                    :MedicalProcedure ;
              
              schema:rangeIncludes :MedicalWard ;
+             
+             schema:domainIncludes :Patient ;
              
              rdfs:subPropertyOf :healthFacility .
 
@@ -1531,12 +1663,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :medicationProcedure rdf:type owl:ObjectProperty ;
                      
-                     schema:domainIncludes schema:Person ,
-                                           <http://snomed.info/116154003> ,
-                                           <http://snomed.info/125676002> ,
-                                           :Patient ;
+                     rdfs:label "medication procedure" ;
                      
-                     rdfs:subPropertyOf :medicalProcedure .
+                     rdfs:comment "Specifying a medication procedure resource for a patient or a person" ;
+                     
+                     schema:rangeIncludes :MedicalTherapy ;
+                     
+                     schema:domainIncludes :Patient ;
+                     
+                     rdfs:subPropertyOf :therapeuticProcedure .
 
 
 
@@ -1544,18 +1679,16 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :menopause rdf:type owl:ObjectProperty ;
            
+           rdfs:label "menopause" ;
+           
            rdfs:comment "Specifying the menopause event of a women " ;
            
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ;
+           schema:domainIncludes schema:Person ;
            
            schema:rangeIncludes <http://snomed.info/276477006> ,
                                 :Menopause ;
            
-           schema:domainIncludes :Patient ;
-           
-           rdfs:subPropertyOf :gynecObsetricHistory .
+           rdfs:subPropertyOf :gynObsHistory .
 
 
 
@@ -1563,17 +1696,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :menstruation rdf:type owl:ObjectProperty ;
               
+              rdfs:label "menstruation" ;
+              
               rdfs:comment "Specifying the menstruation event of a women " ;
               
-              schema:domainIncludes schema:Person ,
-                                    <http://snomed.info/116154003> ,
-                                    <http://snomed.info/125676002> ;
+              schema:domainIncludes <http://snomed.info/224526002> ;
               
               schema:rangeIncludes :Menstruation ;
               
-              schema:domainIncludes :Patient ;
-              
-              rdfs:subPropertyOf :gynecObsetricHistory .
+              rdfs:subPropertyOf :gynObsHistory .
 
 
 
@@ -1581,17 +1712,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :menstruationPeriod rdf:type owl:ObjectProperty ;
                     
+                    rdfs:label "menstruation period" ;
+                    
                     rdfs:comment "Specifying the menstruation period description event of a women " ;
                     
-                    schema:domainIncludes schema:Person ,
-                                          <http://snomed.info/116154003> ,
-                                          <http://snomed.info/125676002> ;
+                    schema:rangeIncludes schema:QuantitativeValue ;
                     
-                    schema:rangeIncludes :Menstruation ;
+                    schema:domainIncludes <http://snomed.info/224526002> ;
                     
-                    schema:domainIncludes :Patient ;
-                    
-                    rdfs:subPropertyOf :menstruation .
+                    rdfs:subPropertyOf :interval .
 
 
 
@@ -1599,29 +1728,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :mentalHealthHistory rdf:type owl:ObjectProperty ;
                      
-                     schema:domainIncludes schema:Person ,
-                                           <http://snomed.info/116154003> ,
-                                           <http://snomed.info/125676002> ;
+                     rdfs:label "mental health history" ;
+                     
+                     rdfs:comment "Specifying the mental health history for a patient" ;
+                     
+                     schema:domainIncludes schema:Person ;
                      
                      schema:rangeIncludes :MentalHealthHistory ;
                      
-                     schema:domainIncludes :Patient ;
-                     
                      rdfs:subPropertyOf :personalHistory .
-
-
-
-###  http://www.example.org/medicalEntity#method
-
-:method rdf:type owl:ObjectProperty ;
-        
-        rdfs:comment "Specifying the method used in a procedure" ;
-        
-        schema:domainIncludes schema:Thing ;
-        
-        schema:rangeIncludes schema:Thing ;
-        
-        schema:domainIncludes :MedicalProcedure .
 
 
 
@@ -1629,62 +1744,34 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :mother rdf:type owl:ObjectProperty ;
         
-        rdfs:comment "Specifying a women person as a mother of someone " ;
+        rdfs:label "mother" ;
+        
+        rdfs:comment "Specifying a mother (parent) of this person when no other specifications are given." ;
         
         schema:domainIncludes schema:Person ;
         
-        schema:rangeIncludes schema:Person ,
-                             <http://snomed.info/116154003> ;
+        schema:rangeIncludes schema:Person ;
         
-        schema:domainIncludes <http://snomed.info/116154003> ;
-        
-        schema:rangeIncludes <http://snomed.info/125676002> ;
-        
-        schema:domainIncludes <http://snomed.info/125676002> ,
-                              :Patient ;
-        
-        schema:rangeIncludes :Patient ;
-        
-        rdfs:subPropertyOf :familyMember .
+        rdfs:subPropertyOf :parent .
 
 
 
-###  http://www.example.org/medicalEntity#newborm
+###  http://www.example.org/medicalEntity#newborn
 
-:newborm rdf:type owl:ObjectProperty ;
+:newborn rdf:type owl:ObjectProperty ;
          
-         rdfs:comment "Specifying the newborn person " ,
-                      "Specifying a person as a newborn from delivery"@en ;
+         rdfs:label "newborn" ;
+         
+         rdfs:comment "Specifying the newborn person " ;
          
          schema:domainIncludes schema:Person ;
          
-         schema:rangeIncludes schema:Person ;
+         schema:rangeIncludes <http://snomed.info/133933007> ;
          
-         schema:domainIncludes <http://snomed.info/116154003> ;
-         
-         schema:rangeIncludes <http://snomed.info/116154003> ;
-         
-         schema:domainIncludes <http://snomed.info/125676002> ;
-         
-         schema:rangeIncludes <http://snomed.info/125676002> ,
-                              <http://snomed.info/133933007> ;
-         
-         schema:domainIncludes <http://snomed.info/360149000> ;
-         
-         schema:rangeIncludes :Newborn ,
-                              :Patient ;
-         
-         schema:domainIncludes :Patient ,
-                               :father ,
-                               :mother .
-
-
-
-###  http://www.example.org/medicalEntity#normalRange
-
-:normalRange rdf:type owl:ObjectProperty ;
-             
-             rdfs:comment "Range of acceptable values for quantitative values: typically a laboratory test, experiment accepted values etc"@en .
+         schema:domainIncludes <http://snomed.info/360149000> ,
+                               :LifeEvent ,
+                               :MedicalIntervention ,
+                               :MedicalProcedure .
 
 
 
@@ -1692,15 +1779,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :observable rdf:type owl:ObjectProperty ;
             
-            rdfs:label "has clinical observable"@en ;
+            rdfs:label "observable"@en ;
             
             rdfs:comment "Specifying a clinical observable of a patient not necessarily through a clinical examination. example: a swelling, etc"@en ;
             
-            schema:rangeIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ,
-                                 <http://snomed.info/363787002> ,
-                                 :Patient .
+            schema:rangeIncludes <http://snomed.info/363787002> ;
+            
+            schema:domainIncludes :Patient .
 
 
 
@@ -1708,13 +1793,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :occupationalHistory rdf:type owl:ObjectProperty ;
                      
-                     schema:domainIncludes schema:Person ,
-                                           <http://snomed.info/116154003> ,
-                                           <http://snomed.info/125676002> ;
+                     rdfs:label "occupational history" ;
+                     
+                     rdfs:comment "Specifying the occupational history resource of the patient or person." ;
+                     
+                     schema:domainIncludes schema:Person ;
                      
                      schema:rangeIncludes :OccupationalHistory ;
-                     
-                     schema:domainIncludes :Patient ;
                      
                      rdfs:subPropertyOf :socialHistory .
 
@@ -1726,38 +1811,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
            
            rdfs:label "onset mode" ;
            
-           rdfs:comment "Specifying a way a process, an ilness, or an event comes into existence"@en .
-
-
-
-###  http://www.example.org/medicalEntity#outcome
-
-:outcome rdf:type owl:ObjectProperty ;
-         
-         rdfs:label "outcome" ;
-         
-         rdfs:comment "Specifying the outcome of procedure or action " ;
-         
-         schema:rangeIncludes schema:Thing ;
-         
-         schema:domainIncludes schema:Thing ,
-                               :MedicalProcedure .
-
-
-
-###  http://www.example.org/medicalEntity#package
-
-:package rdf:type owl:ObjectProperty ;
-         
-         rdfs:label "package" ;
-         
-         rdfs:comment "Specifying something physically containing something else."@en ;
-         
-         schema:domainIncludes dcterms:PhysicalResource ;
-         
-         schema:rangeIncludes dcterms:PhysicalResource ;
-         
-         owl:inverseOf :contains .
+           rdfs:comment "Specifying a way a process, an illness, or an event comes into existence"@en ;
+           
+           schema:domainIncludes :MedicalCondition ;
+           
+           schema:rangeIncludes :OnsetMode .
 
 
 
@@ -1765,9 +1823,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :palliativeProcedure rdf:type owl:ObjectProperty ;
                      
-                     rdfs:comment "Specifying the a palliative procedure " ;
+                     rdfs:label "palliative procedure" ;
                      
-                     rdfs:subPropertyOf :medicalProcedure .
+                     rdfs:comment "Specifying a palliative procedure resource for a patient or a person" ;
+                     
+                     schema:rangeIncludes :PalliativeProcedure ;
+                     
+                     schema:domainIncludes :Patient ;
+                     
+                     rdfs:subPropertyOf :therapeuticProcedure .
 
 
 
@@ -1775,41 +1839,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :parent rdf:type owl:ObjectProperty ;
         
-        rdfs:comment "Specifying a person as parent of another person " ;
+        rdfs:label "parent" ;
+        
+        rdfs:comment "A parent of this person" ;
         
         schema:rangeIncludes schema:Person ;
         
-        schema:domainIncludes schema:Person ,
-                              <http://snomed.info/116154003> ;
-        
-        schema:rangeIncludes <http://snomed.info/116154003> ;
-        
-        schema:domainIncludes <http://snomed.info/125676002> ;
-        
-        schema:rangeIncludes <http://snomed.info/125676002> ,
-                             :Patient ;
-        
-        schema:domainIncludes :Patient ;
+        schema:domainIncludes schema:Person ;
         
         rdfs:subPropertyOf :familyMember .
-
-
-
-###  http://www.example.org/medicalEntity#parity
-
-:parity rdf:type owl:ObjectProperty ;
-        
-        rdfs:comment "Parity is defined as the number of times that she has given birth to a fetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn." ;
-        
-        schema:domainIncludes schema:Person ,
-                              <http://snomed.info/116154003> ,
-                              <http://snomed.info/125676002> ;
-        
-        schema:rangeIncludes :Parity ;
-        
-        schema:domainIncludes :Patient ;
-        
-        rdfs:subPropertyOf :gynecObsetricHistory .
 
 
 
@@ -1817,40 +1855,31 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :pastMedicalHistory rdf:type owl:ObjectProperty ;
                     
+                    rdfs:label "past medical history" ;
+                    
                     rdfs:comment "Specifying the past medical history of a patient" ;
                     
-                    schema:domainIncludes schema:Person ,
-                                          <http://snomed.info/116154003> ,
-                                          <http://snomed.info/125676002> ;
+                    schema:domainIncludes schema:Person ;
                     
                     schema:rangeIncludes :PastMedicalHistory ;
-                    
-                    schema:domainIncludes :Patient ;
                     
                     rdfs:subPropertyOf :personalHistory .
 
 
 
-###  http://www.example.org/medicalEntity#paternalRelatives
+###  http://www.example.org/medicalEntity#paternalRelative
 
-:paternalRelatives rdf:type owl:ObjectProperty ;
-                   
-                   rdfs:comment "Specifying the a paternal relative person of someone" ;
-                   
-                   schema:rangeIncludes schema:Person ;
-                   
-                   schema:domainIncludes schema:Person ,
-                                         <http://snomed.info/116154003> ;
-                   
-                   schema:rangeIncludes <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ;
-                   
-                   schema:domainIncludes <http://snomed.info/125676002> ,
-                                         :Patient ;
-                   
-                   schema:rangeIncludes :Patient ;
-                   
-                   rdfs:subPropertyOf :familyMember .
+:paternalRelative rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "paternal relative" ;
+                  
+                  rdfs:comment "Specifying the a paternal relative person of this person" ;
+                  
+                  schema:rangeIncludes schema:Person ;
+                  
+                  schema:domainIncludes schema:Person ;
+                  
+                  rdfs:subPropertyOf :familyMember .
 
 
 
@@ -1858,17 +1887,14 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :personalHistory rdf:type owl:ObjectProperty ;
                  
+                 rdfs:label "personal history" ;
+                 
                  rdfs:comment " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
                  
-                 schema:domainIncludes schema:Person ,
-                                       <http://snomed.info/116154003> ,
-                                       <http://snomed.info/125676002> ;
+                 schema:domainIncludes schema:Person ;
                  
-                 schema:rangeIncludes <http://snomed.info/160476009> ;
-                 
-                 schema:domainIncludes :Patient ;
-                 
-                 schema:rangeIncludes :PersonalHistory ;
+                 schema:rangeIncludes <http://snomed.info/160476009> ,
+                                      :PersonalHistory ;
                  
                  rdfs:subPropertyOf :medicalHistory .
 
@@ -1878,14 +1904,14 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :physicalActivity rdf:type owl:ObjectProperty ;
                   
-                  rdfs:comment "Specifying the physical activity of someone or another entity" ;
+                  rdfs:label "physical Activity" ;
                   
-                  schema:rangeIncludes "schema:PhysicalActivity" ;
+                  rdfs:comment "Specifying the physical activity  resource of the patient or person." ;
                   
-                  schema:domainIncludes schema:Person ,
-                                        <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ,
-                                        :Patient ;
+                  schema:domainIncludes schema:Person ;
+                  
+                  schema:rangeIncludes schema:PhysicalActivity ,
+                                       :RecreationalHistory ;
                   
                   rdfs:subPropertyOf :socialHistory .
 
@@ -1895,7 +1921,20 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :physicalExamination rdf:type owl:ObjectProperty ;
                      
-                     rdfs:subPropertyOf :medicalProcedure .
+                     rdfs:label "physical examination" ;
+                     
+                     rdfs:comment "Specifying a physical examination procedure resource for a patient or a person" ;
+                     
+                     schema:domainIncludes <http://snomed.info/404684003> ,
+                                           :ClinicalFinding ,
+                                           :LifeEvent ,
+                                           :MedicalIntervention ,
+                                           :MedicalProcedure ,
+                                           :Patient ;
+                     
+                     schema:rangeIncludes :PhysicalExamination ;
+                     
+                     rdfs:subPropertyOf :diagnosticProcedure .
 
 
 
@@ -1917,25 +1956,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :playsRole rdf:type owl:ObjectProperty ;
            
+           rdfs:label "plays role" ;
+           
            rdfs:comment "Specifying the role played by an agent " ;
            
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ,
-                                 :Patient .
-
-
-
-###  http://www.example.org/medicalEntity#position
-
-:position rdf:type owl:ObjectProperty ;
-          
-          rdfs:comment "Specifying a position of something in given space. e.g. standing position, sitting position etc."@en ;
-          
-          schema:rangeIncludes schema:GeoCoordinates ,
-                               schema:GeoShape ;
-          
-          schema:domainIncludes schema:Thing .
+           schema:rangeIncludes schema:Thing ;
+           
+           schema:domainIncludes schema:Thing .
 
 
 
@@ -1953,20 +1980,25 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
+###  http://www.example.org/medicalEntity#possibleTreatment
+
+:possibleTreatment rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:subPropertyOf :treatment .
+
+
+
 ###  http://www.example.org/medicalEntity#pregnancy
 
 :pregnancy rdf:type owl:ObjectProperty ;
            
-           rdfs:comment "Specifying the resource as the pregnancy event or period related to the patient not differentiating if the pregnancy gave a birth or not. Should be noted that gravidity property is a data property instead. " ,
-                        "Gravidity refers to the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth." ;
+           rdfs:label "pregnancy" ;
            
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ;
+           rdfs:comment "Specifying the resource as the pregnancy event or period related to the patient not differentiating if the pregnancy gave a birth or not. Should be noted that gravidity property is a data property instead. " ;
            
-           schema:rangeIncludes :Gravidity ;
+           schema:domainIncludes schema:Person ;
            
-           schema:domainIncludes :Patient .
+           schema:rangeIncludes :Gravidity .
 
 
 
@@ -1974,77 +2006,110 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :prescribingProcedure rdf:type owl:ObjectProperty ;
                       
-                      rdfs:comment "Specifying the prescribing procedure. This propety is linking a patient or a provider to the procedure. The precudre has as an output a prescription." ;
+                      rdfs:label "prescribing procedure" ;
                       
-                      rdfs:subPropertyOf :medicalProcedure .
+                      rdfs:comment "Specifying a prescribing procedure resource for a patient or a person. This property is linking a patient or a provider to the procedure. The procedure has as an output a prescription." ;
+                      
+                      schema:domainIncludes <http://snomed.info/223366009> ,
+                                            :HealthcareProfessional ,
+                                            :Patient ;
+                      
+                      schema:rangeIncludes :PrescribingProcedure ;
+                      
+                      rdfs:subPropertyOf :therapeuticProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#preventiveProcedure
+
+:preventiveProcedure rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "preventive procedure" ;
+                     
+                     rdfs:comment "Specifying any preventive procedure resource for a person" ;
+                     
+                     schema:domainIncludes :Patient ;
+                     
+                     schema:rangeIncludes :PreventiveProcedure ;
+                     
+                     rdfs:subPropertyOf :therapeuticProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#primaryPrevention
+
+:primaryPrevention rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:subPropertyOf :preventiveProcedure .
 
 
 
 ###  http://www.example.org/medicalEntity#procedure
 
-:procedure rdf:type owl:ObjectProperty ;
+:procedure rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.example.org/medicalEntity#race
+
+:race rdf:type owl:ObjectProperty ;
+      
+      rdfs:label "race origin" ;
+      
+      rdfs:comment "Specifying a race group or anthropological family as origin of the person. Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property "@en ;
+      
+      schema:domainIncludes schema:Person ;
+      
+      schema:rangeIncludes :Race ;
+      
+      rdfs:subPropertyOf :socialHistory .
+
+
+
+###  http://www.example.org/medicalEntity#rankOrder
+
+:rankOrder rdf:type owl:ObjectProperty ;
            
-           rdfs:comment " specifying a procedure for the patient ."@en ;
+           rdfs:label "rank order" ;
            
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ;
+           rdfs:comment "rank order number of something. Typically used together with schema:numerator and schema:denominator. eg. refill number 4 out of 10."@en ;
            
-           schema:rangeIncludes <http://snomed.info/71388002> ;
+           schema:rangeIncludes schema:Thing ;
            
-           schema:domainIncludes :Patient .
+           schema:domainIncludes schema:Thing .
 
 
 
-###  http://www.example.org/medicalEntity#prodecureType
+###  http://www.example.org/medicalEntity#recommendedTreatment
 
-:prodecureType rdf:type owl:ObjectProperty ;
-               
-               schema:domainIncludes :MedicalProcedure ;
-               
-               rdfs:subPropertyOf :procedure .
-
-
-
-###  http://www.example.org/medicalEntity#raceOrigin
-
-:raceOrigin rdf:type owl:ObjectProperty ;
-            
-            rdfs:comment "Specifying a race group or anthropological family as origin of the person."@en ;
-            
-            schema:domainIncludes schema:Person ,
-                                  <http://snomed.info/116154003> ,
-                                  <http://snomed.info/125676002> ,
-                                  :Patient ;
-            
-            rdfs:subPropertyOf :socialHistory .
+:recommendedTreatment rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "recommended treatment" ;
+                      
+                      rdfs:comment "Specifying a recommended treatment of a given patient (like paediatric person) or a medical condition." ;
+                      
+                      schema:rangeIncludes :Drug ;
+                      
+                      schema:domainIncludes :MedicalCondition ,
+                                            :Patient ;
+                      
+                      schema:rangeIncludes :TherapeuticProcedure ;
+                      
+                      rdfs:subPropertyOf :treatment .
 
 
 
-###  http://www.example.org/medicalEntity#ranked
+###  http://www.example.org/medicalEntity#refill
 
-:ranked rdf:type owl:ObjectProperty ;
+:refill rdf:type owl:ObjectProperty ;
         
-        rdfs:comment "rank order number of something. Typically used together with schema:denominator like in pattern : 4 out of xxx"@en ;
+        rdfs:label "refill" ;
         
-        schema:rangeIncludes schema:Thing ;
+        rdfs:comment "Specifying the history or plan of refills that can be done before a new prescription is needed, related to a given prescription."@en ;
         
-        schema:domainIncludes schema:Thing .
-
-
-
-###  http://www.example.org/medicalEntity#recreationalHistory
-
-:recreationalHistory rdf:type owl:ObjectProperty ;
-                     
-                     schema:domainIncludes schema:Person ,
-                                           <http://snomed.info/116154003> ,
-                                           <http://snomed.info/125676002> ,
-                                           :Patient ;
-                     
-                     schema:rangeIncludes :RecreationalHistory ;
-                     
-                     rdfs:subPropertyOf :socialHistory .
+        schema:domainIncludes :Patient ;
+        
+        schema:rangeIncludes :Refill .
 
 
 
@@ -2052,50 +2117,18 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :relatedEncounter rdf:type owl:ObjectProperty ;
                   
+                  rdfs:label "related encounter" ;
+                  
+                  rdfs:comment "Specifying an encounter procedure resource related to other procedure" ;
+                  
+                  schema:domainIncludes :ClinicalDocument ;
+                  
                   schema:rangeIncludes :EncounterProcedure ;
                   
-                  schema:domainIncludes :MedicalProcedure .
-
-
-
-###  http://www.example.org/medicalEntity#relationship
-
-:relationship rdf:type owl:ObjectProperty ;
-              
-              rdfs:comment "Specifying a relationship between persons. Typically between persons uses the 'American Kinship terminology'."@en ;
-              
-              schema:rangeIncludes <http://purl.bioontology.org/ontology/MESH/D005195> ;
-              
-              schema:domainIncludes schema:Person ,
-                                    <http://snomed.info/116154003> ,
-                                    <http://snomed.info/125676002> ,
-                                    :Patient .
-
-
-
-###  http://www.example.org/medicalEntity#relative
-
-:relative rdf:type owl:ObjectProperty ;
-          
-          rdfs:comment "Specifying someone who is a relative of someone else, typically used as hasRelative"@en ;
-          
-          schema:domainIncludes schema:Person ;
-          
-          schema:rangeIncludes schema:Person ;
-          
-          schema:domainIncludes <http://snomed.info/116154003> ;
-          
-          schema:rangeIncludes <http://snomed.info/116154003> ;
-          
-          schema:domainIncludes <http://snomed.info/125676002> ;
-          
-          schema:rangeIncludes <http://snomed.info/125676002> ;
-          
-          schema:domainIncludes :Patient ;
-          
-          schema:rangeIncludes :Patient ;
-          
-          rdfs:subPropertyOf :relationship .
+                  schema:domainIncludes :LifeEvent ,
+                                        :MedicalProcedure ,
+                                        :MedicalScore ,
+                                        :RecordArtifact .
 
 
 
@@ -2103,12 +2136,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :religionGroup rdf:type owl:ObjectProperty ;
                
-               rdfs:comment "Specifying a religion or religious beliefs of person."@en ;
+               rdfs:label "religion group" ;
                
-               schema:domainIncludes schema:Person ,
-                                     <http://snomed.info/116154003> ,
-                                     <http://snomed.info/125676002> ,
-                                     :Patient ;
+               rdfs:comment "Specifying a religion group of person."@en ;
+               
+               schema:domainIncludes schema:Person ;
                
                schema:rangeIncludes :ReligionGroup .
 
@@ -2118,10 +2150,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :religiousBelief rdf:type owl:ObjectProperty ;
                  
-                 schema:domainIncludes schema:Person ,
-                                       <http://snomed.info/116154003> ,
-                                       <http://snomed.info/125676002> ,
-                                       :Patient ;
+                 rdfs:label "religion belief" ;
+                 
+                 rdfs:comment "Specifying the religion beliefs of a person. Someone can have multiple religion beliefs." ;
+                 
+                 schema:domainIncludes schema:Person ;
                  
                  schema:rangeIncludes :ReligiousBelief ;
                  
@@ -2133,10 +2166,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :residenceHistory rdf:type owl:ObjectProperty ;
                   
-                  schema:domainIncludes schema:Person ,
-                                        <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ,
-                                        :Patient ;
+                  rdfs:label "residence history" ;
+                  
+                  rdfs:comment "Specifying the residence history resource of the patient or person." ;
+                  
+                  schema:domainIncludes schema:Person ;
                   
                   schema:rangeIncludes :ResidenceHistory ;
                   
@@ -2148,12 +2182,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :residentialStatus rdf:type owl:ObjectProperty ;
                    
+                   rdfs:label "residential status" ;
+                   
                    rdfs:comment "Specifying the act of dwelling in a place. This status is linked to an address and period of the time"@en ;
                    
-                   schema:domainIncludes schema:Person ,
-                                         <http://snomed.info/116154003> ,
-                                         <http://snomed.info/125676002> ,
-                                         :Patient .
+                   schema:domainIncludes schema:Person ;
+                   
+                   schema:rangeIncludes schema:Thing .
 
 
 
@@ -2161,9 +2196,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :severity rdf:type owl:ObjectProperty ;
           
+          rdfs:label "severity" ;
+          
           rdfs:comment "Specifying a severity evaluation of a disease: typically by classification resource or ranking scale: mild, moderate, severe, life threatening or fatal"@en ;
           
-          schema:domainIncludes schema:MedicalCondition .
+          schema:domainIncludes schema:Thing ;
+          
+          schema:rangeIncludes :Severity .
 
 
 
@@ -2171,25 +2210,31 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :sexualBehaviour rdf:type owl:ObjectProperty ;
                  
-                 schema:domainIncludes schema:Person ,
-                                       <http://snomed.info/116154003> ,
-                                       <http://snomed.info/125676002> ,
-                                       :Patient ;
+                 rdfs:label "sexual behaviour" ;
                  
-                 schema:rangeIncludes :SexualBehaviour .
+                 rdfs:comment "Specifying the sexual behaviour resource of  a patient" ;
+                 
+                 schema:domainIncludes schema:Person ;
+                 
+                 schema:rangeIncludes :SexualBehaviour ;
+                 
+                 rdfs:subPropertyOf :lifestyleOrHabit .
 
 
 
-###  http://www.example.org/medicalEntity#siblings
+###  http://www.example.org/medicalEntity#sibling
 
-:siblings rdf:type owl:ObjectProperty ;
-          
-          schema:domainIncludes schema:Person ,
-                                <http://snomed.info/116154003> ,
-                                <http://snomed.info/125676002> ,
-                                :Patient ;
-          
-          rdfs:subPropertyOf :familyMember .
+:sibling rdf:type owl:ObjectProperty ;
+         
+         rdfs:label "sibling" ;
+         
+         rdfs:comment "A sibling for this person" ;
+         
+         schema:domainIncludes schema:Person ;
+         
+         schema:rangeIncludes schema:Person ;
+         
+         rdfs:subPropertyOf :familyMember .
 
 
 
@@ -2197,13 +2242,33 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :sideEffect rdf:type owl:ObjectProperty ;
             
-            schema:domainIncludes :TherapeuticProcedure .
+            rdfs:comment "Specifying side effect for a given medical procedure or substance" ;
+            
+            schema:domainIncludes :DiagnosticProcedure ,
+                                  :ElectiveProcedure ,
+                                  :PalliativeProcedure ,
+                                  :Patient ;
+            
+            schema:rangeIncludes :SideEffect ;
+            
+            schema:domainIncludes :Substance ,
+                                  :TherapeuticProcedure ;
+            
+            rdfs:subPropertyOf :adverseOutcome .
 
 
 
 ###  http://www.example.org/medicalEntity#sign
 
 :sign rdf:type owl:ObjectProperty ;
+      
+      rdfs:label "sign" ;
+      
+      rdfs:comment "Specifying a sign resource" ;
+      
+      schema:domainIncludes :MedicalCondition ,
+                            :MedicalScore ,
+                            :Patient ;
       
       rdfs:subPropertyOf :signOrSymptom .
 
@@ -2219,14 +2284,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :smoking rdf:type owl:ObjectProperty ;
          
-         schema:domainIncludes schema:Person ,
-                               <http://snomed.info/116154003> ,
-                               <http://snomed.info/125676002> ,
-                               :Patient ;
+         rdfs:label "smoking" ;
+         
+         rdfs:comment "Describing the smoking habit resource for the patient" ;
+         
+         schema:domainIncludes schema:Person ;
          
          schema:rangeIncludes :Smoking ;
          
-         rdfs:subPropertyOf :lifestyleOrHabits .
+         rdfs:subPropertyOf :lifestyleOrHabit .
 
 
 
@@ -2234,10 +2300,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :socialHistory rdf:type owl:ObjectProperty ;
                
-               schema:domainIncludes schema:Person ,
-                                     <http://snomed.info/116154003> ,
-                                     <http://snomed.info/125676002> ,
-                                     :Patient ;
+               rdfs:label "social history" ;
+               
+               rdfs:comment "Specifying the social history resource of the patient or person." ;
+               
+               schema:domainIncludes schema:Person ;
                
                schema:rangeIncludes :SocialHistory ;
                
@@ -2249,32 +2316,21 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :spouse rdf:type owl:ObjectProperty ;
         
-        schema:domainIncludes schema:Person ,
-                              <http://snomed.info/116154003> ,
-                              <http://snomed.info/125676002> ,
-                              :Patient ;
+        rdfs:label "spouse" ;
+        
+        rdfs:comment "A spouse of this person" ;
+        
+        schema:domainIncludes schema:Person ;
+        
+        schema:rangeIncludes schema:Person ;
         
         rdfs:subPropertyOf :familyMember .
 
 
 
-###  http://www.example.org/medicalEntity#stage
-
-:stage rdf:type owl:ObjectProperty ;
-       
-       rdfs:label "has stage"@en ;
-       
-       rdfs:comment "Specifying the stage of a process in general like stage of illness, etc."@en .
-
-
-
 ###  http://www.example.org/medicalEntity#status
 
-:status rdf:type owl:ObjectProperty ;
-        
-        rdfs:label "has status"@en ;
-        
-        rdfs:comment "Specifying the confirmation status in general of something."@en .
+:status rdf:type owl:ObjectProperty .
 
 
 
@@ -2282,14 +2338,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :substanceUseOrAbuse rdf:type owl:ObjectProperty ;
                      
-                     schema:domainIncludes schema:Person ,
-                                           <http://snomed.info/116154003> ,
-                                           <http://snomed.info/125676002> ,
-                                           :Patient ;
+                     rdfs:label "substance Use Or Abuse" ;
+                     
+                     rdfs:comment "Describing the substance use or abuse resource of the person" ;
+                     
+                     schema:domainIncludes schema:Person ;
                      
                      schema:rangeIncludes :SubstanceUseOrAbuse ;
                      
-                     rdfs:subPropertyOf :lifestyleOrHabits .
+                     rdfs:subPropertyOf :lifestyleOrHabit .
 
 
 
@@ -2297,21 +2354,29 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :surgicalProcedure rdf:type owl:ObjectProperty ;
                    
+                   rdfs:label "surgical procedure" ;
+                   
+                   rdfs:comment "Specifying a surgical procedure resource for a patient or a person" ;
+                   
+                   schema:domainIncludes :Patient ;
+                   
+                   schema:rangeIncludes :SurgicalProcedure ;
+                   
                    rdfs:subPropertyOf :medicalProcedure .
-
-
-
-###  http://www.example.org/medicalEntity#suspectedCause
-
-:suspectedCause rdf:type owl:ObjectProperty ;
-                
-                schema:rangeIncludes :Allergen .
 
 
 
 ###  http://www.example.org/medicalEntity#symptom
 
 :symptom rdf:type owl:ObjectProperty ;
+         
+         rdfs:label "symptom" ;
+         
+         rdfs:comment "Specifying a symptom resource" ;
+         
+         schema:domainIncludes :Patient ;
+         
+         schema:rangeIncludes :Symptom ;
          
          rdfs:subPropertyOf :signOrSymptom .
 
@@ -2321,11 +2386,14 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :systemicReview rdf:type owl:ObjectProperty ;
                 
-                schema:domainIncludes schema:Person ,
-                                      <http://snomed.info/116154003> ,
-                                      <http://snomed.info/125676002> ,
+                rdfs:label "systemic review" ;
+                
+                rdfs:comment "Specifying a systemic review resource as a part of  anamnesis" ;
+                
+                schema:domainIncludes :AnamnesisProcedure ,
+                                      :ClinicalDocument ,
                                       :Patient ,
-                                      :Record ;
+                                      :RecordArtifact ;
                 
                 schema:rangeIncludes :SystemicReview .
 
@@ -2335,7 +2403,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :systolicBloodPressure rdf:type owl:ObjectProperty ;
                        
+                       rdfs:label "systolic blood pressure" ;
+                       
                        rdfs:comment "Specifying  systolic arterial blood pressure of a patient."@en ;
+                       
+                       schema:domainIncludes schema:Person ;
+                       
+                       schema:rangeIncludes <http://snomed.info/271649006> ;
                        
                        rdfs:subPropertyOf :bloodPressure .
 
@@ -2345,24 +2419,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :therapeuticProcedure rdf:type owl:ObjectProperty ;
                       
-                      schema:domainIncludes schema:Person ,
-                                            <http://snomed.info/116154003> ,
-                                            <http://snomed.info/125676002> ,
-                                            :Patient ;
+                      rdfs:label "therapeutic procedure" ;
                       
-                      schema:rangeIncludes :TherapeuticProcedure .
-
-
-
-###  http://www.example.org/medicalEntity#total
-
-:total rdf:type owl:ObjectProperty ;
-       
-       rdfs:comment "Total number of something."@en ;
-       
-       schema:domainIncludes rdfs:Resource ;
-       
-       rdfs:subPropertyOf owl:topObjectProperty .
+                      rdfs:comment "Specifying the therapeutic procedure resource for a patient or a person." ;
+                      
+                      schema:domainIncludes schema:Person ;
+                      
+                      schema:rangeIncludes :TherapeuticProcedure ;
+                      
+                      rdfs:subPropertyOf :medicalProcedure .
 
 
 
@@ -2372,33 +2437,14 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
           
           rdfs:label "has transfer" ;
           
-          rdfs:comment "Specifying a trafer event of patient from one place in a health care environment to another" ;
+          rdfs:comment "Specifying a transfer event of patient from one place in a health care environment to another" ;
           
           schema:domainIncludes schema:Person ,
-                                <http://snomed.info/116154003> ,
-                                <http://snomed.info/125676002> ,
-                                :Patient ;
+                                :EncounterProcedure ;
           
-          schema:rangeIncludes :TransferProcedure ;
+          schema:rangeIncludes :Transfer ;
           
           rdfs:subPropertyOf :encounter .
-
-
-
-###  http://www.example.org/medicalEntity#treatedWith
-
-:treatedWith rdf:type owl:ObjectProperty ;
-             
-             rdfs:comment "Specifying a treatment or management or therapeutic procedures for a disorder"@en ;
-             
-             schema:domainIncludes schema:Person ,
-                                   <http://snomed.info/116154003> ,
-                                   <http://snomed.info/125676002> ;
-             
-             schema:rangeIncludes <http://snomed.info/277132007> ;
-             
-             schema:domainIncludes <http://snomed.info/64572001> ,
-                                   :Patient .
 
 
 
@@ -2410,22 +2456,51 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                    
                    rdfs:comment "Specifying a specific physician assigned to the patient as specific or individual healthcare provider."@en ;
                    
-                   schema:rangeIncludes schema:Person ;
+                   schema:rangeIncludes <http://snomed.info/223366009> ;
+                   
+                   schema:domainIncludes :CaringEvent ;
+                   
+                   schema:rangeIncludes :HealthcareProfessional ;
+                   
+                   schema:domainIncludes :Patient ;
                    
                    rdfs:subPropertyOf :careProvider .
 
 
 
-###  http://www.example.org/medicalEntity#triage
+###  http://www.example.org/medicalEntity#treatment
 
-:triage rdf:type owl:ObjectProperty ;
-        
-        schema:domainIncludes schema:Person ,
-                              <http://snomed.info/116154003> ,
-                              <http://snomed.info/125676002> ,
-                              :Patient ;
-        
-        schema:rangeIncludes :Triage .
+:treatment rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "treatment" ;
+           
+           rdfs:comment "Specifying a treatment or management or therapeutic procedures for a disorder or a patient"@en ;
+           
+           schema:rangeIncludes <http://snomed.info/277132007> ;
+           
+           schema:domainIncludes <http://snomed.info/64572001> ;
+           
+           schema:rangeIncludes :Drug ;
+           
+           schema:domainIncludes :MedicalCondition ,
+                                 :Patient ;
+           
+           schema:rangeIncludes :TherapeuticProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#triageProcedure
+
+:triageProcedure rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "triage procedure" ;
+                 
+                 rdfs:comment "Specifying a triage procedure resource" ;
+                 
+                 schema:domainIncludes :CaringEvent ,
+                                       :Patient ;
+                 
+                 schema:rangeIncludes :TriageProcedure .
 
 
 
@@ -2433,18 +2508,15 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :vaccination rdf:type owl:ObjectProperty ;
              
-             schema:domainIncludes schema:Person ,
-                                   <http://snomed.info/116154003> ,
-                                   <http://snomed.info/125676002> ,
-                                   :Patient ;
+             rdfs:label "vaccination" ;
              
-             schema:rangeIncludes :Vaccination .
-
-
-
-###  http://www.example.org/medicalEntity#vesselFunction
-
-:vesselFunction rdf:type owl:ObjectProperty .
+             rdfs:comment "Specifying a vaccination procedure resource" ;
+             
+             schema:domainIncludes schema:Person ;
+             
+             schema:rangeIncludes :Vaccination ;
+             
+             rdfs:subPropertyOf :primaryPrevention .
 
 
 
@@ -2477,7 +2549,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :abortions rdf:type owl:DatatypeProperty ;
            
+           rdfs:label "abortions" ;
+           
            rdfs:comment "Specifying the number of abortion for a given patient woman" ;
+           
+           schema:domainIncludes <http://snomed.info/224526002> ;
            
            schema:rangeIncludes xsd:integer .
 
@@ -2487,9 +2563,17 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :admissionDate rdf:type owl:DatatypeProperty ;
                
-               schema:rangeIncludes ""^^xsd:dateTime ;
+               rdfs:label "admission date" ;
                
-               rdfs:comment "An admission date" .
+               rdfs:comment "Specifying an admission date" ;
+               
+               schema:domainIncludes <http://snomed.info/305056002> ,
+                                     :Admission ,
+                                     :Patient ;
+               
+               rdfs:subPropertyOf :dateTime ;
+               
+               schema:rangeIncludes xsd:dateTime .
 
 
 
@@ -2497,7 +2581,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :ageAtEvent rdf:type owl:DatatypeProperty ;
             
+            rdfs:label "age at event" ;
+            
             rdfs:comment "Specifying the age of the entity when an event occurred" ;
+            
+            schema:domainIncludes schema:Person ;
             
             schema:rangeIncludes xsd:decimal .
 
@@ -2509,13 +2597,11 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
             
             rdfs:label "APGAR Score" ;
             
-            rdfs:comment "Spifying the value of APGAR Score. " ;
+            rdfs:comment "Specifying the value of APGAR Score. " ;
             
-            schema:domainIncludes schema:Person ,
-                                  <http://snomed.info/116154003> ,
-                                  <http://snomed.info/125676002> ,
-                                  :Newborn ,
-                                  :Patient .
+            schema:domainIncludes <http://snomed.info/133933007> ;
+            
+            schema:rangeIncludes xsd:positiveInteger .
 
 
 
@@ -2523,9 +2609,21 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :atWeeksAmenorrhea rdf:type owl:DatatypeProperty ;
                    
-                   rdfs:comment "Specifying the weeks of amenorrhea when an event occurs. " ;
+                   rdfs:label "at weeks of amenorrhoea" ;
+                   
+                   rdfs:comment "Specifying the weeks of amenorrhoea when an event occurs. " ;
+                   
+                   schema:domainIncludes :MedicalCondition ;
                    
                    schema:rangeIncludes xsd:decimal .
+
+
+
+###  http://www.example.org/medicalEntity#birthDate
+
+:birthDate rdf:type owl:DatatypeProperty ;
+           
+           rdfs:subPropertyOf :dateTime .
 
 
 
@@ -2533,11 +2631,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :birthHeight rdf:type owl:DatatypeProperty ;
              
-             schema:domainIncludes schema:Person ,
-                                   <http://snomed.info/116154003> ,
-                                   <http://snomed.info/125676002> ,
-                                   :Newborn ,
-                                   :Patient .
+             rdfs:label "birth weight" ;
+             
+             rdfs:comment "Specifying a birth weight" ;
+             
+             schema:domainIncludes <http://snomed.info/133933007> ;
+             
+             schema:rangeIncludes xsd:decimal .
 
 
 
@@ -2545,11 +2645,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :birthPercentile rdf:type owl:DatatypeProperty ;
                  
-                 schema:domainIncludes schema:Person ,
-                                       <http://snomed.info/116154003> ,
-                                       <http://snomed.info/125676002> ,
-                                       :Newborn ,
-                                       :Patient .
+                 rdfs:label "birth percentile" ;
+                 
+                 rdfs:comment "Specifying the birth percentile of a newborn" ;
+                 
+                 schema:domainIncludes <http://snomed.info/133933007> ;
+                 
+                 schema:rangeIncludes xsd:decimal .
 
 
 
@@ -2557,11 +2659,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :birthWeight rdf:type owl:DatatypeProperty ;
              
-             schema:domainIncludes schema:Person ,
-                                   <http://snomed.info/116154003> ,
-                                   <http://snomed.info/125676002> ,
-                                   :Newborn ,
-                                   :Patient ;
+             rdfs:label "birth weight" ;
+             
+             rdfs:comment "Specifying birth weight of a newborn" ;
+             
+             schema:domainIncludes <http://snomed.info/133933007> ;
+             
+             schema:rangeIncludes xsd:decimal ;
              
              rdfs:subPropertyOf owl:topDataProperty .
 
@@ -2571,10 +2675,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :bodyMassIndex rdf:type owl:DatatypeProperty ;
                
-               schema:domainIncludes schema:Person ,
-                                     <http://snomed.info/116154003> ,
-                                     <http://snomed.info/125676002> ,
-                                     :Patient .
+               rdfs:label "body mass index" ;
+               
+               rdfs:comment "Specifying the body mass index of  a person" ;
+               
+               schema:domainIncludes schema:Person ;
+               
+               schema:rangeIncludes xsd:decimal .
 
 
 
@@ -2582,10 +2689,28 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :bodyVolumeIndex rdf:type owl:DatatypeProperty ;
                  
-                 schema:domainIncludes schema:Person ,
-                                       <http://snomed.info/116154003> ,
-                                       <http://snomed.info/125676002> ,
-                                       :Patient .
+                 rdfs:label "body volume index" ;
+                 
+                 rdfs:comment "Specifying the body volume index of  a person" ;
+                 
+                 schema:domainIncludes schema:Person ;
+                 
+                 schema:rangeIncludes xsd:decimal .
+
+
+
+###  http://www.example.org/medicalEntity#dateTime
+
+:dateTime rdf:type owl:DatatypeProperty ;
+          
+          rdfs:label "dateTime"^^rdfs:Literal ;
+          
+          rdfs:comment "Specifying an instant of something. Typically derived from W3C Time Ontology this describes a point in time when an event or action occurs." ;
+          
+          schema:domainIncludes schema:Thing ;
+          
+          schema:rangeIncludes rdfs:Literal ,
+                               xsd:dateTimeStamp .
 
 
 
@@ -2593,16 +2718,24 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :deathDate rdf:type owl:DatatypeProperty ;
            
-           schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ,
-                                 :Patient .
+           rdfs:subPropertyOf :dateTime .
 
 
 
 ###  http://www.example.org/medicalEntity#diagnosticDate
 
-:diagnosticDate rdf:type owl:DatatypeProperty .
+:diagnosticDate rdf:type owl:DatatypeProperty ;
+                
+                rdfs:label "diagnostic date" ;
+                
+                rdfs:comment "Specifying the diagnostic date for  a person" ;
+                
+                schema:domainIncludes schema:Person ,
+                                      <http://snomed.info/439401001> ;
+                
+                rdfs:subPropertyOf :dateTime ;
+                
+                schema:rangeIncludes xsd:dateTime .
 
 
 
@@ -2610,25 +2743,16 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :dischargeDate rdf:type owl:DatatypeProperty ;
                
-               schema:domainIncludes schema:Person ,
-                                     <http://snomed.info/116154003> ,
-                                     <http://snomed.info/125676002> ,
-                                     :Patient .
-
-
-
-###  http://www.example.org/medicalEntity#firstDayOfLastMenstruation
-
-:firstDayOfLastMenstruation rdf:type owl:DatatypeProperty ;
-                            
-                            schema:domainIncludes schema:Person ,
-                                                  <http://snomed.info/116154003> ,
-                                                  <http://snomed.info/125676002> ,
-                                                  :Patient ;
-                            
-                            schema:rangeIncludes xsd:anyURI ,
-                                                 xsd:dateTime ,
-                                                 xsd:dateTimeStamp .
+               rdfs:label "discharge date" ;
+               
+               rdfs:comment "Specifying a discharge date for a patient" ;
+               
+               schema:domainIncludes :Discharge ,
+                                     :Patient ;
+               
+               rdfs:subPropertyOf :dateTime ;
+               
+               schema:rangeIncludes xsd:dateTime .
 
 
 
@@ -2636,12 +2760,12 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :gravidity rdf:type owl:DatatypeProperty ;
            
+           rdfs:label "gravidity" ;
+           
            rdfs:comment "Specifying the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth." ;
            
            schema:domainIncludes schema:Person ,
-                                 <http://snomed.info/116154003> ,
-                                 <http://snomed.info/125676002> ,
-                                 :Patient ;
+                                 <http://snomed.info/224526002> ;
            
            schema:rangeIncludes xsd:positiveInteger .
 
@@ -2651,10 +2775,14 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :hipCircumference rdf:type owl:DatatypeProperty ;
                   
+                  rdfs:label "hip circumference" ;
+                  
+                  rdfs:comment "The hip circumference measurement of someone" ;
+                  
                   schema:domainIncludes schema:Person ,
-                                        <http://snomed.info/116154003> ,
-                                        <http://snomed.info/125676002> ,
-                                        :Patient .
+                                        :HipCircumference ;
+                  
+                  schema:rangeIncludes xsd:decimal .
 
 
 
@@ -2664,40 +2792,42 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                    
                    rdfs:label "medical identifier" ;
                    
-                   rdfs:comment "Specifying the identification number of a medical entity like provider identifier number, patient identifier etc." .
+                   rdfs:comment "Specifying the identification number of a medical entity like care provider identifier number, patient identifier etc." ;
+                   
+                   schema:domainIncludes schema:Person ,
+                                         <http://snomed.info/223366009> ,
+                                         :HealthcareProfessional ;
+                   
+                   schema:rangeIncludes xsd:positiveInteger .
 
 
 
-###  http://www.example.org/medicalEntity#refills
+###  http://www.example.org/medicalEntity#parity
 
-:refills rdf:type owl:DatatypeProperty ;
-         
-         rdfs:comment "Specifying the history or plan of refills that can be done before a new prescription is needed, related to a given prescription."@en ;
-         
-         schema:domainIncludes schema:Person ,
-                               <http://snomed.info/116154003> ,
-                               <http://snomed.info/125676002> ,
-                               :Patient .
+:parity rdf:type owl:DatatypeProperty ;
+        
+        rdfs:label "parity" ;
+        
+        rdfs:comment "Parity is defined as the number of times that she has given birth to a foetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn." ;
+        
+        schema:domainIncludes schema:Person ,
+                              <http://snomed.info/224526002> ;
+        
+        schema:rangeIncludes xsd:positiveInteger .
 
 
 
-###  http://www.example.org/medicalEntity#reportDate
+###  http://www.example.org/medicalEntity#totalValue
 
-:reportDate rdf:type owl:DatatypeProperty ;
+:totalValue rdf:type owl:DatatypeProperty ;
             
-            schema:rangeIncludes xsd:dateTime .
-
-
-
-###  http://www.example.org/medicalEntity#reportID
-
-:reportID rdf:type owl:DatatypeProperty .
-
-
-
-###  http://www.example.org/medicalEntity#reportRecorder
-
-:reportRecorder rdf:type owl:DatatypeProperty .
+            rdfs:label "total value" ;
+            
+            rdfs:comment "Total number of something."@en ;
+            
+            schema:domainIncludes schema:Thing ;
+            
+            schema:rangeIncludes xsd:decimal .
 
 
 
@@ -2705,10 +2835,16 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :transferDate rdf:type owl:DatatypeProperty ;
               
+              rdfs:label "transfer date" ;
+              
+              rdfs:comment "Specifying the transfer date for a patient" ;
+              
               schema:domainIncludes schema:Person ,
-                                    <http://snomed.info/116154003> ,
-                                    <http://snomed.info/125676002> ,
-                                    :Patient .
+                                    :Transfer ;
+              
+              rdfs:subPropertyOf :dateTime ;
+              
+              schema:rangeIncludes xsd:dateTime .
 
 
 
@@ -2720,10 +2856,10 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
              
              rdfs:comment "Specifying the value of a triage score" ;
              
-             schema:domainIncludes schema:Person ,
-                                   <http://snomed.info/116154003> ,
-                                   <http://snomed.info/125676002> ,
-                                   :Patient .
+             schema:domainIncludes :Patient ,
+                                   :TriageScore ;
+             
+             schema:rangeIncludes xsd:decimal .
 
 
 
@@ -2731,10 +2867,14 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :waistCircumference rdf:type owl:DatatypeProperty ;
                     
+                    rdfs:label "waist circumference" ;
+                    
+                    rdfs:comment "The waist circumference measurement of someone" ;
+                    
                     schema:domainIncludes schema:Person ,
-                                          <http://snomed.info/116154003> ,
-                                          <http://snomed.info/125676002> ,
-                                          :Patient .
+                                          :WaistCircumference ;
+                    
+                    schema:rangeIncludes xsd:decimal .
 
 
 
@@ -2742,10 +2882,14 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :waistHipRatio rdf:type owl:DatatypeProperty ;
                
+               rdfs:label "waist hip ratio" ;
+               
+               rdfs:comment "The waist hip ratio measurement of someone" ;
+               
                schema:domainIncludes schema:Person ,
-                                     <http://snomed.info/116154003> ,
-                                     <http://snomed.info/125676002> ,
-                                     :Patient .
+                                     :WaistHipRatio ;
+               
+               schema:rangeIncludes xsd:decimal .
 
 
 
@@ -2920,7 +3064,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
              
              rdfs:label "Acupuncture" ;
              
-             rdfs:subClassOf :TherapeuticProcedure ;
+             rdfs:subClassOf :AlternativeTherapy ;
              
              rdfs:comment "A system of complementary medicine in which fine needles are inserted in the skin at specific points along what are considered to be lines of energy (meridians), used in the treatment of various physical and mental conditions." .
 
@@ -3022,6 +3166,16 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
+###  http://www.example.org/medicalEntity#AlternativeTherapy
+
+:AlternativeTherapy rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :TherapeuticProcedure ;
+                    
+                    rdfs:comment "Any practice that is put forward as having the healing effects of medicine but is not based on evidence gathered using the scientific method. It may however consists of a wide range of health care practices, products and therapies known in conventiional medicine. Source: Wikipedia" .
+
+
+
 ###  http://www.example.org/medicalEntity#AnamnesisProcedure
 
 :AnamnesisProcedure rdf:type owl:Class ;
@@ -3074,11 +3228,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :AnatomicalStructure rdf:type owl:Class ;
                      
-                     rdfs:label "Anatomical structure" ;
-                     
-                     rdfs:subClassOf :AnatomicalEntity ;
-                     
-                     rdfs:comment "Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures." .
+                     rdfs:subClassOf :AnatomicalEntity .
 
 
 
@@ -3086,11 +3236,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 :AnatomicalSystem rdf:type owl:Class ;
                   
-                  rdfs:label "Anatomical system" ;
-                  
-                  rdfs:subClassOf :AnatomicalEntity ;
-                  
-                  rdfs:comment "An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can includes circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems." .
+                  rdfs:subClassOf :AnatomicalEntity .
 
 
 
@@ -3316,7 +3462,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                  
                  rdfs:subClassOf :MedicalEntity ;
                  
-                 rdfs:comment "The result of a clinical observation, assessment or judgment, and include both normal and abnormal clinical states. Source: SNOMED" .
+                 rdfs:comment "The result of a clinical observation, assessment or judgement, and include both normal and abnormal clinical states. Source: SNOMED" .
 
 
 
@@ -3436,20 +3582,19 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
          
          rdfs:subClassOf :MedicalCondition ;
          
-         rdfs:comment "The term disease broadly refers to any condition that impairs normal function, and is therefore associated with dysfunction of normal homeostasis. In other side, in medicine, a disorder is a functional abnormality or disturbance.Source: wikipedia" .
+         rdfs:comment "The term disease broadly refers to any condition that impairs normal function, and is therefore associated with dysfunction of normal homeostasis. In other side, in medicine, a disorder is a functional abnormality or disturbance. Source: Wikipedia." .
 
 
 
-###  http://www.example.org/medicalEntity#DrugOrMedicine
+###  http://www.example.org/medicalEntity#Drug
 
-:DrugOrMedicine rdf:type owl:Class ;
-                
-                rdfs:label "Drug or medicine" ;
-                
-                rdfs:subClassOf :PharmaceuticalSubstance ;
-                
-                rdfs:comment """The term \"drug\" means any articles intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease in man or other animals.
-""" .
+:Drug rdf:type owl:Class ;
+      
+      rdfs:label "Drug " ;
+      
+      rdfs:subClassOf :PharmaceuticalSubstance ;
+      
+      rdfs:comment "Any articles intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease in man or other animals. Here the term drug is used interchangeably with the term medicine although clinical knowledge make a clear difference between them." .
 
 
 
@@ -3608,6 +3753,14 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
+###  http://www.example.org/medicalEntity#FamilyRelation
+
+:FamilyRelation rdf:type owl:Class ;
+                
+                rdfs:subClassOf :QualifierConcept .
+
+
+
 ###  http://www.example.org/medicalEntity#FoodIntolerance
 
 :FoodIntolerance rdf:type owl:Class ;
@@ -3626,7 +3779,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
              
              rdfs:label "Gene therapy" ;
              
-             rdfs:subClassOf :TherapeuticProcedure ;
+             rdfs:subClassOf :MedicalTherapy ;
              
              rdfs:comment "The introduction of normal genes into cells in place of missing or defective ones in order to correct genetic disorders." .
 
@@ -3686,7 +3839,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                         
                         rdfs:label "Healthcare professional" ;
                         
-                        rdfs:subClassOf :ClinicalFinding ;
+                        rdfs:subClassOf :MedicalEntity ;
                         
                         rdfs:comment "Any person working in healthcare settings. This includes healthcare providers but also data reporters, and others" .
 
@@ -3758,7 +3911,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                 
                 rdfs:label "Hormone therapy" ;
                 
-                rdfs:subClassOf :TherapeuticProcedure ;
+                rdfs:subClassOf :MedicalTherapy ;
                 
                 rdfs:comment "Hormone therapy or hormonal therapy is the use of hormones in medical treatment. " .
 
@@ -3770,7 +3923,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
               
               rdfs:label "Hydrotherapy" ;
               
-              rdfs:subClassOf :TherapeuticProcedure ;
+              rdfs:subClassOf :AlternativeTherapy ;
               
               rdfs:comment "Hydrotherapy, or water therapy, is the use of water (hot, cold, steam, or ice) to relieve discomfort and promote physical well-being." .
 
@@ -3800,25 +3953,13 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
-###  http://www.example.org/medicalEntity#Invasive
-
-:Invasive rdf:type owl:Class ;
-          
-          rdfs:label "Invasive" ;
-          
-          rdfs:subClassOf :InvasivenessType ;
-          
-          rdfs:comment "An invasive procedure is one that penetrates or breaks the skin or enters a body cavity" .
-
-
-
 ###  http://www.example.org/medicalEntity#InvasivenessType
 
 :InvasivenessType rdf:type owl:Class ;
                   
                   rdfs:label "Invasiveness category " ;
                   
-                  rdfs:subClassOf :MedicalEntity ;
+                  rdfs:subClassOf :QualifierConcept ;
                   
                   rdfs:comment "A cotegorization of invasiveness type of medical procedures." .
 
@@ -3830,21 +3971,9 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                 
                 rdfs:label "Kinesiotherapy" ;
                 
-                rdfs:subClassOf :TherapeuticProcedure ;
+                rdfs:subClassOf :MedicalTherapy ;
                 
                 rdfs:comment "Also known as physical therapy or physiotherapy is a health care profession primarily concerned with the remediation of impairments and disabilities and the promotion of mobility, functional ability, quality of life and movement potential through examination, evaluation, diagnosis and physical intervention." .
-
-
-
-###  http://www.example.org/medicalEntity#KrebsCycle
-
-:KrebsCycle rdf:type owl:Class ;
-            
-            rdfs:label "KREBS Cycle" ;
-            
-            rdfs:subClassOf :PhysiologicalEntity ;
-            
-            rdfs:comment "Also known as the tricarboxylic acid cycle (TCA cycle), or citric acid cycle — is a series of chemical reactions used by all aerobic organisms to generate energy through the oxidation of acetate derived from carbohydrates, fats and proteins into carbon dioxide and chemical energy in the form of adenosine triphosphate (ATP). Source:Wikipedia" .
 
 
 
@@ -3976,8 +4105,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                
                rdfs:subClassOf :HealthFacility ;
                
-               rdfs:comment """A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.
-""" .
+               rdfs:comment "A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well." .
 
 
 
@@ -4007,11 +4135,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 ###  http://www.example.org/medicalEntity#MedicalEntity
 
-:MedicalEntity rdf:type owl:Class ;
-               
-               rdfs:label "MedicalEntity" ;
-               
-               rdfs:comment "The most generic type of entity related to health and the practice of medicine." .
+:MedicalEntity rdf:type owl:Class .
 
 
 
@@ -4171,6 +4295,14 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
+###  http://www.example.org/medicalEntity#MedicalTherapy
+
+:MedicalTherapy rdf:type owl:Class ;
+                
+                rdfs:subClassOf :TherapeuticProcedure .
+
+
+
 ###  http://www.example.org/medicalEntity#MedicalUnit
 
 :MedicalUnit rdf:type owl:Class ;
@@ -4243,18 +4375,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
-###  http://www.example.org/medicalEntity#MinimallyInvasive
-
-:MinimallyInvasive rdf:type owl:Class ;
-                   
-                   rdfs:label "Minimally invasive" ;
-                   
-                   rdfs:subClassOf :InvasivenessType ;
-                   
-                   rdfs:comment "A minimally invasive procedure (MIP) is any procedure (surgical or otherwise) that is less invasive than open surgery used for the same purpose. Source: wikipedia" .
-
-
-
 ###  http://www.example.org/medicalEntity#MorbidityEvent
 
 :MorbidityEvent rdf:type owl:Class ;
@@ -4276,18 +4396,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                        rdfs:subClassOf :AnatomicalSystem ;
                        
                        rdfs:comment "The human musculoskeletal system (also known as the locomotor system, and previously the activity system) is an organ system that gives humans (and many animal species) the ability to move using the muscular and skeletal systems." .
-
-
-
-###  http://www.example.org/medicalEntity#NonInvasive
-
-:NonInvasive rdf:type owl:Class ;
-             
-             rdfs:label "Non invasive" ;
-             
-             rdfs:subClassOf :InvasivenessType ;
-             
-             rdfs:comment "A medical procedure is strictly defined as non-invasive when no break in the skin is created and there is no contact with the mucosa, or skin break, or internal body cavity beyond a natural or artificial body orifice. " .
 
 
 
@@ -4327,6 +4435,18 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
+###  http://www.example.org/medicalEntity#OnsetMode
+
+:OnsetMode rdf:type owl:Class ;
+           
+           rdfs:label "onset mode" ;
+           
+           rdfs:subClassOf :QualifierConcept ;
+           
+           rdfs:comment "Description of how the medical condition started." .
+
+
+
 ###  http://www.example.org/medicalEntity#OralTemperature
 
 :OralTemperature rdf:type owl:Class ;
@@ -4345,7 +4465,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                 
                 rdfs:label "Oxygen therapy" ;
                 
-                rdfs:subClassOf :TherapeuticProcedure ;
+                rdfs:subClassOf :MedicalTherapy ;
                 
                 rdfs:comment "Oxygen therapy is the administration of oxygen as a medical intervention, which can be for a variety of purposes in both chronic and acute patient care" .
 
@@ -4375,18 +4495,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
-###  http://www.example.org/medicalEntity#Parity
-
-:Parity rdf:type owl:Class ;
-        
-        rdfs:label "Parity" ;
-        
-        rdfs:subClassOf :GynObsHistory ;
-        
-        rdfs:comment "Parity is defined as the number of times that she has given birth to a fetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn" .
-
-
-
 ###  http://www.example.org/medicalEntity#PastMedicalHistory
 
 :PastMedicalHistory rdf:type owl:Class ;
@@ -4405,9 +4513,17 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
          
          rdfs:label "Patient" ;
          
-         rdfs:subClassOf :MedicalEntity ;
+         rdfs:subClassOf :Person ;
          
          rdfs:comment "A patient is any person recipient of health care services." .
+
+
+
+###  http://www.example.org/medicalEntity#Person
+
+:Person rdf:type owl:Class ;
+        
+        rdfs:subClassOf :MedicalEntity .
 
 
 
@@ -4441,7 +4557,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                  
                  rdfs:label "Pharmacotherapy " ;
                  
-                 rdfs:subClassOf :TherapeuticProcedure ;
+                 rdfs:subClassOf :MedicalTherapy ;
                  
                  rdfs:comment "Pharmacotherapy or drug therapy or medication is the treatment of disease through the administration of drugs." .
 
@@ -4453,7 +4569,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
               
               rdfs:label "Phototherapy" ;
               
-              rdfs:subClassOf :TherapeuticProcedure ;
+              rdfs:subClassOf :MedicalTherapy ;
               
               rdfs:comment "Also known as light therapy or classically referred to as heliotherapy, consists of exposure to daylight or to specific wavelengths of light using polychromatic polarised light, lasers, light-emitting diodes, fluorescent lamps, dichroic lamps or very bright, full-spectrum light, usually controlled with various devices." .
 
@@ -4507,13 +4623,33 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
 
 
 
+###  http://www.example.org/medicalEntity#PrescribingProcedure
+
+:PrescribingProcedure rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :TherapeuticProcedure .
+
+
+
+###  http://www.example.org/medicalEntity#PreventiveProcedure
+
+:PreventiveProcedure rdf:type owl:Class ;
+                     
+                     rdfs:label "Preventive procedure" ;
+                     
+                     rdfs:subClassOf :TherapeuticProcedure ;
+                     
+                     rdfs:comment "Any procedure or anymedicine or other treatment designed to prevent disease or ill health." .
+
+
+
 ###  http://www.example.org/medicalEntity#Psychotherapy
 
 :Psychotherapy rdf:type owl:Class ;
                
                rdfs:label "Psychotherapy" ;
                
-               rdfs:subClassOf :TherapeuticProcedure ;
+               rdfs:subClassOf :MedicalTherapy ;
                
                rdfs:comment "The treatment of mental disorder by psychological rather than medical means." .
 
@@ -4573,7 +4709,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
               
               rdfs:label "Radiotherapy" ;
               
-              rdfs:subClassOf :TherapeuticProcedure ;
+              rdfs:subClassOf :MedicalTherapy ;
               
               rdfs:comment "The treatment of disease, especially cancer, using X-rays or similar forms of radiation." .
 
@@ -4612,6 +4748,18 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                    rdfs:subClassOf :BodyTemperature ;
                    
                    rdfs:comment "Human body temperature taken at rectal region (anal)" .
+
+
+
+###  http://www.example.org/medicalEntity#Refill
+
+:Refill rdf:type owl:Class ;
+        
+        rdfs:label "Refill" ;
+        
+        rdfs:subClassOf :MedicalPrescription ;
+        
+        rdfs:comment "A prescription section, that shows many times you can get more of your medicine without going back to see your doctor." .
 
 
 
@@ -4839,7 +4987,7 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
                       
                       rdfs:subClassOf :MedicalProcedure ;
                       
-                      rdfs:comment "Any medical procedure concerned with the prevention or treatment of medical conditions." .
+                      rdfs:comment "Any medical procedure concerned with the prevention or treatment of medical conditions. " .
 
 
 
@@ -4911,30 +5059,6 @@ Race and Ethnicity as well as religious beliefs are in most cases not given in E
              rdfs:subClassOf :Immunotherapy ;
              
              rdfs:comment "Communly known as immunization, vaccination is the administration of antigenic material (a vaccine) to stimulate an individual's immune system to develop adaptive immunity to a pathogen." .
-
-
-
-###  http://www.example.org/medicalEntity#Vasoconstriction
-
-:Vasoconstriction rdf:type owl:Class ;
-                  
-                  rdfs:label "Vasoconstriction" ;
-                  
-                  rdfs:subClassOf :VesselsFunction ;
-                  
-                  rdfs:comment "The constriction of blood vessels (narrowing, becoming smaller in cross-sectional area) by contracting the vascular smooth muscle in the vessel walls." .
-
-
-
-###  http://www.example.org/medicalEntity#Vasodilatation
-
-:Vasodilatation rdf:type owl:Class ;
-                
-                rdfs:label "Vasodilation" ;
-                
-                rdfs:subClassOf :VesselsFunction ;
-                
-                rdfs:comment "Vasodilation (or vasodilatation) refers to the widening of blood vessels. It results from relaxation of smooth muscle cells within the vessel walls, in particular in the large veins, large arteries, and smaller arterioles. Source: wikipedia" .
 
 
 
