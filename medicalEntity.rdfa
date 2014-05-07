@@ -327,13 +327,13 @@
     <div typeof="rdfs:Class" resource="http://schema.org/EHR">
       <span class="h" property="rdfs:label">EHR</span>
       <span property="rdfs:comment">The Electronic Health Record (EHR) is an electronic record of health-related information on an individual that conforms to nationally recognized interoperability standards and that can be created, managed, and consulted by authorized clinicians and staff across more than one health care organization.US NAHIT</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/RecordArtifact">RecordArtifact</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/EMR">
       <span class="h" property="rdfs:label">EMR</span>
       <span property="rdfs:comment">An Electronic Medical Record (EMR) is an electronic record of health-related information on an individual that can be created, gathered, managed, and consulted by authorized clinicians and staff within one health care organization. Source: US NAHIT</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/RecordArtifact">RecordArtifact</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/EducationLevel">
@@ -596,7 +596,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalCase">
       <span class="h" property="rdfs:label">MedicalCase</span>
       <span property="rdfs:comment">A summary of all relevant and actionable information and instructions for a given patient in given time period.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalCertificate">
@@ -672,6 +672,12 @@
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalProcedure">
       <span class="h" property="rdfs:label">MedicalProcedure</span>
       <span property="rdfs:comment">A series of steps taken with defined manner of performing something; a method or technique within medical examination, treatment, or other act having preventive, administrative, diagnostic, therapeutic or rehabilitative aims. </span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalRecord">
+      <span class="h" property="rdfs:label">MedicalRecord</span>
+      <span property="rdfs:comment">Any kind of patient related information record. This can be paper or digital</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
@@ -808,7 +814,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/PHR">
       <span class="h" property="rdfs:label">PHR</span>
       <span property="rdfs:comment">The Personal Health Record (PHR) is an electronic record of health-related information on an individual that conforms to nationally recognized interoperability standards and that can be drawn from multiple sources while being managed, shared, and controlled by the individual.Source: US NAHIT</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/RecordArtifact">RecordArtifact</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/PalliativeProcedure">
@@ -927,12 +933,6 @@
       <span class="h" property="rdfs:label">Radiotherapy</span>
       <span property="rdfs:comment">The treatment of disease, especially cancer, using X-rays or similar forms of radiation.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/RecordArtifact">
-      <span class="h" property="rdfs:label">RecordArtifact</span>
-      <span property="rdfs:comment">Any kind of patient related information record. This can be paper or digital</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/RecreationalHistory">
@@ -1891,7 +1891,7 @@
       <span class="h" property="rdfs:label">medicalRecord</span>
       <span property="rdfs:comment">Specifying a medical record for a given medical entity or patient. A medical record is a summ of all medical cases of a patient.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/RecordArtifact">RecordArtifact</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalReport">
@@ -2144,7 +2144,7 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalScore">MedicalScore</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/RecordArtifact">RecordArtifact</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
     </div>
 
@@ -2259,7 +2259,7 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/AnamnesisProcedure">AnamnesisProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/RecordArtifact">RecordArtifact</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/SystemicReview">SystemicReview</a></span>
     </div>
 
