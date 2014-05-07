@@ -62,7 +62,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                schema:rangeIncludes <http://snomed.info/303071001> ;
                
-               rdfs:subPropertyOf :familyRelationship .
+               rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -215,7 +215,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           schema:domainIncludes :Allergy ;
           
-          rdfs:subPropertyOf :allergy .
+          rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -401,6 +401,20 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#bloodGroup
+
+:bloodGroup rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "blood group" ;
+            
+            rdfs:comment "Specifying the blood group for a person, i.e type of human blood based on presence or absence of inherited antigenic substances on the surface of red blood cells." ;
+            
+            schema:domainIncludes schema:Person ;
+            
+            schema:rangeIncludes <http://snomed.info/365636006> .
+
+
+
 ###  http://www.example.org/medicalEntity#bloodPressure
 
 :bloodPressure rdf:type owl:ObjectProperty ;
@@ -467,7 +481,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               schema:domainIncludes :Patient ;
               
-              rdfs:subPropertyOf :caringEvent .
+              rdfs:subPropertyOf :location .
 
 
 
@@ -490,7 +504,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               schema:domainIncludes :MedicalProcedure ,
                                     :Patient ;
               
-              rdfs:subPropertyOf :caringEvent .
+              rdfs:subPropertyOf :provider .
 
 
 
@@ -640,6 +654,22 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#comorbidity
+
+:comorbidity rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "comorbidity" ;
+             
+             rdfs:comment "Specifying a health disorder simultaneously but independently existing with another health disorder in a human." ;
+             
+             schema:domainIncludes :MedicalCondition ;
+             
+             schema:rangeIncludes :MedicalCondition ;
+             
+             schema:domainIncludes :Patient .
+
+
+
 ###  http://www.example.org/medicalEntity#comprisedOf
 
 :comprisedOf rdf:type owl:ObjectProperty ;
@@ -733,7 +763,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 schema:domainIncludes <http://snomed.info/439401001> ,
                                       :Diagnosis ;
                 
-                rdfs:subPropertyOf :diagnosis .
+                rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -752,7 +782,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                       :MedicalDepartment ,
                                       :MedicalUnit ;
                  
-                 rdfs:subPropertyOf :diagnosis .
+                 rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -785,7 +815,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 schema:domainIncludes <http://snomed.info/439401001> ,
                                       :Diagnosis ;
                 
-                rdfs:subPropertyOf :diagnosis .
+                rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -853,7 +883,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                           :Patient ,
                                           :TherapeuticProcedure ;
                     
-                    rdfs:subPropertyOf :drug .
+                    rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -873,7 +903,24 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                         :MedicalCondition ,
                                         :TherapeuticProcedure ;
                   
-                  rdfs:subPropertyOf :drug .
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.example.org/medicalEntity#drugDispensator
+
+:drugDispensator rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "drug dispensator" ;
+                 
+                 rdfs:comment "Health care professional entitled to deliver drugs on prescription to the end-consumer (pharmacist). " ;
+                 
+                 schema:rangeIncludes :HealthcareProfessional ;
+                 
+                 schema:domainIncludes :Patient ,
+                                       :PharmaceuticalSubstance ;
+                 
+                 rdfs:subPropertyOf :provider .
 
 
 
@@ -891,7 +938,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                    :Patient ,
                                    :TherapeuticProcedure ;
              
-             rdfs:subPropertyOf :drug .
+             rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -911,7 +958,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                        :HealthcareProfessional ,
                                        :TherapeuticProcedure ;
                  
-                 rdfs:subPropertyOf :drug .
+                 rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -1141,6 +1188,23 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#foodIntolerance
+
+:foodIntolerance rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "food intolerance" ;
+                 
+                 rdfs:comment "Food intolerance or non-allergic food hypersensitivity is a term used widely for varied physiological responses associated with a particular food, or compound found in a range of foods." ;
+                 
+                 schema:rangeIncludes <http://snomed.info/235719002> ,
+                                      :MedicalCondition ;
+                 
+                 schema:domainIncludes :Patient ;
+                 
+                 rdfs:subPropertyOf :adverseOutcome .
+
+
+
 ###  http://www.example.org/medicalEntity#guarantor
 
 :guarantor rdf:type owl:ObjectProperty ;
@@ -1350,6 +1414,12 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#location
+
+:location rdf:type owl:ObjectProperty .
+
+
+
 ###  http://www.example.org/medicalEntity#maritalStatus
 
 :maritalStatus rdf:type owl:ObjectProperty ;
@@ -1518,7 +1588,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                      
                      rdfs:label "medical prescription" ;
                      
-                     rdfs:comment "Linking a patient with his medical order (=written prescription) for the patient. Not that for the provider we use the property prescribingProcedure."@en ;
+                     rdfs:comment "Linking a patient with his medical order (=written prescription) for the patient Eg. hasPrescription or gotPrescribed. For the provider we use the property prescribingProcedure."@en ;
                      
                      schema:rangeIncludes <http://snomed.info/440545006> ,
                                           :MedicalPrescription ;
@@ -2052,6 +2122,12 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#provider
+
+:provider rdf:type owl:ObjectProperty .
+
+
+
 ###  http://www.example.org/medicalEntity#race
 
 :race rdf:type owl:ObjectProperty ;
@@ -2101,6 +2177,22 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#referringPhysician
+
+:referringPhysician rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "referring physician" ;
+                    
+                    rdfs:comment "A healthcare provider referring a patient to another healthcare provider." ;
+                    
+                    schema:rangeIncludes :HealthcareProfessional ;
+                    
+                    schema:domainIncludes :Patient ;
+                    
+                    rdfs:subPropertyOf :careProvider .
+
+
+
 ###  http://www.example.org/medicalEntity#refill
 
 :refill rdf:type owl:ObjectProperty ;
@@ -2129,8 +2221,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   schema:domainIncludes :LifeEvent ,
                                         :MedicalProcedure ,
-                                        :MedicalScore ,
-                                        :MedicalRecord .
+                                        :MedicalRecord ,
+                                        :MedicalScore .
 
 
 
@@ -2191,6 +2283,20 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    schema:domainIncludes schema:Person ;
                    
                    schema:rangeIncludes schema:Thing .
+
+
+
+###  http://www.example.org/medicalEntity#resistantTo
+
+:resistantTo rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "resistant to" ;
+             
+             rdfs:comment "Specifying pharmacological substance a micro-organism  is resistant to." ;
+             
+             schema:domainIncludes <http://snomed.info/264395009> ;
+             
+             schema:rangeIncludes :PharmaceuticalSubstance .
 
 
 
@@ -2368,6 +2474,20 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.example.org/medicalEntity#susceptibleTo
+
+:susceptibleTo rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "susceptibleTo" ;
+               
+               rdfs:comment "Specifying a pharmacological substance a microorganism is susceptible to." ;
+               
+               schema:domainIncludes <http://snomed.info/264395009> ;
+               
+               schema:rangeIncludes :PharmaceuticalSubstance .
+
+
+
 ###  http://www.example.org/medicalEntity#symptom
 
 :symptom rdf:type owl:ObjectProperty ;
@@ -2394,8 +2514,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 schema:domainIncludes :AnamnesisProcedure ,
                                       :ClinicalDocument ,
-                                      :Patient ,
-                                      :MedicalRecord ;
+                                      :MedicalRecord ,
+                                      :Patient ;
                 
                 schema:rangeIncludes :SystemicReview .
 
@@ -4397,7 +4517,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:subClassOf :LifeEvent ;
                 
-                owl:backwardCompatibleWith "The state of being  diseased or unhealthy for a person or within a population" .
+                rdfs:comment "The state of being  diseased or unhealthy for a person or within a population" .
 
 
 
