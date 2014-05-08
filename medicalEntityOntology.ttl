@@ -1,5 +1,4 @@
 @prefix : <http://www.example.org/medicalEntity#> .
-@prefix gr: <http://purl.org/goodrelations/v1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -8,7 +7,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix snomed: <http://snomed.info/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.example.org/medicalEntity> .
 
 <http://www.example.org/medicalEntity> rdf:type owl:Ontology ;
@@ -491,7 +489,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               rdfs:label "care provider" ;
               
-              rdfs:comment "Specifying a person, medical organization, or unitcare provider for any health care services"@en ;
+              rdfs:comment "Specifying a person, medical organization, or unit care-provider for any health care services"@en ;
               
               schema:rangeIncludes schema:MedicalOrganization ,
                                    schema:Person ,
@@ -875,7 +873,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                     
                     rdfs:label "drug administration" ;
                     
-                    rdfs:comment "specifying the event of administering the drug to the patient. Typically associated with the route of administration ie.oral, injection etc." ;
+                    rdfs:comment "specifying the event of administering the drug to the patient. Typically associated with the route of administration i.e.oral, injection etc." ;
                     
                     schema:rangeIncludes <http://snomed.info/182832007> ;
                     
@@ -1621,7 +1619,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:label "medical record" ;
                
-               rdfs:comment "Specifying a medical record for a given medical entity or patient. A medical record is a summ of all medical cases of a patient."@en ;
+               rdfs:comment "Specifying a medical record for a given medical entity or patient."@en ;
                
                schema:rangeIncludes :MedicalRecord ;
                
@@ -2673,7 +2671,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:label "abortions" ;
            
-           rdfs:comment "Specifying the number of abortion for a given patient woman" ;
+           rdfs:comment "Specifying the number of abortion for a given woman" ;
            
            schema:domainIncludes <http://snomed.info/224526002> ;
            
@@ -3463,8 +3461,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:subClassOf :Substance ;
                
-               rdfs:comment "The substance of the human body." ,
-                            "Body substance" .
+               rdfs:comment "The substance of the human body." ;
+                rdfs:comment   "Body substance" .
 
 
 
@@ -3584,7 +3582,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:subClassOf :MedicalEntity ;
                  
-                 rdfs:comment "The result of a clinical observation, assessment or judgement, and include both normal and abnormal clinical states. Source: SNOMED" .
+                 rdfs:comment "The result of a clinical observation, assessment or judgement, and include both normal and abnormal clinical states." .
 
 
 
@@ -3846,8 +3844,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:subClassOf :QualifierConcept ;
              
-             rdfs:comment "Episodicity" ,
-                          "A quantification of a medical condition occurances." .
+             rdfs:label "Episodicity" ;
+             rdfs:comment  "A quantification of a medical condition occurrences." .
 
 
 
@@ -3878,7 +3876,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 ###  http://www.example.org/medicalEntity#FamilyRelation
 
 :FamilyRelation rdf:type owl:Class ;
-                
+                rdfs:label "FamilyRelation" ;
+				rdfs:comment "Relationship relatedness or connection by blood, marriage or adoption ."; 
                 rdfs:subClassOf :QualifierConcept .
 
 
@@ -3951,7 +3950,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:subClassOf :MedicalEntity ;
                 
-                rdfs:comment "A medical facility is, in general, any location where healthcare is provided or medicine is practiced regularly. " .
+                rdfs:comment "A medical facility is, in general, any location where healthcare is provided or medicine is practised regularly. " .
 
 
 
@@ -4083,7 +4082,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:subClassOf :QualifierConcept ;
                   
-                  rdfs:comment "A cotegorization of invasiveness type of medical procedures." .
+                  rdfs:comment "A categorization of invasiveness type of medical procedures." .
 
 
 
@@ -4251,7 +4250,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:subClassOf :HealthFacility ;
                    
-                   rdfs:comment "A health ficility department. Typically named according the medical specialities. Eg. Internal medicine, Surgery, etc." .
+                   rdfs:comment "A health facility department. Typically named according the medical specialities. Eg. Internal medicine, Surgery, etc." .
 
 
 
@@ -4305,7 +4304,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                      
                      rdfs:subClassOf :MedicalEntity ;
                      
-                     rdfs:comment "Any examination, treatment, or other act having preventive, diagnostic, therapeutic or rehabilitative aims and which is carried out by a physician or other health care provider (Declaration on the Promotion of Rights of Patients in Europe, WHO, Amsterdam 1994). Typically-but not limitted to, the intervention is set of different procedures for a common care purpose." .
+                     rdfs:comment "Any examination, treatment, or other act having preventive, diagnostic, therapeutic or rehabilitative aims and which is carried out by a physician or other health care provider (Declaration on the Promotion of Rights of Patients in Europe, WHO, Amsterdam 1994). Typically-but not limited to, the intervention is set of different procedures for a common care purpose." .
 
 
 
@@ -4432,7 +4431,6 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 ###  http://www.example.org/medicalEntity#MedicalTherapy
 
 :MedicalTherapy rdf:type owl:Class ;
-                
                 rdfs:subClassOf :TherapeuticProcedure .
 
 
@@ -4917,7 +4915,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:subClassOf :HealthcareProfessional ;
                    
-                   rdfs:comment "People engaged in research in healthcare environement." .
+                   rdfs:comment "People engaged in research in healthcare environment." .
 
 
 
@@ -5121,7 +5119,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           rdfs:subClassOf :EncounterProcedure ;
           
-          rdfs:comment "Procedure consisting in tranfering a patient from a health care environment to another" .
+          rdfs:comment "Procedure consisting in transferring a patient from a health care environment to another" .
 
 
 
@@ -5167,8 +5165,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:subClassOf :MedicalImaging ;
             
-            rdfs:comment "Ultrasound" ,
-                         "Diagnostic ultrasound, also called sonography or diagnostic medical sonography, is an imaging method that uses high-frequency sound waves to produce relatively precise images of structures within your body." .
+            rdfs:label "Ultrasound" ;
+            rdfs:comment "Diagnostic ultrasound, also called sonography or diagnostic medical sonography, is an imaging method that uses high-frequency sound waves to produce relatively precise images of structures within your body." .
 
 
 
@@ -5180,7 +5178,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:subClassOf :Immunotherapy ;
              
-             rdfs:comment "Communly known as immunization, vaccination is the administration of antigenic material (a vaccine) to stimulate an individual's immune system to develop adaptive immunity to a pathogen." .
+             rdfs:comment "Commonly known as immunization, vaccination is the administration of antigenic material (a vaccine) to stimulate an individual's immune system to develop adaptive immunity to a pathogen." .
 
 
 
