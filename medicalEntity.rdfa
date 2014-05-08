@@ -1150,60 +1150,86 @@
     <div typeof="rdf:Property" resource="http://schema.org/abortions">
       <span class="h" property="rdfs:label">abortions</span>
       <span property="rdfs:comment">Specifying the number of abortion for a given woman</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/224526002">http://snomed.info/224526002</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/integer">integer</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/aboutRelative">
       <span class="h" property="rdfs:label">aboutRelative</span>
       <span property="rdfs:comment">Specifying a relative who is concerned by something. i.e medical history about XY relative.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/303071001">http://snomed.info/303071001</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/administrativeFather">
       <span class="h" property="rdfs:label">administrativeFather</span>
       <span property="rdfs:comment">Specifying a person who plays a role of an administrative father (parent) of this person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/father">father</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/administrativeMother">
       <span class="h" property="rdfs:label">administrativeMother</span>
       <span property="rdfs:comment">Specifying a person who plays a role of an administrative mother (parent) of this person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/mother">mother</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/admissionDate">
       <span class="h" property="rdfs:label">admissionDate</span>
       <span property="rdfs:comment">Specifying an admission date</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/305056002">http://snomed.info/305056002</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Admission">Admission</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/dateTime">dateTime</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/dateTime">dateTime</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/admission">
       <span class="h" property="rdfs:label">admission</span>
       <span property="rdfs:comment">Specifying admission procedure related to a resource, activity, another procedure, or patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/305056002">http://snomed.info/305056002</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Admission">Admission</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AdmissionProcedure">AdmissionProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/encounter">encounter</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/adulthoodHistory">
       <span class="h" property="rdfs:label">adulthoodHistory</span>
       <span property="rdfs:comment">Specifying an adulthood description of someone</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/41847000">http://snomed.info/41847000</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AdulthoodHistory">AdulthoodHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/socialHistory">socialHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/adverseDrugEvent">
       <span class="h" property="rdfs:label">adverseDrugEvent</span>
       <span property="rdfs:comment">Specifying an adverse drug event- defined according World Health Organization standards</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/277132007">http://snomed.info/277132007</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/410942007">http://snomed.info/410942007</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/62014003">http://snomed.info/62014003</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AdverseDrugReaction">AdverseDrugReaction</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/adverseEvent">adverseEvent</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/adverseEvent">
       <span class="h" property="rdfs:label">adverseEvent</span>
       <span property="rdfs:comment">Specifying an adverse event, in general sense - defined according World Health Organization standards</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/105590001">http://snomed.info/105590001</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/277132007">http://snomed.info/277132007</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/281647001">http://snomed.info/281647001</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AdverseEvent">AdverseEvent</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/adverseOutcome">adverseOutcome</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/adverseOutcome">
@@ -1213,37 +1239,51 @@
     <div typeof="rdf:Property" resource="http://schema.org/ageAtEvent">
       <span class="h" property="rdfs:label">ageAtEvent</span>
       <span property="rdfs:comment">Specifying the age of the entity when an event occurred</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/alcoholIntake">
       <span class="h" property="rdfs:label">alcoholIntake</span>
       <span property="rdfs:comment">Specifying a alcohol intake behaviour description of a person. </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AlcoholIntake">AlcoholIntake</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/lifestyleOrHabit">lifestyleOrHabit</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/allergen">
       <span class="h" property="rdfs:label">allergen</span>
       <span property="rdfs:comment">Specifying something that can cause an allergic reaction.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/421961002">http://snomed.info/421961002</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/473011001">http://snomed.info/473011001</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Allergy">Allergy</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/90260006">http://snomed.info/90260006</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/allergy">
       <span class="h" property="rdfs:label">allergy</span>
       <span property="rdfs:comment">Specifying an allergic reaction, an hypersensitivity or disorder.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/421961002">http://snomed.info/421961002</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/473011001">http://snomed.info/473011001</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Allergy">Allergy</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/anamnesisProcedure">
       <span class="h" property="rdfs:label">anamnesisProcedure</span>
       <span property="rdfs:comment">Specifying the anamnesis procedure resource for a patient or a person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnamnesisProcedure">AnamnesisProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalProcedure">medicalProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/anatomicalOrgan">
       <span class="h" property="rdfs:label">anatomicalOrgan</span>
       <span property="rdfs:comment">Specifying the anatomical organ for a resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalOrgan">AnatomicalOrgan</a></span>
@@ -1252,6 +1292,8 @@
     <div typeof="rdf:Property" resource="http://schema.org/anatomicalRegion">
       <span class="h" property="rdfs:label">anatomicalRegion</span>
       <span property="rdfs:comment">Specifying the anatomical region for a resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalRegion">AnatomicalRegion</a></span>
@@ -1260,6 +1302,8 @@
     <div typeof="rdf:Property" resource="http://schema.org/anatomicalStructure">
       <span class="h" property="rdfs:label">anatomicalStructure</span>
       <span property="rdfs:comment">Specifying the anatomical structure for a resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalStructure">AnatomicalStructure</a></span>
@@ -1268,6 +1312,8 @@
     <div typeof="rdf:Property" resource="http://schema.org/anatomicalSystem">
       <span class="h" property="rdfs:label">anatomicalSystem</span>
       <span property="rdfs:comment">Specifying the anatomical system for a resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalSystem">AnatomicalSystem</a></span>
@@ -1276,13 +1322,16 @@
     <div typeof="rdf:Property" resource="http://schema.org/apgarScore">
       <span class="h" property="rdfs:label">apgarScore</span>
       <span property="rdfs:comment">Specifying the value of APGAR Score. </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/133933007">http://snomed.info/133933007</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/positiveInteger">positiveInteger</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/arterialPulse">
       <span class="h" property="rdfs:label">arterialPulse</span>
       <span property="rdfs:comment">Specifying the regularly recurrent wave of distension in arteries that results from the progress through an artery of blood injected into the arterial system at each contraction of the ventricles of the heart</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Pulse">Pulse</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/sign">sign</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/atWeeksAmenorrhea">
@@ -1295,94 +1344,125 @@
     <div typeof="rdf:Property" resource="http://schema.org/belongsTo">
       <span class="h" property="rdfs:label">belongsTo</span>
       <span property="rdfs:comment">Specifying a resource to which another resource belongs</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/biologicalFather">
       <span class="h" property="rdfs:label">biologicalFather</span>
       <span property="rdfs:comment">Specifying a person who is a biological father (parent) of this person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/father">father</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/biologicalMother">
       <span class="h" property="rdfs:label">biologicalMother</span>
       <span property="rdfs:comment">Specifying a person who is a biological mother (parent) of this person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/mother">mother</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/birthDate">
       <span class="h" property="rdfs:label">birthDate</span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/dateTime">dateTime</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/birthHeight">
       <span class="h" property="rdfs:label">birthHeight</span>
       <span property="rdfs:comment">Specifying a birth weight</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/133933007">http://snomed.info/133933007</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/birthPercentile">
       <span class="h" property="rdfs:label">birthPercentile</span>
       <span property="rdfs:comment">Specifying the birth percentile of a newborn</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/133933007">http://snomed.info/133933007</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/birthPlace">
       <span class="h" property="rdfs:label">birthPlace</span>
       <span property="rdfs:comment">Specifying the place of birth for a person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Birth">Birth</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/169812000">http://snomed.info/169812000</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/birthWeight">
       <span class="h" property="rdfs:label">birthWeight</span>
       <span property="rdfs:comment">Specifying birth weight of a newborn</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/133933007">http://snomed.info/133933007</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topDataProperty">topDataProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/bloodGroup">
       <span class="h" property="rdfs:label">bloodGroup</span>
       <span property="rdfs:comment">Specifying the blood group for a person, i.e type of human blood based on presence or absence of inherited antigenic substances on the surface of red blood cells.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/365636006">http://snomed.info/365636006</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/bloodPressure">
       <span class="h" property="rdfs:label">bloodPressure</span>
       <span property="rdfs:comment">Specifying the blood pressure resource of a patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/75367002">http://snomed.info/75367002</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/BloodPressure">BloodPressure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/bodyMassIndex">
       <span class="h" property="rdfs:label">bodyMassIndex</span>
       <span property="rdfs:comment">Specifying the body mass index of  a person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/bodyPosition">
       <span class="h" property="rdfs:label">bodyPosition</span>
       <span property="rdfs:comment">Specifying a position of human body or anatomical entity in given space e.g. Supine body position, standing position, sitting position etc.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/364830008">http://snomed.info/364830008</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/bodySide">
       <span class="h" property="rdfs:label">bodySide</span>
       <span property="rdfs:comment">body side</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">http://schema.org/Text</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/bodySide">
       <span class="h" property="rdfs:label">bodySide</span>
       <span property="rdfs:comment">specifying the laterality of the body structure, body organ, or body region.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">http://schema.org/Text</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/bodyVolumeIndex">
       <span class="h" property="rdfs:label">bodyVolumeIndex</span>
       <span property="rdfs:comment">Specifying the body volume index of  a person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/careLocation">
       <span class="h" property="rdfs:label">careLocation</span>
       <span property="rdfs:comment">Specifying a location or a place where the care event is taking place</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Event">http://schema.org/Event</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/305056002">http://snomed.info/305056002</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Place">http://schema.org/Place</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDepartment">MedicalDepartment</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalUnit">MedicalUnit</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/location">location</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/careProvider">
@@ -1391,7 +1471,11 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/CaringEvent">CaringEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalOrganization">http://schema.org/MedicalOrganization</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/223366009">http://snomed.info/223366009</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/provider">provider</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/careReason">
@@ -1400,14 +1484,17 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/CaringEvent">CaringEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/indication">indication</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/caredPerson">
       <span class="h" property="rdfs:label">caredPerson</span>
       <span property="rdfs:comment">Specifying a person (typically a patient) receiving services from the health care professional during a caring event.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/223366009">http://snomed.info/223366009</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/CaringEvent">CaringEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/caringEvent">
@@ -1416,11 +1503,15 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/CaringEvent">CaringEvent</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/lifeEvent">lifeEvent</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/causalityStatus">
       <span class="h" property="rdfs:label">causalityStatus</span>
       <span property="rdfs:comment">Causality score or ranking following a codified system (like HL7 causalityExpectation) or not.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/status">status</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/cause">
@@ -1428,6 +1519,7 @@
       <span property="rdfs:comment">Specifying a cause of something. when it's established. </span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/SignOrSymptom">SignOrSymptom</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCause">http://schema.org/MedicalCause</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/chiefComplaint">
@@ -1435,12 +1527,15 @@
       <span property="rdfs:comment">Specifying a chief complaint resource</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ChiefComplaint">ChiefComplaint</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/symptom">symptom</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/childhoodHistory">
       <span class="h" property="rdfs:label">childhoodHistory</span>
       <span property="rdfs:comment">Specifying a resource describing the childhood history of a patient or a person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ChildhoodHistory">ChildhoodHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/socialHistory">socialHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/clinicalDocument">
@@ -1454,6 +1549,8 @@
       <span class="h" property="rdfs:label">clinicalFinding</span>
       <span property="rdfs:comment">Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/118246004">http://snomed.info/118246004</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
     </div>
 
@@ -1476,56 +1573,77 @@
     <div typeof="rdf:Property" resource="http://schema.org/confirmationStatus">
       <span class="h" property="rdfs:label">confirmationStatus</span>
       <span property="rdfs:comment">Specifying the confirmation status of something. eg: confirmed, suspected etc., as outcome of evaluation process</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Text">http://schema.org/Text</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/status">status</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/cosmeticProcedure">
       <span class="h" property="rdfs:label">cosmeticProcedure</span>
       <span property="rdfs:comment">Specifying a cosmetic procedure resource for a patient or a person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/electiveProcedure">electiveProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/dateTime">
       <span class="h" property="rdfs:label">dateTime</span>
       <span property="rdfs:comment">Specifying an instant of something. Typically derived from W3C Time Ontology this describes a point in time when an event or action occurs.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Literal">Literal</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/dateTimeStamp">dateTimeStamp</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/deathDate">
       <span class="h" property="rdfs:label">deathDate</span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/dateTime">dateTime</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/deathPlace">
       <span class="h" property="rdfs:label">deathPlace</span>
       <span property="rdfs:comment">Specifying the place of death for a person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Death">Death</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/169812000">http://snomed.info/169812000</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diagnosis">
       <span class="h" property="rdfs:label">diagnosis</span>
       <span property="rdfs:comment">Specifying a medical condition which is output of a diagnosis process</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCondition">http://schema.org/MedicalCondition</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/439401001">http://snomed.info/439401001</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diagnosticDate">
       <span class="h" property="rdfs:label">diagnosticDate</span>
       <span property="rdfs:comment">Specifying the diagnostic date for  a person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/439401001">http://snomed.info/439401001</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/dateTime">dateTime</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/dateTime">dateTime</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diagnosticMean">
       <span class="h" property="rdfs:label">diagnosticMean</span>
       <span property="rdfs:comment">Specifying the mean for diagnosis procedure.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/439401001">http://snomed.info/439401001</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Diagnosis">Diagnosis</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDevice">http://schema.org/MedicalDevice</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTest">http://schema.org/MedicalTest</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/260686004">http://snomed.info/260686004</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diagnosticPlace">
       <span class="h" property="rdfs:label">diagnosticPlace</span>
       <span property="rdfs:comment">Specifying the location or place where the diagnosis was made. Typically the department or health facility unit.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/439401001">http://snomed.info/439401001</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Diagnosis">Diagnosis</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDepartment">MedicalDepartment</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalUnit">MedicalUnit</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diagnosticProcedure">
@@ -1533,17 +1651,24 @@
       <span property="rdfs:comment">Specifying the diagnostic procedure resource for a patient or a person.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/DiagnosticProcedure">DiagnosticProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalProcedure">medicalProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diagnosticType">
       <span class="h" property="rdfs:label">diagnosticType</span>
       <span property="rdfs:comment">Specifying the type of diagnosis i.e discharge diagnosis, admission diagnosis, etc.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/439401001">http://snomed.info/439401001</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Diagnosis">Diagnosis</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/106229004">http://snomed.info/106229004</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diastolicBloodPressure">
       <span class="h" property="rdfs:label">diastolicBloodPressure</span>
       <span property="rdfs:comment">Specifying a diastolic arterial blood pressure of a patient.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/271650006">http://snomed.info/271650006</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/bloodPressure">bloodPressure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/dischargeDate">
@@ -1552,6 +1677,7 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Discharge">Discharge</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/dateTime">dateTime</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/dateTime">dateTime</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/discharge">
@@ -1560,6 +1686,7 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Discharge">Discharge</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/encounter">encounter</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drugAdministration">
@@ -1568,14 +1695,19 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/182832007">http://snomed.info/182832007</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drugDispensation">
       <span class="h" property="rdfs:label">drugDispensation</span>
       <span property="rdfs:comment">Specifying an drug dispensation event i.e the event of delivering the drug to the patient at pharmacy. This is different to the drug administration</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/223366009">http://snomed.info/223366009</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/440298008">http://snomed.info/440298008</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drugDispensator">
@@ -1584,6 +1716,7 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/PharmaceuticalSubstance">PharmaceuticalSubstance</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/provider">provider</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drugIntaken">
@@ -1592,13 +1725,19 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/129019007">http://snomed.info/129019007</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drugPreparation">
       <span class="h" property="rdfs:label">drugPreparation</span>
       <span property="rdfs:comment">Specifying a drug preparation used in a procedure, typically prepared for a patient from one or multiple drug packages</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/223366009">http://snomed.info/223366009</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/105904009">http://snomed.info/105904009</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drug">
@@ -1607,25 +1746,31 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/410942007">http://snomed.info/410942007</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Drug">Drug</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/educationLevel">
       <span class="h" property="rdfs:label">educationLevel</span>
       <span property="rdfs:comment">Specifying the education level of the person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/EducationLevel">EducationLevel</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/elderhoodHistory">
       <span class="h" property="rdfs:label">elderhoodHistory</span>
       <span property="rdfs:comment">specifying the elderhood history of someone</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Elderhood">Elderhood</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/socialHistory">socialHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/electiveProcedure">
       <span class="h" property="rdfs:label">electiveProcedure</span>
       <span property="rdfs:comment">Specifying the elective procedure resource for a patient or a person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ElectiveProcedure">ElectiveProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalProcedure">medicalProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/encounterPlace">
@@ -1633,13 +1778,17 @@
       <span property="rdfs:comment">specifying the location or a place where the encounter took place</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/encounter">encounter</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/encounterProvider">
       <span class="h" property="rdfs:label">encounterProvider</span>
       <span property="rdfs:comment">specifying the provider of the encounter</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/223366009">http://snomed.info/223366009</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/encounter">encounter</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/encounterReason">
@@ -1647,89 +1796,122 @@
       <span property="rdfs:comment">specifying the reason or indication for a patient encounter</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalIndication">http://schema.org/MedicalIndication</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/indication">indication</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/encounterStatus">
       <span class="h" property="rdfs:label">encounterStatus</span>
       <span property="rdfs:comment">discharge status</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">http://schema.org/Text</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/encounter">encounter</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/encounterStatus">
       <span class="h" property="rdfs:label">encounterStatus</span>
       <span property="rdfs:comment">specifying the status of discharge procedure.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">http://schema.org/Text</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/encounter">encounter</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/encounter">
       <span class="h" property="rdfs:label">encounter</span>
       <span property="rdfs:comment">Specifying an encounter between the patient and a healthcare provider.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/308335008">http://snomed.info/308335008</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/ethnicity">
       <span class="h" property="rdfs:label">ethnicity</span>
       <span property="rdfs:comment">Specifying the ethnicity resource of someone. Ethnicity or ethnic group is a socially defined category of people. Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Ethnicity">Ethnicity</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/socialHistory">socialHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/examination">
       <span class="h" property="rdfs:label">examination</span>
       <span property="rdfs:comment">Specifying an examination procedure in general performed on  something or on a patient.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTest">http://schema.org/MedicalTest</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/familyHistory">
       <span class="h" property="rdfs:label">familyHistory</span>
       <span property="rdfs:comment">Specifying a personal history as a part of a full medical history provided by the patient during an anamnesis procedure .</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/57177007">http://snomed.info/57177007</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalHistory">medicalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/familyMember">
       <span class="h" property="rdfs:label">familyMember</span>
       <span property="rdfs:comment">Specifying a family member for this person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/familyHistory">familyHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/familyRelationship">
       <span class="h" property="rdfs:label">familyRelationship</span>
       <span property="rdfs:comment">Specifying a relationship between persons. Typically between persons uses the 'American Kinship terminology'.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/FamilyRelation">FamilyRelation</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/father">
       <span class="h" property="rdfs:label">father</span>
       <span property="rdfs:comment">Specifying a father (parent) of this person when no other specifications are given.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/parent">parent</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/foodIntolerance">
       <span class="h" property="rdfs:label">foodIntolerance</span>
       <span property="rdfs:comment">Food intolerance or non-allergic food hypersensitivity is a term used widely for varied physiological responses associated with a particular food, or compound found in a range of foods.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/235719002">http://snomed.info/235719002</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/adverseOutcome">adverseOutcome</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/gravidity">
       <span class="h" property="rdfs:label">gravidity</span>
       <span property="rdfs:comment">Specifying the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/224526002">http://snomed.info/224526002</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/positiveInteger">positiveInteger</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/guarantor">
       <span class="h" property="rdfs:label">guarantor</span>
       <span property="rdfs:comment">Specifying a person or company , known as guarantor, offering insurance policies in return for premiums</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Organization">http://schema.org/Organization</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/gynObsHistory">
       <span class="h" property="rdfs:label">gynObsHistory</span>
       <span property="rdfs:comment">Specifying the gynaecology-obstetric history of a patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/GynObsHistory">GynObsHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/personalHistory">personalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/healthFacility">
       <span class="h" property="rdfs:label">healthFacility</span>
       <span property="rdfs:comment">Specifying a health facility where care is being given.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
@@ -1741,6 +1923,7 @@
     <div typeof="rdf:Property" resource="http://schema.org/hipCircumference">
       <span class="h" property="rdfs:label">hipCircumference</span>
       <span property="rdfs:comment">The hip circumference measurement of someone</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HipCircumference">HipCircumference</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
     </div>
@@ -1750,34 +1933,45 @@
       <span property="rdfs:comment">The history of the present illness.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HistoryOfPresentIllness">HistoryOfPresentIllness</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/personalHistory">personalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/indication">
       <span class="h" property="rdfs:label">indication</span>
       <span property="rdfs:comment">A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalDevice">http://schema.org/MedicalDevice</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIndication">http://schema.org/MedicalIndication</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/71388002">http://snomed.info/71388002</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/CaringEvent">CaringEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalIndication">http://schema.org/MedicalIndication</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/insurance">
       <span class="h" property="rdfs:label">insurance</span>
       <span property="rdfs:comment">Specifying an insurance scheme for a patient. </span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Offer">http://schema.org/Offer</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/interpretation">
       <span class="h" property="rdfs:label">interpretation</span>
       <span property="rdfs:comment">Specifying an interpretation of something or concise and clinically contextualized narrative interpretation of laboratory results or medical test.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DiagnosticProcedure">DiagnosticProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/243814003">http://snomed.info/243814003</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/277034006">http://snomed.info/277034006</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/interval">
       <span class="h" property="rdfs:label">interval</span>
       <span property="rdfs:comment">Typically derived from W3C Time Ontology this describes a time interval when an event or action occurs.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/laboratoryProcedure">
@@ -1785,6 +1979,7 @@
       <span property="rdfs:comment">Specifying a laboratory procedure resource for a patient or a person.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/LaboratoryTest">LaboratoryTest</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/diagnosticProcedure">diagnosticProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/laboratoryResult">
@@ -1797,6 +1992,9 @@
     <div typeof="rdf:Property" resource="http://schema.org/lastMenstruationPeriod">
       <span class="h" property="rdfs:label">lastMenstruationPeriod</span>
       <span property="rdfs:comment">Specifying the last menstruation period of a woman</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/224526002">http://snomed.info/224526002</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/interval">interval</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/lifeEvent">
@@ -1809,7 +2007,9 @@
     <div typeof="rdf:Property" resource="http://schema.org/lifestyleOrHabit">
       <span class="h" property="rdfs:label">lifestyleOrHabit</span>
       <span property="rdfs:comment">describing the lifestyles or habits of the person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/LifestyleOrHabits">LifestyleOrHabits</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/personalHistory">personalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/location">
@@ -1819,11 +2019,17 @@
     <div typeof="rdf:Property" resource="http://schema.org/maritalStatus">
       <span class="h" property="rdfs:label">maritalStatus</span>
       <span property="rdfs:comment">Specifying an agent having the social and/or juridical status of being married or unmarried. </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/365581002">http://snomed.info/365581002</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/socialHistory">socialHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/maternalRelative">
       <span class="h" property="rdfs:label">maternalRelative</span>
       <span property="rdfs:comment">Specifying the a maternal relative person of this person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/familyMember">familyMember</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalCase">
@@ -1831,6 +2037,7 @@
       <span property="rdfs:comment">Specifying a medical case for a given medical entity or patient. A medical case is a part of a full medical record of a patient.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCase">MedicalCase</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalRecord">medicalRecord</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalCertificate">
@@ -1838,45 +2045,56 @@
       <span property="rdfs:comment">Specifying any medical certificate</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCertificate">MedicalCertificate</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/clinicalDocument">clinicalDocument</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalClinic">
       <span class="h" property="rdfs:label">medicalClinic</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalClinic">MedicalClinic</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/healthFacility">healthFacility</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalCondition">
       <span class="h" property="rdfs:label">medicalCondition</span>
       <span property="rdfs:comment">Specifying a medical condition in general, diagnosed or not.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCondition">http://schema.org/MedicalCondition</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MorbidityEvent">MorbidityEvent</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalDepartment">
       <span class="h" property="rdfs:label">medicalDepartment</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDepartment">MedicalDepartment</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/healthFacility">healthFacility</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalHistory">
       <span class="h" property="rdfs:label">medicalHistory</span>
       <span property="rdfs:comment">Specifying a full medical history provided by the patient during an anamnesis procedure .</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalHistory">MedicalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalIdentifier">
       <span class="h" property="rdfs:label">medicalIdentifier</span>
       <span property="rdfs:comment">Specifying the identification number of a medical entity like care provider identifier number, patient identifier etc.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/223366009">http://snomed.info/223366009</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/positiveInteger">positiveInteger</a></span>
     </div>
@@ -1893,13 +2111,16 @@
       <span property="rdfs:comment">Specifying any medical letter </span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/clinicalDocument">clinicalDocument</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalPrescription">
       <span class="h" property="rdfs:label">medicalPrescription</span>
       <span property="rdfs:comment">Linking a patient with his medical order (=written prescription) for the patient Eg. hasPrescription or gotPrescribed. For the provider we use the property prescribingProcedure.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/440545006">http://snomed.info/440545006</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalPrescription">MedicalPrescription</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/clinicalDocument">clinicalDocument</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalProcedure">
@@ -1907,6 +2128,7 @@
       <span property="rdfs:comment">Specifying the medical procedure resource of the patient or person.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/procedure">procedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalRecord">
@@ -1925,16 +2147,19 @@
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalReport">MedicalReport</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PatientRecord">PatientRecord</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/clinicalDocument">clinicalDocument</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalRoom">
       <span class="h" property="rdfs:label">medicalRoom</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalRoom">MedicalRoom</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/healthFacility">healthFacility</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalSpecialty">
@@ -1944,29 +2169,36 @@
     <div typeof="rdf:Property" resource="http://schema.org/medicalSubSpecialty">
       <span class="h" property="rdfs:label">medicalSubSpecialty</span>
       <span property="rdfs:comment">Specifying the medical sub-speciality of a healthcare provider</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/223366009">http://snomed.info/223366009</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalSubSpeciality">MedicalSubSpeciality</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalSpecialty">medicalSpecialty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalUnit">
       <span class="h" property="rdfs:label">medicalUnit</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalUnit">MedicalUnit</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/healthFacility">healthFacility</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalWard">
       <span class="h" property="rdfs:label">medicalWard</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalWard">MedicalWard</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/healthFacility">healthFacility</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicationProcedure">
@@ -1974,54 +2206,74 @@
       <span property="rdfs:comment">Specifying a medication procedure resource for a patient or a person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/therapeuticProcedure">therapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/menopause">
       <span class="h" property="rdfs:label">menopause</span>
       <span property="rdfs:comment">Specifying the menopause event of a women </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/276477006">http://snomed.info/276477006</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Menopause">Menopause</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/gynObsHistory">gynObsHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/menstruationPeriod">
       <span class="h" property="rdfs:label">menstruationPeriod</span>
       <span property="rdfs:comment">Specifying the menstruation period description event of a women </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/224526002">http://snomed.info/224526002</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/QuantitativeValue">http://schema.org/QuantitativeValue</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/interval">interval</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/menstruation">
       <span class="h" property="rdfs:label">menstruation</span>
       <span property="rdfs:comment">Specifying the menstruation event of a women </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/224526002">http://snomed.info/224526002</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Menstruation">Menstruation</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/gynObsHistory">gynObsHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/mentalHealthHistory">
       <span class="h" property="rdfs:label">mentalHealthHistory</span>
       <span property="rdfs:comment">Specifying the mental health history for a patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MentalHealthHistory">MentalHealthHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/personalHistory">personalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/mother">
       <span class="h" property="rdfs:label">mother</span>
       <span property="rdfs:comment">Specifying a mother (parent) of this person when no other specifications are given.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/parent">parent</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/newborn">
       <span class="h" property="rdfs:label">newborn</span>
       <span property="rdfs:comment">Specifying the newborn person </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/360149000">http://snomed.info/360149000</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/133933007">http://snomed.info/133933007</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/observable">
       <span class="h" property="rdfs:label">observable</span>
       <span property="rdfs:comment">Specifying a clinical observable of a patient not necessarily through a clinical examination. example: a swelling, etc</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/363787002">http://snomed.info/363787002</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/occupationalHistory">
       <span class="h" property="rdfs:label">occupationalHistory</span>
       <span property="rdfs:comment">Specifying the occupational history resource of the patient or person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/OccupationalHistory">OccupationalHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/socialHistory">socialHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/onsetMode">
@@ -2036,85 +2288,114 @@
       <span property="rdfs:comment">Specifying a palliative procedure resource for a patient or a person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PalliativeProcedure">PalliativeProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/therapeuticProcedure">therapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/parent">
       <span class="h" property="rdfs:label">parent</span>
       <span property="rdfs:comment">A parent of this person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/familyMember">familyMember</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/parity">
       <span class="h" property="rdfs:label">parity</span>
       <span property="rdfs:comment">Parity is defined as the number of times that she has given birth to a foetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/224526002">http://snomed.info/224526002</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/positiveInteger">positiveInteger</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/pastMedicalHistory">
       <span class="h" property="rdfs:label">pastMedicalHistory</span>
       <span property="rdfs:comment">Specifying the past medical history of a patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PastMedicalHistory">PastMedicalHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/personalHistory">personalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/paternalRelative">
       <span class="h" property="rdfs:label">paternalRelative</span>
       <span property="rdfs:comment">Specifying the a paternal relative person of this person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/familyMember">familyMember</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/personalHistory">
       <span class="h" property="rdfs:label">personalHistory</span>
       <span property="rdfs:comment"> specifying a personal history provided by the patient during an anamnesis procedure .</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/160476009">http://snomed.info/160476009</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PersonalHistory">PersonalHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalHistory">medicalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/physicalActivity">
       <span class="h" property="rdfs:label">physicalActivity</span>
       <span property="rdfs:comment">Specifying the physical activity  resource of the patient or person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PhysicalActivity">http://schema.org/PhysicalActivity</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/RecreationalHistory">RecreationalHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/socialHistory">socialHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/physicalExamination">
       <span class="h" property="rdfs:label">physicalExamination</span>
       <span property="rdfs:comment">Specifying a physical examination procedure resource for a patient or a person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/diagnosticProcedure">diagnosticProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/physiologicalRole">
       <span class="h" property="rdfs:label">physiologicalRole</span>
       <span property="rdfs:comment">Specifying any physiological role of something</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PhysiologicalEntity">PhysiologicalEntity</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/playsRole">
       <span class="h" property="rdfs:label">playsRole</span>
       <span property="rdfs:comment">Specifying the role played by an agent </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/possibleCause">
       <span class="h" property="rdfs:label">possibleCause</span>
       <span property="rdfs:comment">Specifying a possible cause of something</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/cause">cause</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/possibleTreatment">
       <span class="h" property="rdfs:label">possibleTreatment</span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/treatment">treatment</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/pregnancy">
       <span class="h" property="rdfs:label">pregnancy</span>
       <span property="rdfs:comment">Specifying the resource as the pregnancy event or period related to the patient not differentiating if the pregnancy gave a birth or not. Should be noted that gravidity property is a data property instead. </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Gravidity">Gravidity</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/prescribingProcedure">
       <span class="h" property="rdfs:label">prescribingProcedure</span>
       <span property="rdfs:comment">Specifying a prescribing procedure resource for a patient or a person. This property is linking a patient or a provider to the procedure. The procedure has as an output a prescription.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/223366009">http://snomed.info/223366009</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PrescribingProcedure">PrescribingProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/therapeuticProcedure">therapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/preventiveProcedure">
@@ -2122,10 +2403,12 @@
       <span property="rdfs:comment">Specifying any preventive procedure resource for a person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PreventiveProcedure">PreventiveProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/therapeuticProcedure">therapeuticProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/primaryPrevention">
       <span class="h" property="rdfs:label">primaryPrevention</span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/preventiveProcedure">preventiveProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/procedure">
@@ -2139,12 +2422,16 @@
     <div typeof="rdf:Property" resource="http://schema.org/race">
       <span class="h" property="rdfs:label">race</span>
       <span property="rdfs:comment">Specifying a race group or anthropological family as origin of the person. Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property </span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Race">Race</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/socialHistory">socialHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/rankOrder">
       <span class="h" property="rdfs:label">rankOrder</span>
       <span property="rdfs:comment">rank order number of something. Typically used together with schema:numerator and schema:denominator. eg. refill number 4 out of 10.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/recommendedTreatment">
@@ -2154,6 +2441,7 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Drug">Drug</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/treatment">treatment</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/referringPhysician">
@@ -2161,6 +2449,7 @@
       <span property="rdfs:comment">A healthcare provider referring a patient to another healthcare provider.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/careProvider">careProvider</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/refill">
@@ -2184,47 +2473,61 @@
     <div typeof="rdf:Property" resource="http://schema.org/religionGroup">
       <span class="h" property="rdfs:label">religionGroup</span>
       <span property="rdfs:comment">Specifying a religion group of person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ReligionGroup">ReligionGroup</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/religiousBelief">
       <span class="h" property="rdfs:label">religiousBelief</span>
       <span property="rdfs:comment">Specifying the religion beliefs of a person. Someone can have multiple religion beliefs.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ReligiousBelief">ReligiousBelief</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/religionGroup">religionGroup</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/residenceHistory">
       <span class="h" property="rdfs:label">residenceHistory</span>
       <span property="rdfs:comment">Specifying the residence history resource of the patient or person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ResidenceHistory">ResidenceHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/socialHistory">socialHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/residentialStatus">
       <span class="h" property="rdfs:label">residentialStatus</span>
       <span property="rdfs:comment">Specifying the act of dwelling in a place. This status is linked to an address and period of the time</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/resistantTo">
       <span class="h" property="rdfs:label">resistantTo</span>
       <span property="rdfs:comment">Specifying pharmacological substance a micro-organism  is resistant to.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/264395009">http://snomed.info/264395009</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PharmaceuticalSubstance">PharmaceuticalSubstance</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/severity">
       <span class="h" property="rdfs:label">severity</span>
       <span property="rdfs:comment">Specifying a severity evaluation of a disease: typically by classification resource or ranking scale: mild, moderate, severe, life threatening or fatal</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Severity">Severity</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/sexualBehaviour">
       <span class="h" property="rdfs:label">sexualBehaviour</span>
       <span property="rdfs:comment">Specifying the sexual behaviour resource of  a patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/SexualBehaviour">SexualBehaviour</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/lifestyleOrHabit">lifestyleOrHabit</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/sibling">
       <span class="h" property="rdfs:label">sibling</span>
       <span property="rdfs:comment">A sibling for this person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/familyMember">familyMember</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/sideEffect">
@@ -2237,6 +2540,7 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Substance">Substance</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/SideEffect">SideEffect</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/adverseOutcome">adverseOutcome</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/signOrSymptom">
@@ -2249,23 +2553,31 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalScore">MedicalScore</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/signOrSymptom">signOrSymptom</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/smoking">
       <span class="h" property="rdfs:label">smoking</span>
       <span property="rdfs:comment">Describing the smoking habit resource for the patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Smoking">Smoking</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/lifestyleOrHabit">lifestyleOrHabit</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/socialHistory">
       <span class="h" property="rdfs:label">socialHistory</span>
       <span property="rdfs:comment">Specifying the social history resource of the patient or person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/SocialHistory">SocialHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/personalHistory">personalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/spouse">
       <span class="h" property="rdfs:label">spouse</span>
       <span property="rdfs:comment">A spouse of this person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/familyMember">familyMember</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/status">
@@ -2275,7 +2587,9 @@
     <div typeof="rdf:Property" resource="http://schema.org/substanceUseOrAbuse">
       <span class="h" property="rdfs:label">substanceUseOrAbuse</span>
       <span property="rdfs:comment">Describing the substance use or abuse resource of the person</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/SubstanceUseOrAbuse">SubstanceUseOrAbuse</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/lifestyleOrHabit">lifestyleOrHabit</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/surgicalProcedure">
@@ -2283,11 +2597,13 @@
       <span property="rdfs:comment">Specifying a surgical procedure resource for a patient or a person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/SurgicalProcedure">SurgicalProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalProcedure">medicalProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/susceptibleTo">
       <span class="h" property="rdfs:label">susceptibleTo</span>
       <span property="rdfs:comment">Specifying a pharmacological substance a microorganism is susceptible to.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/264395009">http://snomed.info/264395009</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PharmaceuticalSubstance">PharmaceuticalSubstance</a></span>
     </div>
 
@@ -2296,6 +2612,7 @@
       <span property="rdfs:comment">Specifying a symptom resource</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Symptom">Symptom</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/signOrSymptom">signOrSymptom</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/systemicReview">
@@ -2311,32 +2628,42 @@
     <div typeof="rdf:Property" resource="http://schema.org/systolicBloodPressure">
       <span class="h" property="rdfs:label">systolicBloodPressure</span>
       <span property="rdfs:comment">Specifying  systolic arterial blood pressure of a patient.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/271649006">http://snomed.info/271649006</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/bloodPressure">bloodPressure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/therapeuticProcedure">
       <span class="h" property="rdfs:label">therapeuticProcedure</span>
       <span property="rdfs:comment">Specifying the therapeutic procedure resource for a patient or a person.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalProcedure">medicalProcedure</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/totalValue">
       <span class="h" property="rdfs:label">totalValue</span>
       <span property="rdfs:comment">Total number of something.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/transferDate">
       <span class="h" property="rdfs:label">transferDate</span>
       <span property="rdfs:comment">Specifying the transfer date for a patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Transfer">Transfer</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/dateTime">dateTime</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/dateTime">dateTime</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/transfer">
       <span class="h" property="rdfs:label">transfer</span>
       <span property="rdfs:comment">Specifying a transfer event of patient from one place in a health care environment to another</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Transfer">Transfer</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/encounter">encounter</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/treatingPhysician">
@@ -2344,14 +2671,18 @@
       <span property="rdfs:comment">Specifying a specific physician assigned to the patient as specific or individual healthcare provider.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/CaringEvent">CaringEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/223366009">http://snomed.info/223366009</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/careProvider">careProvider</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/treatment">
       <span class="h" property="rdfs:label">treatment</span>
       <span property="rdfs:comment">Specifying a treatment or management or therapeutic procedures for a disorder or a patient</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/64572001">http://snomed.info/64572001</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/277132007">http://snomed.info/277132007</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Drug">Drug</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
@@ -2375,7 +2706,9 @@
     <div typeof="rdf:Property" resource="http://schema.org/vaccination">
       <span class="h" property="rdfs:label">vaccination</span>
       <span property="rdfs:comment">Specifying a vaccination procedure resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Vaccination">Vaccination</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/primaryPrevention">primaryPrevention</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/vitalSign">
@@ -2383,11 +2716,13 @@
       <span property="rdfs:comment">Specifying the vital sign of a person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Vitalsign">Vitalsign</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/sign">sign</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/waistCircumference">
       <span class="h" property="rdfs:label">waistCircumference</span>
       <span property="rdfs:comment">The waist circumference measurement of someone</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/WaistCircumference">WaistCircumference</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
     </div>
@@ -2395,6 +2730,7 @@
     <div typeof="rdf:Property" resource="http://schema.org/waistHipRatio">
       <span class="h" property="rdfs:label">waistHipRatio</span>
       <span property="rdfs:comment">The waist hip ratio measurement of someone</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/WaistHipRatio">WaistHipRatio</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
     </div>
