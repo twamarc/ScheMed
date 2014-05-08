@@ -58,9 +58,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                schema:domainIncludes schema:Person ;
                
-               schema:rangeIncludes <http://snomed.info/303071001> ;
-               
-               rdfs:subPropertyOf owl:topObjectProperty .
+               schema:rangeIncludes <http://snomed.info/303071001> .
 
 
 
@@ -211,9 +209,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           schema:rangeIncludes <http://snomed.info/90260006> ;
           
-          schema:domainIncludes :Allergy ;
-          
-          rdfs:subPropertyOf owl:topObjectProperty .
+          schema:domainIncludes :Allergy .
 
 
 
@@ -536,9 +532,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              schema:rangeIncludes :Patient ;
              
-             owl:inverseOf :treatingPhysician ;
-             
-             rdfs:subPropertyOf owl:topObjectProperty .
+             owl:inverseOf :treatingPhysician .
 
 
 
@@ -759,9 +753,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                      <http://snomed.info/260686004> ;
                 
                 schema:domainIncludes <http://snomed.info/439401001> ,
-                                      :Diagnosis ;
-                
-                rdfs:subPropertyOf owl:topObjectProperty .
+                                      :Diagnosis .
 
 
 
@@ -778,9 +770,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  schema:rangeIncludes :HealthFacility ,
                                       :MedicalDepartment ,
-                                      :MedicalUnit ;
-                 
-                 rdfs:subPropertyOf owl:topObjectProperty .
+                                      :MedicalUnit .
 
 
 
@@ -811,9 +801,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 schema:rangeIncludes <http://snomed.info/106229004> ;
                 
                 schema:domainIncludes <http://snomed.info/439401001> ,
-                                      :Diagnosis ;
-                
-                rdfs:subPropertyOf owl:topObjectProperty .
+                                      :Diagnosis .
 
 
 
@@ -879,9 +867,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                     
                     schema:domainIncludes :MedicalCondition ,
                                           :Patient ,
-                                          :TherapeuticProcedure ;
-                    
-                    rdfs:subPropertyOf owl:topObjectProperty .
+                                          :TherapeuticProcedure .
 
 
 
@@ -899,9 +885,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   schema:domainIncludes :HealthcareProfessional ,
                                         :MedicalCondition ,
-                                        :TherapeuticProcedure ;
-                  
-                  rdfs:subPropertyOf owl:topObjectProperty .
+                                        :TherapeuticProcedure .
 
 
 
@@ -934,9 +918,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              schema:domainIncludes :MedicalCondition ,
                                    :Patient ,
-                                   :TherapeuticProcedure ;
-             
-             rdfs:subPropertyOf owl:topObjectProperty .
+                                   :TherapeuticProcedure .
 
 
 
@@ -954,9 +936,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  schema:domainIncludes <http://snomed.info/223366009> ,
                                        :HealthcareProfessional ,
-                                       :TherapeuticProcedure ;
-                 
-                 rdfs:subPropertyOf owl:topObjectProperty .
+                                       :TherapeuticProcedure .
 
 
 
@@ -1635,16 +1615,12 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying any medical report" ;
                
-               schema:rangeIncludes :HealthRecord ;
-               
                schema:domainIncludes :MedicalProcedure ;
                
                schema:rangeIncludes :MedicalRecord ,
                                     :MedicalReport ;
                
                schema:domainIncludes :Patient ;
-               
-               schema:rangeIncludes :PatientRecord ;
                
                rdfs:subPropertyOf :clinicalDocument .
 
@@ -2785,9 +2761,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              schema:domainIncludes <http://snomed.info/133933007> ;
              
-             schema:rangeIncludes xsd:decimal ;
-             
-             rdfs:subPropertyOf owl:topDataProperty .
+             schema:rangeIncludes xsd:decimal .
 
 
 
@@ -3461,8 +3435,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:subClassOf :Substance ;
                
-               rdfs:comment "The substance of the human body." ;
-                rdfs:comment   "Body substance" .
+               rdfs:comment "The substance of the human body." ,
+                            "Body substance" .
 
 
 
@@ -3842,10 +3816,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :Episodicity rdf:type owl:Class ;
              
+             rdfs:label "Episodicity" ;
+             
              rdfs:subClassOf :QualifierConcept ;
              
-             rdfs:label "Episodicity" ;
-             rdfs:comment  "A quantification of a medical condition occurrences." .
+             rdfs:comment "A quantification of a medical condition occurrences." .
 
 
 
@@ -3876,9 +3851,12 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 ###  http://www.example.org/medicalEntity#FamilyRelation
 
 :FamilyRelation rdf:type owl:Class ;
+                
                 rdfs:label "FamilyRelation" ;
-				rdfs:comment "Relationship relatedness or connection by blood, marriage or adoption ."; 
-                rdfs:subClassOf :QualifierConcept .
+                
+                rdfs:subClassOf :QualifierConcept ;
+                
+                rdfs:comment "Relationship relatedness or connection by blood, marriage or adoption ." .
 
 
 
@@ -4431,6 +4409,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 ###  http://www.example.org/medicalEntity#MedicalTherapy
 
 :MedicalTherapy rdf:type owl:Class ;
+                
                 rdfs:subClassOf :TherapeuticProcedure .
 
 
@@ -5163,9 +5142,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :Ultrasound rdf:type owl:Class ;
             
+            rdfs:label "Ultrasound" ;
+            
             rdfs:subClassOf :MedicalImaging ;
             
-            rdfs:label "Ultrasound" ;
             rdfs:comment "Diagnostic ultrasound, also called sonography or diagnostic medical sonography, is an imaging method that uses high-frequency sound waves to produce relatively precise images of structures within your body." .
 
 

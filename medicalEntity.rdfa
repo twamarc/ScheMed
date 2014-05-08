@@ -1159,7 +1159,6 @@
       <span property="rdfs:comment">Specifying a relative who is concerned by something. i.e medical history about XY relative.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/303071001">http://snomed.info/303071001</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/administrativeFather">
@@ -1259,7 +1258,6 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/473011001">http://snomed.info/473011001</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Allergy">Allergy</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/90260006">http://snomed.info/90260006</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/allergy">
@@ -1396,7 +1394,6 @@
       <span property="rdfs:comment">Specifying birth weight of a newborn</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/133933007">http://snomed.info/133933007</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/decimal">decimal</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topDataProperty">topDataProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/bloodGroup">
@@ -1494,7 +1491,6 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/CaringEvent">CaringEvent</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/caringEvent">
@@ -1632,7 +1628,6 @@
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDevice">http://schema.org/MedicalDevice</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTest">http://schema.org/MedicalTest</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/260686004">http://snomed.info/260686004</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diagnosticPlace">
@@ -1643,7 +1638,6 @@
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDepartment">MedicalDepartment</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalUnit">MedicalUnit</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diagnosticProcedure">
@@ -1660,7 +1654,6 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/439401001">http://snomed.info/439401001</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Diagnosis">Diagnosis</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/106229004">http://snomed.info/106229004</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/diastolicBloodPressure">
@@ -1696,7 +1689,6 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/182832007">http://snomed.info/182832007</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drugDispensation">
@@ -1707,7 +1699,6 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/440298008">http://snomed.info/440298008</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drugDispensator">
@@ -1726,7 +1717,6 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/129019007">http://snomed.info/129019007</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drugPreparation">
@@ -1737,7 +1727,6 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://snomed.info/105904009">http://snomed.info/105904009</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/drug">
@@ -2143,10 +2132,8 @@
       <span property="rdfs:comment">Specifying any medical report</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthRecord">HealthRecord</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalReport">MedicalReport</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PatientRecord">PatientRecord</a></span>
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/clinicalDocument">clinicalDocument</a></span>
     </div>
 
