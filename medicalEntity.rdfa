@@ -2039,7 +2039,7 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalClinic">
       <span class="h" property="rdfs:label">medicalClinic</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
+      <span property="rdfs:comment">Specifying the medical clinic where a procedure or a care event is taking place or attended by a patient.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
@@ -2061,6 +2061,7 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalDepartment">
       <span class="h" property="rdfs:label">medicalDepartment</span>
+      <span property="rdfs:comment">Specifying the medical department where a procedure or a care event is taking place or attended by a patient.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">http://schema.org/Thing</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
@@ -2139,6 +2140,7 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalRoom">
       <span class="h" property="rdfs:label">medicalRoom</span>
+      <span property="rdfs:comment">Specifying the medical room where a procedure or a care event is taking place or attended by a patient.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
@@ -2166,6 +2168,7 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalUnit">
       <span class="h" property="rdfs:label">medicalUnit</span>
+      <span property="rdfs:comment">Specifying the medical department unit where a procedure or a care event is taking place or attended by a patient.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
@@ -2178,6 +2181,7 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalWard">
       <span class="h" property="rdfs:label">medicalWard</span>
+      <span property="rdfs:comment">Specifying the medical ward (a set of rooms) where a procedure or a care event is taking place or attended by a patient.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>

@@ -1466,8 +1466,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :medicalClinic rdf:type owl:ObjectProperty ;
                
-               schema:domainIncludes schema:Thing ,
-                                     <http://snomed.info/404684003> ,
+               rdfs:label "medical clinic" ;
+               
+               rdfs:comment "Specifying the medical clinic where a procedure or a care event is taking place or attended by a patient." ;
+               
+               schema:domainIncludes <http://snomed.info/404684003> ,
                                      :ClinicalFinding ,
                                      :LifeEvent ;
                
@@ -1500,6 +1503,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 ###  http://www.example.org/medicalEntity#medicalDepartment
 
 :medicalDepartment rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "medical department" ;
+                   
+                   rdfs:comment "Specifying the medical department where a procedure or a care event is taking place or attended by a patient." ;
                    
                    schema:domainIncludes schema:Thing ,
                                          <http://snomed.info/404684003> ,
@@ -1630,6 +1637,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :medicalRoom rdf:type owl:ObjectProperty ;
              
+             rdfs:label "medical room" ;
+             
+             rdfs:comment "Specifying the medical room where a procedure or a care event is taking place or attended by a patient." ;
+             
              schema:domainIncludes <http://snomed.info/404684003> ,
                                    :ClinicalFinding ,
                                    :LifeEvent ,
@@ -1673,6 +1684,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :medicalUnit rdf:type owl:ObjectProperty ;
              
+             rdfs:label "medical unit" ;
+             
+             rdfs:comment "Specifying the medical department unit where a procedure or a care event is taking place or attended by a patient." ;
+             
              schema:domainIncludes <http://snomed.info/404684003> ,
                                    :ClinicalFinding ,
                                    :LifeEvent ,
@@ -1690,6 +1705,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 ###  http://www.example.org/medicalEntity#medicalWard
 
 :medicalWard rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "medical ward" ;
+             
+             rdfs:comment "Specifying the medical ward (a set of rooms) where a procedure or a care event is taking place or attended by a patient." ;
              
              schema:domainIncludes <http://snomed.info/404684003> ,
                                    :ClinicalFinding ,
