@@ -31,8 +31,12 @@
 		?O3
 		{	?S rdfs:subClassOf ?O.
 			?O log:uri ?O1.
-			(?O1 "#") func:substring-after ?O2.
-			("""      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/""" ?O2 """">""" ?O2 """</a></span>\n""") string:concatenation ?O3.
+			?SCOPE e:optional
+				{	(?O1 "#") func:substring-after ?O2.
+					("""      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/""" ?O2 """">""" ?O2 """</a></span>\n""") string:concatenation ?O3.
+				},
+				{	("""      <span>Subclass of: <a property="rdfs:subClassOf" href=\"""" ?O1 """">""" ?O1 """</a></span>\n""") string:concatenation ?O3.
+				}.
 		}
 		?L
 	).
@@ -54,28 +58,50 @@
 		{	?S6 log:equalTo "".
 		}.
 	?SCOPE e:findall (
-		?O3
-		{	?S schema:domainIncludes ?O.
-			?O log:uri ?O1.
-			(?O1 "#") func:substring-after ?O2.
-			("""      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/""" ?O2 """">""" ?O2 """</a></span>\n""") string:concatenation ?O3.
+		?O1
+		{	?S schema:domainIncludes ?O2.
+			?O2 log:uri ?O3.
+			?SCOPE e:optional
+				{	(?O3 "#") func:substring-after ?O4.
+					("""      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/""" ?O4 """">""" ?O4 """</a></span>\n""") string:concatenation ?O1.
+				},
+				{	("""      <span>Domain: <a property="http://schema.org/domainIncludes" href=\"""" ?O3 """">""" ?O3 """</a></span>\n""") string:concatenation ?O1.
+				}.
 		}
 		?L1
 	).
 	?L1 string:concatenation ?S7.	
 	?SCOPE e:findall (
-		?O6
-		{	?S schema:rangeIncludes ?O.
-			?O log:uri ?O4.
-			(?O4 "#") func:substring-after ?O5.
-			("""      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/""" ?O5 """">""" ?O5 """</a></span>\n""") string:concatenation ?O6.
+		?O5
+		{	?S schema:rangeIncludes ?O6.
+			?O6 log:uri ?O7.
+			?SCOPE e:optional
+				{	(?O7 "#") func:substring-after ?O8.
+					("""      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/""" ?O8 """">""" ?O8 """</a></span>\n""") string:concatenation ?O5.
+				},
+				{	("""      <span>Range: <a property="http://schema.org/rangeIncludes" href=\"""" ?O7 """">""" ?O7 """</a></span>\n""") string:concatenation ?O5.
+				}.
 		}
 		?L2
 	).
 	?L2 string:concatenation ?S8.	
-	(?S3 ?S4 ?S6 ?S7 ?S8 """    </div>\n\n""") string:concatenation ?S9.
+	?SCOPE e:findall (
+		?O9
+		{	?S rdfs:subPropertyOf ?O10.
+			?O10 log:uri ?O11.
+			?SCOPE e:optional
+				{	(?O11 "#") func:substring-after ?O12.
+					("""      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/""" ?O12 """">""" ?O12 """</a></span>\n""") string:concatenation ?O9.
+				},
+				{	("""      <span>SubProperty of: <a property="rdfs:subPropertyOf" href=\"""" ?O11 """">""" ?O11 """</a></span>\n""") string:concatenation ?O9.
+				}.
+		}
+		?L3
+	).
+	?L3 string:concatenation ?S9.	
+	(?S3 ?S4 ?S6 ?S7 ?S8 ?S9 """    </div>\n\n""") string:concatenation ?S10.
 } =>
-{	"gamma" log:outputString ?S9.
+{	"gamma" log:outputString ?S10.
 }.
 
 {	?U :footer ?V.
