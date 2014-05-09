@@ -1537,8 +1537,8 @@
       <span class="h" property="rdfs:label">deathPlace</span>
       <span property="rdfs:comment">Specifying the place of death for a person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Death">Death</a></span>
-      <span>Range: <a property="http://schema.org/domainIncludes" href="http://schema.org/Place">Place</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Place">Place</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/169812000">sctid:169812000</a></span>
     </div>
 
