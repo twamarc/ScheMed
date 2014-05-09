@@ -652,9 +652,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the place of death for a person"@en ;
             
-            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            :rangeIncludes :Place, <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
             
-            :domainIncludes :Death , :Place,
+            :domainIncludes :Death , 
                             :Person .
 
 
