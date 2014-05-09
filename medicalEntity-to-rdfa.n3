@@ -21,12 +21,14 @@
 	(?S1 "#") func:substring-after ?S2.
 	("""    <div typeof="rdfs:Class" resource="http://schema.org/""" ?S2 """">\n""") string:concatenation ?S3.
 	("""      <span class="h" property="rdfs:label">""" ?S2 """</span>\n""") string:concatenation ?S4.
-	?SCOPE e:optional
+	?SCOPE e:findall (
+		?S6
 		{	?S rdfs:comment ?S5.
 			("""      <span property="rdfs:comment">""" ?S5 """</span>\n""") string:concatenation ?S6.
-		},
-		{	?S6 log:equalTo "".
-		}.
+		}
+		?L
+	).
+	?L string:concatenation ?S7.
 	?SCOPE e:findall (
 		?O3
 		{	?S rdfs:subClassOf ?O.
@@ -38,12 +40,12 @@
 				{	("""      <span>Subclass of: <a property="rdfs:subClassOf" href=\"""" ?O1 """">""" ?O1 """</a></span>\n""") string:concatenation ?O3.
 				}.
 		}
-		?L
+		?L1
 	).
-	?L string:concatenation ?S7.	
-	(?S3 ?S4 ?S6 ?S7 """    </div>\n\n""") string:concatenation ?S8.
+	?L1 string:concatenation ?S8.
+	(?S3 ?S4 ?S7 ?S8 """    </div>\n\n""") string:concatenation ?S9.
 } =>
-{	"beta" log:outputString ?S8.
+{	"beta" log:outputString ?S9.
 }.
 
 {	?S a rdf:Property.
@@ -51,12 +53,14 @@
 	(?S1 "#") func:substring-after ?S2.
 	("""    <div typeof="rdf:Property" resource="http://schema.org/""" ?S2 """">\n""") string:concatenation ?S3.
 	("""      <span class="h" property="rdfs:label">""" ?S2 """</span>\n""") string:concatenation ?S4.
-	?SCOPE e:optional
+	?SCOPE e:findall (
+		?S6
 		{	?S rdfs:comment ?S5.
 			("""      <span property="rdfs:comment">""" ?S5 """</span>\n""") string:concatenation ?S6.
-		},
-		{	?S6 log:equalTo "".
-		}.
+		}
+		?L
+	).
+	?L string:concatenation ?S7.
 	?SCOPE e:findall (
 		?O1
 		{	?S schema:domainIncludes ?O2.
@@ -70,7 +74,7 @@
 		}
 		?L1
 	).
-	?L1 string:concatenation ?S7.	
+	?L1 string:concatenation ?S8.
 	?SCOPE e:findall (
 		?O5
 		{	?S schema:rangeIncludes ?O6.
@@ -84,7 +88,7 @@
 		}
 		?L2
 	).
-	?L2 string:concatenation ?S8.	
+	?L2 string:concatenation ?S9.
 	?SCOPE e:findall (
 		?O9
 		{	?S rdfs:subPropertyOf ?O10.
@@ -98,10 +102,10 @@
 		}
 		?L3
 	).
-	?L3 string:concatenation ?S9.	
-	(?S3 ?S4 ?S6 ?S7 ?S8 ?S9 """    </div>\n\n""") string:concatenation ?S10.
+	?L3 string:concatenation ?S10.
+	(?S3 ?S4 ?S7 ?S8 ?S9 ?S10 """    </div>\n\n""") string:concatenation ?S11.
 } =>
-{	"gamma" log:outputString ?S10.
+{	"gamma" log:outputString ?S11.
 }.
 
 {	?U :footer ?V.

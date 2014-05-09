@@ -146,13 +146,8 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/Birth">
       <span class="h" property="rdfs:label">Birth</span>
-      <span property="rdfs:comment">Birth</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/LifeEvent">LifeEvent</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/Birth">
-      <span class="h" property="rdfs:label">Birth</span>
       <span property="rdfs:comment">The event, act or process of bearing or bringing forth offspring</span>
+      <span property="rdfs:comment">Birth</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/LifeEvent">LifeEvent</a></span>
     </div>
 
@@ -176,13 +171,8 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/BodySubstance">
       <span class="h" property="rdfs:label">BodySubstance</span>
-      <span property="rdfs:comment">Body substance</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Substance">Substance</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/BodySubstance">
-      <span class="h" property="rdfs:label">BodySubstance</span>
       <span property="rdfs:comment">The substance of the human body.</span>
+      <span property="rdfs:comment">Body substance</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Substance">Substance</a></span>
     </div>
 
@@ -1428,13 +1418,6 @@
     <div typeof="rdf:Property" resource="http://schema.org/bodySide">
       <span class="h" property="rdfs:label">bodySide</span>
       <span property="rdfs:comment">body side</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">http://schema.org/Text</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/bodySide">
-      <span class="h" property="rdfs:label">bodySide</span>
       <span property="rdfs:comment">specifying the laterality of the body structure, body organ, or body region.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://snomed.info/404684003">http://snomed.info/404684003</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
@@ -1792,17 +1775,8 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/encounterStatus">
       <span class="h" property="rdfs:label">encounterStatus</span>
-      <span property="rdfs:comment">discharge status</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">http://schema.org/Text</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/encounter">encounter</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/encounterStatus">
-      <span class="h" property="rdfs:label">encounterStatus</span>
       <span property="rdfs:comment">specifying the status of discharge procedure.</span>
+      <span property="rdfs:comment">discharge status</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">http://schema.org/Person</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/EncounterProcedure">EncounterProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
