@@ -1,17 +1,17 @@
 @prefix : <http://schema.org/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
-@base <http://schema.org> .
+@base <http://schema.org>.
 
 <http://schema.org> rdf:type owl:Ontology ;
                     
-                    owl:versionIRI <http://schema.org> .
+                    owl:versionIRI <http://schema.org>.
 
 
 #################################################################
@@ -56,7 +56,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying a relative who is concerned by something. i.e medical history about XY relative."@en ;
                
-               :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/303071001> ;
+               :rangeIncludes snomed:303071001;
                
                :domainIncludes :Person .
 
@@ -102,7 +102,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying admission procedure related to a resource, activity, another procedure, or patient"@en ;
            
-           :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ,
+           :rangeIncludes snomed:305056002,
                           :AdmissionProcedure ,
                           :MedicalAdmission ;
            
@@ -121,7 +121,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying an adulthood description of someone"@en ;
                   
-                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/41847000> ,
+                  :rangeIncludes snomed:41847000,
                                  :AdulthoodHistory ;
                   
                   :domainIncludes :Person ;
@@ -138,10 +138,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying an adverse drug event- defined according World Health Organization standards"@en ;
                   
-                  :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/277132007> ,
-                                  <http://purl.bioontology.org/ontology/SNOMEDCT/410942007> ;
+                  :domainIncludes snomed:277132007,
+                                  snomed:410942007;
                   
-                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/62014003> ,
+                  :rangeIncludes snomed:62014003,
                                  :AdverseDrugReaction ;
                   
                   :domainIncludes :Patient ,
@@ -159,10 +159,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               rdfs:comment "Specifying an adverse event, in general sense - defined according World Health Organization standards"@en ;
               
-              :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/105590001> ,
-                              <http://purl.bioontology.org/ontology/SNOMEDCT/277132007> ;
+              :domainIncludes snomed:105590001,
+                              snomed:277132007;
               
-              :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/281647001> ,
+              :rangeIncludes snomed:281647001,
                              :AdverseEvent ;
               
               :domainIncludes :Patient ,
@@ -202,10 +202,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           rdfs:comment "Specifying something that can cause an allergic reaction."@en ;
           
-          :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/421961002> ,
-                          <http://purl.bioontology.org/ontology/SNOMEDCT/473011001> ;
+          :domainIncludes snomed:421961002,
+                          snomed:473011001;
           
-          :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/90260006> ;
+          :rangeIncludes snomed:90260006;
           
           :domainIncludes :Allergy ,
                           :Person .
@@ -220,8 +220,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
          
          rdfs:comment "Specifying an allergic reaction, an hypersensitivity or disorder."@en ;
          
-         :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/421961002> ,
-                        <http://purl.bioontology.org/ontology/SNOMEDCT/473011001> ,
+         :rangeIncludes snomed:421961002,
+                        snomed:473011001,
                         :Allergy ;
          
          :domainIncludes :Patient .
@@ -252,7 +252,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Specifying the anatomical organ for a resource" ;
                  
-                 :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+                 :domainIncludes snomed:404684003;
                  
                  :rangeIncludes :AnatomicalOrgan ;
                  
@@ -270,7 +270,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying the anatomical region for a resource" ;
                   
-                  :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+                  :domainIncludes snomed:404684003;
                   
                   :rangeIncludes :AnatomicalRegion ;
                   
@@ -288,7 +288,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                      
                      rdfs:comment "Specifying the anatomical structure for a resource" ;
                      
-                     :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+                     :domainIncludes snomed:404684003;
                      
                      :rangeIncludes :AnatomicalStructure ;
                      
@@ -306,7 +306,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying the anatomical system for a resource" ;
                   
-                  :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+                  :domainIncludes snomed:404684003;
                   
                   :rangeIncludes :AnatomicalSystem ;
                   
@@ -386,7 +386,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the place of birth for a person"@en ;
             
-            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            :rangeIncludes snomed:169812000;
             
             :domainIncludes :Birth ,
                             :Person .
@@ -401,7 +401,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the blood group for a person, i.e type of human blood based on presence or absence of inherited antigenic substances on the surface of red blood cells." ;
             
-            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/365636006> ;
+            :rangeIncludes snomed:365636006;
             
             :domainIncludes :Person .
 
@@ -415,7 +415,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying the blood pressure resource of a patient" ;
                
-               :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/75367002> ,
+               :rangeIncludes snomed:75367002,
                               :BloodPressure ;
                
                :domainIncludes :Person .
@@ -430,7 +430,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               rdfs:comment "Specifying a position of human body or anatomical entity in given space e.g. Supine body position, standing position, sitting position etc."@en ;
               
-              :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/364830008> ;
+              :rangeIncludes snomed:364830008;
               
               :domainIncludes :Thing .
 
@@ -444,7 +444,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           rdfs:comment "Specifying the laterality of the body structure, body organ, or body region." ;
           
-          :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+          :domainIncludes snomed:404684003,
                           :ClinicalFinding ;
           
           :rangeIncludes :Text .
@@ -459,7 +459,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               rdfs:comment "Specifying a location or a place where the care event is taking place" ;
               
-              :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ,
+              :domainIncludes snomed:305056002,
                               :Event ;
               
               :rangeIncludes :HealthFacility ,
@@ -485,7 +485,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               rdfs:comment "Specifying a person, medical organization, or unit care-provider for any health care services"@en ;
               
-              :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ;
+              :rangeIncludes snomed:223366009;
               
               :domainIncludes :CaringEvent ;
               
@@ -525,7 +525,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying a person (typically a patient) receiving services from the health care professional during a caring event."@en ;
              
-             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+             :domainIncludes snomed:223366009,
                              :CaringEvent ,
                              :HealthcareProfessional ;
              
@@ -637,8 +637,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc"@en ;
                  
-                 :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/118246004> ,
-                                <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                 :rangeIncludes snomed:118246004,
+                                snomed:404684003,
                                 :ClinicalFinding ;
                  
                  :domainIncludes :Patient .
@@ -716,7 +716,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the place of death for a person"@en ;
             
-            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            :rangeIncludes snomed:169812000;
             
             :domainIncludes :Death ,
                             :Person .
@@ -731,7 +731,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying a medical condition which is output of a diagnosis process"@en ;
            
-           :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
+           :rangeIncludes snomed:439401001,
                           :MedicalCondition ;
            
            :domainIncludes :Patient .
@@ -746,9 +746,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:comment "Specifying the mean for diagnosis procedure." ;
                 
-                :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/260686004> ;
+                :rangeIncludes snomed:260686004;
                 
-                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
+                :domainIncludes snomed:439401001,
                                 :Diagnosis ;
                 
                 :rangeIncludes :MedicalDevice ,
@@ -764,7 +764,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Specifying the location or place where the diagnosis was made. Typically the department or health facility unit." ;
                  
-                 :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
+                 :domainIncludes snomed:439401001,
                                  :Diagnosis ;
                  
                  :rangeIncludes :HealthFacility ,
@@ -797,9 +797,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:comment "Specifying the type of diagnosis i.e medical discharge diagnosis, admission diagnosis, etc."@en ;
                 
-                :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/106229004> ;
+                :rangeIncludes snomed:106229004;
                 
-                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
+                :domainIncludes snomed:439401001,
                                 :Diagnosis .
 
 
@@ -812,7 +812,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                         
                         rdfs:comment "Specifying a diastolic arterial blood pressure of a patient."@en ;
                         
-                        :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/271650006> ;
+                        :rangeIncludes snomed:271650006;
                         
                         :domainIncludes :Person ;
                         
@@ -828,7 +828,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
       
       rdfs:comment "Specifying a drug or medicine used in a medication procedure" ;
       
-      :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/410942007> ,
+      :rangeIncludes snomed:410942007,
                      :Drug ;
       
       :domainIncludes :MedicalCondition ,
@@ -845,7 +845,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                     
                     rdfs:comment "specifying the event of administering the drug to the patient. Typically associated with the route of administration i.e.oral, injection etc." ;
                     
-                    :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/182832007> ;
+                    :rangeIncludes snomed:182832007;
                     
                     :domainIncludes :MedicalCondition ,
                                     :Patient ,
@@ -861,9 +861,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying an drug dispensation event i.e the event of delivering the drug to the patient at pharmacy. This is different to the drug administration"@en ;
                   
-                  :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ;
+                  :domainIncludes snomed:223366009;
                   
-                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/440298008> ;
+                  :rangeIncludes snomed:440298008;
                   
                   :domainIncludes :HealthcareProfessional ,
                                   :MedicalCondition ,
@@ -896,7 +896,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying an event of taking cure medication, related to a medication period"@en ;
              
-             :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/129019007> ;
+             :rangeIncludes snomed:129019007;
              
              :domainIncludes :MedicalCondition ,
                              :Patient ,
@@ -912,9 +912,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Specifying a drug preparation used in a procedure, typically prepared for a patient from one or multiple drug packages"@en ;
                  
-                 :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/105904009> ;
+                 :rangeIncludes snomed:105904009;
                  
-                 :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                 :domainIncludes snomed:223366009,
                                  :HealthcareProfessional ,
                                  :Person ,
                                  :TherapeuticProcedure .
@@ -991,7 +991,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:comment "specifying the provider of the medicalEncounter" ;
                    
-                   :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                   :rangeIncludes snomed:223366009,
                                   :HealthcareProfessional ;
                    
                    :domainIncludes :MedicalEncounter ;
@@ -1078,7 +1078,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying a personal history as a part of a full medical history provided by the patient during an anamnesis procedure ."@en ;
                
-               :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/57177007> ;
+               :rangeIncludes snomed:57177007;
                
                :domainIncludes :Person ;
                
@@ -1140,7 +1140,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Food intolerance or non-allergic food hypersensitivity is a term used widely for varied physiological responses associated with a particular food, or compound found in a range of foods." ;
                  
-                 :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/235719002> ,
+                 :rangeIncludes snomed:235719002,
                                 :MedicalCondition ;
                  
                  :domainIncludes :Patient ;
@@ -1188,7 +1188,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:comment "Specifying a health facility where care is being given." ;
                 
-                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                :domainIncludes snomed:404684003,
                                 :ClinicalFinding ;
                 
                 :rangeIncludes :HealthFacility ;
@@ -1224,7 +1224,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication."@en ;
             
-            :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/71388002> ,
+            :domainIncludes snomed:71388002,
                             :CaringEvent ,
                             :MedicalDevice ,
                             :MedicalIndication ;
@@ -1259,10 +1259,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:comment "Specifying an interpretation of something or concise and clinically contextualized narrative interpretation of laboratory results or medical test."@en ;
                 
-                :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/243814003> ,
-                               <http://purl.bioontology.org/ontology/SNOMEDCT/277034006> ;
+                :rangeIncludes snomed:243814003,
+                               snomed:277034006;
                 
-                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                :domainIncludes snomed:404684003,
                                 :ClinicalFinding ,
                                 :DiagnosticProcedure ,
                                 :PhysicalExamination .
@@ -1319,7 +1319,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                         
                         rdfs:comment "Specifying the last menstruation period of a woman" ;
                         
-                        :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+                        :domainIncludes snomed:224526002;
                         
                         :rangeIncludes :QuantitativeValue ;
                         
@@ -1371,7 +1371,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying an agent having the social and/or juridical status of being married or unmarried. "@en ;
                
-               :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/365581002> ;
+               :rangeIncludes snomed:365581002;
                
                :domainIncludes :Person ;
                
@@ -1407,7 +1407,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:subPropertyOf :medicalRecord ;
              
-             :rangeIncludes <http://schema.rdfs.org/all#MedicalCase> .
+             :rangeIncludes :MedicalCase.
 
 
 
@@ -1435,7 +1435,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying the medical clinic where a procedure or a care event is taking place or attended by a patient." ;
                
-               :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+               :domainIncludes snomed:404684003,
                                :ClinicalFinding ,
                                :LifeEvent ;
                
@@ -1472,7 +1472,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:comment "Specifying the medical department where a procedure or a care event is taking place or attended by a patient." ;
                    
-                   :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                   :domainIncludes snomed:404684003,
                                    :ClinicalFinding ,
                                    :LifeEvent ;
                    
@@ -1512,7 +1512,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "Specifying a medical encounter between the patient and a healthcare provider."@en ;
                   
-                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/308335008> ,
+                  :rangeIncludes snomed:308335008,
                                  :MedicalEncounter ;
                   
                   :domainIncludes :Person .
@@ -1571,7 +1571,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                      
                      rdfs:comment "Linking a patient with his medical order (=written prescription) for the patient Eg. hasPrescription or gotPrescribed. For the provider we use the property prescribingProcedure."@en ;
                      
-                     :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/440545006> ,
+                     :rangeIncludes snomed:440545006,
                                     :MedicalPrescription ;
                      
                      :domainIncludes :Patient ;
@@ -1637,7 +1637,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying the medical room where a procedure or a care event is taking place or attended by a patient." ;
              
-             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+             :domainIncludes snomed:404684003,
                              :ClinicalFinding ,
                              :LifeEvent ,
                              :MedicalIntervention ,
@@ -1665,7 +1665,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                      
                      rdfs:comment "Specifying the medical sub-speciality of a healthcare provider" ;
                      
-                     :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                     :domainIncludes snomed:223366009,
                                      :HealthFacility ,
                                      :HealthcareProfessional ;
                      
@@ -1703,7 +1703,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying the medical department unit where a procedure or a care event is taking place or attended by a patient." ;
              
-             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+             :domainIncludes snomed:404684003,
                              :ClinicalFinding ,
                              :LifeEvent ,
                              :MedicalIntervention ,
@@ -1725,7 +1725,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying the medical ward (a set of rooms) where a procedure or a care event is taking place or attended by a patient." ;
              
-             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+             :domainIncludes snomed:404684003,
                              :ClinicalFinding ,
                              :LifeEvent ,
                              :MedicalIntervention ,
@@ -1763,7 +1763,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying the menopause event of a women " ;
            
-           :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/276477006> ,
+           :rangeIncludes snomed:276477006,
                           :Menopause ;
            
            :domainIncludes :Person ;
@@ -1780,7 +1780,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               rdfs:comment "Specifying the menstruation event of a women " ;
               
-              :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+              :domainIncludes snomed:224526002;
               
               :rangeIncludes :Menstruation ;
               
@@ -1796,7 +1796,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                     
                     rdfs:comment "Specifying the menstruation period description event of a women " ;
                     
-                    :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+                    :domainIncludes snomed:224526002;
                     
                     :rangeIncludes :QuantitativeValue ;
                     
@@ -1844,9 +1844,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
          
          rdfs:comment "Specifying the newborn person " ;
          
-         :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+         :rangeIncludes snomed:133933007;
          
-         :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/360149000> ,
+         :domainIncludes snomed:360149000,
                          :LifeEvent ,
                          :MedicalIntervention ,
                          :MedicalProcedure ,
@@ -1862,7 +1862,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying a clinical observable of a patient not necessarily through a clinical examination. example: a swelling, etc"@en ;
             
-            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/363787002> ;
+            :rangeIncludes snomed:363787002;
             
             :domainIncludes :Patient .
 
@@ -1970,7 +1970,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
                  
-                 :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/160476009> ;
+                 :rangeIncludes snomed:160476009;
                  
                  :domainIncludes :Person ;
                  
@@ -2005,7 +2005,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                      
                      rdfs:comment "Specifying a physical examination procedure resource for a patient or a person" ;
                      
-                     :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                     :domainIncludes snomed:404684003,
                                      :ClinicalFinding ,
                                      :LifeEvent ,
                                      :MedicalIntervention ,
@@ -2090,7 +2090,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                       
                       rdfs:comment "Specifying a prescribing procedure resource for a patient or a person. This property is linking a patient or a provider to the procedure. The procedure has as an output a prescription." ;
                       
-                      :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                      :domainIncludes snomed:223366009,
                                       :HealthcareProfessional ,
                                       :Patient ;
                       
@@ -2302,7 +2302,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying pharmacological substance a micro-organism  is resistant to." ;
              
-             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/264395009> ;
+             :domainIncludes snomed:264395009;
              
              :rangeIncludes :PharmaceuticalSubstance .
 
@@ -2490,7 +2490,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying a pharmacological substance a microorganism is susceptible to." ;
                
-               :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/264395009> ;
+               :domainIncludes snomed:264395009;
                
                :rangeIncludes :PharmaceuticalSubstance .
 
@@ -2537,7 +2537,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                        
                        rdfs:comment "Specifying  systolic arterial blood pressure of a patient."@en ;
                        
-                       :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/271649006> ;
+                       :rangeIncludes snomed:271649006;
                        
                        :domainIncludes :Person ;
                        
@@ -2569,7 +2569,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:comment "Specifying a specific physician assigned to the patient as specific or individual healthcare provider."@en ;
                    
-                   :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ;
+                   :rangeIncludes snomed:223366009;
                    
                    :domainIncludes :CaringEvent ;
                    
@@ -2589,9 +2589,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying a treatment or management or therapeutic procedures for a disorder or a patient"@en ;
            
-           :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/277132007> ;
+           :rangeIncludes snomed:277132007;
            
-           :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/64572001> ;
+           :domainIncludes snomed:64572001;
            
            :rangeIncludes :Drug ;
            
@@ -2667,7 +2667,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying the number of abortion for a given woman" ;
            
-           :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+           :domainIncludes snomed:224526002;
            
            :rangeIncludes xsd:integer .
 
@@ -2681,7 +2681,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying a medical admission date" ;
                
-               :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ,
+               :domainIncludes snomed:305056002,
                                :MedicalAdmission ,
                                :Patient ;
                
@@ -2713,7 +2713,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the value of APGAR Score. " ;
             
-            :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+            :domainIncludes snomed:133933007;
             
             :rangeIncludes xsd:positiveInteger .
 
@@ -2749,7 +2749,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying a birth weight" ;
              
-             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+             :domainIncludes snomed:133933007;
              
              :rangeIncludes xsd:decimal .
 
@@ -2763,7 +2763,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Specifying the birth percentile of a newborn" ;
                  
-                 :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+                 :domainIncludes snomed:133933007;
                  
                  :rangeIncludes xsd:decimal .
 
@@ -2777,7 +2777,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying birth weight of a newborn" ;
              
-             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+             :domainIncludes snomed:133933007;
              
              :rangeIncludes xsd:decimal .
 
@@ -2842,7 +2842,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:comment "Specifying the diagnostic date for  a person" ;
                 
-                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
+                :domainIncludes snomed:439401001,
                                 :Person ;
                 
                 rdfs:subPropertyOf :dateTime ;
@@ -2876,7 +2876,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth." ;
            
-           :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ,
+           :domainIncludes snomed:224526002,
                            :Person ;
            
            :rangeIncludes xsd:positiveInteger .
@@ -2906,7 +2906,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:comment "Specifying the identification number of a medical entity like care provider identifier number, patient identifier etc." ;
                    
-                   :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                   :domainIncludes snomed:223366009,
                                    :HealthcareProfessional ,
                                    :Person ;
                    
@@ -2922,7 +2922,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
         
         rdfs:comment "Parity is defined as the number of times that she has given birth to a foetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn." ;
         
-        :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ,
+        :domainIncludes snomed:224526002,
                         :Person ;
         
         :rangeIncludes xsd:positiveInteger .
@@ -3478,7 +3478,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
         
         rdfs:label "Dermis" ;
         
-        rdfs:subClassOf <http://schema.rdfs.org/all#IntegumentarySystem> ;
+        rdfs:subClassOf :IntegumentarySystem;
         
         rdfs:comment "The dermis is the middle layer of skin, composed of dense irregular connective tissue and areolar connective tissue such as collagen with elastin arranged in a diffusely bundled and woven pattern." .
 
@@ -3622,7 +3622,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:label "Epidermis" ;
            
-           rdfs:subClassOf <http://schema.rdfs.org/all#IntegumentarySystem> ;
+           rdfs:subClassOf :IntegumentarySystem;
            
            rdfs:comment "This is the top layer of skin made up of epithelial cells." .
 
@@ -3706,7 +3706,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
        
        rdfs:label "Gland" ;
        
-       rdfs:subClassOf <http://schema.rdfs.org/all#EndocrineSystem> ;
+       rdfs:subClassOf :EndocrineSystem;
        
        rdfs:comment "A gland is an organ in an animal's body that synthesizes a substance such as hormones for release into the bloodstream (endocrine gland) or into cavities inside the body or its outer surface (exocrine gland)." .
 
@@ -3850,7 +3850,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:label "Hypodermis" ;
             
-            rdfs:subClassOf <http://schema.rdfs.org/all#IntegumentarySystem> ;
+            rdfs:subClassOf :IntegumentarySystem;
             
             rdfs:comment "The innermost and thickest layer of the skin." .
 
@@ -5090,21 +5090,21 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#CardiovascularSystem
+###  http://schema.org/CardiovascularSystem
 
-<http://schema.rdfs.org/all#CardiovascularSystem> rdf:type owl:Class ;
+:CardiovascularSystem rdf:type owl:Class ;
                                                   
-                                                  rdfs:label "Cardiovascular system" ;
+               rdfs:label "Cardiovascular system" ;
                                                   
-                                                  rdfs:subClassOf :CirculatorySystem ;
+               rdfs:subClassOf :CirculatorySystem ;
                                                   
-                                                  rdfs:comment "A circulatory system which distributes blood through the body" .
+               rdfs:comment "A circulatory system which distributes blood through the body" .
 
 
 
-###  http://schema.rdfs.org/all#DigestiveSystem
+###  http://schema.org/DigestiveSystem
 
-<http://schema.rdfs.org/all#DigestiveSystem> rdf:type owl:Class ;
+:DigestiveSystem rdf:type owl:Class ;
                                              
                                              rdfs:label "Digestive system" ;
                                              
@@ -5114,9 +5114,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#EndocrineSystem
+###  http://schema.org/EndocrineSystem
 
-<http://schema.rdfs.org/all#EndocrineSystem> rdf:type owl:Class ;
+:EndocrineSystem rdf:type owl:Class ;
                                              
                                              rdfs:label "Endocrine system" ;
                                              
@@ -5126,9 +5126,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#ImmuneSystem
+###  http://schema.org/ImmuneSystem
 
-<http://schema.rdfs.org/all#ImmuneSystem> rdf:type owl:Class ;
+:ImmuneSystem rdf:type owl:Class ;
                                           
                                           rdfs:label "Immune system" ;
                                           
@@ -5138,9 +5138,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#IntegumentarySystem
+###  http://schema.org/IntegumentarySystem
 
-<http://schema.rdfs.org/all#IntegumentarySystem> rdf:type owl:Class ;
+:IntegumentarySystem rdf:type owl:Class ;
                                                  
                                                  rdfs:label "Integumentary system" ;
                                                  
@@ -5150,9 +5150,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#MedicalCase
+###  http://schema.org/MedicalCase
 
-<http://schema.rdfs.org/all#MedicalCase> rdf:type owl:Class ;
+:MedicalCase rdf:type owl:Class ;
                                          
                                          rdfs:label "Medical case" ;
                                          
@@ -5162,9 +5162,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#MuscularSystem
+###  http://schema.org/MuscularSystem
 
-<http://schema.rdfs.org/all#MuscularSystem> rdf:type owl:Class ;
+:MuscularSystem rdf:type owl:Class ;
                                             
                                             rdfs:label "Muscular system" ;
                                             
@@ -5174,9 +5174,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#NervousSystem
+###  http://schema.org/NervousSystem
 
-<http://schema.rdfs.org/all#NervousSystem> rdf:type owl:Class ;
+:NervousSystem rdf:type owl:Class ;
                                            
                                            rdfs:label "Nervous system" ;
                                            
@@ -5186,9 +5186,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#ReproductiveSystem
+###  http://schema.org/ReproductiveSystem
 
-<http://schema.rdfs.org/all#ReproductiveSystem> rdf:type owl:Class ;
+:ReproductiveSystem rdf:type owl:Class ;
                                                 
                                                 rdfs:label "Reproductive system" ;
                                                 
@@ -5198,9 +5198,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#RespiratorySystem
+###  http://schema.org/RespiratorySystem
 
-<http://schema.rdfs.org/all#RespiratorySystem> rdf:type owl:Class ;
+:RespiratorySystem rdf:type owl:Class ;
                                                
                                                rdfs:label "Respiratory system" ;
                                                
@@ -5210,9 +5210,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#SkeletalSystem
+###  http://schema.org/SkeletalSystem
 
-<http://schema.rdfs.org/all#SkeletalSystem> rdf:type owl:Class ;
+:SkeletalSystem rdf:type owl:Class ;
                                             
                                             rdfs:label "Skeletal system" ;
                                             
@@ -5222,9 +5222,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.rdfs.org/all#UrinarySystem
+###  http://schema.org/UrinarySystem
 
-<http://schema.rdfs.org/all#UrinarySystem> rdf:type owl:Class ;
+:UrinarySystem rdf:type owl:Class ;
                                            
                                            rdfs:label "Urinary system" ;
                                            
