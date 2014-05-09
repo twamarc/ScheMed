@@ -207,7 +207,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/ChiefComplaint">
       <span class="h" property="rdfs:label">ChiefComplaint</span>
       <span property="rdfs:comment">Also  termed Presenting Complaint, Reason for Encounter, Presenting Problem, Problem on admission or Reason for Presenting, refers the primary symptom that a patient states as the reason for seeking medical care.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Symptom">Symptom</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalSymptom">MedicalSymptom</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/ChildhoodHistory">
@@ -360,8 +360,8 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SocialHistory">SocialHistory</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/FamilyHistory">
-      <span class="h" property="rdfs:label">FamilyHistory</span>
+    <div typeof="rdfs:Class" resource="http://schema.org/FamilyMedicalHistory">
+      <span class="h" property="rdfs:label">FamilyMedicalHistory</span>
       <span property="rdfs:comment">In medicine, as a part of medical history, the family history consists of information about disorders from which the direct blood relatives of the patient have suffered.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalHistory">MedicalHistory</a></span>
     </div>
@@ -670,6 +670,12 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalSign">
+      <span class="h" property="rdfs:label">MedicalSign</span>
+      <span property="rdfs:comment">Any objective evidence of a disease, such as blood in the stool, a skin rash, is a sign recognized by the doctor, nurse, family members and/or the patient.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SignOrSymptom">SignOrSymptom</a></span>
+    </div>
+
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalSpecialty">
       <span class="h" property="rdfs:label">MedicalSpecialty</span>
       <span property="rdfs:comment">A specialty (or speciality) in medicine is a branch of medical science.</span>
@@ -686,6 +692,12 @@
       <span class="h" property="rdfs:label">MedicalSubSpeciality</span>
       <span property="rdfs:comment">A subspecialty (or sub-speciality) in medicine is a branch of medical speciality.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalSpecialty">MedicalSpecialty</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalSymptom">
+      <span class="h" property="rdfs:label">MedicalSymptom</span>
+      <span property="rdfs:comment">Any complain sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SignOrSymptom">SignOrSymptom</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalTherapy">
@@ -905,7 +917,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/Pulse">
       <span class="h" property="rdfs:label">Pulse</span>
       <span property="rdfs:comment">In medicine, one's pulse represents the tactile arterial palpation of the heartbeat by trained fingertips. </span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Sign">Sign</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalSign">MedicalSign</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/QualifierConcept">
@@ -1016,12 +1028,6 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/Sign">
-      <span class="h" property="rdfs:label">Sign</span>
-      <span property="rdfs:comment">Any objective evidence of a disease, such as blood in the stool, a skin rash, is a sign recognized by the doctor, nurse, family members and/or the patient.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SignOrSymptom">SignOrSymptom</a></span>
-    </div>
-
     <div typeof="rdfs:Class" resource="http://schema.org/SkeletalSystem">
       <span class="h" property="rdfs:label">SkeletalSystem</span>
       <span property="rdfs:comment">The internal framework of the body composed of bones</span>
@@ -1056,12 +1062,6 @@
       <span class="h" property="rdfs:label">SurgicalProcedure</span>
       <span property="rdfs:comment">A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes in a living body</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/Symptom">
-      <span class="h" property="rdfs:label">Symptom</span>
-      <span property="rdfs:comment">Any complain sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/SignOrSymptom">SignOrSymptom</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Syndrome">
@@ -1121,7 +1121,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/Vitalsign">
       <span class="h" property="rdfs:label">Vitalsign</span>
       <span property="rdfs:comment">Vital signs are measures of various physiological functions in order to assess the most basic body functions</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Sign">Sign</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalSign">MedicalSign</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/WaistCircumference">
@@ -1148,22 +1148,6 @@
       <span property="rdfs:comment">Specifying a relative who is concerned by something. i.e medical history about XY relative.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/303071001">sctid:303071001</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/administrativeFather">
-      <span class="h" property="rdfs:label">administrativeFather</span>
-      <span property="rdfs:comment">Specifying a person who plays a role of an administrative father (parent) of this person.</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/father">father</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/administrativeMother">
-      <span class="h" property="rdfs:label">administrativeMother</span>
-      <span property="rdfs:comment">Specifying a person who plays a role of an administrative mother (parent) of this person.</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/mother">mother</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/admissionDate">
@@ -1318,7 +1302,7 @@
       <span property="rdfs:comment">Specifying the regularly recurrent wave of distension in arteries that results from the progress through an artery of blood injected into the arterial system at each contraction of the ventricles of the heart</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Pulse">Pulse</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/sign">sign</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalSign">medicalSign</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/atWeeksAmenorrhea">
@@ -1333,22 +1317,6 @@
       <span property="rdfs:comment">Specifying a resource to which another resource belongs</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">Thing</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Thing">Thing</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/biologicalFather">
-      <span class="h" property="rdfs:label">biologicalFather</span>
-      <span property="rdfs:comment">Specifying a person who is a biological father (parent) of this person.</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/father">father</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/biologicalMother">
-      <span class="h" property="rdfs:label">biologicalMother</span>
-      <span property="rdfs:comment">Specifying a person who is a biological mother (parent) of this person.</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/mother">mother</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/birthDate">
@@ -1504,7 +1472,7 @@
       <span property="rdfs:comment">Specifying a chief complaint resource</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ChiefComplaint">ChiefComplaint</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/symptom">symptom</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalSymptom">medicalSymptom</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/childhoodHistory">
@@ -1787,8 +1755,8 @@
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTest">MedicalTest</a></span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/familyHistory">
-      <span class="h" property="rdfs:label">familyHistory</span>
+    <div typeof="rdf:Property" resource="http://schema.org/familyMedicalHistory">
+      <span class="h" property="rdfs:label">familyMedicalHistory</span>
       <span property="rdfs:comment">Specifying a personal history as a part of a full medical history provided by the patient during an anamnesis procedure .</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/57177007">sctid:57177007</a></span>
@@ -1800,7 +1768,7 @@
       <span property="rdfs:comment">Specifying a family member for this person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/familyHistory">familyHistory</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/familyMedicalHistory">familyMedicalHistory</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/familyRelationship">
@@ -2121,6 +2089,15 @@
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/healthFacility">healthFacility</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/medicalSign">
+      <span class="h" property="rdfs:label">medicalSign</span>
+      <span property="rdfs:comment">Specifying a medicalSign resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalScore">MedicalScore</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/signOrSymptom">signOrSymptom</a></span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/medicalSpecialty">
       <span class="h" property="rdfs:label">medicalSpecialty</span>
     </div>
@@ -2134,6 +2111,14 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalSubSpeciality">MedicalSubSpeciality</a></span>
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalSpecialty">medicalSpecialty</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalSymptom">
+      <span class="h" property="rdfs:label">medicalSymptom</span>
+      <span property="rdfs:comment">Specifying a symptom resource</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalSymptom">MedicalSymptom</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/signOrSymptom">signOrSymptom</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalTransfer">
@@ -2263,9 +2248,6 @@
 
     <div typeof="rdf:Property" resource="http://schema.org/parent">
       <span class="h" property="rdfs:label">parent</span>
-      <span property="rdfs:comment">A parent of this person</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">Person</a></span>
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/familyMember">familyMember</a></span>
     </div>
 
@@ -2517,15 +2499,6 @@
       <span class="h" property="rdfs:label">signOrSymptom</span>
     </div>
 
-    <div typeof="rdf:Property" resource="http://schema.org/sign">
-      <span class="h" property="rdfs:label">sign</span>
-      <span property="rdfs:comment">Specifying a sign resource</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalScore">MedicalScore</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/signOrSymptom">signOrSymptom</a></span>
-    </div>
-
     <div typeof="rdf:Property" resource="http://schema.org/smoking">
       <span class="h" property="rdfs:label">smoking</span>
       <span property="rdfs:comment">Describing the smoking habit resource for the patient</span>
@@ -2575,14 +2548,6 @@
       <span property="rdfs:comment">Specifying a pharmacological substance a microorganism is susceptible to.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/264395009">sctid:264395009</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PharmaceuticalSubstance">PharmaceuticalSubstance</a></span>
-    </div>
-
-    <div typeof="rdf:Property" resource="http://schema.org/symptom">
-      <span class="h" property="rdfs:label">symptom</span>
-      <span property="rdfs:comment">Specifying a symptom resource</span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Symptom">Symptom</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/signOrSymptom">signOrSymptom</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/systemicReview">
@@ -2677,7 +2642,7 @@
       <span property="rdfs:comment">Specifying the vital sign of a person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Vitalsign">Vitalsign</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/sign">sign</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalSign">medicalSign</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/waistCircumference">
