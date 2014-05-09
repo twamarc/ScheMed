@@ -62,11 +62,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.org/admission
+###  http://schema.org/medicalAdmission
 
-:admission rdf:type owl:ObjectProperty ;
+:medicalAdmission rdf:type owl:ObjectProperty ;
            
-           rdfs:label "admission" ;
+           rdfs:label "medicalAdmission" ;
            
            rdfs:comment "Specifying admission procedure related to a resource, activity, another procedure, or patient"@en ;
            
@@ -443,7 +443,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:label "care reason" ;
             
-            rdfs:comment "Specifying a reason for a caring event(typically a medical condition or other medicalEncounter reasons)"@en ;
+            rdfs:comment "Specifying a reason for a caring event(typically a medical condition or other medical encounter reasons)"@en ;
             
             :domainIncludes :CaringEvent ,
                             :MedicalProcedure ,
@@ -654,7 +654,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
             
-            :domainIncludes :Death ,
+            :domainIncludes :Death , :Place,
                             :Person .
 
 
@@ -907,9 +907,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :encounterPlace rdf:type owl:ObjectProperty ;
                 
-                rdfs:label "medicalEncounter place" ;
+                rdfs:label "medical encounter place" ;
                 
-                rdfs:comment "specifying the location or a place where the medicalEncounter took place" ;
+                rdfs:comment "specifying the location or a place where the medical encounter took place" ;
                 
                 :rangeIncludes :HealthFacility ;
                 
@@ -923,9 +923,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :encounterProvider rdf:type owl:ObjectProperty ;
                    
-                   rdfs:label "medicalEncounter provider" ;
+                   rdfs:label "medical encounter provider" ;
                    
-                   rdfs:comment "specifying the provider of the medicalEncounter" ;
+                   rdfs:comment "specifying the provider of the medical encounter" ;
                    
                    :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
                                   :HealthcareProfessional ;
@@ -942,9 +942,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :encounterReason rdf:type owl:ObjectProperty ;
                  
-                 rdfs:label "medicalEncounter reason" ;
+                 rdfs:label "medical encounter reason" ;
                  
-                 rdfs:comment "specifying the reason or indication for a patient medicalEncounter" ;
+                 rdfs:comment "specifying the reason or indication for a patient medical encounter" ;
                  
                  :rangeIncludes :MedicalCondition ;
                  
@@ -2572,7 +2572,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            :domainIncludes :Patient ;
            
-           :rangeIncludes :Vitalsign ;
+           :rangeIncludes :VitalSign ;
            
            rdfs:subPropertyOf :medicalSign .
 
@@ -3190,7 +3190,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:label "Blood pressure" ;
                
-               rdfs:subClassOf :Vitalsign ;
+               rdfs:subClassOf :VitalSign ;
                
                rdfs:comment "Blood pressure (BP), sometimes referred to as arterial blood pressure, is the pressure exerted by circulating blood upon the walls of blood vessels, and is one of the principal vital signs. " .
 
@@ -3238,7 +3238,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:label "Body temperature" ;
                  
-                 rdfs:subClassOf :Vitalsign ;
+                 rdfs:subClassOf :VitalSign ;
                  
                  rdfs:comment "Human body temperature is the temperature of person's body. " .
 
@@ -3742,7 +3742,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:label "Heart rate" ;
            
-           rdfs:subClassOf :Vitalsign ;
+           rdfs:subClassOf :VitalSign ;
            
            rdfs:comment "In medicine, heart rate represents the heat beat frequency normally evaluated per minute. " .
 
@@ -3784,9 +3784,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.org/Hormonetherapy
+###  http://schema.org/HormoneTherapy
 
-:Hormonetherapy rdf:type owl:Class ;
+:HormoneTherapy rdf:type owl:Class ;
                 
                 rdfs:label "Hormone therapy" ;
                 
@@ -4880,7 +4880,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:label "Respiration rate" ;
                  
-                 rdfs:subClassOf :Vitalsign ;
+                 rdfs:subClassOf :VitalSign ;
                  
                  rdfs:comment "The respiratory rate (RR), also known as the respiration rate, ventilation rate, ventilatory rate, ventilation frequency (Vf), respiration frequency (Rf), pulmonary ventilation rate, or breathing frequency, is the rate (frequency) of ventilation, that is, the number of breaths (inhalation-exhalation cycles) taken within a set amount of time (typically 60 seconds). " .
 
@@ -5126,9 +5126,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.org/Vitalsign
+###  http://schema.org/VitalSign
 
-:Vitalsign rdf:type owl:Class ;
+:VitalSign rdf:type owl:Class ;
            
            rdfs:label "Vital sign" ;
            
