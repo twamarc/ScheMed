@@ -1,5 +1,5 @@
-Medical Entity Ontology
-=======================
+Medical Ontology Schema (SchemEd)
+=================================
 
 Dear colleagues,
 I am pleased to introduce to you this **healthcare community effort** initiated in June 2013, to enable the use of schema.org not only in indexing health records, web, healthcare documents but also as a **pillar source of medical ontology/vocabulary** for formalization of healthcare information, exchange and interoperability and use in HL7 standards, C-CCD/CDA elements based APIs. This was already tested within SALUS EU FP7 project- with AGFA Healthcare as a partner, and was successful.
