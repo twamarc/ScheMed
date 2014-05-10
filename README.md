@@ -1,4 +1,4 @@
-Medical Ontology Schema (SchemEd)
+Medical Ontology Schema (ScheMed)
 =================================
 
 Dear colleagues,
