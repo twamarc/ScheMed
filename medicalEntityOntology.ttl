@@ -48,6 +48,20 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 #################################################################
 
 
+###  http://schema.org#medicalScore
+
+<http://schema.org#medicalScore> rdf:type owl:ObjectProperty ;
+                                 
+                                 rdfs:label "medical score" ;
+                                 
+                                 rdfs:comment "Specifying a medical score resource" ;
+                                 
+                                 :rangeIncludes :MedicalScore ;
+                                 
+                                 :domainIncludes :Thing .
+
+
+
 ###  http://schema.org/aboutRelative
 
 :aboutRelative rdf:type owl:ObjectProperty ;
@@ -59,25 +73,6 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/303071001> ;
                
                :domainIncludes :Person .
-
-
-
-###  http://schema.org/medicalAdmission
-
-:medicalAdmission rdf:type owl:ObjectProperty ;
-           
-           rdfs:label "medicalAdmission" ;
-           
-           rdfs:comment "Specifying admission procedure related to a resource, activity, another procedure, or patient"@en ;
-           
-           :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ,
-                          :AdmissionProcedure ,
-                          :MedicalAdmission ;
-           
-           :domainIncludes :MedicalEncounter ,
-                           :Person ;
-           
-           rdfs:subPropertyOf :medicalEncounter .
 
 
 
@@ -652,10 +647,12 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the place of death for a person"@en ;
             
-            :rangeIncludes :Place, <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
             
-            :domainIncludes :Death , 
-                            :Person .
+            :domainIncludes :Death ,
+                            :Person ;
+            
+            :rangeIncludes :Place .
 
 
 
@@ -915,7 +912,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 :domainIncludes :MedicalEncounter ;
                 
-                rdfs:subPropertyOf :medicalEncounter .
+                rdfs:subPropertyOf :location .
 
 
 
@@ -934,7 +931,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    :rangeIncludes :Person ;
                    
-                   rdfs:subPropertyOf :medicalEncounter .
+                   rdfs:subPropertyOf :provider .
 
 
 
@@ -972,7 +969,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  :rangeIncludes :Text ;
                  
-                 rdfs:subPropertyOf :medicalEncounter .
+                 rdfs:subPropertyOf :status .
 
 
 
@@ -988,7 +985,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            :domainIncludes :Person ;
            
-           rdfs:subPropertyOf :socialHistory .
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -1034,7 +1031,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               :domainIncludes :Person ;
               
-              rdfs:subPropertyOf :familyMedicalHistory .
+              rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -1311,7 +1308,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                :domainIncludes :Person ;
                
-               rdfs:subPropertyOf :socialHistory .
+               rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -1328,6 +1325,25 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   :domainIncludes :Person ;
                   
                   rdfs:subPropertyOf :familyMember .
+
+
+
+###  http://schema.org/medicalAdmission
+
+:medicalAdmission rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "medicalAdmission" ;
+                  
+                  rdfs:comment "Specifying admission procedure related to a resource, activity, another procedure, or patient"@en ;
+                  
+                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ,
+                                 :AdmissionProcedure ,
+                                 :MedicalAdmission ;
+                  
+                  :domainIncludes :MedicalEncounter ,
+                                  :Person ;
+                  
+                  rdfs:subPropertyOf :medicalEncounter .
 
 
 
@@ -1953,7 +1969,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   :rangeIncludes :PhysicalActivity ,
                                  :RecreationalHistory ;
                   
-                  rdfs:subPropertyOf :socialHistory .
+                  rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -2108,7 +2124,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
       
       :rangeIncludes :Race ;
       
-      rdfs:subPropertyOf :socialHistory .
+      rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
