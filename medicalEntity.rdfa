@@ -1531,7 +1531,6 @@
       <span class="h" property="rdfs:label">dateTime</span>
       <span property="rdfs:comment">Specifying an instant of something. Typically derived from W3C Time Ontology this describes a point in time when an event or action occurs.</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Thing">Thing</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://www.w3.org/2001/XMLSchema#dateTimeStamp">dateTimeStamp</a></span>
     </div>
 
@@ -1742,7 +1741,6 @@
       <span property="rdfs:comment">Specifying the ethnicity resource of someone. Ethnicity or ethnic group is a socially defined category of people. Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property </span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Ethnicity">Ethnicity</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/examination">
@@ -1765,7 +1763,6 @@
       <span property="rdfs:comment">Specifying a family member for this person</span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">Person</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/familyRelationship">
@@ -1929,7 +1926,6 @@
       <span property="rdfs:comment">Specifying an agent having the social and/or juridical status of being married or unmarried. </span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/365581002">sctid:365581002</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/maternalRelative">
@@ -2298,7 +2294,6 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PhysicalActivity">PhysicalActivity</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/RecreationalHistory">RecreationalHistory</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/physicalExamination">
@@ -2384,7 +2379,6 @@
       <span property="rdfs:comment">Specifying a race group or anthropological family as origin of the person. Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property </span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Race">Race</a></span>
-      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/rankOrder">

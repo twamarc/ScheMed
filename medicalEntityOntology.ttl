@@ -983,9 +983,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            :rangeIncludes :Ethnicity ;
            
-           :domainIncludes :Person ;
-           
-           rdfs:subPropertyOf owl:topObjectProperty .
+           :domainIncludes :Person .
 
 
 
@@ -1029,9 +1027,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               :rangeIncludes :Person ;
               
-              :domainIncludes :Person ;
-              
-              rdfs:subPropertyOf owl:topObjectProperty .
+              :domainIncludes :Person .
 
 
 
@@ -1306,9 +1302,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/365581002> ;
                
-               :domainIncludes :Person ;
-               
-               rdfs:subPropertyOf owl:topObjectProperty .
+               :domainIncludes :Person .
 
 
 
@@ -1967,9 +1961,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   :domainIncludes :Person ;
                   
                   :rangeIncludes :PhysicalActivity ,
-                                 :RecreationalHistory ;
-                  
-                  rdfs:subPropertyOf owl:topObjectProperty .
+                                 :RecreationalHistory .
 
 
 
@@ -2122,9 +2114,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
       
       :domainIncludes :Person ;
       
-      :rangeIncludes :Race ;
-      
-      rdfs:subPropertyOf owl:topObjectProperty .
+      :rangeIncludes :Race .
 
 
 
@@ -2765,8 +2755,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           :domainIncludes :Thing ;
           
-          :rangeIncludes rdfs:Literal ,
-                         xsd:dateTimeStamp .
+          :rangeIncludes xsd:dateTimeStamp .
 
 
 
