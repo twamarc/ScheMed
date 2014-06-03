@@ -4245,9 +4245,21 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:label "MedicalSign" ;
              
-             rdfs:subClassOf :SignOrSymptom ;
+             rdfs:subClassOf :MedicalSignOrSymptom ;
              
              rdfs:comment "Any objective evidence of a disease, such as blood in the stool, a skin rash, is a sign recognized by the doctor, nurse, family members and/or the patient." .
+
+
+
+###  http://schema.org/MedicalSignOrSymptom
+
+:MedicalSignOrSymptom rdf:type owl:Class ;
+                      
+                      rdfs:label "Sign or symptom" ;
+                      
+                      rdfs:subClassOf :MedicalCondition ;
+                      
+                      rdfs:comment "Any feature associated with a medical condition. In medicine a symptom is generally subjective while a sign is objective." .
 
 
 
@@ -4293,7 +4305,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "MedicalSymptom" ;
                 
-                rdfs:subClassOf :SignOrSymptom ;
+                rdfs:subClassOf :MedicalSignOrSymptom ;
                 
                 rdfs:comment "Any complain sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue." .
 
@@ -4939,18 +4951,6 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.org/SignOrSymptom
-
-:SignOrSymptom rdf:type owl:Class ;
-               
-               rdfs:label "Sign or symptom" ;
-               
-               rdfs:subClassOf :MedicalCondition ;
-               
-               rdfs:comment "Any feature associated with a medical condition. In medicine a symptom is generally subjective while a sign is objective." .
-
-
-
 ###  http://schema.org/SkeletalSystem
 
 :SkeletalSystem rdf:type owl:Class ;
@@ -5065,7 +5065,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:label "Triage complaint" ;
                  
-                 rdfs:subClassOf :SignOrSymptom ;
+                 rdfs:subClassOf :MedicalSignOrSymptom ;
                  
                  rdfs:comment "A complaint on which patient triage is based" .
 
