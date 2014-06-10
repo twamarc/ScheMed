@@ -3066,7 +3066,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                     
                     rdfs:subClassOf :TherapeuticProcedure ;
                     
-                    rdfs:comment "Any practice that is put forward as having the healing effects of medicine but is not based on evidence gathered using the scientific method. It may however consists of a wide range of health care practices, products and therapies known in conventiional medicine. Source: Wikipedia" .
+                    rdfs:comment "Any practice that is put forward as having the healing effects of medicine but is not based on evidence gathered using the scientific method. It may however consists of a wide range of health care practices, products and therapies known in conventional medicine. Source: Wikipedia" .
 
 
 

@@ -76,7 +76,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/AlternativeTherapy">
       <span class="h" property="rdfs:label">AlternativeTherapy</span>
-      <span property="rdfs:comment">Any practice that is put forward as having the healing effects of medicine but is not based on evidence gathered using the scientific method. It may however consists of a wide range of health care practices, products and therapies known in conventiional medicine. Source: Wikipedia</span>
+      <span property="rdfs:comment">Any practice that is put forward as having the healing effects of medicine but is not based on evidence gathered using the scientific method. It may however consists of a wide range of health care practices, products and therapies known in conventional medicine. Source: Wikipedia</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
     </div>
 
