@@ -1459,7 +1459,7 @@
       <span class="h" property="rdfs:label">cause</span>
       <span property="rdfs:comment">Specifying a cause of something. when it's established. </span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
-      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/SignOrSymptom">SignOrSymptom</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalSignOrSymptom">MedicalSignOrSymptom</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCause">MedicalCause</a></span>
     </div>
 

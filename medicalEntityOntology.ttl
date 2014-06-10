@@ -510,7 +510,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
        :rangeIncludes :MedicalCause ;
        
        :domainIncludes :MedicalCondition ,
-                       :SignOrSymptom .
+                       :MedicalSignOrSymptom .
 
 
 
