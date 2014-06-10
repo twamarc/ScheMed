@@ -2603,7 +2603,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
            
-           :rangeIncludes xsd:integer .
+           :rangeIncludes :Number .
 
 
 
@@ -2615,13 +2615,14 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying a medical admission date" ;
                
-               :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ,
-                               :MedicalAdmission ,
+               :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ;
+               
+               :rangeIncludes :DateTime ;
+               
+               :domainIncludes :MedicalAdmission ,
                                :Patient ;
                
-               rdfs:subPropertyOf :dateTime ;
-               
-               :rangeIncludes xsd:dateTime .
+               rdfs:subPropertyOf :dateTime .
 
 
 
@@ -2633,9 +2634,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying the age of the entity when an event occurred" ;
             
-            :domainIncludes :Person ;
+            :rangeIncludes :Number ;
             
-            :rangeIncludes xsd:decimal .
+            :domainIncludes :Person .
 
 
 
@@ -2649,7 +2650,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
             
-            :rangeIncludes xsd:positiveInteger .
+            :rangeIncludes :Number .
 
 
 
@@ -2663,7 +2664,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    :domainIncludes :MedicalCondition ;
                    
-                   :rangeIncludes xsd:decimal .
+                   :rangeIncludes :Number .
 
 
 
@@ -2685,7 +2686,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
              
-             :rangeIncludes xsd:decimal .
+             :rangeIncludes :Number .
 
 
 
@@ -2699,7 +2700,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
                  
-                 :rangeIncludes xsd:decimal .
+                 :rangeIncludes :Number .
 
 
 
@@ -2713,7 +2714,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
              
-             :rangeIncludes xsd:decimal .
+             :rangeIncludes :Number .
 
 
 
@@ -2725,9 +2726,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying the body mass index of  a person" ;
                
-               :domainIncludes :Person ;
+               :rangeIncludes :Number ;
                
-               :rangeIncludes xsd:decimal .
+               :domainIncludes :Person .
 
 
 
@@ -2739,9 +2740,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Specifying the body volume index of  a person" ;
                  
-                 :domainIncludes :Person ;
+                 :rangeIncludes :Number ;
                  
-                 :rangeIncludes xsd:decimal .
+                 :domainIncludes :Person .
 
 
 
@@ -2753,9 +2754,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           rdfs:comment "Specifying an instant of something. Typically derived from W3C Time Ontology this describes a point in time when an event or action occurs." ;
           
-          :domainIncludes :Thing ;
+          :rangeIncludes :DateTime ;
           
-          :rangeIncludes xsd:dateTimeStamp .
+          :domainIncludes :Thing .
 
 
 
@@ -2775,12 +2776,13 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:comment "Specifying the diagnostic date for  a person" ;
                 
-                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
-                                :Person ;
+                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ;
                 
-                rdfs:subPropertyOf :dateTime ;
+                :rangeIncludes :DateTime ;
                 
-                :rangeIncludes xsd:dateTime .
+                :domainIncludes :Person ;
+                
+                rdfs:subPropertyOf :dateTime .
 
 
 
@@ -2792,12 +2794,12 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying a medical discharge date for a patient" ;
                
+               :rangeIncludes :DateTime ;
+               
                :domainIncludes :MedicalDischarge ,
                                :Patient ;
                
-               rdfs:subPropertyOf :dateTime ;
-               
-               :rangeIncludes xsd:dateTime .
+               rdfs:subPropertyOf :dateTime .
 
 
 
@@ -2809,10 +2811,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth." ;
            
-           :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ,
-                           :Person ;
+           :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
            
-           :rangeIncludes xsd:positiveInteger .
+           :rangeIncludes :Number ;
+           
+           :domainIncludes :Person .
 
 
 
@@ -2824,10 +2827,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:comment "The hip circumference measurement of someone" ;
                   
-                  :domainIncludes :HipCircumference ,
-                                  :Person ;
+                  :domainIncludes :HipCircumference ;
                   
-                  :rangeIncludes xsd:decimal .
+                  :rangeIncludes :Number ;
+                  
+                  :domainIncludes :Person .
 
 
 
@@ -2843,7 +2847,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                    :HealthcareProfessional ,
                                    :Person ;
                    
-                   :rangeIncludes xsd:positiveInteger .
+                   :rangeIncludes :Text .
 
 
 
@@ -2855,10 +2859,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
         
         rdfs:comment "Parity is defined as the number of times that she has given birth to a foetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn." ;
         
-        :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ,
-                        :Person ;
+        :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
         
-        :rangeIncludes xsd:positiveInteger .
+        :rangeIncludes :Number ;
+        
+        :domainIncludes :Person .
 
 
 
@@ -2870,9 +2875,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Total number of something."@en ;
             
-            :domainIncludes :Thing ;
+            :rangeIncludes :Number ;
             
-            :rangeIncludes xsd:decimal .
+            :domainIncludes :Thing .
 
 
 
@@ -2884,12 +2889,12 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               rdfs:comment "Specifying the medical transfer date for a patient" ;
               
+              :rangeIncludes :DateTime ;
+              
               :domainIncludes :MedicalTransfer ,
                               :Person ;
               
-              rdfs:subPropertyOf :dateTime ;
-              
-              :rangeIncludes xsd:dateTime .
+              rdfs:subPropertyOf :dateTime .
 
 
 
@@ -2901,10 +2906,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:comment "Specifying the value of a triage score" ;
              
-             :domainIncludes :Patient ,
-                             :TriageScore ;
+             :rangeIncludes :Number ;
              
-             :rangeIncludes xsd:decimal .
+             :domainIncludes :Patient ,
+                             :TriageScore .
 
 
 
@@ -2916,10 +2921,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                     
                     rdfs:comment "The waist circumference measurement of someone" ;
                     
-                    :domainIncludes :Person ,
-                                    :WaistCircumference ;
+                    :rangeIncludes :Number ;
                     
-                    :rangeIncludes xsd:decimal .
+                    :domainIncludes :Person ,
+                                    :WaistCircumference .
 
 
 
@@ -2931,10 +2936,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "The waist hip ratio measurement of someone" ;
                
-               :domainIncludes :Person ,
-                               :WaistHipRatio ;
+               :rangeIncludes :Number ;
                
-               :rangeIncludes xsd:decimal .
+               :domainIncludes :Person ,
+                               :WaistHipRatio .
 
 
 
