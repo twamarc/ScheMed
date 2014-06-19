@@ -1980,7 +1980,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                      :MedicalProcedure ,
                                      :Patient ;
                      
-                     :rangeIncludes :PhysicalExamination ;
+                     :rangeIncludes :PhysicalExam ;
                      
                      rdfs:subPropertyOf :diagnosticProcedure .
 
@@ -3224,7 +3224,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:label "Body measure" ;
              
-             rdfs:subClassOf :PhysicalExamination ;
+             rdfs:subClassOf :PhysicalExam ;
              
              rdfs:comment "Common method of specifying body sizes parameters" .
 
@@ -3608,7 +3608,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
              
              rdfs:label "Episodicity" ;
              
-             rdfs:subClassOf :QualifierConcept ;
+             rdfs:subClassOf :MedicalEnumeration ;
              
              rdfs:comment "A quantification of a medical condition occurrences." .
 
@@ -3644,7 +3644,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "FamilyRelation" ;
                 
-                rdfs:subClassOf :QualifierConcept ;
+                rdfs:subClassOf :MedicalEnumeration ;
                 
                 rdfs:comment "Relationship relatedness or connection by blood, marriage or adoption ." .
 
@@ -3872,7 +3872,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:label "Invasiveness category " ;
                   
-                  rdfs:subClassOf :QualifierConcept ;
+                  rdfs:subClassOf :MedicalEnumeration ;
                   
                   rdfs:comment "A categorization of invasiveness type of medical procedures." .
 
@@ -4004,7 +4004,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                      
                      rdfs:label "Medical auscultation" ;
                      
-                     rdfs:subClassOf :PhysicalExamination ;
+                     rdfs:subClassOf :PhysicalExam ;
                      
                      rdfs:comment "The action of listening to sounds from the heart, lungs, or other organs, typically with a stethoscope, as a part of medical diagnosis." .
 
@@ -4100,6 +4100,14 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://schema.org/MedicalEnumeration
+
+:MedicalEnumeration rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :MedicalEntity .
+
+
+
 ###  http://schema.org/MedicalHistory
 
 :MedicalHistory rdf:type owl:Class ;
@@ -4130,7 +4138,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:label "Medical inspection" ;
                    
-                   rdfs:subClassOf :PhysicalExamination ;
+                   rdfs:subClassOf :PhysicalExam ;
                    
                    rdfs:comment "The thorough and unhurried visualization of the patient that requires the use of the naked eye." .
 
@@ -4154,7 +4162,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                   
                   rdfs:label "Medical palpation" ;
                   
-                  rdfs:subClassOf :PhysicalExamination ;
+                  rdfs:subClassOf :PhysicalExam ;
                   
                   rdfs:comment "The process of using your hands to examine the body, especially while perceiving/diagnosing a disease or illness." .
 
@@ -4166,7 +4174,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:label "Medical percussion" ;
                    
-                   rdfs:subClassOf :PhysicalExamination ;
+                   rdfs:subClassOf :PhysicalExam ;
                    
                    rdfs:comment "A method of tapping on a surface to determine the underlying structure, and is used in clinical examinations to assess the condition of the thorax or abdomen" .
 
@@ -4522,7 +4530,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:label "onset mode" ;
            
-           rdfs:subClassOf :QualifierConcept ;
+           rdfs:subClassOf :MedicalEnumeration ;
            
            rdfs:comment "Description of how the medical condition started." .
 
@@ -4656,15 +4664,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.org/PhysicalExamination
+###  http://schema.org/PhysicalExam
 
-:PhysicalExamination rdf:type owl:Class ;
-                     
-                     rdfs:label "Physical examination" ;
-                     
-                     rdfs:subClassOf :MedicalProcedure ;
-                     
-                     rdfs:comment "A physical examination, medical examination, or clinical examination (more popularly known as a check-up or medical) is the process by which a medical professional investigates the body of a patient for signs of disease. It generally follows the taking of the medical history — an account of the symptoms as experienced by the patient. Source: Wikipedia" .
+:PhysicalExam rdf:type owl:Class ;
+              
+              rdfs:subClassOf :MedicalProcedure .
 
 
 
@@ -4749,18 +4753,6 @@ rdfs:comment rdf:type owl:AnnotationProperty .
        rdfs:subClassOf :MedicalSign ;
        
        rdfs:comment "In medicine, one's pulse represents the tactile arterial palpation of the heartbeat by trained fingertips. " .
-
-
-
-###  http://schema.org/QualifierConcept
-
-:QualifierConcept rdf:type owl:Class ;
-                  
-                  rdfs:label "Qualifier concept" ;
-                  
-                  rdfs:subClassOf :MedicalEntity ;
-                  
-                  rdfs:comment "A concept that is used as word or phrase, especially an adjective, to attribute a quality to another concept." .
 
 
 
@@ -4926,7 +4918,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           rdfs:label "Severity" ;
           
-          rdfs:subClassOf :QualifierConcept ;
+          rdfs:subClassOf :MedicalEnumeration ;
           
           rdfs:comment "Intensity quantification or scoring of illness or a medical condition" .
 

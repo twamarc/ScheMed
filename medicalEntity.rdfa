@@ -159,7 +159,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/BodyMeasure">
       <span class="h" property="rdfs:label">BodyMeasure</span>
       <span property="rdfs:comment">Common method of specifying body sizes parameters</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExam">PhysicalExam</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/BodySubstance">
@@ -351,7 +351,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/Episodicity">
       <span class="h" property="rdfs:label">Episodicity</span>
       <span property="rdfs:comment">A quantification of a medical condition occurrences.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QualifierConcept">QualifierConcept</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEnumeration">MedicalEnumeration</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Ethnicity">
@@ -369,7 +369,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/FamilyRelation">
       <span class="h" property="rdfs:label">FamilyRelation</span>
       <span property="rdfs:comment">Relationship relatedness or connection by blood, marriage or adoption .</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QualifierConcept">QualifierConcept</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEnumeration">MedicalEnumeration</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/FoodIntolerance">
@@ -483,7 +483,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/InvasivenessType">
       <span class="h" property="rdfs:label">InvasivenessType</span>
       <span property="rdfs:comment">A categorization of invasiveness type of medical procedures.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QualifierConcept">QualifierConcept</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEnumeration">MedicalEnumeration</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Kinesiotherapy">
@@ -549,7 +549,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalAuscultation">
       <span class="h" property="rdfs:label">MedicalAuscultation</span>
       <span property="rdfs:comment">The action of listening to sounds from the heart, lungs, or other organs, typically with a stethoscope, as a part of medical diagnosis.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExam">PhysicalExam</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalCase">
@@ -598,6 +598,11 @@
       <span class="h" property="rdfs:label">MedicalEntity</span>
     </div>
 
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalEnumeration">
+      <span class="h" property="rdfs:label">MedicalEnumeration</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
+    </div>
+
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalHistory">
       <span class="h" property="rdfs:label">MedicalHistory</span>
       <span property="rdfs:comment">The medical history of a patient is information gained by a physician by asking specific questions through anamnesis procedure, either of the patient or of other people who know the person and can give suitable information, with the aim of obtaining information useful in formulating a diagnosis and providing medical care to the patient. </span>
@@ -613,7 +618,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalInspection">
       <span class="h" property="rdfs:label">MedicalInspection</span>
       <span property="rdfs:comment">The thorough and unhurried visualization of the patient that requires the use of the naked eye.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExam">PhysicalExam</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalIntervention">
@@ -625,13 +630,13 @@
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalPalpation">
       <span class="h" property="rdfs:label">MedicalPalpation</span>
       <span property="rdfs:comment">The process of using your hands to examine the body, especially while perceiving/diagnosing a disease or illness.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExam">PhysicalExam</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalPercussion">
       <span class="h" property="rdfs:label">MedicalPercussion</span>
       <span property="rdfs:comment">A method of tapping on a surface to determine the underlying structure, and is used in clinical examinations to assess the condition of the thorax or abdomen</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExam">PhysicalExam</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalPrescription">
@@ -810,7 +815,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/OnsetMode">
       <span class="h" property="rdfs:label">OnsetMode</span>
       <span property="rdfs:comment">Description of how the medical condition started.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QualifierConcept">QualifierConcept</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEnumeration">MedicalEnumeration</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/OralTemperature">
@@ -878,9 +883,8 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
     </div>
 
-    <div typeof="rdfs:Class" resource="http://schema.org/PhysicalExamination">
-      <span class="h" property="rdfs:label">PhysicalExamination</span>
-      <span property="rdfs:comment">A physical examination, medical examination, or clinical examination (more popularly known as a check-up or medical) is the process by which a medical professional investigates the body of a patient for signs of disease. It generally follows the taking of the medical history — an account of the symptoms as experienced by the patient. Source: Wikipedia</span>
+    <div typeof="rdfs:Class" resource="http://schema.org/PhysicalExam">
+      <span class="h" property="rdfs:label">PhysicalExam</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
     </div>
 
@@ -924,12 +928,6 @@
       <span class="h" property="rdfs:label">Pulse</span>
       <span property="rdfs:comment">In medicine, one's pulse represents the tactile arterial palpation of the heartbeat by trained fingertips. </span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalSign">MedicalSign</a></span>
-    </div>
-
-    <div typeof="rdfs:Class" resource="http://schema.org/QualifierConcept">
-      <span class="h" property="rdfs:label">QualifierConcept</span>
-      <span property="rdfs:comment">A concept that is used as word or phrase, especially an adjective, to attribute a quality to another concept.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/Race">
@@ -1013,7 +1011,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/Severity">
       <span class="h" property="rdfs:label">Severity</span>
       <span property="rdfs:comment">Intensity quantification or scoring of illness or a medical condition</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QualifierConcept">QualifierConcept</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEnumeration">MedicalEnumeration</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/SexualBehaviour">
@@ -2305,7 +2303,7 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
-      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PhysicalExamination">PhysicalExamination</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PhysicalExam">PhysicalExam</a></span>
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/diagnosticProcedure">diagnosticProcedure</a></span>
     </div>
 
