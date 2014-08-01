@@ -48,6 +48,34 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 #################################################################
 
 
+###  http://schema.org#drugPackage
+
+<http://schema.org#drugPackage> rdf:type owl:ObjectProperty ;
+                                
+                                rdfs:label "drugPackage" ;
+                                
+                                rdfs:comment "Specifying the drug package resource" ;
+                                
+                                :rangeIncludes <http://schema.org#DrugPackage> ;
+                                
+                                :domainIncludes :Drug .
+
+
+
+###  http://schema.org#familyRelationshipName
+
+<http://schema.org#familyRelationshipName> rdf:type owl:ObjectProperty ;
+                                           
+                                           rdfs:label "familyRelationshipName" ;
+                                           
+                                           rdfs:comment "Specifying the label of any relationship between persons. " ;
+                                           
+                                           :domainIncludes :FamilyRelation ;
+                                           
+                                           :rangeIncludes :Text .
+
+
+
 ###  http://schema.org#medicalScore
 
 <http://schema.org#medicalScore> rdf:type owl:ObjectProperty ;
@@ -59,6 +87,49 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                  :rangeIncludes :MedicalScore ;
                                  
                                  :domainIncludes :Thing .
+
+
+
+###  http://schema.org#medicalSpecimen
+
+<http://schema.org#medicalSpecimen> rdf:type owl:ObjectProperty ;
+                                    
+                                    rdfs:label "medicalSpecimen" ;
+                                    
+                                    rdfs:comment "Specifying a medical specimen resource for a person" ;
+                                    
+                                    :rangeIncludes <http://schema.org#MedicalSpecimen> ;
+                                    
+                                    :domainIncludes :MedicalProcedure ,
+                                                    :Person .
+
+
+
+###  http://schema.org#medicalSpecimenDonor
+
+<http://schema.org#medicalSpecimenDonor> rdf:type owl:ObjectProperty ;
+                                         
+                                         rdfs:label "medicalSpecimenDonor" ;
+                                         
+                                         rdfs:comment "The specimen donor" ;
+                                         
+                                         :domainIncludes <http://schema.org#MedicalSpecimen> ;
+                                         
+                                         :rangeIncludes :Person .
+
+
+
+###  http://schema.org#medicalSpecimenReceiver
+
+<http://schema.org#medicalSpecimenReceiver> rdf:type owl:ObjectProperty ;
+                                            
+                                            rdfs:label "medicalSpecimenReceiver" ;
+                                            
+                                            rdfs:comment "The specimen receiver" ;
+                                            
+                                            :domainIncludes <http://schema.org#MedicalSpecimen> ;
+                                            
+                                            :rangeIncludes :Person .
 
 
 
@@ -320,7 +391,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
             
             :domainIncludes :Birth ,
-                            :Person .
+                            :Person ;
+            
+            :rangeIncludes :Place .
 
 
 
@@ -2593,6 +2666,38 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 #################################################################
 
 
+###  http://schema.org#receiptDate
+
+<http://schema.org#receiptDate> rdf:type owl:DatatypeProperty ;
+                                
+                                rdfs:label "receiptDate" ;
+                                
+                                rdfs:comment "The date when the medical specimen was received" ;
+                                
+                                :domainIncludes <http://schema.org#MedicalSpecimen> ;
+                                
+                                :rangeIncludes :DateTime ;
+                                
+                                rdfs:subPropertyOf :dateTime .
+
+
+
+###  http://schema.org#specimenCollectionDate
+
+<http://schema.org#specimenCollectionDate> rdf:type owl:DatatypeProperty ;
+                                           
+                                           rdfs:label "specimenCollectionDate" ;
+                                           
+                                           rdfs:comment "The date when the medical specimen was collected" ;
+                                           
+                                           :domainIncludes <http://schema.org#MedicalSpecimen> ;
+                                           
+                                           :rangeIncludes :DateTime ;
+                                           
+                                           rdfs:subPropertyOf :dateTime .
+
+
+
 ###  http://schema.org/abortions
 
 :abortions rdf:type owl:DatatypeProperty ;
@@ -2950,6 +3055,54 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 #    Classes
 #
 #################################################################
+
+
+###  http://schema.org#DrugPackage
+
+<http://schema.org#DrugPackage> rdf:type owl:Class ;
+                                
+                                rdfs:label "DrugPackage" ;
+                                
+                                rdfs:subClassOf :Drug ;
+                                
+                                rdfs:comment "The drug or medicine package" .
+
+
+
+###  http://schema.org#MedicalSpecimen
+
+<http://schema.org#MedicalSpecimen> rdf:type owl:Class ;
+                                    
+                                    rdfs:label "MedicalSpecimen" ;
+                                    
+                                    rdfs:subClassOf :MedicalEntity ;
+                                    
+                                    rdfs:comment "Material (structure, substance, device) removed from a source (patient, donor, physical location, product)" .
+
+
+
+###  http://schema.org#MedicalSpecimenDonor
+
+<http://schema.org#MedicalSpecimenDonor> rdf:type owl:Class ;
+                                         
+                                         rdfs:label "MedicalSpecimenDonor" ;
+                                         
+                                         rdfs:subClassOf <http://schema.org#MedicalSpecimen> ;
+                                         
+                                         rdfs:comment "Medical Specimen Donor" .
+
+
+
+###  http://schema.org#MedicalSpecimenReceiver
+
+<http://schema.org#MedicalSpecimenReceiver> rdf:type owl:Class ;
+                                            
+                                            rdfs:label "MedicalSpecimenReceiver" ;
+                                            
+                                            rdfs:subClassOf <http://schema.org#MedicalSpecimen> ;
+                                            
+                                            rdfs:comment "Medical Specimen Receiver" .
+
 
 
 ###  http://schema.org/Abortion
