@@ -574,16 +574,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 ###  http://schema.org/cause
 
-:cause rdf:type owl:ObjectProperty ;
-       
-       rdfs:label "cause" ;
-       
-       rdfs:comment "Specifying a cause of something. when it's established. "@en ;
-       
-       :rangeIncludes :MedicalCause ;
-       
-       :domainIncludes :MedicalCondition ,
-                       :MedicalSignOrSymptom .
+:cause rdf:type owl:ObjectProperty .
 
 
 
@@ -669,14 +660,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :comprisedOf rdf:type owl:ObjectProperty ;
              
-             rdfs:label "comprised Of" ;
-             
-             rdfs:comment "Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system."@en ;
-             
-             :rangeIncludes :AnatomicalStructure ,
-                            :AnatomicalSystem ;
-             
-             :domainIncludes :AnatomicalSystem .
+             rdfs:comment "Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system."@en .
 
 
 
@@ -829,10 +813,6 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 ###  http://schema.org/drug
 
 :drug rdf:type owl:ObjectProperty ;
-      
-      rdfs:label "drug " ;
-      
-      rdfs:comment "Specifying a drug or medicine used in a medication procedure" ;
       
       :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/410942007> ,
                      :Drug ;
@@ -2191,20 +2171,6 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
-###  http://schema.org/rankOrder
-
-:rankOrder rdf:type owl:ObjectProperty ;
-           
-           rdfs:label "rank order" ;
-           
-           rdfs:comment "rank order number of something. Typically used together with schema:numerator and schema:denominator. eg. refill number 4 out of 10."@en ;
-           
-           :domainIncludes :Thing ;
-           
-           :rangeIncludes :Thing .
-
-
-
 ###  http://schema.org/recommendedTreatment
 
 :recommendedTreatment rdf:type owl:ObjectProperty ;
@@ -2381,14 +2347,6 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :sibling rdf:type owl:ObjectProperty ;
          
-         rdfs:label "sibling" ;
-         
-         rdfs:comment "A sibling for this person" ;
-         
-         :rangeIncludes :Person ;
-         
-         :domainIncludes :Person ;
-         
          rdfs:subPropertyOf :familyMember .
 
 
@@ -2454,14 +2412,6 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 ###  http://schema.org/spouse
 
 :spouse rdf:type owl:ObjectProperty ;
-        
-        rdfs:label "spouse" ;
-        
-        rdfs:comment "A spouse of this person" ;
-        
-        :rangeIncludes :Person ;
-        
-        :domainIncludes :Person ;
         
         rdfs:subPropertyOf :familyMember .
 
@@ -2664,6 +2614,20 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 #    Data properties
 #
 #################################################################
+
+
+###  http://schema.org#rankOrder
+
+<http://schema.org#rankOrder> rdf:type owl:DatatypeProperty ;
+                              
+                              rdfs:label "rankOrder" ;
+                              
+                              rdfs:comment "rank order number of something. Typically used together with schema:numerator and schema:denominator. eg. refill number 4 out of 10." ;
+                              
+                              :rangeIncludes :Number ;
+                              
+                              :domainIncludes :Thing .
+
 
 
 ###  http://schema.org#receiptDate
@@ -3063,7 +3027,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                 
                                 rdfs:label "DrugPackage" ;
                                 
-                                rdfs:subClassOf :Drug ;
+                                rdfs:subClassOf :MedicalEnumeration ;
                                 
                                 rdfs:comment "The drug or medicine package" .
 
@@ -3603,11 +3567,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :DiagnosticProcedure rdf:type owl:Class ;
                      
-                     rdfs:label "Diagnostic procedure" ;
-                     
-                     rdfs:subClassOf :MedicalProcedure ;
-                     
-                     rdfs:comment "A set of process performed to help diagnose a disease or condition" .
+                     rdfs:subClassOf :MedicalProcedure .
 
 
 
@@ -3651,11 +3611,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :Drug rdf:type owl:Class ;
       
-      rdfs:label "Drug " ;
-      
-      rdfs:subClassOf :PharmaceuticalSubstance ;
-      
-      rdfs:comment "Any articles intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease in man or other animals. Here the term drug is used interchangeably with the term medicine although clinical knowledge make a clear difference between them." .
+      rdfs:subClassOf :PharmaceuticalSubstance .
 
 
 
@@ -4729,11 +4685,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 :PalliativeProcedure rdf:type owl:Class ;
                      
-                     rdfs:label "Palliative procedure" ;
-                     
-                     rdfs:subClassOf :MedicalProcedure ;
-                     
-                     rdfs:comment "Any procedure related to a care that offers pain and symptom management and emotional and spiritual support when you face a chronic, debilitating or life-threatening illness." .
+                     rdfs:subClassOf :MedicalProcedure .
 
 
 
