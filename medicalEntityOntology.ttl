@@ -84,9 +84,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                                  
                                  rdfs:comment "Specifying a medical score resource" ;
                                  
-                                 :rangeIncludes :MedicalScore ;
+                                 :domainIncludes :MedicalEntity ;
                                  
-                                 :domainIncludes :Thing .
+                                 :rangeIncludes :MedicalScore .
 
 
 
@@ -374,9 +374,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying a resource to which another resource belongs"@en ;
            
-           :domainIncludes :Thing ;
+           :domainIncludes :MedicalEntity ;
            
-           :rangeIncludes :Thing .
+           :rangeIncludes :MedicalEntity .
 
 
 
@@ -436,7 +436,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
               
               :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/364830008> ;
               
-              :domainIncludes :Thing .
+              :domainIncludes :MedicalEntity .
 
 
 
@@ -513,8 +513,11 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Specifying a reason for a caring event(typically a medical condition or other medical encounter reasons)"@en ;
             
-            :domainIncludes :CaringEvent ,
-                            :MedicalProcedure ,
+            :domainIncludes :CaringEvent ;
+            
+            :rangeIncludes :MedicalIndication ;
+            
+            :domainIncludes :MedicalProcedure ,
                             :Patient ;
             
             rdfs:subPropertyOf :indication .
@@ -564,9 +567,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  
                  rdfs:comment "Causality score or ranking following a codified system (like HL7 causalityExpectation) or not." ;
                  
-                 :domainIncludes :Thing ;
+                 :rangeIncludes :MedicalEntity ;
                  
-                 :rangeIncludes :Thing ;
+                 :domainIncludes :MedicalEntity ;
                  
                  rdfs:subPropertyOf :status .
 
@@ -672,9 +675,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                     
                     rdfs:comment "Specifying the confirmation status of something. eg: confirmed, suspected etc., as outcome of evaluation process"@en ;
                     
-                    :domainIncludes :Text ;
+                    :rangeIncludes :MedicalEntity ;
                     
-                    :rangeIncludes :Thing ;
+                    :domainIncludes :Text ;
                     
                     rdfs:subPropertyOf :status .
 
@@ -1259,9 +1262,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           rdfs:comment "Typically derived from W3C Time Ontology this describes a time interval when an event or action occurs."@en ;
           
-          :rangeIncludes :QuantitativeValue ;
+          :domainIncludes :MedicalEntity ;
           
-          :domainIncludes :Thing .
+          :rangeIncludes :QuantitativeValue .
 
 
 
@@ -1477,10 +1480,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    :rangeIncludes :MedicalDepartment ;
                    
-                   :domainIncludes :MedicalIntervention ,
+                   :domainIncludes :MedicalEntity ,
+                                   :MedicalIntervention ,
                                    :MedicalProcedure ,
-                                   :Patient ,
-                                   :Thing ;
+                                   :Patient ;
                    
                    rdfs:subPropertyOf :healthFacility .
 
@@ -2047,9 +2050,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:comment "Specifying any physiological role of something" ;
                    
-                   :rangeIncludes :PhysiologicalEntity ;
+                   :domainIncludes :MedicalEntity ;
                    
-                   :domainIncludes :Thing .
+                   :rangeIncludes :PhysiologicalEntity .
 
 
 
@@ -2061,9 +2064,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:comment "Specifying the role played by an agent " ;
            
-           :domainIncludes :Thing ;
+           :rangeIncludes :MedicalEntity ;
            
-           :rangeIncludes :Thing .
+           :domainIncludes :MedicalEntity .
 
 
 
@@ -2073,9 +2076,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                
                rdfs:comment "Specifying a possible cause of something" ;
                
-               :rangeIncludes :Thing ;
+               :domainIncludes :MedicalEntity ;
                
-               :domainIncludes :Thing ;
+               :rangeIncludes :MedicalEntity ;
                
                rdfs:subPropertyOf :cause .
 
@@ -2293,9 +2296,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    
                    rdfs:comment "Specifying the act of dwelling in a place. This status is linked to an address and period of the time"@en ;
                    
-                   :domainIncludes :Person ;
+                   :rangeIncludes :MedicalEntity ;
                    
-                   :rangeIncludes :Thing .
+                   :domainIncludes :Person .
 
 
 
@@ -2321,9 +2324,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           rdfs:comment "Specifying a severity evaluation of a disease: typically by classification resource or ranking scale: mild, moderate, severe, life threatening or fatal"@en ;
           
-          :rangeIncludes :Severity ;
+          :domainIncludes :MedicalEntity ;
           
-          :domainIncludes :Thing .
+          :rangeIncludes :Severity .
 
 
 
@@ -2624,9 +2627,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                               
                               rdfs:comment "rank order number of something. Typically used together with schema:numerator and schema:denominator. eg. refill number 4 out of 10." ;
                               
-                              :rangeIncludes :Number ;
+                              :domainIncludes :MedicalEntity ;
                               
-                              :domainIncludes :Thing .
+                              :rangeIncludes :Number .
 
 
 
@@ -2825,7 +2828,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
           
           :rangeIncludes :DateTime ;
           
-          :domainIncludes :Thing .
+          :domainIncludes :MedicalEntity .
 
 
 
@@ -2944,9 +2947,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
             
             rdfs:comment "Total number of something."@en ;
             
-            :rangeIncludes :Number ;
+            :domainIncludes :MedicalEntity ;
             
-            :domainIncludes :Thing .
+            :rangeIncludes :Number .
 
 
 
