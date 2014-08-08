@@ -4226,7 +4226,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "Medical history" ;
                 
-                rdfs:subClassOf :AnamnesisProcedure ;
+                rdfs:subClassOf :MedicalEnumeration ;
                 
                 rdfs:comment "The medical history of a patient is information gained by a physician by asking specific questions through anamnesis procedure, either of the patient or of other people who know the person and can give suitable information, with the aim of obtaining information useful in formulating a diagnosis and providing medical care to the patient. " .
 
@@ -4810,7 +4810,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            
            rdfs:label "Pregnancy" ;
            
-           rdfs:subClassOf :MedicalEntity ;
+           rdfs:subClassOf :ClinicalFinding ;
            
            rdfs:comment "The period from conception to birth. Can also refer to the condition of a woman or female animal that is going to have a baby or babies. This is regardless to the outcome" .
 
@@ -5146,7 +5146,7 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "Systemic review" ;
                 
-                rdfs:subClassOf :AnamnesisProcedure ;
+                rdfs:subClassOf :MedicalEnumeration ;
                 
                 rdfs:comment "The part of anamnesis where the physician makes a screening interview of all body systems and organs for relevant disorders in history of the patient." .
 

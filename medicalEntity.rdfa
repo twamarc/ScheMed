@@ -610,7 +610,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalHistory">
       <span class="h" property="rdfs:label">MedicalHistory</span>
       <span property="rdfs:comment">The medical history of a patient is information gained by a physician by asking specific questions through anamnesis procedure, either of the patient or of other people who know the person and can give suitable information, with the aim of obtaining information useful in formulating a diagnosis and providing medical care to the patient. </span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/AnamnesisProcedure">AnamnesisProcedure</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEnumeration">MedicalEnumeration</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalImaging">
@@ -924,7 +924,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/Pregnancy">
       <span class="h" property="rdfs:label">Pregnancy</span>
       <span property="rdfs:comment">The period from conception to birth. Can also refer to the condition of a woman or female animal that is going to have a baby or babies. This is regardless to the outcome</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/PrescribingProcedure">
@@ -1092,7 +1092,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/SystemicReview">
       <span class="h" property="rdfs:label">SystemicReview</span>
       <span property="rdfs:comment">The part of anamnesis where the physician makes a screening interview of all body systems and organs for relevant disorders in history of the patient.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/AnamnesisProcedure">AnamnesisProcedure</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEnumeration">MedicalEnumeration</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/TherapeuticProcedure">
