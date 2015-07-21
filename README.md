@@ -37,8 +37,8 @@ External Library:
 -----------------
 In order to run the scripts for converting *turtle* file to *RDFa* file:
 
-+ `make.sh`
-+ `make.cmd`
++ `make.sh` and `make.cmd`
++ `ttl_to_rdfa.sh` and `ttl_to_rdfa.cmd`
 
 You will need [EulerSharp](http://sourceforge.net/projects/eulersharp/).
 
