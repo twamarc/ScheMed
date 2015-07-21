@@ -1,8 +1,6 @@
 Healthcare Schema Vocabulary  (ScheMed)
 =================================
-<h2 class="group-title">Healthcare Schema Vocabulary Community Group</h2>
-  <div class="intro">
-    <p>Dear colleagues,</p>
+<p>Dear colleagues,</p>
 <p>
 I am pleased to introduce to you this healthcare community effort initiated in June 2013, to build an extension to schema.org medical entity (henceforth named health.schema.org). </p>
 The materials here are owned and maintained by the <a href="http://www.w3.org/community/schemed"> W3C Healthcare Schema Vocabulary Community Group</a>.
@@ -22,11 +20,15 @@ The bigger our community will be, the better the coverage our health schema voca
 <p>We will leave out to the consumer the next step of drafting a set of clinical information models using schema.org as a third-party pillar source of medical ontology. This will contribute to the interoperability and re-use of the patterns in healthcare information exchange.</p>
 <p>Do not miss this momentum! Please join this effort today and be part of the future healthcare information sharing community!</p>
 <p>You're all welcome!</p>
-<p>Marc Twagirumukiza, Chair</p>  </div>  
+<p>Marc Twagirumukiza, </p>
+<p><a href="http://www.w3.org/community/schemed"> W3C Healthcare Schema Vocabulary Community Group</a>.</p>
+<p>Chair</p>  </div>  
 </section>
 
 <h3>Urgent announcement:</h3>
-<p>We need 2 extra Chairs for our community Group. Just leave a comment on this page if you can volunteer here. Please note that the chair need to contribute efficiently in maintenance of Community Group materials!</p>
+<p>We need 2 extra Chairs for our <a href="http://www.w3.org/community/schemed"> W3C Healthcare Schema Vocabulary Community Group</a>.</p>
+<p>Just go to <a href="http://www.w3.org/community/schemed"> W3C Healthcare Schema Vocabulary Community Group</a> and send your contacts and short biosketch to the chair if you can volunteer here. </p>
+<p>Please note that the chair has to contribute efficiently in maintenance of Community Group materials, and this is a strictly unpaid, voluntary task, but rewarding as a community knowledge contribution!</p>
 
 Note:
 =====
