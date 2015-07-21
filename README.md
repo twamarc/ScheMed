@@ -20,10 +20,9 @@ The bigger our community will be, the better the coverage our health schema voca
 <p>We will leave out to the consumer the next step of drafting a set of clinical information models using schema.org as a third-party pillar source of medical ontology. This will contribute to the interoperability and re-use of the patterns in healthcare information exchange.</p>
 <p>Do not miss this momentum! Please join this effort today and be part of the future healthcare information sharing community!</p>
 <p>You're all welcome!</p>
-<p>Marc Twagirumukiza, </p>
-<p><a href="http://www.w3.org/community/schemed"> W3C Healthcare Schema Vocabulary Community Group</a>.</p>
-<p>Chair</p>  </div>  
-</section>
+<p>Marc Twagirumukiza, </br>
+<a href="http://www.w3.org/community/schemed"> W3C Healthcare Schema Vocabulary Community Group</a>.</br>
+Chair</br></p>
 
 <h3>Urgent announcement:</h3>
 <p>We need 2 extra Chairs for our <a href="http://www.w3.org/community/schemed"> W3C Healthcare Schema Vocabulary Community Group</a>.</p>
