@@ -1,0 +1,5277 @@
+@prefix : <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@base <http://schema.org> .
+
+<http://schema.org> rdf:type owl:Ontology ;
+                    
+                    owl:versionIRI <http://schema.org> .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://schema.org/domainIncludes
+
+:domainIncludes rdf:type owl:AnnotationProperty .
+
+
+
+###  http://schema.org/rangeIncludes
+
+:rangeIncludes rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://schema.org#drugPackage
+
+<http://schema.org#drugPackage> rdf:type owl:ObjectProperty ;
+                                
+                                rdfs:label "drugPackage" ;
+                                
+                                rdfs:comment "Specifying the drug package resource" ;
+                                
+                                :rangeIncludes <http://schema.org#DrugPackage> ;
+                                
+                                :domainIncludes :Drug .
+
+
+
+###  http://schema.org#familyRelationshipName
+
+<http://schema.org#familyRelationshipName> rdf:type owl:ObjectProperty ;
+                                           
+                                           rdfs:label "familyRelationshipName" ;
+                                           
+                                           rdfs:comment "Specifying the label of any relationship between persons. " ;
+                                           
+                                           :domainIncludes :FamilyRelation ;
+                                           
+                                           :rangeIncludes :Text .
+
+
+
+###  http://schema.org#medicalScore
+
+<http://schema.org#medicalScore> rdf:type owl:ObjectProperty ;
+                                 
+                                 rdfs:label "medical score" ;
+                                 
+                                 rdfs:comment "Specifying a medical score resource" ;
+                                 
+                                 :domainIncludes :MedicalEntity ;
+                                 
+                                 :rangeIncludes :MedicalScore .
+
+
+
+###  http://schema.org#medicalSpecimen
+
+<http://schema.org#medicalSpecimen> rdf:type owl:ObjectProperty ;
+                                    
+                                    rdfs:label "medicalSpecimen" ;
+                                    
+                                    rdfs:comment "Specifying a medical specimen resource for a person" ;
+                                    
+                                    :rangeIncludes <http://schema.org#MedicalSpecimen> ;
+                                    
+                                    :domainIncludes :MedicalProcedure ,
+                                                    :Person .
+
+
+
+###  http://schema.org#medicalSpecimenDonor
+
+<http://schema.org#medicalSpecimenDonor> rdf:type owl:ObjectProperty ;
+                                         
+                                         rdfs:label "medicalSpecimenDonor" ;
+                                         
+                                         rdfs:comment "The specimen donor" ;
+                                         
+                                         :domainIncludes <http://schema.org#MedicalSpecimen> ;
+                                         
+                                         :rangeIncludes :Person .
+
+
+
+###  http://schema.org#medicalSpecimenReceiver
+
+<http://schema.org#medicalSpecimenReceiver> rdf:type owl:ObjectProperty ;
+                                            
+                                            rdfs:label "medicalSpecimenReceiver" ;
+                                            
+                                            rdfs:comment "The specimen receiver" ;
+                                            
+                                            :domainIncludes <http://schema.org#MedicalSpecimen> ;
+                                            
+                                            :rangeIncludes :Person .
+
+
+
+###  http://schema.org/aboutRelative
+
+:aboutRelative rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "about relative" ;
+               
+               rdfs:comment "Specifying a relative who is concerned by something. i.e medical history about XY relative."@en ;
+               
+               :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/303071001> ;
+               
+               :domainIncludes :Person .
+
+
+
+###  http://schema.org/adulthoodHistory
+
+:adulthoodHistory rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "adulthood history" ;
+                  
+                  rdfs:comment "Specifying an adulthood description of someone"@en ;
+                  
+                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/41847000> ,
+                                 :AdulthoodHistory ;
+                  
+                  :domainIncludes :Person ;
+                  
+                  rdfs:subPropertyOf :socialHistory .
+
+
+
+###  http://schema.org/adverseDrugEvent
+
+:adverseDrugEvent rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "adverse drug event" ;
+                  
+                  rdfs:comment "Specifying an adverse drug event- defined according World Health Organization standards"@en ;
+                  
+                  :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/277132007> ,
+                                  <http://purl.bioontology.org/ontology/SNOMEDCT/410942007> ;
+                  
+                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/62014003> ,
+                                 :AdverseDrugReaction ;
+                  
+                  :domainIncludes :Patient ,
+                                  :TherapeuticProcedure ;
+                  
+                  rdfs:subPropertyOf :adverseEvent .
+
+
+
+###  http://schema.org/adverseEvent
+
+:adverseEvent rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "adverse event" ;
+              
+              rdfs:comment "Specifying an adverse event, in general sense - defined according World Health Organization standards"@en ;
+              
+              :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/105590001> ,
+                              <http://purl.bioontology.org/ontology/SNOMEDCT/277132007> ;
+              
+              :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/281647001> ,
+                             :AdverseEvent ;
+              
+              :domainIncludes :Patient ,
+                              :TherapeuticProcedure ;
+              
+              rdfs:subPropertyOf :adverseOutcome .
+
+
+
+###  http://schema.org/adverseOutcome
+
+:adverseOutcome rdf:type owl:ObjectProperty .
+
+
+
+###  http://schema.org/alcoholIntake
+
+:alcoholIntake rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "alcohol intake" ;
+               
+               rdfs:comment "Specifying a alcohol intake behaviour description of a person. "@en ;
+               
+               :rangeIncludes :AlcoholIntake ;
+               
+               :domainIncludes :Person ;
+               
+               rdfs:subPropertyOf :lifestyleOrHabit .
+
+
+
+###  http://schema.org/allergen
+
+:allergen rdf:type owl:ObjectProperty ;
+          
+          rdfs:label "allergen" ;
+          
+          rdfs:comment "Specifying something that can cause an allergic reaction."@en ;
+          
+          :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/421961002> ,
+                          <http://purl.bioontology.org/ontology/SNOMEDCT/473011001> ;
+          
+          :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/90260006> ;
+          
+          :domainIncludes :Allergy ,
+                          :Person .
+
+
+
+###  http://schema.org/allergy
+
+:allergy rdf:type owl:ObjectProperty ;
+         
+         rdfs:label "allergy" ;
+         
+         rdfs:comment "Specifying an allergic reaction, an hypersensitivity or disorder."@en ;
+         
+         :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/421961002> ,
+                        <http://purl.bioontology.org/ontology/SNOMEDCT/473011001> ,
+                        :Allergy ;
+         
+         :domainIncludes :Patient .
+
+
+
+###  http://schema.org/anamnesisProcedure
+
+:anamnesisProcedure rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "anamnesis procedure" ;
+                    
+                    rdfs:comment "Specifying the anamnesis procedure resource for a patient or a person." ;
+                    
+                    :rangeIncludes :AnamnesisProcedure ;
+                    
+                    :domainIncludes :Person ;
+                    
+                    rdfs:subPropertyOf :medicalProcedure .
+
+
+
+###  http://schema.org/anatomicalOrgan
+
+:anatomicalOrgan rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "anatomical organ" ;
+                 
+                 rdfs:comment "Specifying the anatomical organ for a resource" ;
+                 
+                 :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+                 
+                 :rangeIncludes :AnatomicalOrgan ;
+                 
+                 :domainIncludes :ClinicalFinding ,
+                                 :MedicalProcedure ,
+                                 :Person .
+
+
+
+###  http://schema.org/anatomicalRegion
+
+:anatomicalRegion rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "anatomical region" ;
+                  
+                  rdfs:comment "Specifying the anatomical region for a resource" ;
+                  
+                  :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+                  
+                  :rangeIncludes :AnatomicalRegion ;
+                  
+                  :domainIncludes :ClinicalFinding ,
+                                  :MedicalProcedure ,
+                                  :Person .
+
+
+
+###  http://schema.org/anatomicalStructure
+
+:anatomicalStructure rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "anatomical structure" ;
+                     
+                     rdfs:comment "Specifying the anatomical structure for a resource" ;
+                     
+                     :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+                     
+                     :rangeIncludes :AnatomicalStructure ;
+                     
+                     :domainIncludes :ClinicalFinding ,
+                                     :MedicalProcedure ,
+                                     :Person .
+
+
+
+###  http://schema.org/anatomicalSystem
+
+:anatomicalSystem rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "anatomical system" ;
+                  
+                  rdfs:comment "Specifying the anatomical system for a resource" ;
+                  
+                  :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ;
+                  
+                  :rangeIncludes :AnatomicalSystem ;
+                  
+                  :domainIncludes :ClinicalFinding ,
+                                  :MedicalProcedure ,
+                                  :Person .
+
+
+
+###  http://schema.org/arterialPulse
+
+:arterialPulse rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "arterial pulse" ;
+               
+               rdfs:comment "Specifying the regularly recurrent wave of distension in arteries that results from the progress through an artery of blood injected into the arterial system at each contraction of the ventricles of the heart" ;
+               
+               :domainIncludes :Person ;
+               
+               :rangeIncludes :Pulse ;
+               
+               rdfs:subPropertyOf :medicalSign .
+
+
+
+###  http://schema.org/belongsTo
+
+:belongsTo rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "belongs to" ;
+           
+           rdfs:comment "Specifying a resource to which another resource belongs"@en ;
+           
+           :domainIncludes :MedicalEntity ;
+           
+           :rangeIncludes :MedicalEntity .
+
+
+
+###  http://schema.org/birthPlace
+
+:birthPlace rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "Place of birth"@en ;
+            
+            rdfs:comment "Specifying the place of birth for a person"@en ;
+            
+            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            
+            :domainIncludes :Birth ,
+                            :Person ;
+            
+            :rangeIncludes :Place .
+
+
+
+###  http://schema.org/bloodGroup
+
+:bloodGroup rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "blood group" ;
+            
+            rdfs:comment "Specifying the blood group for a person, i.e type of human blood based on presence or absence of inherited antigenic substances on the surface of red blood cells." ;
+            
+            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/365636006> ;
+            
+            :domainIncludes :Person .
+
+
+
+###  http://schema.org/bloodPressure
+
+:bloodPressure rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "blood pressure" ;
+               
+               rdfs:comment "Specifying the blood pressure resource of a patient" ;
+               
+               :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/75367002> ,
+                              :BloodPressure ;
+               
+               :domainIncludes :Person .
+
+
+
+###  http://schema.org/bodyPosition
+
+:bodyPosition rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "body position" ;
+              
+              rdfs:comment "Specifying a position of human body or anatomical entity in given space e.g. Supine body position, standing position, sitting position etc."@en ;
+              
+              :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/364830008> ;
+              
+              :domainIncludes :MedicalEntity .
+
+
+
+###  http://schema.org/bodySide
+
+:bodySide rdf:type owl:ObjectProperty ;
+          
+          rdfs:label "body side" ;
+          
+          rdfs:comment "Specifying the laterality of the body structure, body organ, or body region." ;
+          
+          :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                          :ClinicalFinding ;
+          
+          :rangeIncludes :Text .
+
+
+
+###  http://schema.org/careLocation
+
+:careLocation rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "care location" ;
+              
+              rdfs:comment "Specifying a location or a place where the care event is taking place" ;
+              
+              :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ,
+                              :Event ;
+              
+              :rangeIncludes :HealthFacility ,
+                             :MedicalDepartment ;
+              
+              :domainIncludes :MedicalProcedure ;
+              
+              :rangeIncludes :MedicalUnit ;
+              
+              :domainIncludes :Patient ;
+              
+              :rangeIncludes :Place ;
+              
+              rdfs:subPropertyOf :location .
+
+
+
+###  http://schema.org/careProvider
+
+:careProvider rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "care provider" ;
+              
+              rdfs:comment "Specifying a person, medical organization, or unit care-provider for any health care services"@en ;
+              
+              :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ;
+              
+              :domainIncludes :CaringEvent ;
+              
+              :rangeIncludes :HealthcareProfessional ,
+                             :MedicalOrganization ;
+              
+              :domainIncludes :MedicalProcedure ,
+                              :Patient ;
+              
+              :rangeIncludes :Person ;
+              
+              rdfs:subPropertyOf :provider .
+
+
+
+###  http://schema.org/careReason
+
+:careReason rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "care reason" ;
+            
+            rdfs:comment "Specifying a reason for a caring event(typically a medical condition or other medical encounter reasons)"@en ;
+            
+            :domainIncludes :CaringEvent ;
+            
+            :rangeIncludes :MedicalIndication ;
+            
+            :domainIncludes :MedicalProcedure ,
+                            :Patient ;
+            
+            rdfs:subPropertyOf :indication .
+
+
+
+###  http://schema.org/caredPerson
+
+:caredPerson rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "cared person" ;
+             
+             rdfs:comment "Specifying a person (typically a patient) receiving services from the health care professional during a caring event."@en ;
+             
+             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                             :CaringEvent ,
+                             :HealthcareProfessional ;
+             
+             :rangeIncludes :Patient ;
+             
+             owl:inverseOf :treatingPhysician .
+
+
+
+###  http://schema.org/caringEvent
+
+:caringEvent rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "caring event" ;
+             
+             rdfs:comment "Specifying an event wherein services are rendered by members of the health profession (or under their supervision) for the benefit of the patient."@en ;
+             
+             :rangeIncludes :CaringEvent ;
+             
+             :domainIncludes :MedicalCondition ,
+                             :Patient ;
+             
+             rdfs:subPropertyOf :lifeEvent .
+
+
+
+###  http://schema.org/causalityStatus
+
+:causalityStatus rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "causalityStatus" ;
+                 
+                 rdfs:comment "Causality score or ranking following a codified system (like HL7 causalityExpectation) or not." ;
+                 
+                 :rangeIncludes :MedicalEntity ;
+                 
+                 :domainIncludes :MedicalEntity ;
+                 
+                 rdfs:subPropertyOf :status .
+
+
+
+###  http://schema.org/cause
+
+:cause rdf:type owl:ObjectProperty .
+
+
+
+###  http://schema.org/chiefComplaint
+
+:chiefComplaint rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "chief complaint" ;
+                
+                rdfs:comment "Specifying a chief complaint resource" ;
+                
+                :rangeIncludes :ChiefComplaint ;
+                
+                :domainIncludes :Patient ;
+                
+                rdfs:subPropertyOf :medicalSymptom .
+
+
+
+###  http://schema.org/childhoodHistory
+
+:childhoodHistory rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "childhood history" ;
+                  
+                  rdfs:comment "Specifying a resource describing the childhood history of a patient or a person" ;
+                  
+                  :rangeIncludes :ChildhoodHistory ;
+                  
+                  :domainIncludes :Person ;
+                  
+                  rdfs:subPropertyOf :socialHistory .
+
+
+
+###  http://schema.org/clinicalDocument
+
+:clinicalDocument rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "clinical document" ;
+                  
+                  rdfs:comment "Specifying any clinical document" ;
+                  
+                  :rangeIncludes :ClinicalDocument ;
+                  
+                  :domainIncludes :Patient .
+
+
+
+###  http://schema.org/clinicalFinding
+
+:clinicalFinding rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "clinical finding"@en ;
+                 
+                 rdfs:comment "Specifying a clinical finding of a patient through a formal clinical examination. example: Body temperature, etc"@en ;
+                 
+                 :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/118246004> ,
+                                <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                                :ClinicalFinding ;
+                 
+                 :domainIncludes :Patient .
+
+
+
+###  http://schema.org/comorbidity
+
+:comorbidity rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "comorbidity" ;
+             
+             rdfs:comment "Specifying a health disorder simultaneously but independently existing with another health disorder in a human." ;
+             
+             :domainIncludes :MedicalCondition ;
+             
+             :rangeIncludes :MedicalCondition ;
+             
+             :domainIncludes :Patient .
+
+
+
+###  http://schema.org/comprisedOf
+
+:comprisedOf rdf:type owl:ObjectProperty ;
+             
+             rdfs:comment "Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system."@en .
+
+
+
+###  http://schema.org/confirmationStatus
+
+:confirmationStatus rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "confirmation status"@en ;
+                    
+                    rdfs:comment "Specifying the confirmation status of something. eg: confirmed, suspected etc., as outcome of evaluation process"@en ;
+                    
+                    :rangeIncludes :MedicalEntity ;
+                    
+                    :domainIncludes :Text ;
+                    
+                    rdfs:subPropertyOf :status .
+
+
+
+###  http://schema.org/cosmeticProcedure
+
+:cosmeticProcedure rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "cosmetic procedure" ;
+                   
+                   rdfs:comment "Specifying a cosmetic procedure resource for a patient or a person" ;
+                   
+                   :rangeIncludes :MedicalProcedure ;
+                   
+                   :domainIncludes :Person ;
+                   
+                   rdfs:subPropertyOf :electiveProcedure .
+
+
+
+###  http://schema.org/deathPlace
+
+:deathPlace rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "Place of death"@en ;
+            
+            rdfs:comment "Specifying the place of death for a person"@en ;
+            
+            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000> ;
+            
+            :domainIncludes :Death ,
+                            :Person ;
+            
+            :rangeIncludes :Place .
+
+
+
+###  http://schema.org/diagnosis
+
+:diagnosis rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "diagnosis" ;
+           
+           rdfs:comment "Specifying a medical condition which is output of a diagnosis process"@en ;
+           
+           :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
+                          :MedicalCondition ;
+           
+           :domainIncludes :Patient .
+
+
+
+###  http://schema.org/diagnosticMean
+
+:diagnosticMean rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "diagnosis mean" ;
+                
+                rdfs:comment "Specifying the mean for diagnosis procedure." ;
+                
+                :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/260686004> ;
+                
+                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
+                                :Diagnosis ;
+                
+                :rangeIncludes :MedicalDevice ,
+                               :MedicalTest .
+
+
+
+###  http://schema.org/diagnosticPlace
+
+:diagnosticPlace rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "diagnostic place" ;
+                 
+                 rdfs:comment "Specifying the location or place where the diagnosis was made. Typically the department or health facility unit." ;
+                 
+                 :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
+                                 :Diagnosis ;
+                 
+                 :rangeIncludes :HealthFacility ,
+                                :MedicalDepartment ,
+                                :MedicalUnit .
+
+
+
+###  http://schema.org/diagnosticProcedure
+
+:diagnosticProcedure rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "diagnostic procedure" ;
+                     
+                     rdfs:comment "Specifying the diagnostic procedure resource for a patient or a person." ;
+                     
+                     :rangeIncludes :DiagnosticProcedure ;
+                     
+                     :domainIncludes :Patient ;
+                     
+                     rdfs:subPropertyOf :medicalProcedure .
+
+
+
+###  http://schema.org/diagnosticType
+
+:diagnosticType rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "diagnostic type" ;
+                
+                rdfs:comment "Specifying the type of diagnosis i.e medical discharge diagnosis, admission diagnosis, etc."@en ;
+                
+                :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/106229004> ;
+                
+                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ,
+                                :Diagnosis .
+
+
+
+###  http://schema.org/diastolicBloodPressure
+
+:diastolicBloodPressure rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:label "diastolic blood pressure" ;
+                        
+                        rdfs:comment "Specifying a diastolic arterial blood pressure of a patient."@en ;
+                        
+                        :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/271650006> ;
+                        
+                        :domainIncludes :Person ;
+                        
+                        rdfs:subPropertyOf :bloodPressure .
+
+
+
+###  http://schema.org/drug
+
+:drug rdf:type owl:ObjectProperty ;
+      
+      :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/410942007> ,
+                     :Drug ;
+      
+      :domainIncludes :MedicalCondition ,
+                      :Patient ,
+                      :TherapeuticProcedure .
+
+
+
+###  http://schema.org/drugAdministration
+
+:drugAdministration rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "drug administration" ;
+                    
+                    rdfs:comment "specifying the event of administering the drug to the patient. Typically associated with the route of administration i.e.oral, injection etc." ;
+                    
+                    :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/182832007> ;
+                    
+                    :domainIncludes :MedicalCondition ,
+                                    :Patient ,
+                                    :TherapeuticProcedure .
+
+
+
+###  http://schema.org/drugDispensation
+
+:drugDispensation rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "drug dispensation" ;
+                  
+                  rdfs:comment "Specifying an drug dispensation event i.e the event of delivering the drug to the patient at pharmacy. This is different to the drug administration"@en ;
+                  
+                  :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ;
+                  
+                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/440298008> ;
+                  
+                  :domainIncludes :HealthcareProfessional ,
+                                  :MedicalCondition ,
+                                  :TherapeuticProcedure .
+
+
+
+###  http://schema.org/drugDispensator
+
+:drugDispensator rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "drug dispensator" ;
+                 
+                 rdfs:comment "Health care professional entitled to deliver drugs on prescription to the end-consumer (pharmacist). " ;
+                 
+                 :rangeIncludes :HealthcareProfessional ;
+                 
+                 :domainIncludes :Patient ,
+                                 :PharmaceuticalSubstance ;
+                 
+                 rdfs:subPropertyOf :provider .
+
+
+
+###  http://schema.org/drugIntaken
+
+:drugIntaken rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "drug intake" ;
+             
+             rdfs:comment "Specifying an event of taking cure medication, related to a medication period"@en ;
+             
+             :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/129019007> ;
+             
+             :domainIncludes :MedicalCondition ,
+                             :Patient ,
+                             :TherapeuticProcedure .
+
+
+
+###  http://schema.org/drugPreparation
+
+:drugPreparation rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "drug preparation" ;
+                 
+                 rdfs:comment "Specifying a drug preparation used in a procedure, typically prepared for a patient from one or multiple drug packages"@en ;
+                 
+                 :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/105904009> ;
+                 
+                 :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                                 :HealthcareProfessional ,
+                                 :Person ,
+                                 :TherapeuticProcedure .
+
+
+
+###  http://schema.org/educationLevel
+
+:educationLevel rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "education level" ;
+                
+                rdfs:comment "Specifying the education level of the person" ;
+                
+                :rangeIncludes :EducationLevel ;
+                
+                :domainIncludes :Person .
+
+
+
+###  http://schema.org/elderhoodHistory
+
+:elderhoodHistory rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "elderhood history" ;
+                  
+                  rdfs:comment "specifying the elderhood history of someone" ;
+                  
+                  :rangeIncludes :Elderhood ;
+                  
+                  :domainIncludes :Person ;
+                  
+                  rdfs:subPropertyOf :socialHistory .
+
+
+
+###  http://schema.org/electiveProcedure
+
+:electiveProcedure rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "elective procedure" ;
+                   
+                   rdfs:comment "Specifying the elective procedure resource for a patient or a person." ;
+                   
+                   :rangeIncludes :ElectiveProcedure ;
+                   
+                   :domainIncludes :Person ;
+                   
+                   rdfs:subPropertyOf :medicalProcedure .
+
+
+
+###  http://schema.org/encounterPlace
+
+:encounterPlace rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "medical encounter place" ;
+                
+                rdfs:comment "specifying the location or a place where the medical encounter took place" ;
+                
+                :rangeIncludes :HealthFacility ;
+                
+                :domainIncludes :MedicalEncounter ;
+                
+                rdfs:subPropertyOf :location .
+
+
+
+###  http://schema.org/encounterProvider
+
+:encounterProvider rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "medical encounter provider" ;
+                   
+                   rdfs:comment "specifying the provider of the medical encounter" ;
+                   
+                   :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                                  :HealthcareProfessional ;
+                   
+                   :domainIncludes :MedicalEncounter ;
+                   
+                   :rangeIncludes :Person ;
+                   
+                   rdfs:subPropertyOf :provider .
+
+
+
+###  http://schema.org/encounterReason
+
+:encounterReason rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "medical encounter reason" ;
+                 
+                 rdfs:comment "specifying the reason or indication for a patient medical encounter" ;
+                 
+                 :rangeIncludes :MedicalCondition ;
+                 
+                 :domainIncludes :MedicalEncounter ;
+                 
+                 :rangeIncludes :MedicalIndication ;
+                 
+                 :domainIncludes :Patient ;
+                 
+                 rdfs:subPropertyOf :indication .
+
+
+
+###  http://schema.org/encounterStatus
+
+:encounterStatus rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "encounter status" ;
+                 
+                 rdfs:comment "specifying the status of medical encounter procedure." ;
+                 
+                 :domainIncludes :MedicalEncounter ,
+                                 :Patient ,
+                                 :Person ;
+                 
+                 :rangeIncludes :Text ;
+                 
+                 rdfs:subPropertyOf :status .
+
+
+
+###  http://schema.org/ethnicity
+
+:ethnicity rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "ethnicity" ;
+           
+           rdfs:comment "Specifying the ethnicity resource of someone. Ethnicity or ethnic group is a socially defined category of people. Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property " ;
+           
+           :rangeIncludes :Ethnicity ;
+           
+           :domainIncludes :Person .
+
+
+
+###  http://schema.org/examination
+
+:examination rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "examination" ;
+             
+             rdfs:comment "Specifying an examination procedure in general performed on  something or on a patient."@en ;
+             
+             :rangeIncludes :MedicalTest ;
+             
+             :domainIncludes :Patient .
+
+
+
+###  http://schema.org/familyMedicalHistory
+
+:familyMedicalHistory rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "family history" ;
+                      
+                      rdfs:comment "Specifying a personal history as a part of a full medical history provided by the patient during an anamnesis procedure ."@en ;
+                      
+                      :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/57177007> ;
+                      
+                      :domainIncludes :Person ;
+                      
+                      rdfs:subPropertyOf :medicalHistory .
+
+
+
+###  http://schema.org/familyMember
+
+:familyMember rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "family member" ;
+              
+              rdfs:comment "Specifying a family member for this person" ;
+              
+              :rangeIncludes :Person ;
+              
+              :domainIncludes :Person .
+
+
+
+###  http://schema.org/familyRelationship
+
+:familyRelationship rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "relationship" ;
+                    
+                    rdfs:comment "Specifying a relationship between persons. Typically between persons uses the 'American Kinship terminology'."@en ;
+                    
+                    :rangeIncludes :FamilyRelation ;
+                    
+                    :domainIncludes :Person .
+
+
+
+###  http://schema.org/father
+
+:father rdf:type owl:ObjectProperty ;
+        
+        rdfs:label "father" ;
+        
+        rdfs:comment "Specifying a father (parent) of this person when no other specifications are given." ;
+        
+        :rangeIncludes :Person ;
+        
+        :domainIncludes :Person ;
+        
+        rdfs:subPropertyOf :parent .
+
+
+
+###  http://schema.org/foodIntolerance
+
+:foodIntolerance rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "food intolerance" ;
+                 
+                 rdfs:comment "Food intolerance or non-allergic food hypersensitivity is a term used widely for varied physiological responses associated with a particular food, or compound found in a range of foods." ;
+                 
+                 :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/235719002> ,
+                                :MedicalCondition ;
+                 
+                 :domainIncludes :Patient ;
+                 
+                 rdfs:subPropertyOf :adverseOutcome .
+
+
+
+###  http://schema.org/guarantor
+
+:guarantor rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "guarantor" ;
+           
+           rdfs:comment "Specifying a person or company , known as guarantor, offering insurance policies in return for premiums"@en ;
+           
+           :rangeIncludes :Organization ,
+                          :Person ;
+           
+           :domainIncludes :Person .
+
+
+
+###  http://schema.org/gynObsHistory
+
+:gynObsHistory rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "gynaecology and obstetric history" ;
+               
+               rdfs:comment "Specifying the gynaecology-obstetric history of a patient" ;
+               
+               :rangeIncludes :GynObsHistory ;
+               
+               :domainIncludes :Person ;
+               
+               rdfs:subPropertyOf :personalHistory .
+
+
+
+###  http://schema.org/healthFacility
+
+:healthFacility rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "health facility" ;
+                
+                rdfs:comment "Specifying a health facility where care is being given." ;
+                
+                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                                :ClinicalFinding ;
+                
+                :rangeIncludes :HealthFacility ;
+                
+                :domainIncludes :LifeEvent ,
+                                :MedicalIntervention ,
+                                :MedicalProcedure ,
+                                :Patient .
+
+
+
+###  http://schema.org/historyOfPresentIllness
+
+:historyOfPresentIllness rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:label "History of Present Illness" ;
+                         
+                         rdfs:comment "The history of the present illness." ;
+                         
+                         :rangeIncludes :HistoryOfPresentIllness ;
+                         
+                         :domainIncludes :Patient ;
+                         
+                         rdfs:subPropertyOf :personalHistory .
+
+
+
+###  http://schema.org/indication
+
+:indication rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "indication"@en ;
+            
+            rdfs:comment "A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication."@en ;
+            
+            :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/71388002> ,
+                            :CaringEvent ,
+                            :MedicalDevice ,
+                            :MedicalIndication ;
+            
+            :rangeIncludes :MedicalIndication ;
+            
+            :domainIncludes :MedicalIntervention ,
+                            :MedicalProcedure ,
+                            :MedicalTherapy .
+
+
+
+###  http://schema.org/insurance
+
+:insurance rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "insurance" ;
+           
+           rdfs:comment "Specifying an insurance scheme for a patient. "@en ;
+           
+           :rangeIncludes :Offer ;
+           
+           :domainIncludes :Patient .
+
+
+
+###  http://schema.org/interpretation
+
+:interpretation rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "interpretation" ;
+                
+                rdfs:comment "Specifying an interpretation of something or concise and clinically contextualized narrative interpretation of laboratory results or medical test."@en ;
+                
+                :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/243814003> ,
+                               <http://purl.bioontology.org/ontology/SNOMEDCT/277034006> ;
+                
+                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                                :ClinicalFinding ,
+                                :DiagnosticProcedure ,
+                                :PhysicalExamination .
+
+
+
+###  http://schema.org/interval
+
+:interval rdf:type owl:ObjectProperty ;
+          
+          rdfs:label "interval" ;
+          
+          rdfs:comment "Typically derived from W3C Time Ontology this describes a time interval when an event or action occurs."@en ;
+          
+          :domainIncludes :MedicalEntity ;
+          
+          :rangeIncludes :QuantitativeValue .
+
+
+
+###  http://schema.org/laboratoryProcedure
+
+:laboratoryProcedure rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "laboratory procedure" ;
+                     
+                     rdfs:comment "Specifying a laboratory procedure resource for a patient or a person." ;
+                     
+                     :rangeIncludes :LaboratoryTest ;
+                     
+                     :domainIncludes :Patient ;
+                     
+                     rdfs:subPropertyOf :diagnosticProcedure .
+
+
+
+###  http://schema.org/laboratoryResult
+
+:laboratoryResult rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "laboratory result" ;
+                  
+                  rdfs:comment "Specifying the laboratory test findings for a person" ;
+                  
+                  :rangeIncludes :LaboratoryResult ;
+                  
+                  :domainIncludes :Patient .
+
+
+
+###  http://schema.org/lastMenstruationPeriod
+
+:lastMenstruationPeriod rdf:type owl:ObjectProperty ;
+                        
+                        rdfs:comment "Specifying the last menstruation period of a woman" ;
+                        
+                        :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+                        
+                        :rangeIncludes :QuantitativeValue ;
+                        
+                        rdfs:subPropertyOf :interval .
+
+
+
+###  http://schema.org/lifeEvent
+
+:lifeEvent rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "life event" ;
+           
+           rdfs:comment "Specifying an event in person's life time line" ;
+           
+           :rangeIncludes :LifeEvent ;
+           
+           :domainIncludes :Patient .
+
+
+
+###  http://schema.org/lifestyleOrHabit
+
+:lifestyleOrHabit rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "lifestyles or habits" ;
+                  
+                  rdfs:comment "describing the lifestyles or habits of the person" ;
+                  
+                  :rangeIncludes :LifestyleOrHabits ;
+                  
+                  :domainIncludes :Person ;
+                  
+                  rdfs:subPropertyOf :personalHistory .
+
+
+
+###  http://schema.org/location
+
+:location rdf:type owl:ObjectProperty .
+
+
+
+###  http://schema.org/maritalStatus
+
+:maritalStatus rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "has marital status"@en ;
+               
+               rdfs:comment "Specifying an agent having the social and/or juridical status of being married or unmarried. "@en ;
+               
+               :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/365581002> ;
+               
+               :domainIncludes :Person .
+
+
+
+###  http://schema.org/maternalRelative
+
+:maternalRelative rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "maternal relative" ;
+                  
+                  rdfs:comment "Specifying the a maternal relative person of this person" ;
+                  
+                  :rangeIncludes :Person ;
+                  
+                  :domainIncludes :Person ;
+                  
+                  rdfs:subPropertyOf :familyMember .
+
+
+
+###  http://schema.org/medicalAdmission
+
+:medicalAdmission rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "medicalAdmission" ;
+                  
+                  rdfs:comment "Specifying admission procedure related to a resource, activity, another procedure, or patient"@en ;
+                  
+                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ,
+                                 :AdmissionProcedure ,
+                                 :MedicalAdmission ;
+                  
+                  :domainIncludes :MedicalEncounter ,
+                                  :Person ;
+                  
+                  rdfs:subPropertyOf :medicalEncounter .
+
+
+
+###  http://schema.org/medicalCase
+
+:medicalCase rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "medical case" ;
+             
+             rdfs:comment "Specifying a medical case for a given medical entity or patient. A medical case is a part of a full medical record of a patient."@en ;
+             
+             :rangeIncludes :MedicalCase ;
+             
+             :domainIncludes :Patient ;
+             
+             rdfs:subPropertyOf :medicalRecord .
+
+
+
+###  http://schema.org/medicalCertificate
+
+:medicalCertificate rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "medical certificate" ;
+                    
+                    rdfs:comment "Specifying any medical certificate" ;
+                    
+                    :rangeIncludes :MedicalCertificate ;
+                    
+                    :domainIncludes :Patient ;
+                    
+                    rdfs:subPropertyOf :clinicalDocument .
+
+
+
+###  http://schema.org/medicalClinic
+
+:medicalClinic rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "medical clinic" ;
+               
+               rdfs:comment "Specifying the medical clinic where a procedure or a care event is taking place or attended by a patient." ;
+               
+               :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                               :ClinicalFinding ,
+                               :LifeEvent ;
+               
+               :rangeIncludes :MedicalClinic ;
+               
+               :domainIncludes :MedicalIntervention ,
+                               :MedicalProcedure ,
+                               :Patient ;
+               
+               rdfs:subPropertyOf :healthFacility .
+
+
+
+###  http://schema.org/medicalCondition
+
+:medicalCondition rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "medical condition" ;
+                  
+                  rdfs:comment "Specifying a medical condition in general, diagnosed or not."@en ;
+                  
+                  :rangeIncludes :MedicalCondition ,
+                                 :MorbidityEvent ;
+                  
+                  :domainIncludes :Patient .
+
+
+
+###  http://schema.org/medicalDepartment
+
+:medicalDepartment rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "medical department" ;
+                   
+                   rdfs:comment "Specifying the medical department where a procedure or a care event is taking place or attended by a patient." ;
+                   
+                   :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                                   :ClinicalFinding ,
+                                   :LifeEvent ;
+                   
+                   :rangeIncludes :MedicalDepartment ;
+                   
+                   :domainIncludes :MedicalEntity ,
+                                   :MedicalIntervention ,
+                                   :MedicalProcedure ,
+                                   :Patient ;
+                   
+                   rdfs:subPropertyOf :healthFacility .
+
+
+
+###  http://schema.org/medicalDischarge
+
+:medicalDischarge rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "medicalDischarge" ;
+                  
+                  rdfs:comment "specifying a medical discharge procedure resource of a patient" ;
+                  
+                  :rangeIncludes :MedicalDischarge ;
+                  
+                  :domainIncludes :MedicalEncounter ,
+                                  :Patient ;
+                  
+                  rdfs:subPropertyOf :medicalEncounter .
+
+
+
+###  http://schema.org/medicalEncounter
+
+:medicalEncounter rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "medicalEncounter" ;
+                  
+                  rdfs:comment "Specifying a medical encounter between the patient and a healthcare provider."@en ;
+                  
+                  :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/308335008> ,
+                                 :MedicalEncounter ;
+                  
+                  :domainIncludes :Person .
+
+
+
+###  http://schema.org/medicalHistory
+
+:medicalHistory rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "medical history" ;
+                
+                rdfs:comment "Specifying a full medical history provided by the patient during an anamnesis procedure ." ;
+                
+                :rangeIncludes :MedicalHistory ;
+                
+                :domainIncludes :Person .
+
+
+
+###  http://schema.org/medicalIntervention
+
+:medicalIntervention rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "medical intervention" ;
+                     
+                     rdfs:comment "Specifying the medical intervention resource for the patient or person. Medical intervention is a broad non specific term often used as a set of multiple procedures." ;
+                     
+                     :rangeIncludes :MedicalIntervention ;
+                     
+                     :domainIncludes :Patient .
+
+
+
+###  http://schema.org/medicalLetter
+
+:medicalLetter rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "medical letter" ;
+               
+               rdfs:comment "Specifying any medical letter " ;
+               
+               :rangeIncludes :ClinicalDocument ;
+               
+               :domainIncludes :Patient ;
+               
+               rdfs:subPropertyOf :clinicalDocument .
+
+
+
+###  http://schema.org/medicalPrescription
+
+:medicalPrescription rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "medical prescription" ;
+                     
+                     rdfs:comment "Linking a patient with his medical order (=written prescription) for the patient Eg. hasPrescription or gotPrescribed. For the provider we use the property prescribingProcedure."@en ;
+                     
+                     :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/440545006> ,
+                                    :MedicalPrescription ;
+                     
+                     :domainIncludes :Patient ;
+                     
+                     rdfs:subPropertyOf :clinicalDocument .
+
+
+
+###  http://schema.org/medicalProcedure
+
+:medicalProcedure rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "medical procedure" ;
+                  
+                  rdfs:comment "Specifying the medical procedure resource of the patient or person." ;
+                  
+                  :rangeIncludes :MedicalProcedure ;
+                  
+                  :domainIncludes :Patient ;
+                  
+                  rdfs:subPropertyOf :procedure .
+
+
+
+###  http://schema.org/medicalRecord
+
+:medicalRecord rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "medical record" ;
+               
+               rdfs:comment "Specifying a medical record for a given medical entity or patient."@en ;
+               
+               :rangeIncludes :MedicalRecord ;
+               
+               :domainIncludes :Patient .
+
+
+
+###  http://schema.org/medicalReport
+
+:medicalReport rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "medical report" ;
+               
+               rdfs:comment "Specifying any medical report" ;
+               
+               :domainIncludes :MedicalProcedure ;
+               
+               :rangeIncludes :MedicalRecord ,
+                              :MedicalReport ;
+               
+               :domainIncludes :Patient ;
+               
+               rdfs:subPropertyOf :clinicalDocument .
+
+
+
+###  http://schema.org/medicalRoom
+
+:medicalRoom rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "medical room" ;
+             
+             rdfs:comment "Specifying the medical room where a procedure or a care event is taking place or attended by a patient." ;
+             
+             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                             :ClinicalFinding ,
+                             :LifeEvent ,
+                             :MedicalIntervention ,
+                             :MedicalProcedure ;
+             
+             :rangeIncludes :MedicalRoom ;
+             
+             :domainIncludes :Patient ;
+             
+             rdfs:subPropertyOf :healthFacility .
+
+
+
+###  http://schema.org/medicalSign
+
+:medicalSign rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "medicalSign" ;
+             
+             rdfs:comment "Specifying a medicalSign resource" ;
+             
+             :domainIncludes :MedicalCondition ,
+                             :MedicalScore ,
+                             :Patient ;
+             
+             rdfs:subPropertyOf :signOrSymptom .
+
+
+
+###  http://schema.org/medicalSpecialty
+
+:medicalSpecialty rdf:type owl:ObjectProperty .
+
+
+
+###  http://schema.org/medicalSubSpecialty
+
+:medicalSubSpecialty rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "medical subspecialty" ;
+                     
+                     rdfs:comment "Specifying the medical sub-speciality of a healthcare provider" ;
+                     
+                     :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                                     :HealthFacility ,
+                                     :HealthcareProfessional ;
+                     
+                     :rangeIncludes :MedicalSubSpeciality ;
+                     
+                     :domainIncludes :Person ;
+                     
+                     rdfs:subPropertyOf :medicalSpecialty .
+
+
+
+###  http://schema.org/medicalSymptom
+
+:medicalSymptom rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "medicalSymptom" ;
+                
+                rdfs:comment "Specifying a symptom resource" ;
+                
+                :rangeIncludes :MedicalSymptom ;
+                
+                :domainIncludes :Patient ;
+                
+                rdfs:subPropertyOf :signOrSymptom .
+
+
+
+###  http://schema.org/medicalTransfer
+
+:medicalTransfer rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "medicalTransfer" ;
+                 
+                 rdfs:comment "Specifying a medical transfer event of patient from one place in a health care environment to another" ;
+                 
+                 :domainIncludes :MedicalEncounter ;
+                 
+                 :rangeIncludes :MedicalTransfer ;
+                 
+                 :domainIncludes :Person ;
+                 
+                 rdfs:subPropertyOf :medicalEncounter .
+
+
+
+###  http://schema.org/medicalUnit
+
+:medicalUnit rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "medical unit" ;
+             
+             rdfs:comment "Specifying the medical department unit where a procedure or a care event is taking place or attended by a patient." ;
+             
+             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                             :ClinicalFinding ,
+                             :LifeEvent ,
+                             :MedicalIntervention ,
+                             :MedicalProcedure ;
+             
+             :rangeIncludes :MedicalUnit ;
+             
+             :domainIncludes :Patient ;
+             
+             rdfs:subPropertyOf :healthFacility .
+
+
+
+###  http://schema.org/medicalWard
+
+:medicalWard rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "medical ward" ;
+             
+             rdfs:comment "Specifying the medical ward (a set of rooms) where a procedure or a care event is taking place or attended by a patient." ;
+             
+             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                             :ClinicalFinding ,
+                             :LifeEvent ,
+                             :MedicalIntervention ,
+                             :MedicalProcedure ;
+             
+             :rangeIncludes :MedicalWard ;
+             
+             :domainIncludes :Patient ;
+             
+             rdfs:subPropertyOf :healthFacility .
+
+
+
+###  http://schema.org/medicationProcedure
+
+:medicationProcedure rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "medication procedure" ;
+                     
+                     rdfs:comment "Specifying a medication procedure resource for a patient or a person" ;
+                     
+                     :rangeIncludes :MedicalTherapy ;
+                     
+                     :domainIncludes :Patient ;
+                     
+                     rdfs:subPropertyOf :therapeuticProcedure .
+
+
+
+###  http://schema.org/menopause
+
+:menopause rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "menopause" ;
+           
+           rdfs:comment "Specifying the menopause event of a women " ;
+           
+           :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/276477006> ,
+                          :Menopause ;
+           
+           :domainIncludes :Person ;
+           
+           rdfs:subPropertyOf :gynObsHistory .
+
+
+
+###  http://schema.org/menstruation
+
+:menstruation rdf:type owl:ObjectProperty ;
+              
+              rdfs:label "menstruation" ;
+              
+              rdfs:comment "Specifying the menstruation event of a women " ;
+              
+              :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+              
+              :rangeIncludes :Menstruation ;
+              
+              rdfs:subPropertyOf :gynObsHistory .
+
+
+
+###  http://schema.org/menstruationPeriod
+
+:menstruationPeriod rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "menstruation period" ;
+                    
+                    rdfs:comment "Specifying the menstruation period description event of a women " ;
+                    
+                    :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+                    
+                    :rangeIncludes :QuantitativeValue ;
+                    
+                    rdfs:subPropertyOf :interval .
+
+
+
+###  http://schema.org/mentalHealthHistory
+
+:mentalHealthHistory rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "mental health history" ;
+                     
+                     rdfs:comment "Specifying the mental health history for a patient" ;
+                     
+                     :rangeIncludes :MentalHealthHistory ;
+                     
+                     :domainIncludes :Person ;
+                     
+                     rdfs:subPropertyOf :personalHistory .
+
+
+
+###  http://schema.org/mother
+
+:mother rdf:type owl:ObjectProperty ;
+        
+        rdfs:label "mother" ;
+        
+        rdfs:comment "Specifying a mother (parent) of this person when no other specifications are given." ;
+        
+        :domainIncludes :Person ;
+        
+        :rangeIncludes :Person ;
+        
+        rdfs:subPropertyOf :parent .
+
+
+
+###  http://schema.org/newborn
+
+:newborn rdf:type owl:ObjectProperty ;
+         
+         rdfs:label "newborn" ;
+         
+         rdfs:comment "Specifying the newborn person " ;
+         
+         :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+         
+         :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/360149000> ,
+                         :LifeEvent ,
+                         :MedicalIntervention ,
+                         :MedicalProcedure ,
+                         :Person .
+
+
+
+###  http://schema.org/observable
+
+:observable rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "observable"@en ;
+            
+            rdfs:comment "Specifying a clinical observable of a patient not necessarily through a clinical examination. example: a swelling, etc"@en ;
+            
+            :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/363787002> ;
+            
+            :domainIncludes :Patient .
+
+
+
+###  http://schema.org/occupationalHistory
+
+:occupationalHistory rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "occupational history" ;
+                     
+                     rdfs:comment "Specifying the occupational history resource of the patient or person." ;
+                     
+                     :rangeIncludes :OccupationalHistory ;
+                     
+                     :domainIncludes :Person ;
+                     
+                     rdfs:subPropertyOf :socialHistory .
+
+
+
+###  http://schema.org/onsetMode
+
+:onsetMode rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "onset mode" ;
+           
+           rdfs:comment "Specifying a way a process, an illness, or an event comes into existence"@en ;
+           
+           :domainIncludes :MedicalCondition ;
+           
+           :rangeIncludes :OnsetMode .
+
+
+
+###  http://schema.org/palliativeProcedure
+
+:palliativeProcedure rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "palliative procedure" ;
+                     
+                     rdfs:comment "Specifying a palliative procedure resource for a patient or a person" ;
+                     
+                     :rangeIncludes :PalliativeProcedure ;
+                     
+                     :domainIncludes :Patient ;
+                     
+                     rdfs:subPropertyOf :therapeuticProcedure .
+
+
+
+###  http://schema.org/parent
+
+:parent rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf :familyMember .
+
+
+
+###  http://schema.org/pastMedicalHistory
+
+:pastMedicalHistory rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "past medical history" ;
+                    
+                    rdfs:comment "Specifying the past medical history of a patient" ;
+                    
+                    :rangeIncludes :PastMedicalHistory ;
+                    
+                    :domainIncludes :Person ;
+                    
+                    rdfs:subPropertyOf :personalHistory .
+
+
+
+###  http://schema.org/paternalRelative
+
+:paternalRelative rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "paternal relative" ;
+                  
+                  rdfs:comment "Specifying the a paternal relative person of this person" ;
+                  
+                  :rangeIncludes :Person ;
+                  
+                  :domainIncludes :Person ;
+                  
+                  rdfs:subPropertyOf :familyMember .
+
+
+
+###  http://schema.org/personalHistory
+
+:personalHistory rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "personal history" ;
+                 
+                 rdfs:comment " specifying a personal history provided by the patient during an anamnesis procedure ."@en ;
+                 
+                 :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/160476009> ;
+                 
+                 :domainIncludes :Person ;
+                 
+                 :rangeIncludes :PersonalHistory ;
+                 
+                 rdfs:subPropertyOf :medicalHistory .
+
+
+
+###  http://schema.org/physicalActivity
+
+:physicalActivity rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "physical Activity" ;
+                  
+                  rdfs:comment "Specifying the physical activity  resource of the patient or person." ;
+                  
+                  :domainIncludes :Person ;
+                  
+                  :rangeIncludes :PhysicalActivity ,
+                                 :RecreationalHistory .
+
+
+
+###  http://schema.org/physicalExamination
+
+:physicalExamination rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "physical examination" ;
+                     
+                     rdfs:comment "Specifying a physical examination procedure resource for a patient or a person" ;
+                     
+                     :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003> ,
+                                     :ClinicalFinding ,
+                                     :LifeEvent ,
+                                     :MedicalIntervention ,
+                                     :MedicalProcedure ,
+                                     :Patient ;
+                     
+                     :rangeIncludes :PhysicalExam ;
+                     
+                     rdfs:subPropertyOf :diagnosticProcedure .
+
+
+
+###  http://schema.org/physiologicalRole
+
+:physiologicalRole rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "physiological role" ;
+                   
+                   rdfs:comment "Specifying any physiological role of something" ;
+                   
+                   :domainIncludes :MedicalEntity ;
+                   
+                   :rangeIncludes :PhysiologicalEntity .
+
+
+
+###  http://schema.org/playsRole
+
+:playsRole rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "plays role" ;
+           
+           rdfs:comment "Specifying the role played by an agent " ;
+           
+           :rangeIncludes :MedicalEntity ;
+           
+           :domainIncludes :MedicalEntity .
+
+
+
+###  http://schema.org/possibleCause
+
+:possibleCause rdf:type owl:ObjectProperty ;
+               
+               rdfs:comment "Specifying a possible cause of something" ;
+               
+               :domainIncludes :MedicalEntity ;
+               
+               :rangeIncludes :MedicalEntity ;
+               
+               rdfs:subPropertyOf :cause .
+
+
+
+###  http://schema.org/possibleTreatment
+
+:possibleTreatment rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:subPropertyOf :treatment .
+
+
+
+###  http://schema.org/pregnancy
+
+:pregnancy rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "pregnancy" ;
+           
+           rdfs:comment "Specifying the resource as the pregnancy event or period related to the patient not differentiating if the pregnancy gave a birth or not. Should be noted that gravidity property is a data property instead. " ;
+           
+           :rangeIncludes :Gravidity ;
+           
+           :domainIncludes :Person .
+
+
+
+###  http://schema.org/prescribingProcedure
+
+:prescribingProcedure rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "prescribing procedure" ;
+                      
+                      rdfs:comment "Specifying a prescribing procedure resource for a patient or a person. This property is linking a patient or a provider to the procedure. The procedure has as an output a prescription." ;
+                      
+                      :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                                      :HealthcareProfessional ,
+                                      :Patient ;
+                      
+                      :rangeIncludes :PrescribingProcedure ;
+                      
+                      rdfs:subPropertyOf :therapeuticProcedure .
+
+
+
+###  http://schema.org/preventiveProcedure
+
+:preventiveProcedure rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "preventive procedure" ;
+                     
+                     rdfs:comment "Specifying any preventive procedure resource for a person" ;
+                     
+                     :domainIncludes :Patient ;
+                     
+                     :rangeIncludes :PreventiveProcedure ;
+                     
+                     rdfs:subPropertyOf :therapeuticProcedure .
+
+
+
+###  http://schema.org/primaryPrevention
+
+:primaryPrevention rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:subPropertyOf :preventiveProcedure .
+
+
+
+###  http://schema.org/procedure
+
+:procedure rdf:type owl:ObjectProperty .
+
+
+
+###  http://schema.org/provider
+
+:provider rdf:type owl:ObjectProperty .
+
+
+
+###  http://schema.org/race
+
+:race rdf:type owl:ObjectProperty ;
+      
+      rdfs:label "race origin" ;
+      
+      rdfs:comment "Specifying a race group or anthropological family as origin of the person. Race and Ethnicity as well as religious beliefs are in most cases not given in EHR, and collecting this info is often seen as illegal. Please check local regulations before using this property "@en ;
+      
+      :domainIncludes :Person ;
+      
+      :rangeIncludes :Race .
+
+
+
+###  http://schema.org/recommendedTreatment
+
+:recommendedTreatment rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "recommended treatment" ;
+                      
+                      rdfs:comment "Specifying a recommended treatment of a given patient (like paediatric person) or a medical condition." ;
+                      
+                      :rangeIncludes :Drug ;
+                      
+                      :domainIncludes :MedicalCondition ,
+                                      :Patient ;
+                      
+                      :rangeIncludes :TherapeuticProcedure ;
+                      
+                      rdfs:subPropertyOf :treatment .
+
+
+
+###  http://schema.org/referringPhysician
+
+:referringPhysician rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "referring physician" ;
+                    
+                    rdfs:comment "A healthcare provider referring a patient to another healthcare provider." ;
+                    
+                    :rangeIncludes :HealthcareProfessional ;
+                    
+                    :domainIncludes :Patient ;
+                    
+                    rdfs:subPropertyOf :careProvider .
+
+
+
+###  http://schema.org/refill
+
+:refill rdf:type owl:ObjectProperty ;
+        
+        rdfs:label "refill" ;
+        
+        rdfs:comment "Specifying the history or plan of refills that can be done before a new prescription is needed, related to a given prescription."@en ;
+        
+        :domainIncludes :Patient ;
+        
+        :rangeIncludes :Refill .
+
+
+
+###  http://schema.org/relatedEncounter
+
+:relatedEncounter rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "related medicalEncounter" ;
+                  
+                  rdfs:comment "Specifying a medical encounter procedure resource related to other procedure" ;
+                  
+                  :domainIncludes :ClinicalDocument ,
+                                  :LifeEvent ;
+                  
+                  :rangeIncludes :MedicalEncounter ;
+                  
+                  :domainIncludes :MedicalProcedure ,
+                                  :MedicalRecord ,
+                                  :MedicalScore .
+
+
+
+###  http://schema.org/religionGroup
+
+:religionGroup rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "religion group" ;
+               
+               rdfs:comment "Specifying a religion group of person."@en ;
+               
+               :domainIncludes :Person ;
+               
+               :rangeIncludes :ReligionGroup .
+
+
+
+###  http://schema.org/religiousBelief
+
+:religiousBelief rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "religion belief" ;
+                 
+                 rdfs:comment "Specifying the religion beliefs of a person. Someone can have multiple religion beliefs." ;
+                 
+                 :domainIncludes :Person ;
+                 
+                 :rangeIncludes :ReligiousBelief ;
+                 
+                 rdfs:subPropertyOf :religionGroup .
+
+
+
+###  http://schema.org/residenceHistory
+
+:residenceHistory rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "residence history" ;
+                  
+                  rdfs:comment "Specifying the residence history resource of the patient or person." ;
+                  
+                  :domainIncludes :Person ;
+                  
+                  :rangeIncludes :ResidenceHistory ;
+                  
+                  rdfs:subPropertyOf :socialHistory .
+
+
+
+###  http://schema.org/residentialStatus
+
+:residentialStatus rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "residential status" ;
+                   
+                   rdfs:comment "Specifying the act of dwelling in a place. This status is linked to an address and period of the time"@en ;
+                   
+                   :rangeIncludes :MedicalEntity ;
+                   
+                   :domainIncludes :Person .
+
+
+
+###  http://schema.org/resistantTo
+
+:resistantTo rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "resistant to" ;
+             
+             rdfs:comment "Specifying pharmacological substance a micro-organism  is resistant to." ;
+             
+             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/264395009> ;
+             
+             :rangeIncludes :PharmaceuticalSubstance .
+
+
+
+###  http://schema.org/severity
+
+:severity rdf:type owl:ObjectProperty ;
+          
+          rdfs:label "severity" ;
+          
+          rdfs:comment "Specifying a severity evaluation of a disease: typically by classification resource or ranking scale: mild, moderate, severe, life threatening or fatal"@en ;
+          
+          :domainIncludes :MedicalEntity ;
+          
+          :rangeIncludes :Severity .
+
+
+
+###  http://schema.org/sexualBehaviour
+
+:sexualBehaviour rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "sexual behaviour" ;
+                 
+                 rdfs:comment "Specifying the sexual behaviour resource of  a patient" ;
+                 
+                 :domainIncludes :Person ;
+                 
+                 :rangeIncludes :SexualBehaviour ;
+                 
+                 rdfs:subPropertyOf :lifestyleOrHabit .
+
+
+
+###  http://schema.org/sibling
+
+:sibling rdf:type owl:ObjectProperty ;
+         
+         rdfs:subPropertyOf :familyMember .
+
+
+
+###  http://schema.org/sideEffect
+
+:sideEffect rdf:type owl:ObjectProperty ;
+            
+            rdfs:comment "Specifying side effect for a given medical procedure or substance" ;
+            
+            :domainIncludes :DiagnosticProcedure ,
+                            :ElectiveProcedure ,
+                            :PalliativeProcedure ,
+                            :Patient ;
+            
+            :rangeIncludes :SideEffect ;
+            
+            :domainIncludes :Substance ,
+                            :TherapeuticProcedure ;
+            
+            rdfs:subPropertyOf :adverseOutcome .
+
+
+
+###  http://schema.org/signOrSymptom
+
+:signOrSymptom rdf:type owl:ObjectProperty .
+
+
+
+###  http://schema.org/smoking
+
+:smoking rdf:type owl:ObjectProperty ;
+         
+         rdfs:label "smoking" ;
+         
+         rdfs:comment "Describing the smoking habit resource for the patient" ;
+         
+         :domainIncludes :Person ;
+         
+         :rangeIncludes :Smoking ;
+         
+         rdfs:subPropertyOf :lifestyleOrHabit .
+
+
+
+###  http://schema.org/socialHistory
+
+:socialHistory rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "social history" ;
+               
+               rdfs:comment "Specifying the social history resource of the patient or person." ;
+               
+               :domainIncludes :Person ;
+               
+               :rangeIncludes :SocialHistory ;
+               
+               rdfs:subPropertyOf :personalHistory .
+
+
+
+###  http://schema.org/spouse
+
+:spouse rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf :familyMember .
+
+
+
+###  http://schema.org/status
+
+:status rdf:type owl:ObjectProperty .
+
+
+
+###  http://schema.org/substanceUseOrAbuse
+
+:substanceUseOrAbuse rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "substance Use Or Abuse" ;
+                     
+                     rdfs:comment "Describing the substance use or abuse resource of the person" ;
+                     
+                     :domainIncludes :Person ;
+                     
+                     :rangeIncludes :SubstanceUseOrAbuse ;
+                     
+                     rdfs:subPropertyOf :lifestyleOrHabit .
+
+
+
+###  http://schema.org/surgicalProcedure
+
+:surgicalProcedure rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "surgical procedure" ;
+                   
+                   rdfs:comment "Specifying a surgical procedure resource for a patient or a person" ;
+                   
+                   :domainIncludes :Patient ;
+                   
+                   :rangeIncludes :SurgicalProcedure ;
+                   
+                   rdfs:subPropertyOf :medicalProcedure .
+
+
+
+###  http://schema.org/susceptibleTo
+
+:susceptibleTo rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "susceptibleTo" ;
+               
+               rdfs:comment "Specifying a pharmacological substance a microorganism is susceptible to." ;
+               
+               :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/264395009> ;
+               
+               :rangeIncludes :PharmaceuticalSubstance .
+
+
+
+###  http://schema.org/systemicReview
+
+:systemicReview rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "systemic review" ;
+                
+                rdfs:comment "Specifying a systemic review resource as a part of  anamnesis" ;
+                
+                :domainIncludes :AnamnesisProcedure ,
+                                :ClinicalDocument ,
+                                :MedicalRecord ,
+                                :Patient ;
+                
+                :rangeIncludes :SystemicReview .
+
+
+
+###  http://schema.org/systolicBloodPressure
+
+:systolicBloodPressure rdf:type owl:ObjectProperty ;
+                       
+                       rdfs:label "systolic blood pressure" ;
+                       
+                       rdfs:comment "Specifying  systolic arterial blood pressure of a patient."@en ;
+                       
+                       :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/271649006> ;
+                       
+                       :domainIncludes :Person ;
+                       
+                       rdfs:subPropertyOf :bloodPressure .
+
+
+
+###  http://schema.org/therapeuticProcedure
+
+:therapeuticProcedure rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "therapeutic procedure" ;
+                      
+                      rdfs:comment "Specifying the therapeutic procedure resource for a patient or a person." ;
+                      
+                      :domainIncludes :Person ;
+                      
+                      :rangeIncludes :TherapeuticProcedure ;
+                      
+                      rdfs:subPropertyOf :medicalProcedure .
+
+
+
+###  http://schema.org/treatingPhysician
+
+:treatingPhysician rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "caring person" ;
+                   
+                   rdfs:comment "Specifying a specific physician assigned to the patient as specific or individual healthcare provider."@en ;
+                   
+                   :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ;
+                   
+                   :domainIncludes :CaringEvent ;
+                   
+                   :rangeIncludes :HealthcareProfessional ;
+                   
+                   :domainIncludes :Patient ;
+                   
+                   rdfs:subPropertyOf :careProvider .
+
+
+
+###  http://schema.org/treatment
+
+:treatment rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "treatment" ;
+           
+           rdfs:comment "Specifying a treatment or management or therapeutic procedures for a disorder or a patient"@en ;
+           
+           :rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/277132007> ;
+           
+           :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/64572001> ;
+           
+           :rangeIncludes :Drug ;
+           
+           :domainIncludes :MedicalCondition ,
+                           :Patient ;
+           
+           :rangeIncludes :TherapeuticProcedure .
+
+
+
+###  http://schema.org/triageProcedure
+
+:triageProcedure rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "triage procedure" ;
+                 
+                 rdfs:comment "Specifying a triage procedure resource" ;
+                 
+                 :domainIncludes :CaringEvent ;
+                 
+                 :rangeIncludes :MedicalTriage ;
+                 
+                 :domainIncludes :Patient .
+
+
+
+###  http://schema.org/vaccination
+
+:vaccination rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "vaccination" ;
+             
+             rdfs:comment "Specifying a vaccination procedure resource" ;
+             
+             :domainIncludes :Person ;
+             
+             :rangeIncludes :Vaccination ;
+             
+             rdfs:subPropertyOf :primaryPrevention .
+
+
+
+###  http://schema.org/vitalSign
+
+:vitalSign rdf:type owl:ObjectProperty ;
+           
+           rdfs:label "vital sign" ;
+           
+           rdfs:comment "Specifying the vital sign of a person" ;
+           
+           :domainIncludes :Patient ;
+           
+           :rangeIncludes :VitalSign ;
+           
+           rdfs:subPropertyOf :medicalSign .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://schema.org#rankOrder
+
+<http://schema.org#rankOrder> rdf:type owl:DatatypeProperty ;
+                              
+                              rdfs:label "rankOrder" ;
+                              
+                              rdfs:comment "rank order number of something. Typically used together with schema:numerator and schema:denominator. eg. refill number 4 out of 10." ;
+                              
+                              :domainIncludes :MedicalEntity ;
+                              
+                              :rangeIncludes :Number .
+
+
+
+###  http://schema.org#receiptDate
+
+<http://schema.org#receiptDate> rdf:type owl:DatatypeProperty ;
+                                
+                                rdfs:label "receiptDate" ;
+                                
+                                rdfs:comment "The date when the medical specimen was received" ;
+                                
+                                :domainIncludes <http://schema.org#MedicalSpecimen> ;
+                                
+                                :rangeIncludes :DateTime ;
+                                
+                                rdfs:subPropertyOf :dateTime .
+
+
+
+###  http://schema.org#specimenCollectionDate
+
+<http://schema.org#specimenCollectionDate> rdf:type owl:DatatypeProperty ;
+                                           
+                                           rdfs:label "specimenCollectionDate" ;
+                                           
+                                           rdfs:comment "The date when the medical specimen was collected" ;
+                                           
+                                           :domainIncludes <http://schema.org#MedicalSpecimen> ;
+                                           
+                                           :rangeIncludes :DateTime ;
+                                           
+                                           rdfs:subPropertyOf :dateTime .
+
+
+
+###  http://schema.org/abortions
+
+:abortions rdf:type owl:DatatypeProperty ;
+           
+           rdfs:label "abortions" ;
+           
+           rdfs:comment "Specifying the number of abortion for a given woman" ;
+           
+           :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+           
+           :rangeIncludes :Number .
+
+
+
+###  http://schema.org/admissionDate
+
+:admissionDate rdf:type owl:DatatypeProperty ;
+               
+               rdfs:label "admission date" ;
+               
+               rdfs:comment "Specifying a medical admission date" ;
+               
+               :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/305056002> ;
+               
+               :rangeIncludes :DateTime ;
+               
+               :domainIncludes :MedicalAdmission ,
+                               :Patient ;
+               
+               rdfs:subPropertyOf :dateTime .
+
+
+
+###  http://schema.org/ageAtEvent
+
+:ageAtEvent rdf:type owl:DatatypeProperty ;
+            
+            rdfs:label "age at event" ;
+            
+            rdfs:comment "Specifying the age of the entity when an event occurred" ;
+            
+            :rangeIncludes :Number ;
+            
+            :domainIncludes :Person .
+
+
+
+###  http://schema.org/apgarScore
+
+:apgarScore rdf:type owl:DatatypeProperty ;
+            
+            rdfs:label "APGAR Score" ;
+            
+            rdfs:comment "Specifying the value of APGAR Score. " ;
+            
+            :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+            
+            :rangeIncludes :Number .
+
+
+
+###  http://schema.org/atWeeksAmenorrhea
+
+:atWeeksAmenorrhea rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:label "at weeks of amenorrhoea" ;
+                   
+                   rdfs:comment "Specifying the weeks of amenorrhoea when an event occurs. " ;
+                   
+                   :domainIncludes :MedicalCondition ;
+                   
+                   :rangeIncludes :Number .
+
+
+
+###  http://schema.org/birthDate
+
+:birthDate rdf:type owl:DatatypeProperty ;
+           
+           rdfs:subPropertyOf :dateTime .
+
+
+
+###  http://schema.org/birthHeight
+
+:birthHeight rdf:type owl:DatatypeProperty ;
+             
+             rdfs:label "birth weight" ;
+             
+             rdfs:comment "Specifying a birth weight" ;
+             
+             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+             
+             :rangeIncludes :Number .
+
+
+
+###  http://schema.org/birthPercentile
+
+:birthPercentile rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:label "birth percentile" ;
+                 
+                 rdfs:comment "Specifying the birth percentile of a newborn" ;
+                 
+                 :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+                 
+                 :rangeIncludes :Number .
+
+
+
+###  http://schema.org/birthWeight
+
+:birthWeight rdf:type owl:DatatypeProperty ;
+             
+             rdfs:label "birth weight" ;
+             
+             rdfs:comment "Specifying birth weight of a newborn" ;
+             
+             :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
+             
+             :rangeIncludes :Number .
+
+
+
+###  http://schema.org/bodyMassIndex
+
+:bodyMassIndex rdf:type owl:DatatypeProperty ;
+               
+               rdfs:label "body mass index" ;
+               
+               rdfs:comment "Specifying the body mass index of  a person" ;
+               
+               :rangeIncludes :Number ;
+               
+               :domainIncludes :Person .
+
+
+
+###  http://schema.org/bodyVolumeIndex
+
+:bodyVolumeIndex rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:label "body volume index" ;
+                 
+                 rdfs:comment "Specifying the body volume index of  a person" ;
+                 
+                 :rangeIncludes :Number ;
+                 
+                 :domainIncludes :Person .
+
+
+
+###  http://schema.org/dateTime
+
+:dateTime rdf:type owl:DatatypeProperty ;
+          
+          rdfs:label "dateTime"^^rdfs:Literal ;
+          
+          rdfs:comment "Specifying an instant of something. Typically derived from W3C Time Ontology this describes a point in time when an event or action occurs." ;
+          
+          :rangeIncludes :DateTime ;
+          
+          :domainIncludes :MedicalEntity .
+
+
+
+###  http://schema.org/deathDate
+
+:deathDate rdf:type owl:DatatypeProperty ;
+           
+           rdfs:subPropertyOf :dateTime .
+
+
+
+###  http://schema.org/diagnosticDate
+
+:diagnosticDate rdf:type owl:DatatypeProperty ;
+                
+                rdfs:label "diagnostic date" ;
+                
+                rdfs:comment "Specifying the diagnostic date for  a person" ;
+                
+                :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001> ;
+                
+                :rangeIncludes :DateTime ;
+                
+                :domainIncludes :Person ;
+                
+                rdfs:subPropertyOf :dateTime .
+
+
+
+###  http://schema.org/dischargeDate
+
+:dischargeDate rdf:type owl:DatatypeProperty ;
+               
+               rdfs:label "discharge date" ;
+               
+               rdfs:comment "Specifying a medical discharge date for a patient" ;
+               
+               :rangeIncludes :DateTime ;
+               
+               :domainIncludes :MedicalDischarge ,
+                               :Patient ;
+               
+               rdfs:subPropertyOf :dateTime .
+
+
+
+###  http://schema.org/gravidity
+
+:gravidity rdf:type owl:DatatypeProperty ;
+           
+           rdfs:label "gravidity" ;
+           
+           rdfs:comment "Specifying the number of times a woman has been pregnant, regardless of whether the pregnancies were interrupted or resulted in a live birth." ;
+           
+           :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+           
+           :rangeIncludes :Number ;
+           
+           :domainIncludes :Person .
+
+
+
+###  http://schema.org/hipCircumference
+
+:hipCircumference rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:label "hip circumference" ;
+                  
+                  rdfs:comment "The hip circumference measurement of someone" ;
+                  
+                  :domainIncludes :HipCircumference ;
+                  
+                  :rangeIncludes :Number ;
+                  
+                  :domainIncludes :Person .
+
+
+
+###  http://schema.org/medicalIdentifier
+
+:medicalIdentifier rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:label "medical identifier" ;
+                   
+                   rdfs:comment "Specifying the identification number of a medical entity like care provider identifier number, patient identifier etc." ;
+                   
+                   :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009> ,
+                                   :HealthcareProfessional ,
+                                   :Person ;
+                   
+                   :rangeIncludes :Text .
+
+
+
+###  http://schema.org/parity
+
+:parity rdf:type owl:DatatypeProperty ;
+        
+        rdfs:label "parity" ;
+        
+        rdfs:comment "Parity is defined as the number of times that she has given birth to a foetus with a gestational age of 24 weeks or more, regardless of whether the child was born alive or was stillborn." ;
+        
+        :domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/224526002> ;
+        
+        :rangeIncludes :Number ;
+        
+        :domainIncludes :Person .
+
+
+
+###  http://schema.org/totalValue
+
+:totalValue rdf:type owl:DatatypeProperty ;
+            
+            rdfs:label "total value" ;
+            
+            rdfs:comment "Total number of something."@en ;
+            
+            :domainIncludes :MedicalEntity ;
+            
+            :rangeIncludes :Number .
+
+
+
+###  http://schema.org/transferDate
+
+:transferDate rdf:type owl:DatatypeProperty ;
+              
+              rdfs:label "transfer date" ;
+              
+              rdfs:comment "Specifying the medical transfer date for a patient" ;
+              
+              :rangeIncludes :DateTime ;
+              
+              :domainIncludes :MedicalTransfer ,
+                              :Person ;
+              
+              rdfs:subPropertyOf :dateTime .
+
+
+
+###  http://schema.org/triageScore
+
+:triageScore rdf:type owl:DatatypeProperty ;
+             
+             rdfs:label "triage score" ;
+             
+             rdfs:comment "Specifying the value of a triage score" ;
+             
+             :rangeIncludes :Number ;
+             
+             :domainIncludes :Patient ,
+                             :TriageScore .
+
+
+
+###  http://schema.org/waistCircumference
+
+:waistCircumference rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:label "waist circumference" ;
+                    
+                    rdfs:comment "The waist circumference measurement of someone" ;
+                    
+                    :rangeIncludes :Number ;
+                    
+                    :domainIncludes :Person ,
+                                    :WaistCircumference .
+
+
+
+###  http://schema.org/waistHipRatio
+
+:waistHipRatio rdf:type owl:DatatypeProperty ;
+               
+               rdfs:label "waist hip ratio" ;
+               
+               rdfs:comment "The waist hip ratio measurement of someone" ;
+               
+               :rangeIncludes :Number ;
+               
+               :domainIncludes :Person ,
+                               :WaistHipRatio .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://schema.org#DrugPackage
+
+<http://schema.org#DrugPackage> rdf:type owl:Class ;
+                                
+                                rdfs:label "DrugPackage" ;
+                                
+                                rdfs:subClassOf :MedicalEnumeration ;
+                                
+                                rdfs:comment "The drug or medicine package" .
+
+
+
+###  http://schema.org#MedicalSpecimen
+
+<http://schema.org#MedicalSpecimen> rdf:type owl:Class ;
+                                    
+                                    rdfs:label "MedicalSpecimen" ;
+                                    
+                                    rdfs:subClassOf :MedicalEntity ;
+                                    
+                                    rdfs:comment "Material (structure, substance, device) removed from a source (patient, donor, physical location, product)" .
+
+
+
+###  http://schema.org#MedicalSpecimenDonor
+
+<http://schema.org#MedicalSpecimenDonor> rdf:type owl:Class ;
+                                         
+                                         rdfs:label "MedicalSpecimenDonor" ;
+                                         
+                                         rdfs:subClassOf <http://schema.org#MedicalSpecimen> ;
+                                         
+                                         rdfs:comment "Medical Specimen Donor" .
+
+
+
+###  http://schema.org#MedicalSpecimenReceiver
+
+<http://schema.org#MedicalSpecimenReceiver> rdf:type owl:Class ;
+                                            
+                                            rdfs:label "MedicalSpecimenReceiver" ;
+                                            
+                                            rdfs:subClassOf <http://schema.org#MedicalSpecimen> ;
+                                            
+                                            rdfs:comment "Medical Specimen Receiver" .
+
+
+
+###  http://schema.org/Abortion
+
+:Abortion rdf:type owl:Class ;
+          
+          rdfs:label "Abortion" ;
+          
+          rdfs:subClassOf :GynObsHistory ;
+          
+          rdfs:comment "Abortion is the ending of pregnancy by the removal or expulsion from the uterus of a fetus or embryo before viability." .
+
+
+
+###  http://schema.org/Acupuncture
+
+:Acupuncture rdf:type owl:Class ;
+             
+             rdfs:label "Acupuncture" ;
+             
+             rdfs:subClassOf :AlternativeTherapy ;
+             
+             rdfs:comment "A system of complementary medicine in which fine needles are inserted in the skin at specific points along what are considered to be lines of energy (meridians), used in the treatment of various physical and mental conditions." .
+
+
+
+###  http://schema.org/AdministrativeProcedure
+
+:AdministrativeProcedure rdf:type owl:Class ;
+                         
+                         rdfs:label "Administrative procedure" ;
+                         
+                         rdfs:subClassOf :MedicalProcedure ;
+                         
+                         rdfs:comment "Procedure related to the administrative aspects of health care, including, business, legal, financial, quality review, peer review, data reporting, notification, and so forth" .
+
+
+
+###  http://schema.org/AdulthoodHistory
+
+:AdulthoodHistory rdf:type owl:Class ;
+                  
+                  rdfs:label "Adulthood history" ;
+                  
+                  rdfs:subClassOf :SocialHistory ;
+                  
+                  rdfs:comment "Any medical history happening in adulthood, the period of time in your life after your physical growth has stopped and you are fully developed" .
+
+
+
+###  http://schema.org/AdverseDrugReaction
+
+:AdverseDrugReaction rdf:type owl:Class ;
+                     
+                     rdfs:label "Adverse drug reaction" ;
+                     
+                     rdfs:subClassOf :AdverseEvent ;
+                     
+                     rdfs:comment "An adverse drug reaction is an expression that describes harm associated with the use of given medications at a normal dosage during normal use. " .
+
+
+
+###  http://schema.org/AdverseEvent
+
+:AdverseEvent rdf:type owl:Class ;
+              
+              rdfs:label "Adverse event." ;
+              
+              rdfs:subClassOf :MedicalCondition ;
+              
+              rdfs:comment "In medicine, an adverse effect is an undesired harmful effect associated with the use of a medical product or other intervention such as surgery in a patient ." .
+
+
+
+###  http://schema.org/AlcoholIntake
+
+:AlcoholIntake rdf:type owl:Class ;
+               
+               rdfs:label "Alcohol intake" ;
+               
+               rdfs:subClassOf :LifestyleOrHabits ;
+               
+               rdfs:comment "The quantification or description of alcohol intake for the person" .
+
+
+
+###  http://schema.org/Allergen
+
+:Allergen rdf:type owl:Class ;
+          
+          rdfs:label "Allergen" ;
+          
+          rdfs:subClassOf :Substance ;
+          
+          rdfs:comment "Any substance, often a protein, that induces an allergy: common allergens include pollen, grasses, dust, and some medications." .
+
+
+
+###  http://schema.org/Allergy
+
+:Allergy rdf:type owl:Class ;
+         
+         rdfs:label "Allergy" ;
+         
+         rdfs:subClassOf :MedicalCondition ;
+         
+         rdfs:comment "An abnormal reaction of the body to a previously encountered allergen." .
+
+
+
+###  http://schema.org/AlternativeTherapy
+
+:AlternativeTherapy rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :TherapeuticProcedure ;
+                    
+                    rdfs:comment "Any practice that is put forward as having the healing effects of medicine but is not based on evidence gathered using the scientific method. It may however consists of a wide range of health care practices, products and therapies known in conventional medicine. Source: Wikipedia" .
+
+
+
+###  http://schema.org/AnamnesisProcedure
+
+:AnamnesisProcedure rdf:type owl:Class ;
+                    
+                    rdfs:label "Anamnesis procedure" ;
+                    
+                    rdfs:subClassOf :MedicalProcedure ;
+                    
+                    rdfs:comment "Interview aiming collecting of the medical history of a patient." .
+
+
+
+###  http://schema.org/AnatomicalEntity
+
+:AnatomicalEntity rdf:type owl:Class ;
+                  
+                  rdfs:label "Anatomical entity" ;
+                  
+                  rdfs:subClassOf :MedicalEntity ;
+                  
+                  rdfs:comment "Defining an anatomical resource of the human body." .
+
+
+
+###  http://schema.org/AnatomicalOrgan
+
+:AnatomicalOrgan rdf:type owl:Class ;
+                 
+                 rdfs:label "Anatomical organ" ;
+                 
+                 rdfs:subClassOf :AnatomicalEntity ;
+                 
+                 rdfs:comment "In biology or anatomy, an organ (or viscus) is a collection of tissues joined in a structural unit to serve a common function." .
+
+
+
+###  http://schema.org/AnatomicalRegion
+
+:AnatomicalRegion rdf:type owl:Class ;
+                  
+                  rdfs:label "Anatomical region" ;
+                  
+                  rdfs:subClassOf :AnatomicalEntity ;
+                  
+                  rdfs:comment "Anatomy based region of the human body which describe areas of the body that have a special function or are supplied by specific blood vessels or nerves." .
+
+
+
+###  http://schema.org/AnatomicalStructure
+
+:AnatomicalStructure rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :AnatomicalEntity .
+
+
+
+###  http://schema.org/AnatomicalSystem
+
+:AnatomicalSystem rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :AnatomicalEntity .
+
+
+
+###  http://schema.org/Angiography
+
+:Angiography rdf:type owl:Class ;
+             
+             rdfs:label "Angiography" ;
+             
+             rdfs:subClassOf :MedicalImaging ;
+             
+             rdfs:comment "Radiography of blood or lymph vessels, carried out after introduction of a radiopaque substance." .
+
+
+
+###  http://schema.org/ApgarScore
+
+:ApgarScore rdf:type owl:Class ;
+            
+            rdfs:label "APGAR Score" ;
+            
+            rdfs:subClassOf :MedicalScore ;
+            
+            rdfs:comment "A scoring method to quickly and summarily assess the health of newborn children immediately after birth." .
+
+
+
+###  http://schema.org/AxillaryTemperature
+
+:AxillaryTemperature rdf:type owl:Class ;
+                     
+                     rdfs:label "Axillary temperature" ;
+                     
+                     rdfs:subClassOf :BodyTemperature ;
+                     
+                     rdfs:comment "Temperature of human body taken in axillary region" .
+
+
+
+###  http://schema.org/BiologicalSubstance
+
+:BiologicalSubstance rdf:type owl:Class ;
+                     
+                     rdfs:label "Biological substance" ;
+                     
+                     rdfs:subClassOf :Substance ;
+                     
+                     rdfs:comment "Material produced by living organisms; it can be a necessary constituent of, or product of an organismal process" .
+
+
+
+###  http://schema.org/Birth
+
+:Birth rdf:type owl:Class ;
+       
+       rdfs:label "Birth" ;
+       
+       rdfs:subClassOf :LifeEvent ;
+       
+       rdfs:comment "The event, act or process of bearing or bringing forth offspring" .
+
+
+
+###  http://schema.org/BloodPressure
+
+:BloodPressure rdf:type owl:Class ;
+               
+               rdfs:label "Blood pressure" ;
+               
+               rdfs:subClassOf :VitalSign ;
+               
+               rdfs:comment "Blood pressure (BP), sometimes referred to as arterial blood pressure, is the pressure exerted by circulating blood upon the walls of blood vessels, and is one of the principal vital signs. " .
+
+
+
+###  http://schema.org/BodyMassIndex
+
+:BodyMassIndex rdf:type owl:Class ;
+               
+               rdfs:label "Body mass index" ;
+               
+               rdfs:subClassOf :BodyMeasure ;
+               
+               rdfs:comment "Also known as BMI, is measure of relative weight based on an individual's mass and height." .
+
+
+
+###  http://schema.org/BodyMeasure
+
+:BodyMeasure rdf:type owl:Class ;
+             
+             rdfs:label "Body measure" ;
+             
+             rdfs:subClassOf :PhysicalExam ;
+             
+             rdfs:comment "Common method of specifying body sizes parameters" .
+
+
+
+###  http://schema.org/BodySubstance
+
+:BodySubstance rdf:type owl:Class ;
+               
+               rdfs:label "Body substance" ;
+               
+               rdfs:subClassOf :Substance ;
+               
+               rdfs:comment "The substance of the human body." .
+
+
+
+###  http://schema.org/BodyTemperature
+
+:BodyTemperature rdf:type owl:Class ;
+                 
+                 rdfs:label "Body temperature" ;
+                 
+                 rdfs:subClassOf :VitalSign ;
+                 
+                 rdfs:comment "Human body temperature is the temperature of person's body. " .
+
+
+
+###  http://schema.org/BodyVolumeIndex
+
+:BodyVolumeIndex rdf:type owl:Class ;
+                 
+                 rdfs:label "Body volum index" ;
+                 
+                 rdfs:subClassOf :BodyMeasure ;
+                 
+                 rdfs:comment "Measurement for obesity,  based at the relationship between mass and volume distribution" .
+
+
+
+###  http://schema.org/CardiovascularSystem
+
+:CardiovascularSystem rdf:type owl:Class ;
+                      
+                      rdfs:label "Cardiovascular system" ;
+                      
+                      rdfs:subClassOf :CirculatorySystem ;
+                      
+                      rdfs:comment "A circulatory system which distributes blood through the body" .
+
+
+
+###  http://schema.org/CaringEvent
+
+:CaringEvent rdf:type owl:Class ;
+             
+             rdfs:label "Caring event" ;
+             
+             rdfs:subClassOf :LifeEvent ;
+             
+             rdfs:comment "Commonly regarded as 'episode of care, the caring event refers to any event of the prevention, treatment, and management of illness and the preservation of mental and physical well-being through the services offered by the medical and allied health professions." .
+
+
+
+###  http://schema.org/ChemicalSubstance
+
+:ChemicalSubstance rdf:type owl:Class ;
+                   
+                   rdfs:label "Chemical substance" ;
+                   
+                   rdfs:subClassOf :Substance ;
+                   
+                   rdfs:comment "Substance produced by or used in a reaction involving changes in atoms or molecules" .
+
+
+
+###  http://schema.org/Chemotherapy
+
+:Chemotherapy rdf:type owl:Class ;
+              
+              rdfs:label "Chemotherapy" ;
+              
+              rdfs:subClassOf :Pharmacotherapy ;
+              
+              rdfs:comment "The word chemotherapy means the use of any drug (such as aspirin or penicillin) to treat any disease, but to most people chemotherapy refers to drugs used for cancer treatment." .
+
+
+
+###  http://schema.org/ChiefComplaint
+
+:ChiefComplaint rdf:type owl:Class ;
+                
+                rdfs:label "chief complaint symptom" ;
+                
+                rdfs:subClassOf :MedicalSymptom ;
+                
+                rdfs:comment "Also  termed Presenting Complaint, Reason for Encounter, Presenting Problem, Problem on admission or Reason for Presenting, refers the primary symptom that a patient states as the reason for seeking medical care." .
+
+
+
+###  http://schema.org/ChildhoodHistory
+
+:ChildhoodHistory rdf:type owl:Class ;
+                  
+                  rdfs:label "Childhood history" ;
+                  
+                  rdfs:subClassOf :SocialHistory ;
+                  
+                  rdfs:comment "Any medical history happening in childhood" .
+
+
+
+###  http://schema.org/CirculatorySystem
+
+:CirculatorySystem rdf:type owl:Class ;
+                   
+                   rdfs:label "Circulatory system" ;
+                   
+                   rdfs:subClassOf :AnatomicalSystem ;
+                   
+                   rdfs:comment "The circulatory system is an organ system that permits blood and lymph circulation to transport nutrients, oxygen, carbon dioxide, hormones, blood cells, etc. to and from cells in the body " .
+
+
+
+###  http://schema.org/ClinicalDocument
+
+:ClinicalDocument rdf:type owl:Class ;
+                  
+                  rdfs:label "Clinical document" ;
+                  
+                  rdfs:subClassOf :MedicalEntity ;
+                  
+                  rdfs:comment "Any document used throughout healthcare to describe care provided to a patient, communicate essential information between healthcare providers and to maintain a patient medical record. " .
+
+
+
+###  http://schema.org/ClinicalFinding
+
+:ClinicalFinding rdf:type owl:Class ;
+                 
+                 rdfs:label "Clinical finding" ;
+                 
+                 rdfs:subClassOf :MedicalEntity ;
+                 
+                 rdfs:comment "The result of a clinical observation, assessment or judgement, and include both normal and abnormal clinical states." .
+
+
+
+###  http://schema.org/ComputedTomography
+
+:ComputedTomography rdf:type owl:Class ;
+                    
+                    rdfs:label "Computed tomography" ;
+                    
+                    rdfs:subClassOf :MedicalImaging ;
+                    
+                    rdfs:comment "A method of examining body organs by scanning them with X rays and using a computer to construct a series of cross-sectional scans along a single axis" .
+
+
+
+###  http://schema.org/CosmeticProcedure
+
+:CosmeticProcedure rdf:type owl:Class ;
+                   
+                   rdfs:label "Cosmetic procedure" ;
+                   
+                   rdfs:subClassOf :ElectiveProcedure ;
+                   
+                   rdfs:comment "Procedures which improve the appearance, but are not medically necessary." .
+
+
+
+###  http://schema.org/DataReporter
+
+:DataReporter rdf:type owl:Class ;
+              
+              rdfs:label "Data reporter" ;
+              
+              rdfs:subClassOf :HealthcareProfessional ;
+              
+              rdfs:comment "Somebody who makes a report of any kind, e.g. a person who is authorized to gather and give a formal or official account or description of findings, events, issues and other information regarding clinical study, drug adverse effect, preclinical research results, data and safety monitoring, etc. to appropriate agency or institution. Source NCIt" .
+
+
+
+###  http://schema.org/Death
+
+:Death rdf:type owl:Class ;
+       
+       rdfs:label "Death" ;
+       
+       rdfs:subClassOf :LifeEvent ;
+       
+       rdfs:comment "Death is the cessation of all biological functions that sustain a living organism. " .
+
+
+
+###  http://schema.org/Dermis
+
+:Dermis rdf:type owl:Class ;
+        
+        rdfs:label "Dermis" ;
+        
+        rdfs:subClassOf :IntegumentarySystem ;
+        
+        rdfs:comment "The dermis is the middle layer of skin, composed of dense irregular connective tissue and areolar connective tissue such as collagen with elastin arranged in a diffusely bundled and woven pattern." .
+
+
+
+###  http://schema.org/Diagnosis
+
+:Diagnosis rdf:type owl:Class ;
+           
+           rdfs:label "Diagnosis" ;
+           
+           rdfs:subClassOf :MedicalCondition ;
+           
+           rdfs:comment "The diagnosis my refer as well to the process of determining by examination the nature and circumstances of a diseased condition or to the decision reached from such an examination. " .
+
+
+
+###  http://schema.org/DiagnosticProcedure
+
+:DiagnosticProcedure rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :MedicalProcedure .
+
+
+
+###  http://schema.org/DigestiveSystem
+
+:DigestiveSystem rdf:type owl:Class ;
+                 
+                 rdfs:label "Digestive system" ;
+                 
+                 rdfs:subClassOf :AnatomicalSystem ;
+                 
+                 rdfs:comment "The human digestive system is a complex series of organs and glands that processes food. Digestion involves the breakdown of food into smaller and smaller components which can be absorbed and assimilated into the body." .
+
+
+
+###  http://schema.org/Disability
+
+:Disability rdf:type owl:Class ;
+            
+            rdfs:label "Disability" ;
+            
+            rdfs:subClassOf :SocialHistory ;
+            
+            rdfs:comment "Any disability history in patient anamnesis" .
+
+
+
+###  http://schema.org/Disease
+
+:Disease rdf:type owl:Class ;
+         
+         rdfs:label "Disease" ;
+         
+         rdfs:subClassOf :MedicalCondition ;
+         
+         rdfs:comment "The term disease broadly refers to any condition that impairs normal function, and is therefore associated with dysfunction of normal homeostasis. In other side, in medicine, a disorder is a functional abnormality or disturbance. Source: Wikipedia." .
+
+
+
+###  http://schema.org/Drug
+
+:Drug rdf:type owl:Class ;
+      
+      rdfs:subClassOf :PharmaceuticalSubstance .
+
+
+
+###  http://schema.org/EHR
+
+:EHR rdf:type owl:Class ;
+     
+     rdfs:label "Electronic Health Record" ;
+     
+     rdfs:subClassOf :MedicalRecord ;
+     
+     rdfs:comment "The Electronic Health Record (EHR) is an electronic record of health-related information on an individual that conforms to nationally recognized interoperability standards and that can be created, managed, and consulted by authorized clinicians and staff across more than one health care organization.US NAHIT" .
+
+
+
+###  http://schema.org/EMR
+
+:EMR rdf:type owl:Class ;
+     
+     rdfs:label "Electronic Medical Record" ;
+     
+     rdfs:subClassOf :MedicalRecord ;
+     
+     rdfs:comment "An Electronic Medical Record (EMR) is an electronic record of health-related information on an individual that can be created, gathered, managed, and consulted by authorized clinicians and staff within one health care organization. Source: US NAHIT" .
+
+
+
+###  http://schema.org/EducationLevel
+
+:EducationLevel rdf:type owl:Class ;
+                
+                rdfs:label "Education level" ;
+                
+                rdfs:subClassOf :SocialHistory ;
+                
+                rdfs:comment "The level of formal education" .
+
+
+
+###  http://schema.org/Elderhood
+
+:Elderhood rdf:type owl:Class ;
+           
+           rdfs:label "Elderhood" ;
+           
+           rdfs:subClassOf :SocialHistory ;
+           
+           rdfs:comment "Any medical history happening in elderhood" .
+
+
+
+###  http://schema.org/ElectiveProcedure
+
+:ElectiveProcedure rdf:type owl:Class ;
+                   
+                   rdfs:label "Elective procedure" ;
+                   
+                   rdfs:subClassOf :MedicalProcedure ;
+                   
+                   rdfs:comment " An elective procedure is one that is chosen (elected) by the patient or physician that is advantageous to the patient but is not urgent." .
+
+
+
+###  http://schema.org/EndocrineSystem
+
+:EndocrineSystem rdf:type owl:Class ;
+                 
+                 rdfs:label "Endocrine system" ;
+                 
+                 rdfs:subClassOf :AnatomicalSystem ;
+                 
+                 rdfs:comment "The endocrine system refers to the collection of glands of an organism that secrete hormones directly into the circulatory system to be carried toward a distant target organ." .
+
+
+
+###  http://schema.org/Endoscopy
+
+:Endoscopy rdf:type owl:Class ;
+           
+           rdfs:label "Endoscopy" ;
+           
+           rdfs:subClassOf :MedicalImaging ;
+           
+           rdfs:comment "Visual examination of the interior of a hollow body organ by use of an endoscope" .
+
+
+
+###  http://schema.org/Epidermis
+
+:Epidermis rdf:type owl:Class ;
+           
+           rdfs:label "Epidermis" ;
+           
+           rdfs:subClassOf :IntegumentarySystem ;
+           
+           rdfs:comment "This is the top layer of skin made up of epithelial cells." .
+
+
+
+###  http://schema.org/Episodicity
+
+:Episodicity rdf:type owl:Class ;
+             
+             rdfs:label "Episodicity" ;
+             
+             rdfs:subClassOf :MedicalEnumeration ;
+             
+             rdfs:comment "A quantification of a medical condition occurrences." .
+
+
+
+###  http://schema.org/Ethnicity
+
+:Ethnicity rdf:type owl:Class ;
+           
+           rdfs:label "Ethnicity" ;
+           
+           rdfs:subClassOf :SocialHistory ;
+           
+           rdfs:comment "A social group characterized by a distinctive social and cultural tradition that is maintained from generation to generation. " .
+
+
+
+###  http://schema.org/FamilyMedicalHistory
+
+:FamilyMedicalHistory rdf:type owl:Class ;
+                      
+                      rdfs:label "Family history" ;
+                      
+                      rdfs:subClassOf :MedicalHistory ;
+                      
+                      rdfs:comment "In medicine, as a part of medical history, the family history consists of information about disorders from which the direct blood relatives of the patient have suffered." .
+
+
+
+###  http://schema.org/FamilyRelation
+
+:FamilyRelation rdf:type owl:Class ;
+                
+                rdfs:label "FamilyRelation" ;
+                
+                rdfs:subClassOf :MedicalEnumeration ;
+                
+                rdfs:comment "Relationship relatedness or connection by blood, marriage or adoption ." .
+
+
+
+###  http://schema.org/FoodIntolerance
+
+:FoodIntolerance rdf:type owl:Class ;
+                 
+                 rdfs:label "Food intolerance" ;
+                 
+                 rdfs:subClassOf :MedicalCondition ;
+                 
+                 rdfs:comment "Food intolerance or non-allergic food hypersensitivity is a term used widely for varied physiological responses associated with a particular food, or compound found in a range of foods." .
+
+
+
+###  http://schema.org/GeneTherapy
+
+:GeneTherapy rdf:type owl:Class ;
+             
+             rdfs:label "Gene therapy" ;
+             
+             rdfs:subClassOf :MedicalTherapy ;
+             
+             rdfs:comment "The introduction of normal genes into cells in place of missing or defective ones in order to correct genetic disorders." .
+
+
+
+###  http://schema.org/Gland
+
+:Gland rdf:type owl:Class ;
+       
+       rdfs:label "Gland" ;
+       
+       rdfs:subClassOf :EndocrineSystem ;
+       
+       rdfs:comment "A gland is an organ in an animal's body that synthesizes a substance such as hormones for release into the bloodstream (endocrine gland) or into cavities inside the body or its outer surface (exocrine gland)." .
+
+
+
+###  http://schema.org/Gravidity
+
+:Gravidity rdf:type owl:Class ;
+           
+           rdfs:label "Gravidity" ;
+           
+           rdfs:subClassOf :GynObsHistory ;
+           
+           rdfs:comment "Gravidity is defined as the number of times that a woman has been pregnant." .
+
+
+
+###  http://schema.org/GynObsHistory
+
+:GynObsHistory rdf:type owl:Class ;
+               
+               rdfs:label "Gynecology and obstetric history" ;
+               
+               rdfs:subClassOf :PersonalHistory ;
+               
+               rdfs:comment "As a part of personal medical history, the gynecology and obstetric history consist of information about reproductive life of the patient" .
+
+
+
+###  http://schema.org/HealthFacility
+
+:HealthFacility rdf:type owl:Class ;
+                
+                rdfs:label "Health facility" ;
+                
+                rdfs:subClassOf :MedicalEntity ;
+                
+                rdfs:comment "A medical facility is, in general, any location where healthcare is provided or medicine is practised regularly. " .
+
+
+
+###  http://schema.org/HealthcareProfessional
+
+:HealthcareProfessional rdf:type owl:Class ;
+                        
+                        rdfs:label "Healthcare professional" ;
+                        
+                        rdfs:subClassOf :MedicalEntity ;
+                        
+                        rdfs:comment "Any person working in healthcare settings. This includes healthcare providers but also data reporters, and others" .
+
+
+
+###  http://schema.org/HealthcareProvider
+
+:HealthcareProvider rdf:type owl:Class ;
+                    
+                    rdfs:label "Healthcare provider" ;
+                    
+                    rdfs:subClassOf :HealthcareProfessional ;
+                    
+                    rdfs:comment "A health care provider is an individual or an institution that provides preventive, curative, promotional or rehabilitative health care services in a systematic way to individuals, families or communities." .
+
+
+
+###  http://schema.org/HeartRate
+
+:HeartRate rdf:type owl:Class ;
+           
+           rdfs:label "Heart rate" ;
+           
+           rdfs:subClassOf :VitalSign ;
+           
+           rdfs:comment "In medicine, heart rate represents the heat beat frequency normally evaluated per minute. " .
+
+
+
+###  http://schema.org/HipCircumference
+
+:HipCircumference rdf:type owl:Class ;
+                  
+                  rdfs:label "Hip circumference" ;
+                  
+                  rdfs:subClassOf :BodyMeasure ;
+                  
+                  rdfs:comment "A measurement of the hips, including the widest portion of the buttocks, used in conjunction with the waist circumference, body weight and percent body fat to calculate the body composition score." .
+
+
+
+###  http://schema.org/HistoryOfPresentIllness
+
+:HistoryOfPresentIllness rdf:type owl:Class ;
+                         
+                         rdfs:label "History of the present illness" ;
+                         
+                         rdfs:subClassOf :PersonalHistory ;
+                         
+                         rdfs:comment "As a part of personal medical history, the history of the present illness consist of information about the patient present problem history." .
+
+
+
+###  http://schema.org/Homeostasis
+
+:Homeostasis rdf:type owl:Class ;
+             
+             rdfs:label "Homeostasis" ;
+             
+             rdfs:subClassOf :PhysiologicalEntity ;
+             
+             rdfs:comment "The ability or tendency of an organism or cell to maintain internal equilibrium by adjusting its physiological processes." .
+
+
+
+###  http://schema.org/HormoneTherapy
+
+:HormoneTherapy rdf:type owl:Class ;
+                
+                rdfs:label "Hormone therapy" ;
+                
+                rdfs:subClassOf :MedicalTherapy ;
+                
+                rdfs:comment "Hormone therapy or hormonal therapy is the use of hormones in medical treatment. " .
+
+
+
+###  http://schema.org/Hydrotherapy
+
+:Hydrotherapy rdf:type owl:Class ;
+              
+              rdfs:label "Hydrotherapy" ;
+              
+              rdfs:subClassOf :AlternativeTherapy ;
+              
+              rdfs:comment "Hydrotherapy, or water therapy, is the use of water (hot, cold, steam, or ice) to relieve discomfort and promote physical well-being." .
+
+
+
+###  http://schema.org/Hypodermis
+
+:Hypodermis rdf:type owl:Class ;
+            
+            rdfs:label "Hypodermis" ;
+            
+            rdfs:subClassOf :IntegumentarySystem ;
+            
+            rdfs:comment "The innermost and thickest layer of the skin." .
+
+
+
+###  http://schema.org/ImmuneSystem
+
+:ImmuneSystem rdf:type owl:Class ;
+              
+              rdfs:label "Immune system" ;
+              
+              rdfs:subClassOf :AnatomicalSystem ;
+              
+              rdfs:comment "The immune system is a system of biological structures and processes within an organism that protects against disease." .
+
+
+
+###  http://schema.org/Immunotherapy
+
+:Immunotherapy rdf:type owl:Class ;
+               
+               rdfs:label "Immunotherapy" ;
+               
+               rdfs:subClassOf :Pharmacotherapy ;
+               
+               rdfs:comment "The treatment of disease by inducing, enhancing, or suppressing an immune response." .
+
+
+
+###  http://schema.org/IntegumentarySystem
+
+:IntegumentarySystem rdf:type owl:Class ;
+                     
+                     rdfs:label "Integumentary system" ;
+                     
+                     rdfs:subClassOf :AnatomicalSystem ;
+                     
+                     rdfs:comment "The organ system that protects the body from various kinds of damage, such as loss of water or abrasion from outside, including the skin and its appendages (hair, scales, feathers, hooves, and nails)." .
+
+
+
+###  http://schema.org/InvasivenessType
+
+:InvasivenessType rdf:type owl:Class ;
+                  
+                  rdfs:label "Invasiveness category " ;
+                  
+                  rdfs:subClassOf :MedicalEnumeration ;
+                  
+                  rdfs:comment "A categorization of invasiveness type of medical procedures." .
+
+
+
+###  http://schema.org/Kinesiotherapy
+
+:Kinesiotherapy rdf:type owl:Class ;
+                
+                rdfs:label "Kinesiotherapy" ;
+                
+                rdfs:subClassOf :MedicalTherapy ;
+                
+                rdfs:comment "Also known as physical therapy or physiotherapy is a health care profession primarily concerned with the remediation of impairments and disabilities and the promotion of mobility, functional ability, quality of life and movement potential through examination, evaluation, diagnosis and physical intervention." .
+
+
+
+###  http://schema.org/LaboratoryResult
+
+:LaboratoryResult rdf:type owl:Class ;
+                  
+                  rdfs:label "Laboratory result" ;
+                  
+                  rdfs:subClassOf :ClinicalFinding ;
+                  
+                  rdfs:comment "Medical laboratory results resource" .
+
+
+
+###  http://schema.org/LaboratoryTest
+
+:LaboratoryTest rdf:type owl:Class ;
+                
+                rdfs:label "Laboratory test" ;
+                
+                rdfs:subClassOf :DiagnosticProcedure ;
+                
+                rdfs:comment "A quantitative or qualitative test of a substance to determine its components" .
+
+
+
+###  http://schema.org/LegalIssueHistory
+
+:LegalIssueHistory rdf:type owl:Class ;
+                   
+                   rdfs:label "Legal issue history" ;
+                   
+                   rdfs:subClassOf :SocialHistory ;
+                   
+                   rdfs:comment "All legal issue in history of a person" .
+
+
+
+###  http://schema.org/LifeEvent
+
+:LifeEvent rdf:type owl:Class ;
+           
+           rdfs:label "Life event" ;
+           
+           rdfs:subClassOf :MedicalEntity ;
+           
+           rdfs:comment "Any event happening in person's life." .
+
+
+
+###  http://schema.org/LifestyleOrHabits
+
+:LifestyleOrHabits rdf:type owl:Class ;
+                   
+                   rdfs:label "Lifestyle or habits" ;
+                   
+                   rdfs:subClassOf :PersonalHistory ;
+                   
+                   rdfs:comment "As a part of personal medical history, the lifestyle or habits data  consist of information behaviour, lifestyles and habits features or risk factors in the living of the patient" .
+
+
+
+###  http://schema.org/LymphaticSystem
+
+:LymphaticSystem rdf:type owl:Class ;
+                 
+                 rdfs:label "Lymphatic system" ;
+                 
+                 rdfs:subClassOf :CirculatorySystem ;
+                 
+                 rdfs:comment "The lymphatic system is part of the circulatory system, comprising a network of conduits called lymphatic vessels that carry a clear fluid called lymph directionally towards the heart." .
+
+
+
+###  http://schema.org/MagneticResonanceImaging
+
+:MagneticResonanceImaging rdf:type owl:Class ;
+                          
+                          rdfs:label "Magnetic resonance imaging" ;
+                          
+                          rdfs:subClassOf :MedicalImaging ;
+                          
+                          rdfs:comment "Also known as MRI, is a technique for producing images of bodily organs by measuring the response of the atomic nuclei of body tissues to high-frequency radio waves when placed in a strong magnetic field." .
+
+
+
+###  http://schema.org/MaritalStatus
+
+:MaritalStatus rdf:type owl:Class ;
+               
+               rdfs:label "Marital status" ;
+               
+               rdfs:subClassOf :SocialHistory ;
+               
+               rdfs:comment "One's situation with regard to whether one is single, married, separated, divorced, or widowed." .
+
+
+
+###  http://schema.org/MedicalAdmission
+
+:MedicalAdmission rdf:type owl:Class ;
+                  
+                  rdfs:label "MedicalAdmission" ;
+                  
+                  rdfs:subClassOf :MedicalEncounter ;
+                  
+                  rdfs:comment "Procedure consisting in taking a patient into a health care environment" .
+
+
+
+###  http://schema.org/MedicalAuscultation
+
+:MedicalAuscultation rdf:type owl:Class ;
+                     
+                     rdfs:label "Medical auscultation" ;
+                     
+                     rdfs:subClassOf :PhysicalExam ;
+                     
+                     rdfs:comment "The action of listening to sounds from the heart, lungs, or other organs, typically with a stethoscope, as a part of medical diagnosis." .
+
+
+
+###  http://schema.org/MedicalCase
+
+:MedicalCase rdf:type owl:Class ;
+             
+             rdfs:label "Medical case" ;
+             
+             rdfs:subClassOf :MedicalRecord ;
+             
+             rdfs:comment "A summary of all relevant and actionable information and instructions for a given patient in given time period." .
+
+
+
+###  http://schema.org/MedicalCertificate
+
+:MedicalCertificate rdf:type owl:Class ;
+                    
+                    rdfs:label "Medical certificate" ;
+                    
+                    rdfs:subClassOf :ClinicalDocument ;
+                    
+                    rdfs:comment "Any certificate given to a person for healthcare purposes" .
+
+
+
+###  http://schema.org/MedicalClinic
+
+:MedicalClinic rdf:type owl:Class ;
+               
+               rdfs:label "Clinic" ;
+               
+               rdfs:subClassOf :HealthFacility ;
+               
+               rdfs:comment "A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well." .
+
+
+
+###  http://schema.org/MedicalCondition
+
+:MedicalCondition rdf:type owl:Class ;
+                  
+                  rdfs:label "Medical condition" ;
+                  
+                  rdfs:subClassOf :ClinicalFinding ;
+                  
+                  rdfs:comment "A medical condition is an abnormal condition that affects the body of an organism. It is often construed as a disease when associated with specific symptoms and signs. A medical condition is a broad term that includes all diseases and disorders." .
+
+
+
+###  http://schema.org/MedicalDepartment
+
+:MedicalDepartment rdf:type owl:Class ;
+                   
+                   rdfs:label "Department" ;
+                   
+                   rdfs:subClassOf :HealthFacility ;
+                   
+                   rdfs:comment "A health facility department. Typically named according the medical specialities. Eg. Internal medicine, Surgery, etc." .
+
+
+
+###  http://schema.org/MedicalDischarge
+
+:MedicalDischarge rdf:type owl:Class ;
+                  
+                  rdfs:label "MedicalDischarge" ;
+                  
+                  rdfs:subClassOf :MedicalEncounter ;
+                  
+                  rdfs:comment "Procedure consisting in taking a patient out of a health care environment" .
+
+
+
+###  http://schema.org/MedicalEncounter
+
+:MedicalEncounter rdf:type owl:Class ;
+                  
+                  rdfs:label "Encounter procedure" ;
+                  
+                  rdfs:subClassOf :AdministrativeProcedure ;
+                  
+                  rdfs:comment "An interaction between a patient and healthcare participant(s) for the purpose of providing patient service(s) or assessing the health status of a patient." .
+
+
+
+###  http://schema.org/MedicalEntity
+
+:MedicalEntity rdf:type owl:Class .
+
+
+
+###  http://schema.org/MedicalEnumeration
+
+:MedicalEnumeration rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :MedicalEntity .
+
+
+
+###  http://schema.org/MedicalHistory
+
+:MedicalHistory rdf:type owl:Class ;
+                
+                rdfs:label "Medical history" ;
+                
+                rdfs:subClassOf :MedicalEnumeration ;
+                
+                rdfs:comment "The medical history of a patient is information gained by a physician by asking specific questions through anamnesis procedure, either of the patient or of other people who know the person and can give suitable information, with the aim of obtaining information useful in formulating a diagnosis and providing medical care to the patient. " .
+
+
+
+###  http://schema.org/MedicalImaging
+
+:MedicalImaging rdf:type owl:Class ;
+                
+                rdfs:label "Medical imaging" ;
+                
+                rdfs:subClassOf :DiagnosticProcedure ;
+                
+                rdfs:comment "A process of capturing, storing, manipulating, and displaying of images for a medical use" .
+
+
+
+###  http://schema.org/MedicalInspection
+
+:MedicalInspection rdf:type owl:Class ;
+                   
+                   rdfs:label "Medical inspection" ;
+                   
+                   rdfs:subClassOf :PhysicalExam ;
+                   
+                   rdfs:comment "The thorough and unhurried visualization of the patient that requires the use of the naked eye." .
+
+
+
+###  http://schema.org/MedicalIntervention
+
+:MedicalIntervention rdf:type owl:Class ;
+                     
+                     rdfs:label "Medical intervention" ;
+                     
+                     rdfs:subClassOf :MedicalEntity ;
+                     
+                     rdfs:comment "Any examination, treatment, or other act having preventive, diagnostic, therapeutic or rehabilitative aims and which is carried out by a physician or other health care provider (Declaration on the Promotion of Rights of Patients in Europe, WHO, Amsterdam 1994). Typically-but not limited to, the intervention is set of different procedures for a common care purpose." .
+
+
+
+###  http://schema.org/MedicalPalpation
+
+:MedicalPalpation rdf:type owl:Class ;
+                  
+                  rdfs:label "Medical palpation" ;
+                  
+                  rdfs:subClassOf :PhysicalExam ;
+                  
+                  rdfs:comment "The process of using your hands to examine the body, especially while perceiving/diagnosing a disease or illness." .
+
+
+
+###  http://schema.org/MedicalPercussion
+
+:MedicalPercussion rdf:type owl:Class ;
+                   
+                   rdfs:label "Medical percussion" ;
+                   
+                   rdfs:subClassOf :PhysicalExam ;
+                   
+                   rdfs:comment "A method of tapping on a surface to determine the underlying structure, and is used in clinical examinations to assess the condition of the thorax or abdomen" .
+
+
+
+###  http://schema.org/MedicalPrescription
+
+:MedicalPrescription rdf:type owl:Class ;
+                     
+                     rdfs:label "Medical prescription" ;
+                     
+                     rdfs:subClassOf :ClinicalDocument ;
+                     
+                     rdfs:comment "Also known as a medical order, the prescription is a written document from a healthcare provider to the patient bearing the information about the medicine or therapy to be used as a treatment." .
+
+
+
+###  http://schema.org/MedicalProcedure
+
+:MedicalProcedure rdf:type owl:Class ;
+                  
+                  rdfs:label "Medical procedure" ;
+                  
+                  rdfs:subClassOf :MedicalEntity ;
+                  
+                  rdfs:comment "A series of steps taken with defined manner of performing something; a method or technique within medical examination, treatment, or other act having preventive, administrative, diagnostic, therapeutic or rehabilitative aims. " .
+
+
+
+###  http://schema.org/MedicalRecord
+
+:MedicalRecord rdf:type owl:Class ;
+               
+               rdfs:label "Health or medical record" ;
+               
+               rdfs:subClassOf :MedicalEntity ;
+               
+               rdfs:comment "Any kind of patient related information record. This can be paper or digital" .
+
+
+
+###  http://schema.org/MedicalReport
+
+:MedicalReport rdf:type owl:Class ;
+               
+               rdfs:label "Medical report" ;
+               
+               rdfs:subClassOf :ClinicalDocument ;
+               
+               rdfs:comment "Any kind of report with patient information" .
+
+
+
+###  http://schema.org/MedicalRoom
+
+:MedicalRoom rdf:type owl:Class ;
+             
+             rdfs:label "Room" ;
+             
+             rdfs:subClassOf :HealthFacility ;
+             
+             rdfs:comment "A room (as a physical space) in a hospital for the care of patients" .
+
+
+
+###  http://schema.org/MedicalScore
+
+:MedicalScore rdf:type owl:Class ;
+              
+              rdfs:label "Medical score" ;
+              
+              rdfs:subClassOf :MedicalEntity ;
+              
+              rdfs:comment "The number of points achieved by a individual through a systematic evaluation." .
+
+
+
+###  http://schema.org/MedicalSign
+
+:MedicalSign rdf:type owl:Class ;
+             
+             rdfs:label "MedicalSign" ;
+             
+             rdfs:subClassOf :MedicalSignOrSymptom ;
+             
+             rdfs:comment "Any objective evidence of a disease, such as blood in the stool, a skin rash, is a sign recognized by the doctor, nurse, family members and/or the patient." .
+
+
+
+###  http://schema.org/MedicalSignOrSymptom
+
+:MedicalSignOrSymptom rdf:type owl:Class ;
+                      
+                      rdfs:label "Sign or symptom" ;
+                      
+                      rdfs:subClassOf :MedicalCondition ;
+                      
+                      rdfs:comment "Any feature associated with a medical condition. In medicine a symptom is generally subjective while a sign is objective." .
+
+
+
+###  http://schema.org/MedicalSpecialty
+
+:MedicalSpecialty rdf:type owl:Class ;
+                  
+                  rdfs:label "Medical speciality" ;
+                  
+                  rdfs:subClassOf :MedicalEntity ;
+                  
+                  rdfs:comment "A specialty (or speciality) in medicine is a branch of medical science." .
+
+
+
+###  http://schema.org/MedicalStay
+
+:MedicalStay rdf:type owl:Class ;
+             
+             rdfs:label "Encounter stay" ;
+             
+             rdfs:subClassOf :MedicalEncounter ;
+             
+             rdfs:comment "Procedure consisting in taking a patient into a health care environment as inpatient (hospitalization)" .
+
+
+
+###  http://schema.org/MedicalSubSpeciality
+
+:MedicalSubSpeciality rdf:type owl:Class ;
+                      
+                      rdfs:label "Medical subspeciality" ;
+                      
+                      rdfs:subClassOf :MedicalSpecialty ;
+                      
+                      rdfs:comment "A subspecialty (or sub-speciality) in medicine is a branch of medical speciality." .
+
+
+
+###  http://schema.org/MedicalSymptom
+
+:MedicalSymptom rdf:type owl:Class ;
+                
+                rdfs:label "MedicalSymptom" ;
+                
+                rdfs:subClassOf :MedicalSignOrSymptom ;
+                
+                rdfs:comment "Any complain sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue." .
+
+
+
+###  http://schema.org/MedicalTherapy
+
+:MedicalTherapy rdf:type owl:Class ;
+                
+                rdfs:subClassOf :TherapeuticProcedure .
+
+
+
+###  http://schema.org/MedicalTransfer
+
+:MedicalTransfer rdf:type owl:Class ;
+                 
+                 rdfs:label "MedicalTransfer" ;
+                 
+                 rdfs:subClassOf :MedicalEncounter ;
+                 
+                 rdfs:comment "Procedure consisting in transferring a patient from a health care environment to another" .
+
+
+
+###  http://schema.org/MedicalTriage
+
+:MedicalTriage rdf:type owl:Class ;
+               
+               rdfs:label "Triage procedure" ;
+               
+               rdfs:subClassOf :AdministrativeProcedure ;
+               
+               rdfs:comment "Procedure which consist in selecting patients by priority of care need, typically at hospital emergency unit" .
+
+
+
+###  http://schema.org/MedicalUnit
+
+:MedicalUnit rdf:type owl:Class ;
+             
+             rdfs:label "Unit" ;
+             
+             rdfs:subClassOf :HealthFacility ;
+             
+             rdfs:comment "A health facility Unit. eg Nephrology unit, Dialyses unite etc." .
+
+
+
+###  http://schema.org/MedicalVisit
+
+:MedicalVisit rdf:type owl:Class ;
+              
+              rdfs:label "Encounter visit" ;
+              
+              rdfs:subClassOf :MedicalEncounter ;
+              
+              rdfs:comment "Procedure consisting in having a patient visiting a health care environment as outpatient" .
+
+
+
+###  http://schema.org/MedicalWard
+
+:MedicalWard rdf:type owl:Class ;
+             
+             rdfs:label "Ward" ;
+             
+             rdfs:subClassOf :HealthFacility ;
+             
+             rdfs:comment "A block forming a division of a hospital (or a suite of rooms) shared by patients who need a similar kind of care" .
+
+
+
+###  http://schema.org/MedicationUseHistory
+
+:MedicationUseHistory rdf:type owl:Class ;
+                      
+                      rdfs:label "Medication use history" ;
+                      
+                      rdfs:subClassOf :PersonalHistory ;
+                      
+                      rdfs:comment "The description of medications use for a person" .
+
+
+
+###  http://schema.org/Menopause
+
+:Menopause rdf:type owl:Class ;
+           
+           rdfs:label "Menopause" ;
+           
+           rdfs:subClassOf :GynObsHistory ;
+           
+           rdfs:comment "The period in a woman's life when menstruation ceases." .
+
+
+
+###  http://schema.org/Menstruation
+
+:Menstruation rdf:type owl:Class ;
+              
+              rdfs:label "Menstruation" ;
+              
+              rdfs:subClassOf :GynObsHistory ;
+              
+              rdfs:comment "The periodic discharge of blood and mucosal tissue (the endometrium) from the uterus and vagina." .
+
+
+
+###  http://schema.org/MentalHealthHistory
+
+:MentalHealthHistory rdf:type owl:Class ;
+                     
+                     rdfs:label "Mental health history" ;
+                     
+                     rdfs:subClassOf :PersonalHistory ;
+                     
+                     rdfs:comment "The description of mental health disorder or conditions for a person" .
+
+
+
+###  http://schema.org/MorbidityEvent
+
+:MorbidityEvent rdf:type owl:Class ;
+                
+                rdfs:label "Morbidity event" ;
+                
+                rdfs:subClassOf :LifeEvent ;
+                
+                rdfs:comment "The state of being  diseased or unhealthy for a person or within a population" .
+
+
+
+###  http://schema.org/MuscularSystem
+
+:MuscularSystem rdf:type owl:Class ;
+                
+                rdfs:label "Muscular system" ;
+                
+                rdfs:subClassOf :MusculoskeletalSystem ;
+                
+                rdfs:comment " An organ system consisting of skeletal, smooth and cardiac muscles." .
+
+
+
+###  http://schema.org/MusculoskeletalSystem
+
+:MusculoskeletalSystem rdf:type owl:Class ;
+                       
+                       rdfs:label "Musculoskeletal system" ;
+                       
+                       rdfs:subClassOf :AnatomicalSystem ;
+                       
+                       rdfs:comment "The human musculoskeletal system (also known as the locomotor system, and previously the activity system) is an organ system that gives humans (and many animal species) the ability to move using the muscular and skeletal systems." .
+
+
+
+###  http://schema.org/NervousSystem
+
+:NervousSystem rdf:type owl:Class ;
+               
+               rdfs:label "Nervous system" ;
+               
+               rdfs:subClassOf :AnatomicalSystem ;
+               
+               rdfs:comment "The part of an animal's body that coordinates its voluntary and involuntary actions and transmits signals between different parts of its body. In most animal species it consists of two main parts, the central nervous system (CNS) and the peripheral nervous system (PNS)." .
+
+
+
+###  http://schema.org/NuclearMedicineImaging
+
+:NuclearMedicineImaging rdf:type owl:Class ;
+                        
+                        rdfs:label "Nuclear medicine" ;
+                        
+                        rdfs:subClassOf :MedicalImaging ;
+                        
+                        rdfs:comment "The branch of medicine that deals with the use of radioactive substances in research, diagnosis, and treatment." .
+
+
+
+###  http://schema.org/ObstetricSurgery
+
+:ObstetricSurgery rdf:type owl:Class ;
+                  
+                  rdfs:label "Obstetric surgery" ;
+                  
+                  rdfs:subClassOf :SurgicalProcedure ;
+                  
+                  rdfs:comment "A surgical procedure related to the care of women during or after pregnancy." .
+
+
+
+###  http://schema.org/OccupationalHistory
+
+:OccupationalHistory rdf:type owl:Class ;
+                     
+                     rdfs:label "Occupational history" ;
+                     
+                     rdfs:subClassOf :SocialHistory ;
+                     
+                     rdfs:comment "A part of the health history in which questions are asked about the person's occupation, source of income, effects of the work on the worker's health or the worker's health on the job, the duration of the job, and to what degree the occupation satisfies the person." .
+
+
+
+###  http://schema.org/OnsetMode
+
+:OnsetMode rdf:type owl:Class ;
+           
+           rdfs:label "onset mode" ;
+           
+           rdfs:subClassOf :MedicalEnumeration ;
+           
+           rdfs:comment "Description of how the medical condition started." .
+
+
+
+###  http://schema.org/OralTemperature
+
+:OralTemperature rdf:type owl:Class ;
+                 
+                 rdfs:label "Oral temperature" ;
+                 
+                 rdfs:subClassOf :BodyTemperature ;
+                 
+                 rdfs:comment "Human body temperature taken from oral region (mouth)" .
+
+
+
+###  http://schema.org/Oxygenotherapy
+
+:Oxygenotherapy rdf:type owl:Class ;
+                
+                rdfs:label "Oxygen therapy" ;
+                
+                rdfs:subClassOf :MedicalTherapy ;
+                
+                rdfs:comment "Oxygen therapy is the administration of oxygen as a medical intervention, which can be for a variety of purposes in both chronic and acute patient care" .
+
+
+
+###  http://schema.org/PHR
+
+:PHR rdf:type owl:Class ;
+     
+     rdfs:label "Personal Health Record" ;
+     
+     rdfs:subClassOf :MedicalRecord ;
+     
+     rdfs:comment "The Personal Health Record (PHR) is an electronic record of health-related information on an individual that conforms to nationally recognized interoperability standards and that can be drawn from multiple sources while being managed, shared, and controlled by the individual.Source: US NAHIT" .
+
+
+
+###  http://schema.org/PalliativeProcedure
+
+:PalliativeProcedure rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :MedicalProcedure .
+
+
+
+###  http://schema.org/PastMedicalHistory
+
+:PastMedicalHistory rdf:type owl:Class ;
+                    
+                    rdfs:label "Past medical history" ;
+                    
+                    rdfs:subClassOf :PersonalHistory ;
+                    
+                    rdfs:comment "The total sum of a patient's health status and morbidity events prior to the presenting problem" .
+
+
+
+###  http://schema.org/Patient
+
+:Patient rdf:type owl:Class ;
+         
+         rdfs:label "Patient" ;
+         
+         rdfs:subClassOf :Person ;
+         
+         rdfs:comment "A patient is any person recipient of health care services." .
+
+
+
+###  http://schema.org/Person
+
+:Person rdf:type owl:Class ;
+        
+        rdfs:subClassOf :MedicalEntity .
+
+
+
+###  http://schema.org/PersonalHistory
+
+:PersonalHistory rdf:type owl:Class ;
+                 
+                 rdfs:label "Personal history" ;
+                 
+                 rdfs:subClassOf :MedicalHistory ;
+                 
+                 rdfs:comment "In medicine, as a part of medical history, the personal history consist of information about disorders the patient have suffered, but also all other information about health determinants for the patient." .
+
+
+
+###  http://schema.org/PharmaceuticalSubstance
+
+:PharmaceuticalSubstance rdf:type owl:Class ;
+                         
+                         rdfs:label "Pharmaceutical substance" ;
+                         
+                         rdfs:subClassOf :ChemicalSubstance ;
+                         
+                         rdfs:comment "Any chemical substance formulated or compounded as single active ingredient or in combination of other pharmacologically active substance, intended for internal, or external or for use in the medical diagnosis, cure, treatment, or prevention of disease" .
+
+
+
+###  http://schema.org/Pharmacotherapy
+
+:Pharmacotherapy rdf:type owl:Class ;
+                 
+                 rdfs:label "Pharmacotherapy " ;
+                 
+                 rdfs:subClassOf :MedicalTherapy ;
+                 
+                 rdfs:comment "Pharmacotherapy or drug therapy or medication is the treatment of disease through the administration of drugs." .
+
+
+
+###  http://schema.org/Phototherapy
+
+:Phototherapy rdf:type owl:Class ;
+              
+              rdfs:label "Phototherapy" ;
+              
+              rdfs:subClassOf :MedicalTherapy ;
+              
+              rdfs:comment "Also known as light therapy or classically referred to as heliotherapy, consists of exposure to daylight or to specific wavelengths of light using polychromatic polarised light, lasers, light-emitting diodes, fluorescent lamps, dichroic lamps or very bright, full-spectrum light, usually controlled with various devices." .
+
+
+
+###  http://schema.org/PhysicalExam
+
+:PhysicalExam rdf:type owl:Class ;
+              
+              rdfs:subClassOf :MedicalProcedure .
+
+
+
+###  http://schema.org/PhysiologicalEntity
+
+:PhysiologicalEntity rdf:type owl:Class ;
+                     
+                     rdfs:label "Physiological entity" ;
+                     
+                     rdfs:subClassOf :MedicalEntity ;
+                     
+                     rdfs:comment "Any entity describing how organisms, organ systems, organs, cells, and bio-molecules carry out the chemical or physical functions that exist in a living system." .
+
+
+
+###  http://schema.org/PlasticSurgeryProcedure
+
+:PlasticSurgeryProcedure rdf:type owl:Class ;
+                         
+                         rdfs:label "Plastic surgery procedure" ;
+                         
+                         rdfs:subClassOf :SurgicalProcedure ;
+                         
+                         rdfs:comment "The process of reconstructing or repairing parts of the body by the transfer of tissue, either in the treatment of injury or for cosmetic reasons." .
+
+
+
+###  http://schema.org/Pregnancy
+
+:Pregnancy rdf:type owl:Class ;
+           
+           rdfs:label "Pregnancy" ;
+           
+           rdfs:subClassOf :ClinicalFinding ;
+           
+           rdfs:comment "The period from conception to birth. Can also refer to the condition of a woman or female animal that is going to have a baby or babies. This is regardless to the outcome" .
+
+
+
+###  http://schema.org/PrescribingProcedure
+
+:PrescribingProcedure rdf:type owl:Class ;
+                      
+                      rdfs:label "prescribing procedure" ;
+                      
+                      rdfs:subClassOf :TherapeuticProcedure ;
+                      
+                      rdfs:comment "Any procedure which consist in prescribing a medicine or other treatment designed to prevent disease or ill health." .
+
+
+
+###  http://schema.org/PreventiveProcedure
+
+:PreventiveProcedure rdf:type owl:Class ;
+                     
+                     rdfs:label "Preventive procedure" ;
+                     
+                     rdfs:subClassOf :TherapeuticProcedure ;
+                     
+                     rdfs:comment "Any procedure or anymedicine or other treatment designed to prevent disease or ill health." .
+
+
+
+###  http://schema.org/Psychotherapy
+
+:Psychotherapy rdf:type owl:Class ;
+               
+               rdfs:label "Psychotherapy" ;
+               
+               rdfs:subClassOf :MedicalTherapy ;
+               
+               rdfs:comment "The treatment of mental disorder by psychological rather than medical means." .
+
+
+
+###  http://schema.org/Pulse
+
+:Pulse rdf:type owl:Class ;
+       
+       rdfs:label "Pulse" ;
+       
+       rdfs:subClassOf :MedicalSign ;
+       
+       rdfs:comment "In medicine, one's pulse represents the tactile arterial palpation of the heartbeat by trained fingertips. " .
+
+
+
+###  http://schema.org/Race
+
+:Race rdf:type owl:Class ;
+      
+      rdfs:label "Race" ;
+      
+      rdfs:subClassOf :SocialHistory ;
+      
+      rdfs:comment "An arbitrary classification of a taxonomic group that is a division of a species." .
+
+
+
+###  http://schema.org/Radiography
+
+:Radiography rdf:type owl:Class ;
+             
+             rdfs:label "Radiography" ;
+             
+             rdfs:subClassOf :MedicalImaging ;
+             
+             rdfs:comment "Radiography is an imaging technique that uses electromagnetic radiation other than visible light, especially X-rays, to view the internal structure of a non-uniformly composed and opaque object such as the human body. " .
+
+
+
+###  http://schema.org/Radiotherapy
+
+:Radiotherapy rdf:type owl:Class ;
+              
+              rdfs:label "Radiotherapy" ;
+              
+              rdfs:subClassOf :MedicalTherapy ;
+              
+              rdfs:comment "The treatment of disease, especially cancer, using X-rays or similar forms of radiation." .
+
+
+
+###  http://schema.org/RecreationalHistory
+
+:RecreationalHistory rdf:type owl:Class ;
+                     
+                     rdfs:label "Recreational history" ;
+                     
+                     rdfs:subClassOf :SocialHistory ;
+                     
+                     rdfs:comment "Description of activity history of a person during his leisure or recreation time. This is a part of medical history describing the physical activity of a person." .
+
+
+
+###  http://schema.org/RectalTemperature
+
+:RectalTemperature rdf:type owl:Class ;
+                   
+                   rdfs:label "Rectal Temperature" ;
+                   
+                   rdfs:subClassOf :BodyTemperature ;
+                   
+                   rdfs:comment "Human body temperature taken at rectal region (anal)" .
+
+
+
+###  http://schema.org/Refill
+
+:Refill rdf:type owl:Class ;
+        
+        rdfs:label "Refill" ;
+        
+        rdfs:subClassOf :MedicalPrescription ;
+        
+        rdfs:comment "A prescription section, that shows many times you can get more of your medicine without going back to see your doctor." .
+
+
+
+###  http://schema.org/ReligionGroup
+
+:ReligionGroup rdf:type owl:Class ;
+               
+               rdfs:label "Religion group" ;
+               
+               rdfs:subClassOf :SocialHistory ;
+               
+               rdfs:comment "A group of people characterized by the practice of a common religion." .
+
+
+
+###  http://schema.org/ReligiousBelief
+
+:ReligiousBelief rdf:type owl:Class ;
+                 
+                 rdfs:label "Religion belief" ;
+                 
+                 rdfs:subClassOf :ReligionGroup ;
+                 
+                 rdfs:comment "A strong belief in a supernatural power or powers that control human destiny." .
+
+
+
+###  http://schema.org/ReproductiveSystem
+
+:ReproductiveSystem rdf:type owl:Class ;
+                    
+                    rdfs:label "Reproductive system" ;
+                    
+                    rdfs:subClassOf :AnatomicalSystem ;
+                    
+                    rdfs:comment "A system of sex organs within an organism which work together for the purpose of sexual reproduction. It comprises the sex organs, such as ovaries, fallopian tubes, uterus, vagina, mammary glands, testes, vas deferens, seminal vesicles and prostate" .
+
+
+
+###  http://schema.org/ResearchPersonnel
+
+:ResearchPersonnel rdf:type owl:Class ;
+                   
+                   rdfs:label "Research personnel" ;
+                   
+                   rdfs:subClassOf :HealthcareProfessional ;
+                   
+                   rdfs:comment "People engaged in research in healthcare environment." .
+
+
+
+###  http://schema.org/ResidenceHistory
+
+:ResidenceHistory rdf:type owl:Class ;
+                  
+                  rdfs:label "Residence history" ;
+                  
+                  rdfs:subClassOf :SocialHistory ;
+                  
+                  rdfs:comment "History of residence addresses change for a person" .
+
+
+
+###  http://schema.org/RespirationRate
+
+:RespirationRate rdf:type owl:Class ;
+                 
+                 rdfs:label "Respiration rate" ;
+                 
+                 rdfs:subClassOf :VitalSign ;
+                 
+                 rdfs:comment "The respiratory rate (RR), also known as the respiration rate, ventilation rate, ventilatory rate, ventilation frequency (Vf), respiration frequency (Rf), pulmonary ventilation rate, or breathing frequency, is the rate (frequency) of ventilation, that is, the number of breaths (inhalation-exhalation cycles) taken within a set amount of time (typically 60 seconds). " .
+
+
+
+###  http://schema.org/RespiratorySystem
+
+:RespiratorySystem rdf:type owl:Class ;
+                   
+                   rdfs:label "Respiratory system" ;
+                   
+                   rdfs:subClassOf :AnatomicalSystem ;
+                   
+                   rdfs:comment "A biological system consisting of specific organs and structures used for the process of respiration in an organism. The respiratory system is involved in the intake and exchange of oxygen and carbon dioxide between an organism and the environment." .
+
+
+
+###  http://schema.org/Severity
+
+:Severity rdf:type owl:Class ;
+          
+          rdfs:label "Severity" ;
+          
+          rdfs:subClassOf :MedicalEnumeration ;
+          
+          rdfs:comment "Intensity quantification or scoring of illness or a medical condition" .
+
+
+
+###  http://schema.org/SexualBehaviour
+
+:SexualBehaviour rdf:type owl:Class ;
+                 
+                 rdfs:label "Sexual behavioural" ;
+                 
+                 rdfs:subClassOf :SocialHistory ;
+                 
+                 rdfs:comment "The history describing the capacity to have erotic experiences and responses. Human sexuality may also involve a person's sexual attraction to another person" .
+
+
+
+###  http://schema.org/SideEffect
+
+:SideEffect rdf:type owl:Class ;
+            
+            rdfs:label "Side effect" ;
+            
+            rdfs:subClassOf :AdverseEvent ;
+            
+            rdfs:comment "In medicine, a side effect is an effect, whether therapeutic or adverse, that is secondary to the one intended; although the term is predominantly employed to describe adverse effects, it can also apply to beneficial, but unintended, consequences of the use of a drug." .
+
+
+
+###  http://schema.org/SkeletalSystem
+
+:SkeletalSystem rdf:type owl:Class ;
+                
+                rdfs:label "Skeletal system" ;
+                
+                rdfs:subClassOf :MusculoskeletalSystem ;
+                
+                rdfs:comment "The internal framework of the body composed of bones" .
+
+
+
+###  http://schema.org/Smoking
+
+:Smoking rdf:type owl:Class ;
+         
+         rdfs:label "Smoking" ;
+         
+         rdfs:subClassOf :LifestyleOrHabits ;
+         
+         rdfs:comment "The quantification or description of smoking habit for the person" .
+
+
+
+###  http://schema.org/SocialHistory
+
+:SocialHistory rdf:type owl:Class ;
+               
+               rdfs:label "Social history" ;
+               
+               rdfs:subClassOf :PersonalHistory ;
+               
+               rdfs:comment "A portion of the medical history addressing familial, occupational, and recreational aspects of the patient's personal life that have the potential to be clinically significant." .
+
+
+
+###  http://schema.org/Substance
+
+:Substance rdf:type owl:Class ;
+           
+           rdfs:label "Substance" ;
+           
+           rdfs:subClassOf :MedicalEntity ;
+           
+           rdfs:comment "Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical." .
+
+
+
+###  http://schema.org/SubstanceUseOrAbuse
+
+:SubstanceUseOrAbuse rdf:type owl:Class ;
+                     
+                     rdfs:label "Substance use or abuse" ;
+                     
+                     rdfs:subClassOf :LifestyleOrHabits ;
+                     
+                     rdfs:comment "The quantification or description of substance use (i.e illicit substances or psychoactive drugs) or abuse for a person" .
+
+
+
+###  http://schema.org/SurgicalProcedure
+
+:SurgicalProcedure rdf:type owl:Class ;
+                   
+                   rdfs:label "Surgical procedure" ;
+                   
+                   rdfs:subClassOf :MedicalProcedure ;
+                   
+                   rdfs:comment "A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes in a living body" .
+
+
+
+###  http://schema.org/Syndrome
+
+:Syndrome rdf:type owl:Class ;
+          
+          rdfs:label "Syndrome" ;
+          
+          rdfs:subClassOf :MedicalCondition ;
+          
+          rdfs:comment "A syndrome is the association of several medical signs, symptoms, and or other characteristics that often occur together." .
+
+
+
+###  http://schema.org/SystemicReview
+
+:SystemicReview rdf:type owl:Class ;
+                
+                rdfs:label "Systemic review" ;
+                
+                rdfs:subClassOf :MedicalEnumeration ;
+                
+                rdfs:comment "The part of anamnesis where the physician makes a screening interview of all body systems and organs for relevant disorders in history of the patient." .
+
+
+
+###  http://schema.org/TherapeuticProcedure
+
+:TherapeuticProcedure rdf:type owl:Class ;
+                      
+                      rdfs:label "Therapeutic procedure" ;
+                      
+                      rdfs:subClassOf :MedicalProcedure ;
+                      
+                      rdfs:comment "Any medical procedure concerned with the prevention or treatment of medical conditions. " .
+
+
+
+###  http://schema.org/TriageComplaint
+
+:TriageComplaint rdf:type owl:Class ;
+                 
+                 rdfs:label "Triage complaint" ;
+                 
+                 rdfs:subClassOf :MedicalSignOrSymptom ;
+                 
+                 rdfs:comment "A complaint on which patient triage is based" .
+
+
+
+###  http://schema.org/TriageScore
+
+:TriageScore rdf:type owl:Class ;
+             
+             rdfs:label "Triage score" ;
+             
+             rdfs:subClassOf :MedicalScore ;
+             
+             rdfs:comment "The score used sorting of patients (as in an emergency room) according to the urgency of their need for care normally evaluated on scale or coding system" .
+
+
+
+###  http://schema.org/Ultrasound
+
+:Ultrasound rdf:type owl:Class ;
+            
+            rdfs:label "Ultrasound" ;
+            
+            rdfs:subClassOf :MedicalImaging ;
+            
+            rdfs:comment "Diagnostic ultrasound, also called sonography or diagnostic medical sonography, is an imaging method that uses high-frequency sound waves to produce relatively precise images of structures within your body." .
+
+
+
+###  http://schema.org/UrinarySystem
+
+:UrinarySystem rdf:type owl:Class ;
+               
+               rdfs:label "Urinary system" ;
+               
+               rdfs:subClassOf :AnatomicalSystem ;
+               
+               rdfs:comment "Also known as the renal system, is an organ system which contribute to eliminate wastes from the body, regulate blood volume and pressure, control levels of electrolytes and metabolites, and regulate blood pH. Normally it consists of the two kidneys, ureters, the bladder, and the urethra." .
+
+
+
+###  http://schema.org/Vaccination
+
+:Vaccination rdf:type owl:Class ;
+             
+             rdfs:label "Vaccination" ;
+             
+             rdfs:subClassOf :Immunotherapy ;
+             
+             rdfs:comment "Commonly known as immunization, vaccination is the administration of antigenic material (a vaccine) to stimulate an individual's immune system to develop adaptive immunity to a pathogen." .
+
+
+
+###  http://schema.org/VesselsFunction
+
+:VesselsFunction rdf:type owl:Class ;
+                 
+                 rdfs:label "Vessels function" ;
+                 
+                 rdfs:subClassOf :PhysiologicalEntity ;
+                 
+                 rdfs:comment "The function of vessels in human body" .
+
+
+
+###  http://schema.org/VitalSign
+
+:VitalSign rdf:type owl:Class ;
+           
+           rdfs:label "Vital sign" ;
+           
+           rdfs:subClassOf :MedicalSign ;
+           
+           rdfs:comment "Vital signs are measures of various physiological functions in order to assess the most basic body functions" .
+
+
+
+###  http://schema.org/WaistCircumference
+
+:WaistCircumference rdf:type owl:Class ;
+                    
+                    rdfs:label "Waist circumference" ;
+                    
+                    rdfs:subClassOf :BodyMeasure ;
+                    
+                    rdfs:comment "A measure of the circumference of the narrowest part of a person's waist, typically measured between belly button and the center of rib cage. This measurement can be used to indicate abdominal obesity and to track changes in waist size during weight loss efforts." .
+
+
+
+###  http://schema.org/WaistHipRatio
+
+:WaistHipRatio rdf:type owl:Class ;
+               
+               rdfs:label "Waist hip ratio" ;
+               
+               rdfs:subClassOf :BodyMeasure ;
+               
+               rdfs:comment "Waist–hip ratio or waist-to-hip ratio is the ratio of the circumference of the waist to that of the hips." .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
