@@ -32,3 +32,13 @@ Chair</br></p>
 Note:
 =====
 Please keep in mind that the files which are displayed here are always under development, therefore they can be changed or deleted without any notice
+
+External Library:
+-----------------
+In order to run the scripts for converting *turtle* file to *RDFa* file:
+
++ `make.sh` and `make.cmd`
++ `ttl_to_rdfa.sh` and `ttl_to_rdfa.cmd`
+
+You will need [EulerSharp](http://sourceforge.net/projects/eulersharp/).
+
