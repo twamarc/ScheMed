@@ -799,8 +799,13 @@ schema:MedicalCase a rdfs:Class ;
 schema:MedicalRequest a rdfs:Class ;
     rdfs:label "MedicalRequest" ;
     rdfs:comment "A medical request for medical information of a patient, or an exam/procedure to be done, or something else. Specifically a procedure request is a record of a request for a procedure to be performed. It can be used to represent a procedure that is planned, that is proposed, or that is ordered." ;
-    rdfs:subClassOf schema:CreatedInExtension.
-
+    rdfs:subClassOf schema:ClinicalDocument,schema:CreatedInExtension.
+		
+schema:MedicalOrder a rdfs:Class ;
+    rdfs:label "MedicalOrder" ;
+    rdfs:comment "Written orders by medical providers to other members of the health care team or to the patient." ;
+    rdfs:subClassOf schema:ClinicalDocument,schema:CreatedInExtension.
+	
 schema:MedicalCause a rdfs:Class ;
     rdfs:label "MedicalCause" ;
     dc:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_WikiDoc> ;
@@ -1016,6 +1021,18 @@ schema:MedicalProcedure a rdfs:Class ;
     rdfs:subClassOf schema:MedicalEntity,
         schema:MovedFromCore .
 
+schema:MedicalProcedureActivity a rdfs:Class ;
+    rdfs:label "MedicalProcedureActivity" ;
+    rdfs:comment "A medical procedure activity" ;
+    rdfs:subClassOf schema:MedicalProcedure,
+        schema:CreatedInCore .
+
+schema:MedicalProcedurePhase a rdfs:Class ;
+    rdfs:label "MedicalProcedurePhase" ;
+    rdfs:comment "A medical procedure phase" ;
+    rdfs:subClassOf schema:MedicalProcedure,
+        schema:CreatedInCore .
+		
 schema:MedicalProcedureType a rdfs:Class ;
     rdfs:label "MedicalProcedureType" ;
     dc:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_WikiDoc> ;
@@ -1066,10 +1083,16 @@ schema:MedicalRiskScore a rdfs:Class ;
 
 schema:MedicalRoom a rdfs:Class ;
     rdfs:label "MedicalRoom" ;
-    rdfs:comment "A room (as a physical space) in a hospital for the care of patients" ;
+    rdfs:comment "A room (as a physical space) in a healthcare facility environment" ;
     rdfs:subClassOf schema:CreatedInExtension,
         schema:HealthFacility .
 
+schema:MedicalBed a rdfs:Class ;
+    rdfs:label "MedicalBed" ;
+    rdfs:comment "A bed (as a physical thing) in a healthcare facility environment" ;
+    rdfs:subClassOf schema:CreatedInExtension,
+        schema:HealthFacility .
+		
 schema:MedicalScholarlyArticle a rdfs:Class ;
     rdfs:label "MedicalScholarlyArticle" ;
     rdfs:comment "A scholarly article in the medical domain." ;
@@ -3217,6 +3240,34 @@ schema:drugAdministration a rdf:Property ;
     rdfs:comment "specifying the event of administering the drug to the patient. Typically associated with the route of administration i.e.oral, injection etc." ;
     rdfs:subClassOf schema:CreatedInExtension .
 
+schema:dispensationCode a rdf:Property ;
+    rdfs:label "dispensationCode" ;
+    schema:domainIncludes schema:Drug, schema:MedicationDispensation;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "specifying the code of the medication dispensation activity" ;
+    rdfs:subClassOf schema:CreatedInExtension .
+	
+schema:medicalPriority a rdf:Property ;
+    rdfs:label "medicalPriority" ;
+    schema:domainIncludes schema:Person, <http://purl.bioontology.org/ontology/SNOMEDCT/116154003>;
+    schema:rangeIncludes schema:Text, <http://purl.bioontology.org/ontology/SNOMEDCT/272125009> ;
+    rdfs:comment "specifying the code of the medication dispensation activity" ;
+    rdfs:subClassOf schema:CreatedInExtension .
+	
+schema:referredBy a rdf:Property ;
+    rdfs:label "referredBy" ;
+    schema:domainIncludes schema:Person, <http://purl.bioontology.org/ontology/SNOMEDCT/116154003>;
+    schema:rangeIncludes schema:HealthFacility, schema:Person ;
+    rdfs:comment "Specifying a referrer for a patient in general, but can be applied to other medical entities" ;
+    rdfs:subClassOf schema:CreatedInExtension .
+	
+schema:medicationTime a rdf:Property ;
+    rdfs:label "medicationTime" ;
+    schema:domainIncludes schema:Drug;
+    schema:rangeIncludes schema:DateTime ;
+    rdfs:comment "specifying the medication time i.e when the drug has or was administrated" ;
+    rdfs:subClassOf schema:CreatedInExtension .
+	
 schema:drugClass a rdf:Property ;
     rdfs:label "drugClass" ;
     schema:domainIncludes schema:Drug ;
@@ -3228,7 +3279,7 @@ schema:drugDispensation a rdf:Property ;
     rdfs:label "drugDispensation" ;
     schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009>,
         schema:HealthcareProfessional,
-        schema:MedicalCondition,
+        schema:MedicalCondition, schema:MedicationDispensation,
         schema:MedicalTherapy,
         schema:TherapeuticProcedure ;
     schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/440298008> ;
@@ -3765,23 +3816,37 @@ schema:medicalCertificate a rdf:Property ;
     rdfs:subClassOf schema:CreatedInExtension ;
     rdfs:subPropertyOf schema:clinicalDocument .
 
-schema:medicalCertificate a rdf:Property ;
-    rdfs:label "medicalCertificate" ;
+schema:medicalOrder a rdf:Property ;
+    rdfs:label "medicalOrder" ;
     schema:domainIncludes schema:Patient ;
-    schema:rangeIncludes schema:MedicalCertificate ;
-    rdfs:comment "Specifying any medical certificate" ;
+    schema:rangeIncludes schema:MedicalOrder ;
+    rdfs:comment "Specifying any medical order" ;
     rdfs:subClassOf schema:CreatedInExtension ;
     rdfs:subPropertyOf schema:clinicalDocument .
+
+schema:medicalOrderID a rdf:Property ;
+    rdfs:label "medicalOrder" ;
+    schema:domainIncludes schema:MedicalOrder ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Specifying any medical order" ;
+    rdfs:subClassOf schema:CreatedInExtension .
 	
 schema:medicalRequest a rdf:Property ;
-    rdfs:label "medicalCertificate" ;
+    rdfs:label "medicalRequest" ;
     schema:domainIncludes schema:Patient,
         schema:MedicalIntervention,
         schema:MedicalProcedure ;
     schema:rangeIncludes schema:MedicalRequest ;
     rdfs:comment "Specifying any medical request" ;
     rdfs:subClassOf schema:CreatedInExtension.
-
+	
+schema:medicalRequestID a rdf:Property ;
+    rdfs:label "medicalCertificate" ;
+    schema:domainIncludes schema:MedicalRequest;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Specifying a medical request identifier" ;
+    rdfs:subClassOf schema:CreatedInExtension.
+	
 schema:medicalClinic a rdf:Property ;
     rdfs:label "medicalClinic" ;
     schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003>,
@@ -3882,6 +3947,19 @@ schema:medicalRoom a rdf:Property ;
     rdfs:subClassOf schema:CreatedInExtension ;
     rdfs:subPropertyOf schema:healthFacility .
 
+schema:medicalBed a rdf:Property ;
+    rdfs:label "medicalBed" ;
+    schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003>,
+        schema:ClinicalFinding,
+        schema:LifeEvent,
+        schema:MedicalIntervention,
+        schema:MedicalProcedure,
+        schema:Patient ;
+    schema:rangeIncludes schema:MedicalBed ;
+    rdfs:comment "Specifying the medical bed attended by a patient." ;
+    rdfs:subClassOf schema:CreatedInExtension ;
+    rdfs:subPropertyOf schema:healthFacility .
+	
 schema:medicalSubSpecialty a rdf:Property ;
     rdfs:label "medicalSubSpecialty" ;
     schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/223366009>,
@@ -4164,6 +4242,20 @@ schema:physicalExamination a rdf:Property ;
     rdfs:subClassOf schema:CreatedInExtension ;
     rdfs:subPropertyOf schema:diagnosticProcedure .
 
+schema:patientID a rdf:Property ;
+    rdfs:label "patientIdentifier" ;
+    schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003>, schema:Patient ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Specifying a digit ID for the patient within a healthcare facility. Therefore a patient can have multiple ID specific to each hospitals" ;
+    rdfs:subClassOf schema:CreatedInExtension.
+
+schema:patientCode a rdf:Property ;
+    rdfs:label "patientCode" ;
+    schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/404684003>, schema:Patient ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Specifying a patient code. Used in general cross-hospitals" ;
+    rdfs:subClassOf schema:CreatedInExtension.
+	
 schema:physiologicalBenefits a rdf:Property ;
     rdfs:label "physiologicalBenefits" ;
     schema:domainIncludes schema:Diet ;
@@ -5196,6 +5288,22 @@ schema:medicalProcedure a rdf:Property ;
     rdfs:comment "Specifying the medical procedure resource of the patient or person." ;
     rdfs:subClassOf schema:CreatedInExtension ;
     rdfs:subPropertyOf schema:procedure .
+
+schema:procedureActivity a rdf:Property ;
+    rdfs:label "procedureActivity" ;
+    schema:domainIncludes schema:MedicalProcedure ;
+    schema:rangeIncludes schema:MedicalProcedureActivity ;
+    rdfs:comment "Specifying the medical procedure activity. This can be another medical procedure" ;
+    rdfs:subClassOf schema:CreatedInExtension ;
+    rdfs:subPropertyOf schema:medicalProcedure .
+
+schema:procedurePhase a rdf:Property ;
+    rdfs:label "procedurePhase" ;
+    schema:domainIncludes schema:MedicalProcedure ;
+    schema:rangeIncludes schema:MedicalProcedurePhase ;
+    rdfs:comment "Specifying the medical procedure phase, specially when a procedure is performed in multiple phases." ;
+    rdfs:subClassOf schema:CreatedInExtension ;
+    rdfs:subPropertyOf schema:medicalProcedure .
 
 schema:personalHistory a rdf:Property ;
     rdfs:label "personalHistory" ;
