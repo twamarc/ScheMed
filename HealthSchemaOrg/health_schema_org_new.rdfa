@@ -905,6 +905,13 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/PhysicalExam">PhysicalExam</a></span>
     </div>
 
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalBed">
+      <span class="h" property="rdfs:label">MedicalBed</span>
+      <span property="rdfs:comment">A bed (as a physical thing) in a healthcare facility environment</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInExtension">CreatedInExtension</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
+    </div>
+
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalCase">
       <span class="h" property="rdfs:label">MedicalCase</span>
       <span property="rdfs:comment">A summary of all relevant and actionable information and instructions for a given patient in given time period.</span>
@@ -1107,6 +1114,13 @@
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
     </div>
 
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalOrder">
+      <span class="h" property="rdfs:label">MedicalOrder</span>
+      <span property="rdfs:comment">Written orders by medical providers to other members of the health care team or to the patient.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInExtension">CreatedInExtension</a></span>
+    </div>
+
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalOrganization">
       <span class="h" property="rdfs:label">MedicalOrganization</span>
       <span property="rdfs:comment">A medical organization, such as a doctor's office or clinic.</span>
@@ -1133,6 +1147,20 @@
       <span property="rdfs:comment">Also known as a medical order, the prescription is a written document from a healthcare provider to the patient bearing the information about the medicine or therapy to be used as a treatment.</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInExtension">CreatedInExtension</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalProcedureActivity">
+      <span class="h" property="rdfs:label">MedicalProcedureActivity</span>
+      <span property="rdfs:comment">A medical procedure activity</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInCore">CreatedInCore</a></span>
+    </div>
+
+    <div typeof="rdfs:Class" resource="http://schema.org/MedicalProcedurePhase">
+      <span class="h" property="rdfs:label">MedicalProcedurePhase</span>
+      <span property="rdfs:comment">A medical procedure phase</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInCore">CreatedInCore</a></span>
     </div>
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalProcedureType">
@@ -1167,6 +1195,7 @@
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalRequest">
       <span class="h" property="rdfs:label">MedicalRequest</span>
       <span property="rdfs:comment">A medical request for medical information of a patient, or an exam/procedure to be done, or something else. Specifically a procedure request is a record of a request for a procedure to be performed. It can be used to represent a procedure that is planned, that is proposed, or that is ordered.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ClinicalDocument">ClinicalDocument</a></span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInExtension">CreatedInExtension</a></span>
     </div>
 
@@ -1200,7 +1229,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalRoom">
       <span class="h" property="rdfs:label">MedicalRoom</span>
-      <span property="rdfs:comment">A room (as a physical space) in a hospital for the care of patients</span>
+      <span property="rdfs:comment">A room (as a physical space) in a healthcare facility environment</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInExtension">CreatedInExtension</a></span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/HealthFacility">HealthFacility</a></span>
     </div>
@@ -1265,7 +1294,7 @@
 
     <div typeof="rdfs:Class" resource="http://schema.org/MedicalStay">
       <span class="h" property="rdfs:label">MedicalStay</span>
-      <span property="rdfs:comment">Procedure consisting in taking a patient into a health care environment as inpatient (hospitalization)</span>
+      <span property="rdfs:comment">Procedure consisting in taking a patient into a healthcare environment as inpatient (hospitalization)</span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInExtension">CreatedInExtension</a></span>
       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MedicalEncounter">MedicalEncounter</a></span>
     </div>
@@ -2837,6 +2866,14 @@
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/dateTime">dateTime</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/dispensationCode">
+      <span class="h" property="rdfs:label">dispensationCode</span>
+      <span property="rdfs:comment">specifying the code of the medication dispensation activity</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicationDispensation">MedicationDispensation</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/distinguishingSign">
       <span class="h" property="rdfs:label">distinguishingSign</span>
       <span property="rdfs:comment">One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.</span>
@@ -2905,6 +2942,7 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/223366009">sctid:223366009</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/HealthcareProfessional">HealthcareProfessional</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicationDispensation">MedicationDispensation</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/440298008">sctid:440298008</a></span>
@@ -3497,6 +3535,19 @@
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalEncounter">medicalEncounter</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/medicalBed">
+      <span class="h" property="rdfs:label">medicalBed</span>
+      <span property="rdfs:comment">Specifying the medical bed attended by a patient.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/404684003">sctid:404684003</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ClinicalFinding">ClinicalFinding</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LifeEvent">LifeEvent</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalIntervention">MedicalIntervention</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalBed">MedicalBed</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/healthFacility">healthFacility</a></span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/medicalCase">
       <span class="h" property="rdfs:label">medicalCase</span>
       <span property="rdfs:comment">Specifying a medical case for a given medical entity or patient. A medical case is a part of a full medical record of a patient.</span>
@@ -3596,6 +3647,21 @@
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/clinicalDocument">clinicalDocument</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/medicalOrderID">
+      <span class="h" property="rdfs:label">medicalOrderID</span>
+      <span property="rdfs:comment">Specifying any medical order</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalOrder">MedicalOrder</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalOrder">
+      <span class="h" property="rdfs:label">medicalOrder</span>
+      <span property="rdfs:comment">Specifying any medical order</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalOrder">MedicalOrder</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/clinicalDocument">clinicalDocument</a></span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/medicalPrescription">
       <span class="h" property="rdfs:label">medicalPrescription</span>
       <span property="rdfs:comment">Linking a patient with his medical order (=written prescription) for the patient Eg. hasPrescription or gotPrescribed. For the provider we use the property prescribingProcedure.</span>
@@ -3603,6 +3669,15 @@
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/440545006">sctid:440545006</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalPrescription">MedicalPrescription</a></span>
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/clinicalDocument">clinicalDocument</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalPriority">
+      <span class="h" property="rdfs:label">medicalPriority</span>
+      <span property="rdfs:comment">specifying the code of the medication dispensation activity</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/116154003">sctid:116154003</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/272125009">sctid:272125009</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalProcedure">
@@ -3628,6 +3703,13 @@
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalRecord">MedicalRecord</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalReport">MedicalReport</a></span>
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/clinicalDocument">clinicalDocument</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicalRequestID">
+      <span class="h" property="rdfs:label">medicalRequestID</span>
+      <span property="rdfs:comment">Specifying a medical request identifier</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalRequest">MedicalRequest</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicalRequest">
@@ -3730,6 +3812,13 @@
       <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/therapeuticProcedure">therapeuticProcedure</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/medicationTime">
+      <span class="h" property="rdfs:label">medicationTime</span>
+      <span property="rdfs:comment">specifying the medication time i.e when the drug has or was administrated</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/DateTime">DateTime</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/medicineSystem">
@@ -3939,6 +4028,22 @@
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/patientCode">
+      <span class="h" property="rdfs:label">patientCode</span>
+      <span property="rdfs:comment">Specifying a patient code. Used in general cross-hospitals</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/404684003">sctid:404684003</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/patientID">
+      <span class="h" property="rdfs:label">patientID</span>
+      <span property="rdfs:comment">Specifying a digit ID for the patient within a healthcare facility. Therefore a patient can have multiple ID specific to each hospitals</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/404684003">sctid:404684003</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/personalHistory">
       <span class="h" property="rdfs:label">personalHistory</span>
       <span property="rdfs:comment"> specifying a personal history provided by the patient during an anamnesis procedure .</span>
@@ -4117,6 +4222,22 @@
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/preventiveProcedure">preventiveProcedure</a></span>
     </div>
 
+    <div typeof="rdf:Property" resource="http://schema.org/procedureActivity">
+      <span class="h" property="rdfs:label">procedureActivity</span>
+      <span property="rdfs:comment">Specifying the medical procedure activity. This can be another medical procedure</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalProcedureActivity">MedicalProcedureActivity</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalProcedure">medicalProcedure</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/procedurePhase">
+      <span class="h" property="rdfs:label">procedurePhase</span>
+      <span property="rdfs:comment">Specifying the medical procedure phase, specially when a procedure is performed in multiple phases.</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalProcedurePhase">MedicalProcedurePhase</a></span>
+      <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/medicalProcedure">medicalProcedure</a></span>
+    </div>
+
     <div typeof="rdf:Property" resource="http://schema.org/procedureType">
       <span class="h" property="rdfs:label">procedureType</span>
       <span property="rdfs:comment">The type of procedure, for example Surgical, Noninvasive, or Percutaneous.</span>
@@ -4235,6 +4356,15 @@
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Drug">Drug</a></span>
       <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
       <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/treatment">treatment</a></span>
+    </div>
+
+    <div typeof="rdf:Property" resource="http://schema.org/referredBy">
+      <span class="h" property="rdfs:label">referredBy</span>
+      <span property="rdfs:comment">Specifying a referrer for a patient in general, but can be applied to other medical entities</span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
+      <span>Domain: <a property="http://schema.org/domainIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/116154003">sctid:116154003</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/HealthFacility">HealthFacility</a></span>
+      <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Person">Person</a></span>
     </div>
 
     <div typeof="rdf:Property" resource="http://schema.org/referringPhysician">
