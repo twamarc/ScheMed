@@ -1148,7 +1148,7 @@ schema:MedicalSpecimenReceiver a rdfs:Class ;
 
 schema:MedicalStay a rdfs:Class ;
     rdfs:label "MedicalStay" ;
-    rdfs:comment "Procedure consisting in taking a patient into a health care environment as inpatient (hospitalization)" ;
+    rdfs:comment "Procedure consisting in taking a patient into a healthcare environment as inpatient (hospitalization)" ;
     rdfs:subClassOf schema:CreatedInExtension,
         schema:MedicalEncounter .
 
