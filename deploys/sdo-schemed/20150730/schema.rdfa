@@ -12921,6 +12921,7 @@ Typical unit code(s): C62 for persons </span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/105904009">sctid:105904009</a></span>
+</div>
 
 <div typeof="rdf:Property" resource="http://schema.org/drugUnit">
   <span class="h" property="rdfs:label">drugUnit</span>
