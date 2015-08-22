@@ -25,7 +25,6 @@
 <div typeof="rdfs:Class" resource="http://schema.org/Abortion">
   <span class="h" property="rdfs:label">Abortion</span>
   <span property="rdfs:comment">Abortion is the ending of pregnancy by the removal or expulsion from the uterus of a fetus or embryo before viability.</span>
-  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInExtension">CreatedInExtension</a></span>
   <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/GynObsHistory">GynObsHistory</a></span>
   <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreatedInExtension">CreatedInExtension</a></span>
 </div>
@@ -2123,6 +2122,7 @@
   <span property="rdfs:comment">The movement the muscle generates.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Muscle">Muscle</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/activeIngredient">
@@ -2133,6 +2133,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DrugStrength">DrugStrength</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/PharmaceuticalSubstance">PharmaceuticalSubstance</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/administrationRoute">
@@ -2223,6 +2224,7 @@
   <span property="rdfs:comment">Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/algorithm">
@@ -2230,6 +2232,7 @@
   <span property="rdfs:comment">The algorithm or rules to follow to compute the score.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalRiskScore">MedicalRiskScore</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/allergen">
@@ -2287,6 +2290,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalStructure">AnatomicalStructure</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/anatomicalSystem">
@@ -2297,6 +2301,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalSystem">AnatomicalSystem</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/antagonist">
@@ -2304,6 +2309,7 @@
   <span property="rdfs:comment">The muscle whose action counteracts the specified muscle.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Muscle">Muscle</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Muscle">Muscle</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/apgarScore">
@@ -2319,6 +2325,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DrugCost">DrugCost</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DrugLegalStatus">DrugLegalStatus</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AdministrativeArea">AdministrativeArea</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/arterialBranch">
@@ -2326,6 +2333,7 @@
   <span property="rdfs:comment">The branches that comprise the arterial structure.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Artery">Artery</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalStructure">AnatomicalStructure</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/arterialPulse">
@@ -2341,6 +2349,7 @@
   <span property="rdfs:comment">An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalWebPage">MedicalWebPage</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/associatedAnatomy">
@@ -2351,6 +2360,7 @@
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalStructure">AnatomicalStructure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalSystem">AnatomicalSystem</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/SuperficialAnatomy">SuperficialAnatomy</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/associatedPathophysiology">
@@ -2360,6 +2370,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/AnatomicalSystem">AnatomicalSystem</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/SuperficialAnatomy">SuperficialAnatomy</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/atWeeksAmenorrhea">
@@ -2374,6 +2385,7 @@
   <span property="rdfs:comment">The location in which the strength is available.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DrugStrength">DrugStrength</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AdministrativeArea">AdministrativeArea</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/availableService">
@@ -2385,6 +2397,7 @@
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTest">MedicalTest</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/availableStrength">
@@ -2392,6 +2405,7 @@
   <span property="rdfs:comment">An available dosage strength for the drug.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/DrugStrength">DrugStrength</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/availableTest">
@@ -2399,6 +2413,7 @@
   <span property="rdfs:comment">A diagnostic test or procedure offered by this lab.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DiagnosticLab">DiagnosticLab</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTest">MedicalTest</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/belongsTo">
@@ -2420,6 +2435,7 @@
   <span property="rdfs:comment">Specifying the birth percentile of a newborn</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/133933007">sctid:133933007</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Number">Number</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/birthPlace">
@@ -2429,6 +2445,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/169812000">sctid:169812000</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Place">Place</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/birthWeight">
@@ -2774,6 +2791,7 @@
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/169812000">sctid:169812000</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Place">Place</a></span>
   <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/diagnosis">
@@ -2783,6 +2801,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/439401001">sctid:439401001</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/diagnosticDate">
@@ -2850,6 +2869,7 @@
   <span property="rdfs:comment">Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Diet">Diet</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/diet">
@@ -2858,6 +2878,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ExerciseAction">ExerciseAction</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Diet">Diet</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/instrument">instrument</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/differentialDiagnosis">
@@ -2865,6 +2886,7 @@
   <span property="rdfs:comment">One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/DDxElement">DDxElement</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/dischargeDate">
@@ -2889,6 +2911,8 @@
   <span property="rdfs:comment">One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DDxElement">DDxElement</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalSignOrSymptom">MedicalSignOrSymptom</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/dosageForm">
@@ -2897,6 +2921,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DietarySupplement">DietarySupplement</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/doseSchedule">
@@ -2905,6 +2930,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/DoseSchedule">DoseSchedule</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/doseUnit">
@@ -2912,6 +2938,7 @@
   <span property="rdfs:comment">The unit of the dose, e.g. 'mg'.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DoseSchedule">DoseSchedule</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/doseValue">
@@ -2919,6 +2946,7 @@
   <span property="rdfs:comment">The value of the dose, e.g. 500.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DoseSchedule">DoseSchedule</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Number">Number</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/drainsTo">
@@ -2926,6 +2954,7 @@
   <span property="rdfs:comment">The vasculature that the vein drains into.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Vein">Vein</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Vessel">Vessel</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/drugAdministration">
@@ -2942,6 +2971,7 @@
   <span property="rdfs:comment">The class of drug this belongs to (e.g., statins).</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/DrugClass">DrugClass</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/drugDispensation">
@@ -2998,6 +3028,7 @@
   <span property="rdfs:comment">The unit in which the drug is measured, e.g. '5 mg tablet'.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DrugCost">DrugCost</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/drug">
@@ -3009,6 +3040,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://purl.bioontology.org/ontology/SNOMEDCT/410942007">sctid:410942007</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Drug">Drug</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/duplicateTherapy">
@@ -3016,6 +3048,7 @@
   <span property="rdfs:comment">A therapy that duplicates or overlaps this one.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/educationLevel">
@@ -3023,6 +3056,7 @@
   <span property="rdfs:comment">Specifying the education level of the person</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Person">Person</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/EducationLevel">EducationLevel</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/elderhoodHistory">
@@ -3092,6 +3126,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/PhysicalActivity">PhysicalActivity</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/estimatesRiskOf">
@@ -3099,6 +3134,7 @@
   <span property="rdfs:comment">The condition, complication, or symptom whose risk is being estimated.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalRiskEstimator">MedicalRiskEstimator</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/ethnicity">
@@ -3113,6 +3149,7 @@
   <span property="rdfs:comment">Strength of evidence of the data used to formulate the guideline (enumerated).</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalGuideline">MedicalGuideline</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalEvidenceLevel">MedicalEvidenceLevel</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/evidenceOrigin">
@@ -3120,6 +3157,7 @@
   <span property="rdfs:comment">Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalGuideline">MedicalGuideline</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/examination">
@@ -3135,6 +3173,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ExerciseAction">ExerciseAction</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Diet">Diet</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/instrument">instrument</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/expectedPrognosis">
@@ -3142,6 +3181,7 @@
   <span property="rdfs:comment">The likely outcome in either the short term or long term of the medical condition.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/expertConsiderations">
@@ -3149,6 +3189,7 @@
   <span property="rdfs:comment">Medical expert advice related to the plan.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Diet">Diet</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/familyMedicalHistory">
@@ -3178,6 +3219,7 @@
   <span property="rdfs:comment">The number of grams of fat.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/NutritionInformation">NutritionInformation</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Mass">Mass</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/father">
@@ -3202,6 +3244,7 @@
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/FoodEstablishment">FoodEstablishment</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Place">Place</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/location">location</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/foodEvent">
@@ -3210,6 +3253,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/CookAction">CookAction</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/FoodEvent">FoodEvent</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/location">location</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/foodIntolerance">
@@ -3226,6 +3270,7 @@
   <span property="rdfs:comment">Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/function">
@@ -3233,6 +3278,7 @@
   <span property="rdfs:comment">Function of the anatomical structure.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/AnatomicalStructure">AnatomicalStructure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/functionalClass">
@@ -3240,6 +3286,7 @@
   <span property="rdfs:comment">The degree of mobility the joint allows.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Joint">Joint</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/gravidity">
@@ -3327,6 +3374,7 @@
   <span property="rdfs:comment">How the procedure is performed.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/identifyingExam">
@@ -3341,6 +3389,7 @@
   <span property="rdfs:comment">A diagnostic test that can identify this sign.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalSign">MedicalSign</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTest">MedicalTest</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/imagingTechnique">
@@ -3355,6 +3404,7 @@
   <span property="rdfs:comment">A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalRiskEstimator">MedicalRiskEstimator</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalRiskFactor">MedicalRiskFactor</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/increasesRiskOf">
@@ -3362,6 +3412,7 @@
   <span property="rdfs:comment">The condition, complication, etc. influenced by this factor.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalRiskFactor">MedicalRiskFactor</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/indication">
@@ -3375,6 +3426,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TherapeuticProcedure">TherapeuticProcedure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalIndication">MedicalIndication</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/infectiousAgentClass">
@@ -3382,6 +3434,7 @@
   <span property="rdfs:comment">The class of infectious agent (bacteria, prion, etc.) that causes the disease.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/InfectiousDisease">InfectiousDisease</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/InfectiousAgentClass">InfectiousAgentClass</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/infectiousAgent">
@@ -3389,6 +3442,7 @@
   <span property="rdfs:comment">The actual infectious agent, such as a specific bacterium.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/InfectiousDisease">InfectiousDisease</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/ingredients">
@@ -3396,6 +3450,7 @@
   <span property="rdfs:comment">A single ingredient used in the recipe, e.g. sugar, flour or garlic.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/insertion">
@@ -3403,6 +3458,7 @@
   <span property="rdfs:comment">The place of attachment of a muscle, or what the muscle moves.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Muscle">Muscle</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalStructure">AnatomicalStructure</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/insurance">
@@ -3442,6 +3498,7 @@
   <span property="rdfs:comment">True if the drug is available in a generic form (regardless of name).</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Boolean">Boolean</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/isProprietary">
@@ -3450,6 +3507,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DietarySupplement">DietarySupplement</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Boolean">Boolean</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/labelDetails">
@@ -3457,6 +3515,7 @@
   <span property="rdfs:comment">Link to the drug's label details.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/URL">URL</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/laboratoryProcedure">
@@ -3512,6 +3571,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Product">Product</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Organization">Organization</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/maritalStatus">
@@ -3535,6 +3595,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DietarySupplement">DietarySupplement</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/medicalAdmission">
@@ -3763,6 +3824,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalClinic">MedicalClinic</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Physician">Physician</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalSpecialty">MedicalSpecialty</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/medicalSubSpecialty">
@@ -3839,6 +3901,7 @@
   <span property="rdfs:comment">The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicineSystem">MedicineSystem</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/menopause">
@@ -3887,6 +3950,7 @@
   <span property="rdfs:comment">The movement the muscle generates.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Muscle">Muscle</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/naturalProgression">
@@ -3894,6 +3958,7 @@
   <span property="rdfs:comment">The expected progression of the condition if it is not treated and allowed to progress naturally.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/nerveMotor">
@@ -3908,6 +3973,7 @@
   <span property="rdfs:comment">The underlying innervation associated with the muscle.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Muscle">Muscle</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Nerve">Nerve</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/newborn">
@@ -3927,6 +3993,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/DietarySupplement">DietarySupplement</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/normalRange">
@@ -3934,6 +4001,7 @@
   <span property="rdfs:comment">Range of acceptable values for a typical patient, when applicable.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalTest">MedicalTest</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/nutrition">
@@ -3941,6 +4009,7 @@
   <span property="rdfs:comment">Nutrition information about the recipe.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/NutritionInformation">NutritionInformation</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/observable">
@@ -3970,6 +4039,7 @@
   <span property="rdfs:comment">The place or point where a muscle arises.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Muscle">Muscle</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalStructure">AnatomicalStructure</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/originatesFrom">
@@ -3977,6 +4047,7 @@
   <span property="rdfs:comment">The vasculature the lymphatic structure originates, or afferents, from.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/LymphaticVessel">LymphaticVessel</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Vessel">Vessel</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/outcome">
@@ -3984,6 +4055,7 @@
   <span property="rdfs:comment">Expected or actual outcomes of the study.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalStudy">MedicalStudy</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/overdosage">
@@ -3991,6 +4063,7 @@
   <span property="rdfs:comment">Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/palliativeProcedure">
@@ -3999,6 +4072,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Patient">Patient</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/PalliativeProcedure">PalliativeProcedure</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/therapeuticProcedure">therapeuticProcedure</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/parity">
@@ -4015,6 +4089,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/AnatomicalStructure">AnatomicalStructure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalSystem">AnatomicalSystem</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/isPartOf">isPartOf</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/pastMedicalHistory">
@@ -4099,6 +4174,7 @@
   <span property="rdfs:comment">Specific physiologic benefits associated to the plan.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Diet">Diet</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/physiologicalRole">
@@ -4120,6 +4196,7 @@
   <span property="rdfs:comment">Any characteristics of the population used in the study, e.g. 'males under 65'.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalStudy">MedicalStudy</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/possibleCause">
@@ -4128,6 +4205,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalEntity">MedicalEntity</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/cause">cause</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/possibleComplication">
@@ -4144,6 +4222,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalSignOrSymptom">MedicalSignOrSymptom</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/treatment">treatment</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/postOp">
@@ -4151,6 +4230,7 @@
   <span property="rdfs:comment">A description of the postoperative procedures, care, and/or followups for this device.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalDevice">MedicalDevice</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/preOp">
@@ -4158,6 +4238,7 @@
   <span property="rdfs:comment">A description of the workup, testing, and other preparations required before implanting this device.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalDevice">MedicalDevice</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/pregnancyCategory">
@@ -4186,6 +4267,7 @@
   <span property="rdfs:comment">The length of time it takes to prepare the recipe, in <a href='http://en.wikipedia.org/wiki/ISO_8601'>ISO 8601 duration format</a>.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Duration">Duration</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/preparation">
@@ -4193,6 +4275,7 @@
   <span property="rdfs:comment">Typical preparation that a patient must undergo before having the procedure performed.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/prescribingInfo">
@@ -4200,6 +4283,7 @@
   <span property="rdfs:comment">Link to prescribing information for the drug.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/URL">URL</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/prescribingProcedure">
@@ -4217,6 +4301,7 @@
   <span property="rdfs:comment">Indicates whether this drug is available by prescription or over-the-counter.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/DrugPrescriptionStatus">DrugPrescriptionStatus</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/preventiveProcedure">
@@ -4233,6 +4318,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTherapy">MedicalTherapy</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/preventiveProcedure">preventiveProcedure</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/procedureActivity">
@@ -4256,6 +4342,7 @@
   <span property="rdfs:comment">The type of procedure, for example Surgical, Noninvasive, or Percutaneous.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalProcedureType">MedicalProcedureType</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/procedure">
@@ -4263,6 +4350,7 @@
   <span property="rdfs:comment">A description of the procedure involved in setting up, using, and/or installing the device.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalDevice">MedicalDevice</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/publicationType">
@@ -4270,6 +4358,7 @@
   <span property="rdfs:comment">The type of the medical article, taken from the US NLM MeSH publication type catalog. See: http://www.nlm.nih.gov/mesh/pubtypes.html</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalScholarlyArticle">MedicalScholarlyArticle</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/purpose">
@@ -4280,6 +4369,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/PayAction">PayAction</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDevicePurpose">MedicalDevicePurpose</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Thing">Thing</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/race">
@@ -4301,6 +4391,7 @@
   <span property="rdfs:comment">The category of the recipe&#x2014;for example, appetizer, entree, etc.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/recipeCuisine">
@@ -4308,6 +4399,7 @@
   <span property="rdfs:comment">The cuisine of the recipe (for example, French or Ethiopian).</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/recipeIngredient">
@@ -4315,6 +4407,7 @@
   <span property="rdfs:comment">A single ingredient used in the recipe, e.g. sugar, flour or garlic.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/recipeInstructions">
@@ -4323,6 +4416,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ItemList">ItemList</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/recipeYield">
@@ -4330,6 +4424,7 @@
   <span property="rdfs:comment">The quantity produced by the recipe (for example, number of people served, number of servings, etc).</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/recipe">
@@ -4338,6 +4433,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/CookAction">CookAction</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>SubProperty of: <a property="rdfs:subPropertyOf" href="http://schema.org/instrument">instrument</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/recognizingAuthority">
@@ -4783,6 +4879,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalProcedure">MedicalProcedure</a></span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Recipe">Recipe</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Duration">Duration</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/totalValue">
@@ -4797,6 +4894,7 @@
   <span property="rdfs:comment">The number of grams of trans fat.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/NutritionInformation">NutritionInformation</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Mass">Mass</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/transferDate">
@@ -4813,6 +4911,7 @@
   <span property="rdfs:comment">How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/InfectiousDisease">InfectiousDisease</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/treatingPhysician">
@@ -4857,6 +4956,7 @@
   <span property="rdfs:comment">Specifics about the trial design (enumerated).</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalTrial">MedicalTrial</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTrialDesign">MedicalTrialDesign</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/tributary">
@@ -4864,6 +4964,7 @@
   <span property="rdfs:comment">The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Vein">Vein</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/AnatomicalStructure">AnatomicalStructure</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/typicalTest">
@@ -4871,6 +4972,7 @@
   <span property="rdfs:comment">A medical test typically performed given this condition.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalCondition">MedicalCondition</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalTest">MedicalTest</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/unsaturatedFatContent">
@@ -4878,6 +4980,7 @@
   <span property="rdfs:comment">The number of grams of unsaturated fat.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/NutritionInformation">NutritionInformation</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Mass">Mass</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/usedToDiagnose">
@@ -4892,6 +4995,7 @@
   <span property="rdfs:comment">Device used to perform the test.</span>
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/MedicalTest">MedicalTest</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/MedicalDevice">MedicalDevice</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 <div typeof="rdf:Property" resource="http://schema.org/vaccination">
@@ -4924,6 +5028,7 @@
   <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/Drug">Drug</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
   <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/URL">URL</a></span>
+  <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/MovedFromCore">MovedFromCore</a></span>
 </div>
 
 </body>

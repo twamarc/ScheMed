@@ -983,13 +983,13 @@ schema:MedicalProcedure a rdfs:Class ;
 schema:MedicalProcedureActivity a rdfs:Class ;
     rdfs:label "MedicalProcedureActivity" ;
     rdfs:comment "A medical procedure activity" ;
-    rdfs:subClassOf schema:CreatedInCore,
+    rdfs:subClassOf schema:CreatedInExtension,
         schema:MedicalProcedure .
 
 schema:MedicalProcedurePhase a rdfs:Class ;
     rdfs:label "MedicalProcedurePhase" ;
     rdfs:comment "A medical procedure phase" ;
-    rdfs:subClassOf schema:CreatedInCore,
+    rdfs:subClassOf schema:CreatedInExtension,
         schema:MedicalProcedure .
 
 schema:MedicalProcedureType a rdfs:Class ;
@@ -1794,7 +1794,8 @@ schema:action a rdf:Property ;
     rdfs:label "action" ;
     schema:domainIncludes schema:Muscle ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The movement the muscle generates." .
+    rdfs:comment "The movement the muscle generates." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:activeIngredient a rdf:Property ;
     rdfs:label "activeIngredient" ;
@@ -1803,7 +1804,8 @@ schema:activeIngredient a rdf:Property ;
         schema:DrugStrength,
         schema:PharmaceuticalSubstance ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "An active ingredient, typically chemical compounds and/or biologic substances." .
+    rdfs:comment "An active ingredient, typically chemical compounds and/or biologic substances." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:administrationRoute a rdf:Property ;
     rdfs:label "administrationRoute" ;
@@ -1863,13 +1865,15 @@ schema:alcoholWarning a rdf:Property ;
     rdfs:label "alcoholWarning" ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug." .
+    rdfs:comment "Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:algorithm a rdf:Property ;
     rdfs:label "algorithm" ;
     schema:domainIncludes schema:MedicalRiskScore ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The algorithm or rules to follow to compute the score." .
+    rdfs:comment "The algorithm or rules to follow to compute the score." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:allergen a rdf:Property ;
     rdfs:label "allergen" ;
@@ -1920,7 +1924,8 @@ schema:anatomicalStructure a rdf:Property ;
         schema:MedicalProcedure,
         schema:Person ;
     schema:rangeIncludes schema:AnatomicalStructure ;
-    rdfs:comment "Specifying the anatomical structure for a resource" .
+    rdfs:comment "Specifying the anatomical structure for a resource" ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:anatomicalSystem a rdf:Property ;
     rdfs:label "anatomicalSystem" ;
@@ -1929,13 +1934,15 @@ schema:anatomicalSystem a rdf:Property ;
         schema:MedicalProcedure,
         schema:Person ;
     schema:rangeIncludes schema:AnatomicalSystem ;
-    rdfs:comment "Specifying the anatomical system for a resource" .
+    rdfs:comment "Specifying the anatomical system for a resource" ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:antagonist a rdf:Property ;
     rdfs:label "antagonist" ;
     schema:domainIncludes schema:Muscle ;
     schema:rangeIncludes schema:Muscle ;
-    rdfs:comment "The muscle whose action counteracts the specified muscle." .
+    rdfs:comment "The muscle whose action counteracts the specified muscle." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:apgarScore a rdf:Property ;
     rdfs:label "apgarScore" ;
@@ -1948,13 +1955,15 @@ schema:applicableLocation a rdf:Property ;
     schema:domainIncludes schema:DrugCost,
         schema:DrugLegalStatus ;
     schema:rangeIncludes schema:AdministrativeArea ;
-    rdfs:comment "The location in which the status applies." .
+    rdfs:comment "The location in which the status applies." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:arterialBranch a rdf:Property ;
     rdfs:label "arterialBranch" ;
     schema:domainIncludes schema:Artery ;
     schema:rangeIncludes schema:AnatomicalStructure ;
-    rdfs:comment "The branches that comprise the arterial structure." .
+    rdfs:comment "The branches that comprise the arterial structure." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:arterialPulse a rdf:Property ;
     rdfs:label "arterialPulse" ;
@@ -1967,7 +1976,8 @@ schema:aspect a rdf:Property ;
     rdfs:label "aspect" ;
     schema:domainIncludes schema:MedicalWebPage ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc." .
+    rdfs:comment "An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:associatedAnatomy a rdf:Property ;
     rdfs:label "associatedAnatomy" ;
@@ -1976,7 +1986,8 @@ schema:associatedAnatomy a rdf:Property ;
     schema:rangeIncludes schema:AnatomicalStructure,
         schema:AnatomicalSystem,
         schema:SuperficialAnatomy ;
-    rdfs:comment "The anatomy of the underlying organ system or structures associated with this entity." .
+    rdfs:comment "The anatomy of the underlying organ system or structures associated with this entity." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:associatedPathophysiology a rdf:Property ;
     rdfs:label "associatedPathophysiology" ;
@@ -1984,7 +1995,8 @@ schema:associatedPathophysiology a rdf:Property ;
         schema:AnatomicalSystem,
         schema:SuperficialAnatomy ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system." .
+    rdfs:comment "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:atWeeksAmenorrhea a rdf:Property ;
     rdfs:label "atWeeksAmenorrhea" ;
@@ -1996,7 +2008,8 @@ schema:availableIn a rdf:Property ;
     rdfs:label "availableIn" ;
     schema:domainIncludes schema:DrugStrength ;
     schema:rangeIncludes schema:AdministrativeArea ;
-    rdfs:comment "The location in which the strength is available." .
+    rdfs:comment "The location in which the strength is available." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:availableService a rdf:Property ;
     rdfs:label "availableService" ;
@@ -2006,19 +2019,22 @@ schema:availableService a rdf:Property ;
     schema:rangeIncludes schema:MedicalProcedure,
         schema:MedicalTest,
         schema:MedicalTherapy ;
-    rdfs:comment "A medical service available from this provider." .
+    rdfs:comment "A medical service available from this provider." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:availableStrength a rdf:Property ;
     rdfs:label "availableStrength" ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:DrugStrength ;
-    rdfs:comment "An available dosage strength for the drug." .
+    rdfs:comment "An available dosage strength for the drug." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:availableTest a rdf:Property ;
     rdfs:label "availableTest" ;
     schema:domainIncludes schema:DiagnosticLab ;
     schema:rangeIncludes schema:MedicalTest ;
-    rdfs:comment "A diagnostic test or procedure offered by this lab." .
+    rdfs:comment "A diagnostic test or procedure offered by this lab." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:belongsTo a rdf:Property ;
     rdfs:label "belongsTo" ;
@@ -2036,7 +2052,8 @@ schema:birthPercentile a rdf:Property ;
     rdfs:label "birthPercentile" ;
     schema:domainIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/133933007> ;
     schema:rangeIncludes schema:Number ;
-    rdfs:comment "Specifying the birth percentile of a newborn" .
+    rdfs:comment "Specifying the birth percentile of a newborn" ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:birthPlace a rdf:Property ;
     rdfs:label "birthPlace" ;
@@ -2044,7 +2061,8 @@ schema:birthPlace a rdf:Property ;
         schema:Person ;
     schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/169812000>,
         schema:Place ;
-    rdfs:comment "The place where the person was born." .
+    rdfs:comment "The place where the person was born." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:birthWeight a rdf:Property ;
     rdfs:label "birthWeight" ;
@@ -2315,7 +2333,8 @@ schema:diagnosis a rdf:Property ;
         schema:Patient ;
     schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/439401001>,
         schema:MedicalCondition ;
-    rdfs:comment "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process." .
+    rdfs:comment "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:diagnosticDate a rdf:Property ;
     rdfs:label "diagnosticDate" ;
@@ -2368,19 +2387,22 @@ schema:diet a rdf:Property ;
     schema:domainIncludes schema:ExerciseAction ;
     schema:rangeIncludes schema:Diet ;
     rdfs:comment "A sub property of instrument. The diet used in this action." ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:instrument .
 
 schema:dietFeatures a rdf:Property ;
     rdfs:label "dietFeatures" ;
     schema:domainIncludes schema:Diet ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines." .
+    rdfs:comment "Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:differentialDiagnosis a rdf:Property ;
     rdfs:label "differentialDiagnosis" ;
     schema:domainIncludes schema:MedicalCondition ;
     schema:rangeIncludes schema:DDxElement ;
-    rdfs:comment "One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient." .
+    rdfs:comment "One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:dischargeDate a rdf:Property ;
     rdfs:label "dischargeDate" ;
@@ -2401,39 +2423,45 @@ schema:distinguishingSign a rdf:Property ;
     rdfs:label "distinguishingSign" ;
     schema:domainIncludes schema:DDxElement ;
     schema:rangeIncludes schema:MedicalSignOrSymptom ;
-    rdfs:comment "One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis." .
+    rdfs:comment "One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:dosageForm a rdf:Property ;
     rdfs:label "dosageForm" ;
     schema:domainIncludes schema:DietarySupplement,
         schema:Drug ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'." .
+    rdfs:comment "A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:doseSchedule a rdf:Property ;
     rdfs:label "doseSchedule" ;
     schema:domainIncludes schema:Drug,
         schema:TherapeuticProcedure ;
     schema:rangeIncludes schema:DoseSchedule ;
-    rdfs:comment "A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used." .
+    rdfs:comment "A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:doseUnit a rdf:Property ;
     rdfs:label "doseUnit" ;
     schema:domainIncludes schema:DoseSchedule ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The unit of the dose, e.g. 'mg'." .
+    rdfs:comment "The unit of the dose, e.g. 'mg'." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:doseValue a rdf:Property ;
     rdfs:label "doseValue" ;
     schema:domainIncludes schema:DoseSchedule ;
     schema:rangeIncludes schema:Number ;
-    rdfs:comment "The value of the dose, e.g. 500." .
+    rdfs:comment "The value of the dose, e.g. 500." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:drainsTo a rdf:Property ;
     rdfs:label "drainsTo" ;
     schema:domainIncludes schema:Vein ;
     schema:rangeIncludes schema:Vessel ;
-    rdfs:comment "The vasculature that the vein drains into." .
+    rdfs:comment "The vasculature that the vein drains into." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:drug a rdf:Property ;
     rdfs:label "drug" ;
@@ -2443,7 +2471,8 @@ schema:drug a rdf:Property ;
         schema:TherapeuticProcedure ;
     schema:rangeIncludes <http://purl.bioontology.org/ontology/SNOMEDCT/410942007>,
         schema:Drug ;
-    rdfs:comment "Specifying a drug or medicine used in a medication procedure" .
+    rdfs:comment "Specifying a drug or medicine used in a medication procedure" ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:drugAdministrated a rdf:Property ;
     rdfs:label "drugAdministrated" ;
@@ -2465,7 +2494,8 @@ schema:drugClass a rdf:Property ;
     rdfs:label "drugClass" ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:DrugClass ;
-    rdfs:comment "The class of drug this belongs to (e.g., statins)." .
+    rdfs:comment "The class of drug this belongs to (e.g., statins)." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:drugDispensation a rdf:Property ;
     rdfs:label "drugDispensation" ;
@@ -2507,19 +2537,22 @@ schema:drugUnit a rdf:Property ;
     rdfs:label "drugUnit" ;
     schema:domainIncludes schema:DrugCost ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The unit in which the drug is measured, e.g. '5 mg tablet'." .
+    rdfs:comment "The unit in which the drug is measured, e.g. '5 mg tablet'." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:duplicateTherapy a rdf:Property ;
     rdfs:label "duplicateTherapy" ;
     schema:domainIncludes schema:MedicalTherapy ;
     schema:rangeIncludes schema:MedicalTherapy ;
-    rdfs:comment "A therapy that duplicates or overlaps this one." .
+    rdfs:comment "A therapy that duplicates or overlaps this one." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:educationLevel a rdf:Property ;
     rdfs:label "educationLevel" ;
     schema:domainIncludes schema:Person ;
     schema:rangeIncludes schema:EducationLevel ;
-    rdfs:comment "Specifying the education level of the person" .
+    rdfs:comment "Specifying the education level of the person" ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:elderhoodHistory a rdf:Property ;
     rdfs:label "elderhoodHistory" ;
@@ -2573,13 +2606,15 @@ schema:epidemiology a rdf:Property ;
     schema:domainIncludes schema:MedicalCondition,
         schema:PhysicalActivity ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The characteristics of associated patients, such as age, gender, race etc." .
+    rdfs:comment "The characteristics of associated patients, such as age, gender, race etc." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:estimatesRiskOf a rdf:Property ;
     rdfs:label "estimatesRiskOf" ;
     schema:domainIncludes schema:MedicalRiskEstimator ;
     schema:rangeIncludes schema:MedicalEntity ;
-    rdfs:comment "The condition, complication, or symptom whose risk is being estimated." .
+    rdfs:comment "The condition, complication, or symptom whose risk is being estimated." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:ethnicity a rdf:Property ;
     rdfs:label "ethnicity" ;
@@ -2591,13 +2626,15 @@ schema:evidenceLevel a rdf:Property ;
     rdfs:label "evidenceLevel" ;
     schema:domainIncludes schema:MedicalGuideline ;
     schema:rangeIncludes schema:MedicalEvidenceLevel ;
-    rdfs:comment "Strength of evidence of the data used to formulate the guideline (enumerated)." .
+    rdfs:comment "Strength of evidence of the data used to formulate the guideline (enumerated)." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:evidenceOrigin a rdf:Property ;
     rdfs:label "evidenceOrigin" ;
     schema:domainIncludes schema:MedicalGuideline ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc." .
+    rdfs:comment "Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:examination a rdf:Property ;
     rdfs:label "examination" ;
@@ -2610,19 +2647,22 @@ schema:exerciseRelatedDiet a rdf:Property ;
     schema:domainIncludes schema:ExerciseAction ;
     schema:rangeIncludes schema:Diet ;
     rdfs:comment "A sub property of instrument. The diet used in this action." ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:instrument .
 
 schema:expectedPrognosis a rdf:Property ;
     rdfs:label "expectedPrognosis" ;
     schema:domainIncludes schema:MedicalCondition ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The likely outcome in either the short term or long term of the medical condition." .
+    rdfs:comment "The likely outcome in either the short term or long term of the medical condition." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:expertConsiderations a rdf:Property ;
     rdfs:label "expertConsiderations" ;
     schema:domainIncludes schema:Diet ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Medical expert advice related to the plan." .
+    rdfs:comment "Medical expert advice related to the plan." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:familyMedicalHistory a rdf:Property ;
     rdfs:label "familyMedicalHistory" ;
@@ -2641,7 +2681,8 @@ schema:fatContent a rdf:Property ;
     rdfs:label "fatContent" ;
     schema:domainIncludes schema:NutritionInformation ;
     schema:rangeIncludes schema:Mass ;
-    rdfs:comment "The number of grams of fat." .
+    rdfs:comment "The number of grams of fat." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:father a rdf:Property ;
     rdfs:label "father" ;
@@ -2662,6 +2703,7 @@ schema:foodEstablishment a rdf:Property ;
     schema:rangeIncludes schema:FoodEstablishment,
         schema:Place ;
     rdfs:comment "A sub property of location. The specific food establishment where the action occurred." ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:location .
 
 schema:foodEvent a rdf:Property ;
@@ -2669,6 +2711,7 @@ schema:foodEvent a rdf:Property ;
     schema:domainIncludes schema:CookAction ;
     schema:rangeIncludes schema:FoodEvent ;
     rdfs:comment "A sub property of location. The specific food event where the action occurred." ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:location .
 
 schema:foodIntolerance a rdf:Property ;
@@ -2683,19 +2726,22 @@ schema:foodWarning a rdf:Property ;
     rdfs:label "foodWarning" ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug." .
+    rdfs:comment "Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:function a rdf:Property ;
     rdfs:label "function" ;
     schema:domainIncludes schema:AnatomicalStructure ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Function of the anatomical structure." .
+    rdfs:comment "Function of the anatomical structure." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:functionalClass a rdf:Property ;
     rdfs:label "functionalClass" ;
     schema:domainIncludes schema:Joint ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The degree of mobility the joint allows." .
+    rdfs:comment "The degree of mobility the joint allows." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:gravidity a rdf:Property ;
     rdfs:label "gravidity" ;
@@ -2753,7 +2799,8 @@ schema:howPerformed a rdf:Property ;
     rdfs:label "howPerformed" ;
     schema:domainIncludes schema:MedicalProcedure ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "How the procedure is performed." .
+    rdfs:comment "How the procedure is performed." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:identifyingExam a rdf:Property ;
     rdfs:label "identifyingExam" ;
@@ -2765,7 +2812,8 @@ schema:identifyingTest a rdf:Property ;
     rdfs:label "identifyingTest" ;
     schema:domainIncludes schema:MedicalSign ;
     schema:rangeIncludes schema:MedicalTest ;
-    rdfs:comment "A diagnostic test that can identify this sign." .
+    rdfs:comment "A diagnostic test that can identify this sign." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:imagingTechnique a rdf:Property ;
     rdfs:label "imagingTechnique" ;
@@ -2777,37 +2825,43 @@ schema:includedRiskFactor a rdf:Property ;
     rdfs:label "includedRiskFactor" ;
     schema:domainIncludes schema:MedicalRiskEstimator ;
     schema:rangeIncludes schema:MedicalRiskFactor ;
-    rdfs:comment "A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition." .
+    rdfs:comment "A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:increasesRiskOf a rdf:Property ;
     rdfs:label "increasesRiskOf" ;
     schema:domainIncludes schema:MedicalRiskFactor ;
     schema:rangeIncludes schema:MedicalEntity ;
-    rdfs:comment "The condition, complication, etc. influenced by this factor." .
+    rdfs:comment "The condition, complication, etc. influenced by this factor." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:infectiousAgent a rdf:Property ;
     rdfs:label "infectiousAgent" ;
     schema:domainIncludes schema:InfectiousDisease ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The actual infectious agent, such as a specific bacterium." .
+    rdfs:comment "The actual infectious agent, such as a specific bacterium." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:infectiousAgentClass a rdf:Property ;
     rdfs:label "infectiousAgentClass" ;
     schema:domainIncludes schema:InfectiousDisease ;
     schema:rangeIncludes schema:InfectiousAgentClass ;
-    rdfs:comment "The class of infectious agent (bacteria, prion, etc.) that causes the disease." .
+    rdfs:comment "The class of infectious agent (bacteria, prion, etc.) that causes the disease." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:ingredients a rdf:Property ;
     rdfs:label "ingredients" ;
     schema:domainIncludes schema:Recipe ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "A single ingredient used in the recipe, e.g. sugar, flour or garlic." .
+    rdfs:comment "A single ingredient used in the recipe, e.g. sugar, flour or garlic." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:insertion a rdf:Property ;
     rdfs:label "insertion" ;
     schema:domainIncludes schema:Muscle ;
     schema:rangeIncludes schema:AnatomicalStructure ;
-    rdfs:comment "The place of attachment of a muscle, or what the muscle moves." .
+    rdfs:comment "The place of attachment of a muscle, or what the muscle moves." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:insurance a rdf:Property ;
     rdfs:label "insurance" ;
@@ -2835,20 +2889,23 @@ schema:isAvailableGenerically a rdf:Property ;
     rdfs:label "isAvailableGenerically" ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:Boolean ;
-    rdfs:comment "True if the drug is available in a generic form (regardless of name)." .
+    rdfs:comment "True if the drug is available in a generic form (regardless of name)." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:isProprietary a rdf:Property ;
     rdfs:label "isProprietary" ;
     schema:domainIncludes schema:DietarySupplement,
         schema:Drug ;
     schema:rangeIncludes schema:Boolean ;
-    rdfs:comment "True if this item's name is a proprietary/brand name (vs. generic name)." .
+    rdfs:comment "True if this item's name is a proprietary/brand name (vs. generic name)." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:labelDetails a rdf:Property ;
     rdfs:label "labelDetails" ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:URL ;
-    rdfs:comment "Link to the drug's label details." .
+    rdfs:comment "Link to the drug's label details." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:laboratoryProcedure a rdf:Property ;
     rdfs:label "laboratoryProcedure" ;
@@ -2883,7 +2940,8 @@ schema:manufacturer a rdf:Property ;
         schema:Drug,
         schema:Product ;
     schema:rangeIncludes schema:Organization ;
-    rdfs:comment "The manufacturer of the product." .
+    rdfs:comment "The manufacturer of the product." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:maritalStatus a rdf:Property ;
     rdfs:label "maritalStatus" ;
@@ -2903,7 +2961,8 @@ schema:mechanismOfAction a rdf:Property ;
     schema:domainIncludes schema:DietarySupplement,
         schema:Drug ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect." .
+    rdfs:comment "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:medicalAdmission a rdf:Property ;
     rdfs:label "medicalAdmission" ;
@@ -3125,7 +3184,8 @@ schema:medicineSystem a rdf:Property ;
     rdfs:label "medicineSystem" ;
     schema:domainIncludes schema:MedicalEntity ;
     schema:rangeIncludes schema:MedicineSystem ;
-    rdfs:comment "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc." .
+    rdfs:comment "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:menopause a rdf:Property ;
     rdfs:label "menopause" ;
@@ -3167,19 +3227,22 @@ schema:muscleAction a rdf:Property ;
     rdfs:label "muscleAction" ;
     schema:domainIncludes schema:Muscle ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The movement the muscle generates." .
+    rdfs:comment "The movement the muscle generates." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:naturalProgression a rdf:Property ;
     rdfs:label "naturalProgression" ;
     schema:domainIncludes schema:MedicalCondition ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The expected progression of the condition if it is not treated and allowed to progress naturally." .
+    rdfs:comment "The expected progression of the condition if it is not treated and allowed to progress naturally." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:nerve a rdf:Property ;
     rdfs:label "nerve" ;
     schema:domainIncludes schema:Muscle ;
     schema:rangeIncludes schema:Nerve ;
-    rdfs:comment "The underlying innervation associated with the muscle." .
+    rdfs:comment "The underlying innervation associated with the muscle." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:nerveMotor a rdf:Property ;
     rdfs:label "nerveMotor" ;
@@ -3202,19 +3265,22 @@ schema:nonProprietaryName a rdf:Property ;
     schema:domainIncludes schema:DietarySupplement,
         schema:Drug ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The generic name of this drug or supplement." .
+    rdfs:comment "The generic name of this drug or supplement." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:normalRange a rdf:Property ;
     rdfs:label "normalRange" ;
     schema:domainIncludes schema:MedicalTest ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Range of acceptable values for a typical patient, when applicable." .
+    rdfs:comment "Range of acceptable values for a typical patient, when applicable." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:nutrition a rdf:Property ;
     rdfs:label "nutrition" ;
     schema:domainIncludes schema:Recipe ;
     schema:rangeIncludes schema:NutritionInformation ;
-    rdfs:comment "Nutrition information about the recipe." .
+    rdfs:comment "Nutrition information about the recipe." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:observable a rdf:Property ;
     rdfs:label "observable" ;
@@ -3239,31 +3305,36 @@ schema:origin a rdf:Property ;
     rdfs:label "origin" ;
     schema:domainIncludes schema:Muscle ;
     schema:rangeIncludes schema:AnatomicalStructure ;
-    rdfs:comment "The place or point where a muscle arises." .
+    rdfs:comment "The place or point where a muscle arises." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:originatesFrom a rdf:Property ;
     rdfs:label "originatesFrom" ;
     schema:domainIncludes schema:LymphaticVessel ;
     schema:rangeIncludes schema:Vessel ;
-    rdfs:comment "The vasculature the lymphatic structure originates, or afferents, from." .
+    rdfs:comment "The vasculature the lymphatic structure originates, or afferents, from." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:outcome a rdf:Property ;
     rdfs:label "outcome" ;
     schema:domainIncludes schema:MedicalStudy ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Expected or actual outcomes of the study." .
+    rdfs:comment "Expected or actual outcomes of the study." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:overdosage a rdf:Property ;
     rdfs:label "overdosage" ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response." .
+    rdfs:comment "Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:palliativeProcedure a rdf:Property ;
     rdfs:label "palliativeProcedure" ;
     schema:domainIncludes schema:Patient ;
     schema:rangeIncludes schema:PalliativeProcedure ;
     rdfs:comment "Specifying a palliative procedure resource for a patient or a person" ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:therapeuticProcedure .
 
 schema:parity a rdf:Property ;
@@ -3278,6 +3349,7 @@ schema:partOfSystem a rdf:Property ;
     schema:domainIncludes schema:AnatomicalStructure ;
     schema:rangeIncludes schema:AnatomicalSystem ;
     rdfs:comment "The anatomical or organ system that this structure is part of." ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:isPartOf .
 
 schema:pastMedicalHistory a rdf:Property ;
@@ -3344,7 +3416,8 @@ schema:physiologicalBenefits a rdf:Property ;
     rdfs:label "physiologicalBenefits" ;
     schema:domainIncludes schema:Diet ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Specific physiologic benefits associated to the plan." .
+    rdfs:comment "Specific physiologic benefits associated to the plan." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:physiologicalRole a rdf:Property ;
     rdfs:label "physiologicalRole" ;
@@ -3362,13 +3435,15 @@ schema:population a rdf:Property ;
     rdfs:label "population" ;
     schema:domainIncludes schema:MedicalStudy ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Any characteristics of the population used in the study, e.g. 'males under 65'." .
+    rdfs:comment "Any characteristics of the population used in the study, e.g. 'males under 65'." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:possibleCause a rdf:Property ;
     rdfs:label "possibleCause" ;
     schema:domainIncludes schema:MedicalEntity ;
     schema:rangeIncludes schema:MedicalEntity ;
     rdfs:comment "Specifying a possible cause of something" ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:cause .
 
 schema:possibleComplication a rdf:Property ;
@@ -3383,19 +3458,22 @@ schema:possibleTreatment a rdf:Property ;
         schema:MedicalSignOrSymptom ;
     schema:rangeIncludes schema:MedicalTherapy ;
     rdfs:comment "A possible treatment to address this condition, sign or symptom." ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:treatment .
 
 schema:postOp a rdf:Property ;
     rdfs:label "postOp" ;
     schema:domainIncludes schema:MedicalDevice ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "A description of the postoperative procedures, care, and/or followups for this device." .
+    rdfs:comment "A description of the postoperative procedures, care, and/or followups for this device." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:preOp a rdf:Property ;
     rdfs:label "preOp" ;
     schema:domainIncludes schema:MedicalDevice ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "A description of the workup, testing, and other preparations required before implanting this device." .
+    rdfs:comment "A description of the workup, testing, and other preparations required before implanting this device." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:pregnancy a rdf:Property ;
     rdfs:label "pregnancy" ;
@@ -3419,19 +3497,22 @@ schema:prepTime a rdf:Property ;
     rdfs:label "prepTime" ;
     schema:domainIncludes schema:Recipe ;
     schema:rangeIncludes schema:Duration ;
-    rdfs:comment "The length of time it takes to prepare the recipe, in ISO 8601 duration format." .
+    rdfs:comment "The length of time it takes to prepare the recipe, in ISO 8601 duration format." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:preparation a rdf:Property ;
     rdfs:label "preparation" ;
     schema:domainIncludes schema:MedicalProcedure ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "Typical preparation that a patient must undergo before having the procedure performed." .
+    rdfs:comment "Typical preparation that a patient must undergo before having the procedure performed." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:prescribingInfo a rdf:Property ;
     rdfs:label "prescribingInfo" ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:URL ;
-    rdfs:comment "Link to prescribing information for the drug." .
+    rdfs:comment "Link to prescribing information for the drug." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:prescribingProcedure a rdf:Property ;
     rdfs:label "prescribingProcedure" ;
@@ -3446,7 +3527,8 @@ schema:prescriptionStatus a rdf:Property ;
     rdfs:label "prescriptionStatus" ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:DrugPrescriptionStatus ;
-    rdfs:comment "Indicates whether this drug is available by prescription or over-the-counter." .
+    rdfs:comment "Indicates whether this drug is available by prescription or over-the-counter." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:procedureActivity a rdf:Property ;
     rdfs:label "procedureActivity" ;
@@ -3466,13 +3548,15 @@ schema:procedureType a rdf:Property ;
     rdfs:label "procedureType" ;
     schema:domainIncludes schema:MedicalProcedure ;
     schema:rangeIncludes schema:MedicalProcedureType ;
-    rdfs:comment "The type of procedure, for example Surgical, Noninvasive, or Percutaneous." .
+    rdfs:comment "The type of procedure, for example Surgical, Noninvasive, or Percutaneous." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:publicationType a rdf:Property ;
     rdfs:label "publicationType" ;
     schema:domainIncludes schema:MedicalScholarlyArticle ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The type of the medical article, taken from the US NLM MeSH publication type catalog. See: http://www.nlm.nih.gov/mesh/pubtypes.html" .
+    rdfs:comment "The type of the medical article, taken from the US NLM MeSH publication type catalog. See: http://www.nlm.nih.gov/mesh/pubtypes.html" ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:purpose a rdf:Property ;
     rdfs:label "purpose" ;
@@ -3481,7 +3565,8 @@ schema:purpose a rdf:Property ;
         schema:PayAction ;
     schema:rangeIncludes schema:MedicalDevicePurpose,
         schema:Thing ;
-    rdfs:comment "A goal towards an action is taken. Can be concrete or abstract." .
+    rdfs:comment "A goal towards an action is taken. Can be concrete or abstract." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:race a rdf:Property ;
     rdfs:label "race" ;
@@ -3500,38 +3585,44 @@ schema:recipe a rdf:Property ;
     schema:domainIncludes schema:CookAction ;
     schema:rangeIncludes schema:Recipe ;
     rdfs:comment "A sub property of instrument. The recipe/instructions used to perform the action." ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:instrument .
 
 schema:recipeCategory a rdf:Property ;
     rdfs:label "recipeCategory" ;
     schema:domainIncludes schema:Recipe ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The category of the recipe—for example, appetizer, entree, etc." .
+    rdfs:comment "The category of the recipe—for example, appetizer, entree, etc." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:recipeCuisine a rdf:Property ;
     rdfs:label "recipeCuisine" ;
     schema:domainIncludes schema:Recipe ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The cuisine of the recipe (for example, French or Ethiopian)." .
+    rdfs:comment "The cuisine of the recipe (for example, French or Ethiopian)." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:recipeIngredient a rdf:Property ;
     rdfs:label "recipeIngredient" ;
     schema:domainIncludes schema:Recipe ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "A single ingredient used in the recipe, e.g. sugar, flour or garlic." .
+    rdfs:comment "A single ingredient used in the recipe, e.g. sugar, flour or garlic." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:recipeInstructions a rdf:Property ;
     rdfs:label "recipeInstructions" ;
     schema:domainIncludes schema:Recipe ;
     schema:rangeIncludes schema:ItemList,
         schema:Text ;
-    rdfs:comment "A step or instruction involved in making the recipe." .
+    rdfs:comment "A step or instruction involved in making the recipe." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:recipeYield a rdf:Property ;
     rdfs:label "recipeYield" ;
     schema:domainIncludes schema:Recipe ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "The quantity produced by the recipe (for example, number of people served, number of servings, etc)." .
+    rdfs:comment "The quantity produced by the recipe (for example, number of people served, number of servings, etc)." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:recognizingAuthority a rdf:Property ;
     rdfs:label "recognizingAuthority" ;
@@ -3885,7 +3976,8 @@ schema:totalTime a rdf:Property ;
     schema:domainIncludes schema:MedicalProcedure,
         schema:Recipe ;
     schema:rangeIncludes schema:Duration ;
-    rdfs:comment "The total time it takes to prepare and cook the recipe, in ISO 8601 duration format." .
+    rdfs:comment "The total time it takes to prepare and cook the recipe, in ISO 8601 duration format." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:totalValue a rdf:Property ;
     rdfs:label "totalValue" ;
@@ -3897,7 +3989,8 @@ schema:transFatContent a rdf:Property ;
     rdfs:label "transFatContent" ;
     schema:domainIncludes schema:NutritionInformation ;
     schema:rangeIncludes schema:Mass ;
-    rdfs:comment "The number of grams of trans fat." .
+    rdfs:comment "The number of grams of trans fat." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:transferDate a rdf:Property ;
     rdfs:label "transferDate" ;
@@ -3911,7 +4004,8 @@ schema:transmissionMethod a rdf:Property ;
     rdfs:label "transmissionMethod" ;
     schema:domainIncludes schema:InfectiousDisease ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc." .
+    rdfs:comment "How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:treatingPhysician a rdf:Property ;
     rdfs:label "treatingPhysician" ;
@@ -3940,25 +4034,29 @@ schema:trialDesign a rdf:Property ;
     rdfs:label "trialDesign" ;
     schema:domainIncludes schema:MedicalTrial ;
     schema:rangeIncludes schema:MedicalTrialDesign ;
-    rdfs:comment "Specifics about the trial design (enumerated)." .
+    rdfs:comment "Specifics about the trial design (enumerated)." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:tributary a rdf:Property ;
     rdfs:label "tributary" ;
     schema:domainIncludes schema:Vein ;
     schema:rangeIncludes schema:AnatomicalStructure ;
-    rdfs:comment "The anatomical or organ system that the vein flows into; a larger structure that the vein connects to." .
+    rdfs:comment "The anatomical or organ system that the vein flows into; a larger structure that the vein connects to." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:typicalTest a rdf:Property ;
     rdfs:label "typicalTest" ;
     schema:domainIncludes schema:MedicalCondition ;
     schema:rangeIncludes schema:MedicalTest ;
-    rdfs:comment "A medical test typically performed given this condition." .
+    rdfs:comment "A medical test typically performed given this condition." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:unsaturatedFatContent a rdf:Property ;
     rdfs:label "unsaturatedFatContent" ;
     schema:domainIncludes schema:NutritionInformation ;
     schema:rangeIncludes schema:Mass ;
-    rdfs:comment "The number of grams of unsaturated fat." .
+    rdfs:comment "The number of grams of unsaturated fat." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:usedToDiagnose a rdf:Property ;
     rdfs:label "usedToDiagnose" ;
@@ -3970,7 +4068,8 @@ schema:usesDevice a rdf:Property ;
     rdfs:label "usesDevice" ;
     schema:domainIncludes schema:MedicalTest ;
     schema:rangeIncludes schema:MedicalDevice ;
-    rdfs:comment "Device used to perform the test." .
+    rdfs:comment "Device used to perform the test." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:vaccination a rdf:Property ;
     rdfs:label "vaccination" ;
@@ -4005,7 +4104,8 @@ schema:warning a rdf:Property ;
     schema:domainIncludes schema:Drug ;
     schema:rangeIncludes schema:Text,
         schema:URL ;
-    rdfs:comment "Any FDA or other warnings about the drug (text or URL)." .
+    rdfs:comment "Any FDA or other warnings about the drug (text or URL)." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:adverseEvent a rdf:Property ;
     rdfs:label "adverseEvent" ;
@@ -4052,7 +4152,8 @@ schema:medicalSpecialty a rdf:Property ;
         schema:MedicalClinic,
         schema:Physician ;
     schema:rangeIncludes schema:MedicalSpecialty ;
-    rdfs:comment "A medical specialty of the provider." .
+    rdfs:comment "A medical specialty of the provider." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:medicalSymptom a rdf:Property ;
     rdfs:label "medicalSymptom" ;
@@ -4073,25 +4174,21 @@ schema:primaryPrevention a rdf:Property ;
     schema:domainIncludes schema:MedicalCondition ;
     schema:rangeIncludes schema:MedicalTherapy ;
     rdfs:comment "A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination." ;
+    rdfs:subClassOf schema:MovedFromCore ;
     rdfs:subPropertyOf schema:preventiveProcedure .
 
 schema:procedure a rdf:Property ;
     rdfs:label "procedure" ;
     schema:domainIncludes schema:MedicalDevice ;
     schema:rangeIncludes schema:Text ;
-    rdfs:comment "A description of the procedure involved in setting up, using, and/or installing the device." .
+    rdfs:comment "A description of the procedure involved in setting up, using, and/or installing the device." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:religionGroup a rdf:Property ;
     rdfs:label "religionGroup" ;
     schema:domainIncludes schema:Person ;
     schema:rangeIncludes schema:ReligionGroup ;
     rdfs:comment "Specifying a religion group of person." .
-
-schema:Enzyme a rdf:Property ;
-    rdfs:label "Enzyme" ;
-    schema:domainIncludes schema:PhysiologicalEntity ;
-    schema:rangeIncludes schema:Enzyme ;
-    rdfs:comment "Biological molecules (proteins) that act as catalysts and help biochemical reactions into the body" .
 
 schema:adverseOutcome a rdf:Property ;
     rdfs:label "adverseOutcome" ;
@@ -4149,7 +4246,8 @@ schema:indication a rdf:Property ;
         schema:MedicalProcedure,
         schema:TherapeuticProcedure ;
     schema:rangeIncludes schema:MedicalIndication ;
-    rdfs:comment "A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication." .
+    rdfs:comment "A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication." ;
+    rdfs:subClassOf schema:MovedFromCore .
 
 schema:interval a rdf:Property ;
     rdfs:label "interval" ;
