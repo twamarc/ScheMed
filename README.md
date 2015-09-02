@@ -7,10 +7,7 @@ The materials here are owned and maintained by the <a href="http://www.w3.org/co
  
 <p>This effort aimed to enable the use of schema.org not only by webmasters but also in indexing health records, healthcare documents,  and as a pillar open source of medical ontology/vocabulary for formalization of healthcare information.</p>
 
-<p>This effort was inspired by the experience with <a href="www.salusproject.eu">SALUS EU FP7 project</a>. Within this SALUS EU FP7 project- with <a href="http://http://www.agfahealthcare.com/">AGFA Healthcare N.V. </a> as a partner and <a href="https://lists.w3.org/Archives/Public/public-swls-ws/2004Sep/att-0030/W3C_Workshop_Semantic_Web_for_Life_Science_-_position.pdf">historically interested in semantic web technology </a> ,  several reusable clinical entities using  schema.org as a third-party pillar source of medical ontology and have been <a href="http://www.srdc.com.tr/projects/salus/docs/D4.3.2.pdf">developed and tested successfully </a> .</p> 
-
-<p>
-This community effort aims to provide a medical/health vocabulary. The intention is not to be complete, or to replace existing clinical information models, or to create a new information model. The aim is mainly to provide most useful and frequently used (so, demand driven) classes and predicates related to the medical domain.</p>
+The intention is not to be complete, or to replace existing clinical information models, or to create a new information model. The aim is mainly to provide most useful and frequently used (so, demand driven) classes and predicates related to the medical domain.</p>
 
 <p> Within this scope all concepts are mapped to the existing terminology (SNOMED, ICD, LOINC, ATC, RxNorm,etc.) as far as it's feasible. The initial proposal have been already submitted to schema.org and anticipatory accepted as an extension but further work is needed for a final submission. Everyone's input is needed here. 
 The bigger our community will be, the better the coverage our health schema vocabulary will be.</p>
