@@ -12,7 +12,12 @@ The intention is not to be complete, or to replace existing clinical information
 <p> Within this scope all concepts are mapped to the existing terminology (SNOMED, ICD, LOINC, ATC, RxNorm,etc.) as far as it's feasible. The initial proposal have been already submitted to schema.org and anticipatory accepted as an extension but further work is needed for a final submission. Everyone's input is needed here. 
 The bigger our community will be, the better the coverage our health schema vocabulary will be.</p>
 
-<p>The current extension is : health.schema.org. Please see the <a href="http://demoschemed.appspot.com/MedicalEntity">initial submission under review and restructure</a>.</p>
+<p>
+The History of submitted proposals:</br>
++ v0.0 (September, 2015):  <a href="http://health.sdo-schemedex.appspot.com">The current version </a> - made by the strictly minimum terms, as they were initially in schema.org core. </br>
++ v0.0 (May, 2015):  <a href="http://health.sdo-schemedex-0-1.appspot.com/MedicalEntity">Second submission </a> after review and restructuring.</br>
++ v0.0 (May,2013) <a href="http://demoschemed.appspot.com/MedicalEntity">Initial submission </a> submitted in 2013 for review.</br>
+</p>
 
 <p>We will leave out to the consumer the next step of drafting a set of clinical information models using schema.org as a third-party pillar source of medical ontology. This will contribute to the interoperability and re-use of the patterns in healthcare information exchange.</p>
 <p>Do not miss this momentum! Please join this effort today and be part of the future healthcare information sharing community!</p>
@@ -24,7 +29,7 @@ Chair</br></p>
 <h3>Urgent announcement:</h3>
 <p>We need 2 extra Chairs for our <a href="http://www.w3.org/community/schemed"> W3C Healthcare Schema Vocabulary Community Group</a>.</p>
 <p>Just go to <a href="http://www.w3.org/community/schemed"> W3C Healthcare Schema Vocabulary Community Group</a> and send your contacts and short biosketch to the chair if you can volunteer here. </p>
-<p>Please note that the chair has to contribute efficiently in maintenance of Community Group materials, and this is a strictly unpaid, voluntary task, but rewarding as a community knowledge contribution!</p>
+<p>Please note that the chair has to contribute efficiently in maintenance of Community Group materials, and this is a strictly unpaid, voluntary task, but rewarding as a community knowledged contribution!</p>
 
 Note:
 =====
