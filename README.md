@@ -14,6 +14,7 @@ The bigger our community will be, the better the coverage our health schema voca
 
 <p>
 The History of submitted proposals:</br>
+
 + v0.0 (September, 2015):  <a href="http://health.sdo-schemedex.appspot.com">The current version </a> - made by the strictly minimum terms, as they were initially in schema.org core. </br>
 + v0.0 (May, 2015):  <a href="http://health.sdo-schemedex-0-1.appspot.com/MedicalEntity">Second submission </a> after review and restructuring.</br>
 + v0.0 (May,2013) <a href="http://demoschemed.appspot.com/MedicalEntity">Initial submission </a> submitted in 2013 for review.</br>
